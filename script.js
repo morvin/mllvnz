@@ -22,8 +22,24 @@ document.addEventListener('DOMContentLoaded', () => {
             // 3. Popoliamo la pagina con i dati
             document.title = `Archivio - ${item.title}`;
             document.getElementById('post-title').textContent = item.title;
+            document.getElementById('post-date').textContent = item.date ? new Date(item.date).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
             document.getElementById('content-caption').textContent = item.caption;
             document.getElementById('post-desc').textContent = item.description;
+
+            // Cambiamo colore di sfondo in modo dinamico e accessibile
+            const palette = [
+                '#ffffff', // Bianco
+                '#f0f7ff', // Azzurro chiarissimo
+                '#f2fff2', // Verde chiarissimo
+                '#fffaf0', // Arancio chiarissimo
+                '#fdf2ff', // Viola chiarissimo
+                '#f5f5f5'  // Grigio chiarissimo
+            ];
+            
+            // Usiamo l'indice per rendere il colore "stabile" per quel post, 
+            // oppure Math.random() se preferisci che cambi ad ogni caricamento.
+            const colorIndex = currentIndex % palette.length;
+            document.body.style.backgroundColor = palette[colorIndex];
             
             const imgElement = document.getElementById('main-image');
             const linkElement = document.getElementById('main-link');

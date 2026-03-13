@@ -21,6 +21,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    transition: background-color 0.8s ease;
 }
 
 .skip-link {
@@ -54,6 +55,12 @@ body {
 #post-title {
     margin-bottom: 1rem;
     font-size: 1.8rem;
+}
+
+.post-date {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
 }
 
 .post-nav ul {
