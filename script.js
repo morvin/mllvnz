@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('data.json')
         .then(response => response.json())
         .then(data => {
+            if (!data || data.length === 0) throw new Error("Database vuoto");
+            
             const total = data.length;
             
             // 2. Determiniamo quale ID mostrare (dall'URL ?p=X o l'ultimo disponibile)
@@ -18,9 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentIndex === -1) currentIndex = total - 1;
             
             const item = data[currentIndex];
+
+            // Log di debug: ti permette di vedere nel terminale del browser cosa sta succedendo
+            console.log(`Caricamento contenuto ID: ${item.id} (Posizione: ${currentIndex + 1} di ${total})`);
             
             // 3. Popoliamo la pagina con i dati
             document.title = `Archivio - ${item.title}`;
+            const metaDesc = document.getElementById('meta-desc');
+            if (metaDesc) metaDesc.content = item.description;
+
             document.getElementById('post-title').textContent = item.title;
             document.getElementById('post-date').textContent = item.date ? new Date(item.date).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
             document.getElementById('content-caption').textContent = item.caption;
@@ -41,6 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const colorIndex = currentIndex % palette.length;
             document.body.style.backgroundColor = palette[colorIndex];
             
+            // Rendiamo visibile la navigazione solo dopo il caricamento
+            document.getElementById('nav-top').style.visibility = 'visible';
+
             const imgElement = document.getElementById('main-image');
             const linkElement = document.getElementById('main-link');
 
@@ -62,6 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const lastId = data[total - 1].id;
             const prevId = currentIndex > 0 ? data[currentIndex - 1].id : null;
             const nextId = currentIndex < total - 1 ? data[currentIndex + 1].id : null;
+
+            console.log(`Navigazione calcolata -> Precedente: ${prevId}, Successivo: ${nextId}`);
 
             // Funzione per aggiornare i link e gestire lo stato disabilitato (WCAG)
             const updateLinks = (className, newId, isDisabled) => {
@@ -100,5 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (e.key === 'ArrowLeft' && prevId !== null) window.location.search = `?p=${prevId}`;
                 if (e.key === 'ArrowRight' && nextId !== null) window.location.search = `?p=${nextId}`;
             });
+        })
+        .catch(error => {
+            console.error("Errore nel caricamento dei dati:", error);
+            document.getElementById('post-title').textContent = "Errore nel caricamento del contenuto.";
         });
 });
