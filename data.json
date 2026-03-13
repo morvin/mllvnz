@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Il Diritto all'Ozio",
+    "url": "https://www.facebook.com/ildirittoallozio/",
+    "caption": "Visita la pagina ufficiale",
+    "description": "Il punto di partenza del nostro archivio: un link alla pagina Facebook 'Il Diritto all'Ozio'."
+  },
+  {
+    "id": 2,
+    "title": "Il Germoglio",
+    "image": "image/2.png",
+    "alt": "Una piccola pianta che spunta dal terreno con due foglioline verdi.",
+    "caption": "La crescita richiede tempo.",
+    "description": "Il secondo passo del percorso: la ghianda è germogliata. Questo contenuto mostra l'evoluzione dell'archivio."
+  }
+]

@@ -94,6 +94,22 @@ a:focus-visible, button:focus-visible {
     border-radius: 2px;
 }
 
+.big-link {
+    display: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-decoration: underline;
+    padding: 3rem 1rem;
+    border: 2px dashed var(--nav-border);
+    word-break: break-all;
+    transition: background-color 0.2s;
+}
+
+.big-link:hover {
+    background-color: var(--nav-bg);
+}
+
 .content-text {
     text-align: left;
     margin-top: 2rem;

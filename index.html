@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archivio - Titolo del Contenuto</title>
+    <title id="page-title">Il Mio Archivio</title>
     <meta name="description" content="Un archivio di immagini e link.">
-    <!-- Colleghiamo il file CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Accessibilità: Link rapido per saltare la navigazione se si usa la tastiera -->
     <a href="#main-content" class="skip-link">Salta al contenuto principale</a>
 
     <header class="site-header">
@@ -19,41 +17,42 @@
 
     <main id="main-content" class="container">
         <article class="content-post">
-            <h2 id="post-title">Titolo del Contenuto Attuale</h2>
+            <h2 id="post-title">&nbsp;</h2>
 
             <!-- Navigazione Superiore -->
             <nav class="post-nav" aria-label="Navigazione contenuti principale">
                 <ul>
-                    <li><a href="#" class="nav-btn" aria-label="Primo contenuto">|&lt; Primo</a></li>
-                    <li><a href="#" class="nav-btn" aria-label="Contenuto precedente">&lt; Indietro</a></li>
+                    <li><a href="#" class="nav-btn nav-first" aria-label="Primo contenuto">|&lt; Primo</a></li>
+                    <li><a href="#" class="nav-btn nav-prev" aria-label="Contenuto precedente">&lt; Indietro</a></li>
                     <li><button class="nav-btn" id="btn-random" aria-label="Contenuto casuale">Casuale</button></li>
-                    <li><a href="#" class="nav-btn" aria-label="Contenuto successivo">Avanti &gt;</a></li>
-                    <li><a href="#" class="nav-btn" aria-label="Ultimo contenuto">Ultimo &gt;|</a></li>
+                    <li><a href="#" class="nav-btn nav-next" aria-label="Contenuto successivo">Avanti &gt;</a></li>
+                    <li><a href="#" class="nav-btn nav-last" aria-label="Ultimo contenuto">Ultimo &gt;|</a></li>
                 </ul>
             </nav>
 
             <!-- Area Contenuto (Immagine o Link) -->
             <div class="content-media">
-                <img src="il_principe.png" 
-                     alt="Immagine de Il principe" 
-                     title="Il principe">
+                <img id="main-image" src="" 
+                     alt="" 
+                     title="">
+                <a id="main-link" href="" class="big-link" target="_blank" rel="noopener"></a>
             </div>
 
             <!-- Navigazione Inferiore -->
             <nav class="post-nav" aria-hidden="true">
                 <ul>
-                    <li><a href="#" class="nav-btn" tabindex="-1">|&lt; Primo</a></li>
-                    <li><a href="#" class="nav-btn" tabindex="-1">&lt; Indietro</a></li>
+                    <li><a href="#" class="nav-btn nav-first" tabindex="-1">|&lt; Primo</a></li>
+                    <li><a href="#" class="nav-btn nav-prev" tabindex="-1">&lt; Indietro</a></li>
                     <li><button class="nav-btn" tabindex="-1" onclick="document.getElementById('btn-random').click()">Casuale</button></li>
-                    <li><a href="#" class="nav-btn" tabindex="-1">Avanti &gt;</a></li>
-                    <li><a href="#" class="nav-btn" tabindex="-1">Ultimo &gt;|</a></li>
+                    <li><a href="#" class="nav-btn nav-next" tabindex="-1">Avanti &gt;</a></li>
+                    <li><a href="#" class="nav-btn nav-last" tabindex="-1">Ultimo &gt;|</a></li>
                 </ul>
             </nav>
 
             <!-- Testo / Trascrizione -->
             <div class="content-text">
-                <h3>Trascrizione / Dettagli</h3>
-                <p>Qui puoi inserire il testo associato all'immagine o al link. Questo spazio è ottimo per la SEO e per rendere accessibile qualsiasi testo presente all'interno dell'immagine.</p>
+                <h3 id="content-caption">Dettagli</h3>
+                <p id="post-desc"></p>
             </div>
         </article>
     </main>
