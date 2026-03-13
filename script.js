@@ -44,20 +44,28 @@ document.addEventListener('DOMContentLoaded', () => {
             // 4. Gestiamo la navigazione basandoci sulla posizione nell'array
             const firstId = data[0].id;
             const lastId = data[total - 1].id;
-            const prevId = currentIndex > 0 ? data[currentIndex - 1].id : firstId;
-            const nextId = currentIndex < total - 1 ? data[currentIndex + 1].id : lastId;
+            const prevId = currentIndex > 0 ? data[currentIndex - 1].id : null;
+            const nextId = currentIndex < total - 1 ? data[currentIndex + 1].id : null;
 
-            // Funzione per aggiornare tutti i link della navigazione (top e bottom)
-            const updateLinks = (className, newId) => {
+            // Funzione per aggiornare i link e gestire lo stato disabilitato (WCAG)
+            const updateLinks = (className, newId, isDisabled) => {
                 document.querySelectorAll(`.${className}`).forEach(el => {
-                    el.href = `?p=${newId}`;
+                    if (isDisabled || newId === null) {
+                        el.removeAttribute('href');
+                        el.classList.add('disabled');
+                        el.setAttribute('aria-disabled', 'true');
+                    } else {
+                        el.href = `?p=${newId}`;
+                        el.classList.remove('disabled');
+                        el.removeAttribute('aria-disabled');
+                    }
                 });
             };
 
-            updateLinks('nav-first', firstId);
-            updateLinks('nav-prev', prevId);
-            updateLinks('nav-next', nextId);
-            updateLinks('nav-last', lastId);
+            updateLinks('nav-first', firstId, currentIndex === 0);
+            updateLinks('nav-prev', prevId, currentIndex === 0);
+            updateLinks('nav-next', nextId, currentIndex === total - 1);
+            updateLinks('nav-last', lastId, currentIndex === total - 1);
 
             // Pulsante Casuale
             const btnRandom = document.getElementById('btn-random');
@@ -73,8 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Bonus: Navigazione con le frecce della tastiera (Accessibilità+)
             document.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowLeft') window.location.search = `?p=${prevId}`;
-                if (e.key === 'ArrowRight') window.location.search = `?p=${nextId}`;
+                if (e.key === 'ArrowLeft' && prevId !== null) window.location.search = `?p=${prevId}`;
+                if (e.key === 'ArrowRight' && nextId !== null) window.location.search = `?p=${nextId}`;
             });
         });
 });

@@ -82,6 +82,14 @@ body {
     background-color: var(--nav-hover);
 }
 
+.nav-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+    filter: grayscale(1);
+    border-style: dotted;
+}
+
 a:focus-visible, button:focus-visible {
     outline: 3px solid var(--focus-color);
     outline-offset: 2px;
