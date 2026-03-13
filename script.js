@@ -44,9 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 '#f5f5f5'  // Grigio chiarissimo
             ];
             
-            // Usiamo l'indice per rendere il colore "stabile" per quel post, 
-            // oppure Math.random() se preferisci che cambi ad ogni caricamento.
-            const colorIndex = currentIndex % palette.length;
+            // Scegliamo un colore casuale dalla palette ad ogni caricamento della pagina
+            const colorIndex = Math.floor(Math.random() * palette.length);
             document.body.style.backgroundColor = palette[colorIndex];
             
             // Rendiamo visibile la navigazione solo dopo il caricamento
