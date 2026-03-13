@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Se non c'è parametro p, mostriamo l'ultimo. Se c'è, lo cerchiamo.
             let currentIndex = pParam 
                 ? data.findIndex(d => d.id === parseInt(pParam)) 
-                : total - 1;
+                : 0; // Cambiato: la pagina 1 (indice 0) è la home
 
-            // Fallback: se l'ID non esiste (es. ?p=999), vai all'ultimo
-            if (currentIndex === -1) currentIndex = total - 1;
+            // Fallback: se l'ID non esiste, vai alla home
+            if (currentIndex === -1) currentIndex = 0;
             
             const item = data[currentIndex];
 
