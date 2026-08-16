@@ -1,84 +1,161 @@
+/*
+ * Il Mio Archivio - logica di navigazione.
+ * I contenuti stanno tutti in data.json: per aggiungere una voce
+ * basta aggiungere un oggetto a quel file (vedi README.md).
+ */
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Recuperiamo i dati dal file JSON
-    fetch('data.json')
-        .then(response => response.json())
-        .then(data => {
-            if (!data || data.length === 0) throw new Error("Database vuoto");
-            
-            const total = data.length;
-            
-            // 2. Determiniamo quale ID mostrare (dall'URL ?p=X o l'ultimo disponibile)
-            const urlParams = new URLSearchParams(window.location.search);
-            const pParam = urlParams.get('p');
-            
-            // Se non c'è parametro p, mostriamo l'ultimo. Se c'è, lo cerchiamo.
-            let currentIndex = pParam 
-                ? data.findIndex(d => d.id === parseInt(pParam)) 
-                : 0; // Cambiato: la pagina 1 (indice 0) è la home
 
-            // Fallback: se l'ID non esiste, vai alla home
-            if (currentIndex === -1) currentIndex = 0;
-            
+    const $ = (id) => document.getElementById(id);
+
+    // Palette di sfondi chiari: uno a caso ad ogni caricamento.
+    const PALETTE = [
+        '#ffffff', // Bianco
+        '#f0f7ff', // Azzurro chiarissimo
+        '#f2fff2', // Verde chiarissimo
+        '#fffaf0', // Arancio chiarissimo
+        '#fdf2ff', // Viola chiarissimo
+        '#f5f5f5'  // Grigio chiarissimo
+    ];
+
+    const setBackground = () => {
+        const color = PALETTE[Math.floor(Math.random() * PALETTE.length)];
+        document.body.style.backgroundColor = color;
+        const themeColor = document.querySelector('meta[name="theme-color"]');
+        if (themeColor) themeColor.content = color;
+    };
+
+    const showError = (message) => {
+        document.body.classList.remove('is-loading');
+        $('post-title').textContent = message;
+        // Senza dati non c'è niente da mostrare né da navigare.
+        document.querySelectorAll('.post-nav, .content-media, .content-text')
+            .forEach(el => el.remove());
+    };
+
+    // "2026-01-05" va letto come data locale: new Date("2026-01-05") la
+    // interpreta come UTC e in certi fusi mostrerebbe il giorno prima.
+    const formatDate = (value) => {
+        if (!value) return '';
+        const parts = String(value).split('-').map(Number);
+        const date = parts.length === 3 && parts.every(n => !isNaN(n))
+            ? new Date(parts[0], parts[1] - 1, parts[2])
+            : new Date(value);
+        if (isNaN(date.getTime())) return '';
+        return date.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
+    };
+
+    const goTo = (id) => {
+        window.location.search = `?p=${id}`;
+    };
+
+    const absoluteUrl = (path) => {
+        try {
+            return new URL(path, window.location.href).href;
+        } catch (e) {
+            return '';
+        }
+    };
+
+    setBackground();
+
+    const footerYear = $('footer-year');
+    if (footerYear) footerYear.textContent = new Date().getFullYear();
+
+    fetch('data.json', { cache: 'no-cache' })
+        .then(response => {
+            if (!response.ok) throw new Error(`data.json: HTTP ${response.status}`);
+            return response.json();
+        })
+        .then(rawData => {
+            if (!Array.isArray(rawData)) throw new Error('data.json non contiene un elenco');
+
+            // Teniamo solo le voci utilizzabili: devono avere un id e o un'immagine o un link.
+            const data = rawData.filter(d => d && Number.isInteger(d.id) && (d.image || d.url));
+            if (data.length === 0) throw new Error('Database vuoto');
+
+            const total = data.length;
+
+            // Quale voce mostrare: quella indicata da ?p=ID, altrimenti la prima.
+            const pParam = new URLSearchParams(window.location.search).get('p');
+            let currentIndex = pParam !== null
+                ? data.findIndex(d => d.id === parseInt(pParam, 10))
+                : 0;
+            if (currentIndex === -1) currentIndex = 0; // id inesistente -> home
+
             const item = data[currentIndex];
 
-            // Log di debug: ti permette di vedere nel terminale del browser cosa sta succedendo
-            console.log(`Caricamento contenuto ID: ${item.id} (Posizione: ${currentIndex + 1} di ${total})`);
-            
-            // 3. Popoliamo la pagina con i dati
-            document.title = `Archivio - ${item.title}`;
-            const metaDesc = document.getElementById('meta-desc');
-            if (metaDesc) metaDesc.content = item.description;
+            // 1. Testi della pagina
+            const title = item.title || 'Senza titolo';
+            const description = item.description || '';
 
-            document.getElementById('post-title').textContent = item.title;
-            document.getElementById('post-date').textContent = item.date ? new Date(item.date).toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' }) : '';
-            document.getElementById('content-caption').textContent = item.caption;
-            document.getElementById('post-desc').textContent = item.description;
+            document.title = `Archivio - ${title}`;
+            $('post-title').textContent = title;
+            $('post-date').textContent = formatDate(item.date);
+            $('content-caption').textContent = item.caption || 'Dettagli';
+            $('post-desc').textContent = description;
 
-            // Cambiamo colore di sfondo in modo dinamico e accessibile
-            const palette = [
-                '#ffffff', // Bianco
-                '#f0f7ff', // Azzurro chiarissimo
-                '#f2fff2', // Verde chiarissimo
-                '#fffaf0', // Arancio chiarissimo
-                '#fdf2ff', // Viola chiarissimo
-                '#f5f5f5'  // Grigio chiarissimo
-            ];
-            
-            // Scegliamo un colore casuale dalla palette ad ogni caricamento della pagina
-            const colorIndex = Math.floor(Math.random() * palette.length);
-            document.body.style.backgroundColor = palette[colorIndex];
-            
-            // Rendiamo visibile la navigazione solo dopo il caricamento
-            document.getElementById('nav-top').style.visibility = 'visible';
+            // 2. Metadati (descrizione, canonical, anteprima social)
+            const pageUrl = absoluteUrl(`?p=${item.id}`);
+            const meta = {
+                'meta-desc': description,
+                'og-title': title,
+                'og-desc': description,
+                'og-url': pageUrl
+            };
+            Object.entries(meta).forEach(([id, value]) => {
+                const el = $(id);
+                if (el) el.content = value;
+            });
+            const canonical = $('canonical');
+            if (canonical) canonical.href = pageUrl;
 
-            const imgElement = document.getElementById('main-image');
-            const linkElement = document.getElementById('main-link');
+            const ogImage = $('og-image');
+            const twCard = $('tw-card');
+            if (item.image) {
+                if (ogImage) ogImage.content = absoluteUrl(item.image);
+                if (twCard) twCard.content = 'summary_large_image';
+            } else if (ogImage) {
+                ogImage.remove();
+            }
 
-            if (item.url) {
-                imgElement.style.display = 'none';
+            // 3. Contenuto: immagine (eventualmente cliccabile) oppure link in evidenza
+            const imgElement = $('main-image');
+            const imgLink = $('image-link');
+            const linkElement = $('main-link');
+
+            if (item.image) {
+                linkElement.style.display = 'none';
+                imgElement.alt = item.alt || title;
+                imgElement.src = item.image;
+                imgElement.hidden = false;
+                imgElement.addEventListener('error', () => {
+                    imgElement.hidden = true;
+                    $('post-desc').textContent =
+                        `Immagine non disponibile (${item.image}). ${description}`.trim();
+                }, { once: true });
+
+                // Se la voce ha anche un link, la copertina ci porta sopra.
+                if (item.url) {
+                    imgLink.href = item.url;
+                    imgLink.setAttribute('aria-label', `${title}: apri il link`);
+                } else {
+                    imgLink.removeAttribute('href');
+                }
+            } else {
+                imgElement.hidden = true;
+                imgLink.removeAttribute('href');
                 linkElement.style.display = 'block';
                 linkElement.href = item.url;
                 linkElement.textContent = item.url;
-            } else {
-                imgElement.style.display = 'block';
-                linkElement.style.display = 'none';
-                imgElement.src = item.image;
-                imgElement.alt = item.alt;
-                imgElement.title = item.alt;
             }
 
-            // 4. Gestiamo la navigazione basandoci sulla posizione nell'array
-            const firstId = data[0].id;
-            const lastId = data[total - 1].id;
+            // 4. Navigazione, calcolata sulla posizione nell'elenco
             const prevId = currentIndex > 0 ? data[currentIndex - 1].id : null;
             const nextId = currentIndex < total - 1 ? data[currentIndex + 1].id : null;
 
-            console.log(`Navigazione calcolata -> Precedente: ${prevId}, Successivo: ${nextId}`);
-
-            // Funzione per aggiornare i link e gestire lo stato disabilitato (WCAG)
-            const updateLinks = (className, newId, isDisabled) => {
+            const updateLinks = (className, newId) => {
                 document.querySelectorAll(`.${className}`).forEach(el => {
-                    if (isDisabled || newId === null) {
+                    if (newId === null) {
                         el.removeAttribute('href');
                         el.classList.add('disabled');
                         el.setAttribute('aria-disabled', 'true');
@@ -90,31 +167,43 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             };
 
-            updateLinks('nav-first', firstId, currentIndex === 0);
-            updateLinks('nav-prev', prevId, currentIndex === 0);
-            updateLinks('nav-next', nextId, currentIndex === total - 1);
-            updateLinks('nav-last', lastId, currentIndex === total - 1);
+            updateLinks('nav-first', currentIndex === 0 ? null : data[0].id);
+            updateLinks('nav-prev', prevId);
+            updateLinks('nav-next', nextId);
+            updateLinks('nav-last', currentIndex === total - 1 ? null : data[total - 1].id);
 
-            // Pulsante Casuale
-            const btnRandom = document.getElementById('btn-random');
-            if (btnRandom) {
-                btnRandom.addEventListener('click', () => {
-                    let randomId;
+            // I contenuti sono pronti: mostriamo la navigazione.
+            document.body.classList.remove('is-loading');
+
+            // 5. Pulsante Casuale (presente in entrambe le barre)
+            document.querySelectorAll('.nav-random').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (total === 1) return;
+                    let randomIndex;
                     do {
-                        randomId = data[Math.floor(Math.random() * total)].id;
-                    } while (randomId === item.id && total > 1);
-                    window.location.search = `?p=${randomId}`;
+                        randomIndex = Math.floor(Math.random() * total);
+                    } while (randomIndex === currentIndex);
+                    goTo(data[randomIndex].id);
                 });
-            }
-            
-            // Bonus: Navigazione con le frecce della tastiera (Accessibilità+)
+            });
+
+            // 6. Frecce della tastiera, senza disturbare campi di testo e scorciatoie
             document.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowLeft' && prevId !== null) window.location.search = `?p=${prevId}`;
-                if (e.key === 'ArrowRight' && nextId !== null) window.location.search = `?p=${nextId}`;
+                if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
+                const tag = (e.target.tagName || '').toLowerCase();
+                if (tag === 'input' || tag === 'textarea' || e.target.isContentEditable) return;
+                if (e.key === 'ArrowLeft' && prevId !== null) goTo(prevId);
+                if (e.key === 'ArrowRight' && nextId !== null) goTo(nextId);
+            });
+
+            // 7. Precarichiamo le immagini vicine: sfogliare diventa istantaneo.
+            [currentIndex - 1, currentIndex + 1].forEach(i => {
+                const neighbour = data[i];
+                if (neighbour && neighbour.image) new Image().src = neighbour.image;
             });
         })
         .catch(error => {
-            console.error("Errore nel caricamento dei dati:", error);
-            document.getElementById('post-title').textContent = "Errore nel caricamento del contenuto.";
+            console.error('Errore nel caricamento dei dati:', error);
+            showError('Errore nel caricamento del contenuto.');
         });
 });

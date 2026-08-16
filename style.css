@@ -63,6 +63,16 @@ body {
     margin-bottom: 1rem;
 }
 
+/* Finché i dati non sono pronti la navigazione resta nascosta,
+   ma occupa già il suo spazio: così la pagina non "salta". */
+.is-loading .post-nav {
+    visibility: hidden;
+}
+
+.noscript-msg {
+    margin: 1.5rem 0;
+}
+
 .post-nav ul {
     list-style: none;
     display: flex;
@@ -102,11 +112,23 @@ a:focus-visible, button:focus-visible {
     outline-offset: 2px;
 }
 
+/* Contenitore dell'immagine: diventa un link solo quando la voce ne ha uno,
+   senza cambiare l'aspetto della copertina. */
+.image-link {
+    display: block;
+}
+
 .content-media img {
+    display: block;
+    margin: 0 auto;
     max-width: 100%;
     height: auto;
     border: 2px solid var(--text-color);
     border-radius: 2px;
+}
+
+.content-media img[hidden] {
+    display: none;
 }
 
 .big-link {
