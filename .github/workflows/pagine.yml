@@ -1,0 +1,42 @@
+# Rigenera v/ e og/ quando cambiano i contenuti, così le pagine da condividere
+# restano allineate a data.json senza doverci pensare.
+name: Rigenera le pagine da condividere
+
+on:
+  push:
+    branches: [main]
+    # Solo quando cambiano i contenuti o lo script: le pagine generate
+    # non compaiono qui, altrimenti il commit automatico si richiamerebbe da solo.
+    paths:
+      - 'data.json'
+      - 'image/**'
+      - 'tools/build-pages.py'
+  workflow_dispatch:
+
+jobs:
+  genera:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - run: pip install "Pillow==11.1.0"
+
+      - run: python3 tools/build-pages.py
+
+      - name: Salva le pagine rigenerate
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add v og
+          if git diff --staged --quiet; then
+            echo "Niente da aggiornare: le pagine erano già allineate."
+          else
+            git commit -m "Rigenerate le pagine da condividere"
+            git push
+          fi

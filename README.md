@@ -91,16 +91,23 @@ sfogliabile nell'archivio. I valori usati finora:
 I filtri del catalogo si costruiscono da soli leggendo `data.json`: se inventi una
 categoria nuova, il pulsante compare da solo, senza toccare il codice.
 
-## Dopo ogni modifica a data.json: rigenerare le pagine
+## Le pagine da condividere si rigenerano da sole
+
+Quando su GitHub cambiano `data.json`, le immagini in `image/` o lo script,
+la GitHub Action [`pagine.yml`](.github/workflows/pagine.yml) rilancia il
+generatore e salva le pagine aggiornate nel repository. Non c'è niente da fare
+a mano: dopo un paio di minuti il sito è allineato.
+
+Per farlo comunque in locale (o per vedere il risultato prima di pubblicare):
 
 ```bash
 python3 tools/build-pages.py
 ```
 
-Lo script riscrive da zero le cartelle `v/` e `og/`. **Va rilanciato ogni volta
-che si aggiunge, si toglie o si modifica una voce**, altrimenti le pagine da
-condividere restano indietro rispetto a `data.json`. Serve Pillow
-(`pip3 install Pillow`).
+Serve Pillow (`pip3 install Pillow`). Le pagine in `v/` si riscrivono ogni
+volta; le card in `og/` solo quando la copertina è davvero cambiata, così le
+esecuzioni ripetute non sporcano il repository. Il controllo si basa su
+`og/manifest.json`: cancellandolo, si rifanno tutte.
 
 ## Quale indirizzo condividere
 

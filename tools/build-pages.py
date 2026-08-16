@@ -14,6 +14,7 @@ Da rilanciare ogni volta che si modifica data.json:
 
     python3 tools/build-pages.py
 """
+import hashlib
 import html
 import json
 import os
@@ -27,6 +28,10 @@ PAGES_DIR = os.path.join(ROOT, "v")
 CARDS_DIR = os.path.join(ROOT, "og")
 
 CARD_W, CARD_H = 1200, 630
+# Da cambiare se si modifica il modo di comporre la card: obbliga a rifarle tutte.
+CARD_VERSIONE = 1
+MANIFEST = os.path.join(CARDS_DIR, "manifest.json")
+
 MESI = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno",
         "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"]
 
@@ -207,13 +212,22 @@ def main():
     if not voci:
         sys.exit("data.json non contiene voci utilizzabili")
 
-    # Ripartiamo da zero: le pagine di voci cancellate non devono sopravvivere.
-    for cartella in (PAGES_DIR, CARDS_DIR):
-        shutil.rmtree(cartella, ignore_errors=True)
-        os.makedirs(cartella)
+    # Le pagine sono testo: si riscrivono sempre, sono veloci e deterministiche.
+    shutil.rmtree(PAGES_DIR, ignore_errors=True)
+    os.makedirs(PAGES_DIR)
+    os.makedirs(CARDS_DIR, exist_ok=True)
+
+    # Le card invece si rifanno solo se serve: due compressioni JPEG della stessa
+    # immagine non danno file identici, e senza questo controllo ogni esecuzione
+    # sporcherebbe il repository con 50 immagini "modificate" ma uguali.
+    try:
+        with open(MANIFEST, encoding="utf-8") as f:
+            manifest = json.load(f)
+    except (OSError, ValueError):
+        manifest = {}
 
     ids = [v["id"] for v in voci]
-    pagine = card = 0
+    pagine = card = rifatte = 0
 
     for i, voce in enumerate(voci):
         card_url = None
@@ -221,7 +235,13 @@ def main():
             sorgente = os.path.join(ROOT, voce["image"])
             if os.path.exists(sorgente):
                 nome = f"{voce['id']}.jpg"
-                crea_card(sorgente, os.path.join(CARDS_DIR, nome))
+                destinazione = os.path.join(CARDS_DIR, nome)
+                with open(sorgente, "rb") as f:
+                    impronta = f"{CARD_VERSIONE}:{hashlib.sha1(f.read()).hexdigest()}"
+                if manifest.get(nome) != impronta or not os.path.exists(destinazione):
+                    crea_card(sorgente, destinazione)
+                    manifest[nome] = impronta
+                    rifatte += 1
                 card_url = f"{BASE_URL}og/{nome}"
                 card += 1
             else:
@@ -240,7 +260,23 @@ def main():
             f.write(pagina)
         pagine += 1
 
-    print(f"{pagine} pagine scritte in v/ e {card} card in og/")
+    # Via le card di voci cancellate o rimaste senza immagine.
+    attese = {f"{v['id']}.jpg" for v in voci if v.get("image")}
+    for nome in list(manifest):
+        if nome not in attese:
+            del manifest[nome]
+    rimosse = 0
+    for nome in os.listdir(CARDS_DIR):
+        if nome.endswith(".jpg") and nome not in attese:
+            os.remove(os.path.join(CARDS_DIR, nome))
+            rimosse += 1
+
+    with open(MANIFEST, "w", encoding="utf-8") as f:
+        json.dump(manifest, f, indent=2, sort_keys=True)
+        f.write("\n")
+
+    print(f"{pagine} pagine scritte in v/, {card} card in og/ "
+          f"({rifatte} rifatte, {rimosse} rimosse)")
     print(f"Indirizzo da condividere: {BASE_URL}v/<id>.html")
 
 
