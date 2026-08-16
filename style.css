@@ -154,3 +154,135 @@ a:focus-visible, button:focus-visible {
     background-color: #fafafa;
     border-left: 4px solid var(--nav-border);
 }
+
+/* ------------------------------------------------------------------ */
+/* Catalogo (catalogo.html) - non tocca l'aspetto della pagina archivio */
+/* ------------------------------------------------------------------ */
+
+.site-nav {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.site-nav a {
+    color: var(--text-color);
+}
+
+.container-wide {
+    max-width: 1100px;
+}
+
+#catalog-title {
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.filters {
+    margin: 1.5rem 0 2rem;
+    text-align: left;
+}
+
+.filter-group + .filter-group {
+    margin-top: 1rem;
+}
+
+.filter-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.filter-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.filter-btn {
+    font-size: 0.9rem;
+}
+
+.filter-btn.active {
+    background-color: var(--text-color);
+    color: #ffffff;
+    border-color: var(--text-color);
+}
+
+.catalog-status {
+    text-align: left;
+    font-size: 0.9rem;
+    color: #555;
+    min-height: 1.4em;
+    margin-bottom: 1rem;
+}
+
+.cat-section {
+    margin-bottom: 2.5rem;
+    text-align: left;
+}
+
+.cat-heading {
+    font-size: 1.1rem;
+    padding-bottom: 0.4rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--nav-border);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem 1rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--text-color);
+    border-radius: 2px;
+    transition: opacity 0.2s;
+}
+
+.card:hover img {
+    opacity: 0.75;
+}
+
+.card-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 387 / 500;
+    border: 2px dashed var(--nav-border);
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+.card-title {
+    font-size: 0.9rem;
+    font-weight: bold;
+    line-height: 1.35;
+}
+
+.card:hover .card-title {
+    text-decoration: underline;
+}
+
+.card-date {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.catalog-empty {
+    text-align: left;
+    padding: 2rem 0;
+}

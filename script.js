@@ -5,24 +5,7 @@
  */
 document.addEventListener('DOMContentLoaded', () => {
 
-    const $ = (id) => document.getElementById(id);
-
-    // Palette di sfondi chiari: uno a caso ad ogni caricamento.
-    const PALETTE = [
-        '#ffffff', // Bianco
-        '#f0f7ff', // Azzurro chiarissimo
-        '#f2fff2', // Verde chiarissimo
-        '#fffaf0', // Arancio chiarissimo
-        '#fdf2ff', // Viola chiarissimo
-        '#f5f5f5'  // Grigio chiarissimo
-    ];
-
-    const setBackground = () => {
-        const color = PALETTE[Math.floor(Math.random() * PALETTE.length)];
-        document.body.style.backgroundColor = color;
-        const themeColor = document.querySelector('meta[name="theme-color"]');
-        if (themeColor) themeColor.content = color;
-    };
+    const { $, setBackground, formatDate, setFooterYear, loadData } = Archivio;
 
     const showError = (message) => {
         document.body.classList.remove('is-loading');
@@ -30,18 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // Senza dati non c'è niente da mostrare né da navigare.
         document.querySelectorAll('.post-nav, .content-media, .content-text')
             .forEach(el => el.remove());
-    };
-
-    // "2026-01-05" va letto come data locale: new Date("2026-01-05") la
-    // interpreta come UTC e in certi fusi mostrerebbe il giorno prima.
-    const formatDate = (value) => {
-        if (!value) return '';
-        const parts = String(value).split('-').map(Number);
-        const date = parts.length === 3 && parts.every(n => !isNaN(n))
-            ? new Date(parts[0], parts[1] - 1, parts[2])
-            : new Date(value);
-        if (isNaN(date.getTime())) return '';
-        return date.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
     };
 
     const goTo = (id) => {
@@ -57,22 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     setBackground();
+    setFooterYear();
 
-    const footerYear = $('footer-year');
-    if (footerYear) footerYear.textContent = new Date().getFullYear();
-
-    fetch('data.json', { cache: 'no-cache' })
-        .then(response => {
-            if (!response.ok) throw new Error(`data.json: HTTP ${response.status}`);
-            return response.json();
-        })
-        .then(rawData => {
-            if (!Array.isArray(rawData)) throw new Error('data.json non contiene un elenco');
-
-            // Teniamo solo le voci utilizzabili: devono avere un id e o un'immagine o un link.
-            const data = rawData.filter(d => d && Number.isInteger(d.id) && (d.image || d.url));
-            if (data.length === 0) throw new Error('Database vuoto');
-
+    loadData()
+        .then(data => {
             const total = data.length;
 
             // Quale voce mostrare: quella indicata da ?p=ID, altrimenti la prima.

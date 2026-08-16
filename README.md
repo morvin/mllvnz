@@ -2,9 +2,15 @@
 
 Sito statico pubblicato su GitHub Pages: <https://morvin.github.io/mllvnz/>
 
-Un contenuto per pagina, sfogliabile con i pulsanti `Primo / Indietro / Casuale / Avanti / Ultimo`
-(funzionano anche le frecce ← → della tastiera). La pagina si apre sulla prima voce;
-`?p=ID` apre una voce precisa.
+Due pagine:
+
+- **Archivio** (`index.html`): un contenuto per pagina, sfogliabile con i pulsanti
+  `Primo / Indietro / Casuale / Avanti / Ultimo` (funzionano anche le frecce ← →
+  della tastiera). Si apre sulla voce più vecchia; `?p=ID` apre una voce precisa.
+- **Catalogo** (`catalogo.html`): tutte le voci insieme, raggruppate per categoria,
+  con filtri per categoria, tipo e lingua. I filtri finiscono nell'indirizzo
+  (`catalogo.html?categoria=Miti e classici&lingua=it`), quindi una selezione si
+  può salvare tra i preferiti o mandare a qualcuno.
 
 ## Come aggiungere una voce
 
@@ -37,7 +43,11 @@ cliccandoci si apre la scheda su Amazon):
   "url": "https://www.amazon.it/dp/ASIN",
   "alt": "Cosa si vede in copertina",
   "caption": "Apri la scheda su Amazon",
-  "description": "Il testo che accompagna il libro."
+  "description": "Il testo che accompagna il libro.",
+  "publisher": "La Quercia Edizioni",
+  "lang": "it",
+  "type": "Parole intrecciate",
+  "category": "Miti e classici"
 }
 ```
 
@@ -69,6 +79,18 @@ Regole pratiche:
 - `date` va scritta come `AAAA-MM-GG` e viene mostrata in italiano ("1 marzo 2026").
 - `alt` descrive l'immagine a chi usa uno screen reader: se manca viene usato il titolo.
 
+I campi che riguardano solo il catalogo (`category`, `type`, `lang`, `publisher`)
+si possono anche omettere: la voce finisce sotto "Varie" e resta comunque
+sfogliabile nell'archivio. I valori usati finora:
+
+- `category`: Miti e classici, Natura e stagioni, Luoghi e viaggi, Storia e nostalgia,
+  Cucina e vino, Benessere, Scienza, Animali, Coppia, Musica, Feste, Varie
+- `type`: Parole intrecciate, Diari e taccuini, Sudoku, Libro, Link
+- `lang`: `it` oppure `en`
+
+I filtri del catalogo si costruiscono da soli leggendo `data.json`: se inventi una
+categoria nuova, il pulsante compare da solo, senza toccare il codice.
+
 ## Modifiche in locale
 
 Serve un piccolo server web, perché il sito legge `data.json` via `fetch`
@@ -84,11 +106,14 @@ Poi apri <http://localhost:8765>.
 
 | File | A cosa serve |
 | --- | --- |
-| `index.html` | Struttura della pagina (una sola, i contenuti sono dinamici) |
-| `style.css` | Grafica |
-| `script.js` | Carica `data.json`, riempie la pagina e gestisce la navigazione |
-| `data.json` | I contenuti dell'archivio |
-| `image/` | Le immagini |
+| `index.html` | L'archivio: una voce per volta |
+| `catalogo.html` | Il catalogo: tutte le voci per categoria, con i filtri |
+| `style.css` | Grafica di entrambe le pagine |
+| `common.js` | Funzioni comuni: sfondo casuale, date, caricamento di `data.json` |
+| `script.js` | Logica dell'archivio (navigazione, metadati della voce) |
+| `catalogo.js` | Logica del catalogo (filtri e griglia) |
+| `data.json` | I contenuti |
+| `image/` | Le copertine e le immagini |
 
 ## Nota sulle anteprime social
 
