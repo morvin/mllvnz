@@ -53,20 +53,21 @@ document.addEventListener('DOMContentLoaded', () => {
             $('content-caption').textContent = item.caption || 'Dettagli';
             $('post-desc').textContent = description;
 
-            // 2. Metadati (descrizione, canonical, anteprima social)
-            const pageUrl = absoluteUrl(`?p=${item.id}`);
+            // 2. Metadati. L'indirizzo ufficiale della voce e' la pagina statica
+            // in v/: e' quella con le anteprime social scritte nell'HTML.
+            const staticUrl = absoluteUrl(`v/${item.id}.html`);
             const meta = {
                 'meta-desc': description,
                 'og-title': title,
                 'og-desc': description,
-                'og-url': pageUrl
+                'og-url': staticUrl
             };
             Object.entries(meta).forEach(([id, value]) => {
                 const el = $(id);
                 if (el) el.content = value;
             });
             const canonical = $('canonical');
-            if (canonical) canonical.href = pageUrl;
+            if (canonical) canonical.href = staticUrl;
 
             const ogImage = $('og-image');
             const twCard = $('tw-card');

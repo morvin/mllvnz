@@ -159,6 +159,13 @@ a:focus-visible, button:focus-visible {
 /* Catalogo (catalogo.html) - non tocca l'aspetto della pagina archivio */
 /* ------------------------------------------------------------------ */
 
+/* Nelle pagine statiche il titolo del sito e' un link: deve restare
+   identico al titolo normale, non un link blu sottolineato. */
+.site-header h1 a {
+    color: inherit;
+    text-decoration: none;
+}
+
 .site-nav {
     margin-top: 0.75rem;
     font-size: 0.9rem;

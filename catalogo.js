@@ -88,8 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const buildCard = (entry) => {
                 const card = document.createElement('a');
                 card.className = 'card';
-                // Il catalogo rimanda alla pagina della voce nell'archivio.
-                card.href = `index.html?p=${entry.id}`;
+                // Rimandiamo alla pagina statica della voce: e' quella con le
+                // anteprime social gia' scritte nell'HTML, quindi e' l'indirizzo
+                // giusto da condividere.
+                card.href = `v/${entry.id}.html`;
 
                 if (entry.image) {
                     const img = document.createElement('img');

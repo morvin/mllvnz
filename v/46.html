@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bologna - Diario di Viaggio - Il Mio Archivio</title>
+    <meta name="description" content="Diario creativo per artisti e sognatori: taccuino con playlist, quiz e spazi per schizzi tra i portici della Dotta, la Grassa e la Rossa.">
+    <meta property="og:site_name" content="Il Mio Archivio">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Bologna - Diario di Viaggio">
+    <meta property="og:description" content="Diario creativo per artisti e sognatori: taccuino con playlist, quiz e spazi per schizzi tra i portici della Dotta, la Grassa e la Rossa.">
+    <meta property="og:url" content="https://morvin.github.io/mllvnz/v/46.html">
+    <meta property="og:image" content="https://morvin.github.io/mllvnz/og/46.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Copertina del libro «Bologna - Diario di Viaggio»">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bologna - Diario di Viaggio">
+    <meta name="twitter:description" content="Diario creativo per artisti e sognatori: taccuino con playlist, quiz e spazi per schizzi tra i portici della Dotta, la Grassa e la Rossa.">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="canonical" href="https://morvin.github.io/mllvnz/v/46.html">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23fff'/%3E%3Crect x='2.5' y='2.5' width='11' height='11' fill='none' stroke='%23111' stroke-width='1.5'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Salta al contenuto principale</a>
+
+    <header class="site-header">
+        <h1><a href="../">Il Mio Archivio</a></h1>
+        <p>Un posto per collezionare le mie cose.</p>
+        <p class="site-nav"><a href="../catalogo.html">Vedi tutto il catalogo</a></p>
+    </header>
+
+    <main id="main-content" class="container">
+        <article class="content-post">
+            <h2 id="post-title">Bologna - Diario di Viaggio</h2>
+            <p class="post-date">24 febbraio 2026</p>
+
+            <nav class="post-nav" aria-label="Navigazione contenuti">
+                <ul>
+                    <li><a class="nav-btn nav-first" href="1.html" aria-label="Primo contenuto">|&lt; Primo</a></li>
+                    <li><a class="nav-btn nav-prev" href="48.html" aria-label="Contenuto precedente">&lt; Indietro</a></li>
+                    <li><a class="nav-btn nav-random" href="1.html" aria-label="Contenuto casuale">Casuale</a></li>
+                    <li><a class="nav-btn nav-next" href="47.html" aria-label="Contenuto successivo">Avanti &gt;</a></li>
+                    <li><a class="nav-btn nav-last" href="9.html" aria-label="Ultimo contenuto">Ultimo &gt;|</a></li>
+                </ul>
+            </nav>
+
+            <div class="content-media">
+                <a class="image-link" href="https://www.amazon.it/dp/B0GPX8S58H" target="_blank" rel="noopener" aria-label="Bologna - Diario di Viaggio: apri il link"><img src="../image/diario-bologna.jpg" alt="Copertina del libro «Bologna - Diario di Viaggio»" decoding="async"></a>
+            </div>
+
+            <nav class="post-nav" aria-hidden="true">
+                <ul>
+                    <li><a class="nav-btn nav-first" href="1.html" aria-label="Primo contenuto">|&lt; Primo</a></li>
+                    <li><a class="nav-btn nav-prev" href="48.html" aria-label="Contenuto precedente">&lt; Indietro</a></li>
+                    <li><a class="nav-btn nav-random" href="1.html" aria-label="Contenuto casuale">Casuale</a></li>
+                    <li><a class="nav-btn nav-next" href="47.html" aria-label="Contenuto successivo">Avanti &gt;</a></li>
+                    <li><a class="nav-btn nav-last" href="9.html" aria-label="Ultimo contenuto">Ultimo &gt;|</a></li>
+                </ul>
+            </nav>
+
+            <div class="content-text">
+                <h3>Apri la scheda su Amazon</h3>
+                <p>Diario creativo per artisti e sognatori: taccuino con playlist, quiz e spazi per schizzi tra i portici della Dotta, la Grassa e la Rossa.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="footer-year">2026</span> Il Mio Archivio.</p>
+    </footer>
+
+    <script src="../common.js"></script>
+    <script>
+        // Sfondo casuale e anno del footer, come nel resto del sito.
+        Archivio.setBackground();
+        Archivio.setFooterYear();
+        // Senza JavaScript "Casuale" porta comunque a un'altra voce;
+        // con JavaScript ne sceglie una diversa ad ogni clic.
+        var VOCI = [1, 50, 51, 49, 48, 46, 47, 45, 44, 43, 42, 41, 33, 34, 40, 32, 37, 38, 39, 35, 36, 31, 28, 29, 30, 26, 27, 20, 25, 22, 23, 24, 18, 21, 2, 10, 14, 15, 19, 17, 16, 12, 3, 4, 13, 11, 5, 6, 7, 8, 9];
+        document.querySelectorAll('.nav-random').forEach(function (btn) {
+            btn.addEventListener('click', function (ev) {
+                ev.preventDefault();
+                var altre = VOCI.filter(function (i) { return i !== 46; });
+                if (!altre.length) return;
+                window.location.href = altre[Math.floor(Math.random() * altre.length)] + '.html';
+            });
+        });
+    </script>
+</body>
+</html>

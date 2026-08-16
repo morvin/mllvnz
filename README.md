@@ -91,6 +91,35 @@ sfogliabile nell'archivio. I valori usati finora:
 I filtri del catalogo si costruiscono da soli leggendo `data.json`: se inventi una
 categoria nuova, il pulsante compare da solo, senza toccare il codice.
 
+## Dopo ogni modifica a data.json: rigenerare le pagine
+
+```bash
+python3 tools/build-pages.py
+```
+
+Lo script riscrive da zero le cartelle `v/` e `og/`. **Va rilanciato ogni volta
+che si aggiunge, si toglie o si modifica una voce**, altrimenti le pagine da
+condividere restano indietro rispetto a `data.json`. Serve Pillow
+(`pip3 install Pillow`).
+
+## Quale indirizzo condividere
+
+Per mandare in giro un contenuto (Facebook, WhatsApp, messaggi) usa la pagina
+statica della voce:
+
+    https://morvin.github.io/mllvnz/v/7.html
+
+È l'unica che fa comparire titolo, descrizione e copertina nell'anteprima:
+i programmi che generano le anteprime non eseguono JavaScript, quindi devono
+trovare tutto già scritto nell'HTML. `index.html?p=7` mostra lo stesso
+contenuto ma nell'anteprima resta il titolo generico del sito.
+
+Le copertine per le anteprime stanno in `og/<id>.jpg`: la copertina su una card
+1200x630, la misura che Facebook mostra grande invece di ridurre a francobollo.
+
+Se cambi l'indirizzo del sito, aggiorna `BASE_URL` in `tools/build-pages.py`
+e rigenera: i tag delle anteprime hanno bisogno di indirizzi assoluti.
+
 ## Modifiche in locale
 
 Serve un piccolo server web, perché il sito legge `data.json` via `fetch`
@@ -114,11 +143,13 @@ Poi apri <http://localhost:8765>.
 | `catalogo.js` | Logica del catalogo (filtri e griglia) |
 | `data.json` | I contenuti |
 | `image/` | Le copertine e le immagini |
+| `v/` | Una pagina statica per voce, generata: è quella da condividere |
+| `og/` | Le immagini 1200x630 per le anteprime social, generate |
+| `tools/build-pages.py` | Genera `v/` e `og/` leggendo `data.json` |
 
-## Nota sulle anteprime social
+## Se Facebook mostra ancora l'anteprima vecchia
 
-Il titolo, la descrizione e l'immagine per le anteprime (Facebook, WhatsApp…)
-vengono impostati via JavaScript. I "robot" che generano le anteprime spesso non
-eseguono JavaScript: vedranno quindi sempre il titolo generico del sito, non quello
-della singola voce. Per anteprime corrette voce per voce servirebbe generare una
-pagina HTML separata per ogni contenuto.
+Facebook tiene in memoria le anteprime già viste. Se hai cambiato titolo,
+descrizione o copertina di una voce già condivisa, incolla l'indirizzo della
+pagina nello Sharing Debugger di Facebook e premi "Scrape Again":
+<https://developers.facebook.com/tools/debug/>
