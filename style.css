@@ -293,3 +293,98 @@ a:focus-visible, button:focus-visible {
     text-align: left;
     padding: 2rem 0;
 }
+
+/* ------------------------------------------------------------------ */
+/* Scheda Amazon: descrizione completa, dettagli, formati, QR code     */
+/* ------------------------------------------------------------------ */
+
+.amazon-info h3 {
+    margin-top: 1.75rem;
+}
+
+.amazon-info h3:first-child {
+    margin-top: 0;
+}
+
+.amazon-desc h4 {
+    margin: 1.25rem 0 0.5rem;
+    font-size: 1rem;
+}
+
+.amazon-desc p,
+.amazon-desc li {
+    line-height: 1.55;
+}
+
+.amazon-desc p {
+    margin: 0 0 0.75rem;
+}
+
+.amazon-desc ul,
+.formati {
+    padding-left: 1.25rem;
+}
+
+.amazon-desc li,
+.formati li {
+    margin-bottom: 0.4rem;
+}
+
+.scheda {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.4rem 1.25rem;
+    margin: 0;
+}
+
+.scheda dt {
+    font-weight: bold;
+}
+
+.scheda dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.nota {
+    color: #555;
+    font-size: 0.85em;
+}
+
+.qr {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 1.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #ddd;
+}
+
+.qr img {
+    flex: none;
+    width: 132px;
+    height: 132px;
+    background: #fff;
+    border: 1px solid #ddd;
+}
+
+.qr p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+    .scheda {
+        grid-template-columns: 1fr;
+        gap: 0.1rem;
+    }
+
+    .scheda dd {
+        margin-bottom: 0.6rem;
+    }
+
+    .qr {
+        flex-direction: column;
+        text-align: center;
+    }
+}

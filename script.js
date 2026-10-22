@@ -30,6 +30,68 @@ document.addEventListener('DOMContentLoaded', () => {
     setBackground();
     setFooterYear();
 
+    const LINGUE = { it: 'Italiano', en: 'Inglese', de: 'Tedesco' };
+    const esc = (v) => String(v).replace(/[&<>"']/g, c =>
+        ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+
+    // Descrizione completa, scheda tecnica, altri formati e QR code del libro.
+    // Il markup è lo stesso che tools/build-pages.py scrive nelle pagine in v/.
+    const renderAmazon = (item) => {
+        const box = $('amazon-info');
+        if (!box) return;
+        const url = item.url || '';
+        if (!url.includes('amazon.')) { box.hidden = true; return; }
+        const a = item.amazon || {};
+        const pezzi = [];
+
+        const blocchi = (a.descrizione || []).map(b =>
+            b.h ? `<h4>${esc(b.h)}</h4>` :
+            b.p ? `<p>${esc(b.p)}</p>` :
+            b.ul ? `<ul>${b.ul.map(v => `<li>${esc(v)}</li>`).join('')}</ul>` : '').join('');
+        if (blocchi) pezzi.push(`<h3>Descrizione</h3><div class="amazon-desc">${blocchi}</div>`);
+
+        const righe = [];
+        const riga = (nome, valore) => { if (valore) righe.push(`<dt>${esc(nome)}</dt><dd>${valore}</dd>`); };
+        riga('Autore', esc((a.autori || []).join(', ')));
+        riga('Editore', esc(item.publisher || ''));
+        riga('Formato', esc(a.formato || ''));
+        riga('Lingua', esc(LINGUE[item.lang] || ''));
+        riga('Pagine', esc(a.pagine || ''));
+        riga('Dimensioni', esc(a.dimensioni || ''));
+        riga('Peso', esc(a.peso || ''));
+        riga('File', esc(a.file || ''));
+        riga('ISBN-13', esc(a.isbn13 || ''));
+        riga('ISBN-10', esc(a.isbn10 || ''));
+        if (a.serie) riga('Collana', esc(`${a.serie.nome}, libro ${a.serie.numero} di ${a.serie.di}`));
+        if (a.prezzo) {
+            const quando = formatDate(a.aggiornato);
+            riga('Prezzo', esc(a.prezzo) + (quando ? ` <span class="nota">al ${esc(quando)}</span>` : ''));
+        }
+        if (a.stelle) {
+            const n = a.recensioni;
+            const stelle = a.stelle.toFixed(1).replace('.', ',');
+            riga('Valutazione', esc(`${stelle} su 5` + (n ? ` (${n} ${n === 1 ? 'recensione' : 'recensioni'})` : '')));
+        }
+        if (a.classifica) riga('Classifica', a.classifica.map(esc).join('<br>'));
+        if (righe.length) pezzi.push(`<h3>Scheda del libro</h3><dl class="scheda">${righe.join('')}</dl>`);
+
+        const base = url.split('/dp/')[0];
+        const altri = (a.formati || []).filter(f => f.asin && !url.includes(f.asin));
+        if (altri.length) {
+            pezzi.push('<h3>Altri formati</h3><ul class="formati">' + altri.map(f =>
+                `<li><a href="${esc(base)}/dp/${esc(f.asin)}" target="_blank" rel="noopener">${esc(f.formato)}</a>` +
+                (f.prezzo ? ` <span class="nota">${esc(f.prezzo)}</span>` : '') + '</li>').join('') + '</ul>');
+        }
+
+        pezzi.push(`<div class="qr">
+            <img src="qr/${item.id}.svg" alt="QR code della scheda Amazon" width="132" height="132">
+            <p>Inquadra il codice con il telefono per aprire il libro su Amazon,
+            oppure <a href="${esc(url)}" target="_blank" rel="noopener">apri la scheda</a>.</p>
+        </div>`);
+        box.innerHTML = pezzi.join('');
+        box.hidden = false;
+    };
+
     loadData()
         .then(data => {
             const total = data.length;
@@ -108,6 +170,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 linkElement.href = item.url;
                 linkElement.textContent = item.url;
             }
+
+            // 3b. Scheda Amazon (stessa sezione delle pagine statiche in v/)
+            renderAmazon(item);
 
             // 4. Navigazione, calcolata sulla posizione nell'elenco
             const prevId = currentIndex > 0 ? data[currentIndex - 1].id : null;

@@ -8,7 +8,11 @@ nell'HTML. Le pagine v/<id>.html hanno tutto dentro, e funzionano anche a
 JavaScript spento.
 
 Genera anche og/<id>.jpg: la copertina su una card 1200x630, la misura che
-Facebook mostra grande invece di ridurre a francobollo.
+Facebook mostra grande invece di ridurre a francobollo, e qr/<id>.svg: il QR
+code che porta alla scheda Amazon del libro.
+
+I dati della scheda Amazon (descrizione completa, pagine, ISBN, prezzo...) si
+leggono a parte con tools/amazon.py, che li salva in data.json.
 
 Da rilanciare ogni volta che si modifica data.json:
 
@@ -20,12 +24,14 @@ import json
 import os
 import shutil
 import sys
+import segno
 from PIL import Image, ImageFilter, ImageEnhance
 
 BASE_URL = "https://morvin.github.io/mllvnz/"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGES_DIR = os.path.join(ROOT, "v")
 CARDS_DIR = os.path.join(ROOT, "og")
+QR_DIR = os.path.join(ROOT, "qr")
 
 CARD_W, CARD_H = 1200, 630
 # Da cambiare se si modifica il modo di comporre la card: obbliga a rifarle tutte.
@@ -70,6 +76,88 @@ def crea_card(cover_path, dest_path):
     sfondo.paste(primo_piano, (x, y))
 
     sfondo.save(dest_path, "JPEG", quality=82, optimize=True, progressive=True)
+
+
+LINGUE = {"it": "Italiano", "en": "Inglese", "de": "Tedesco"}
+
+
+def link_amazon(voce):
+    url = voce.get("url") or ""
+    return url if "amazon." in url else None
+
+
+def crea_qr(url, dest_path):
+    # Bordo e colori pieni: i lettori di QR vogliono contrasto, non stile.
+    segno.make(url, error="m").save(dest_path, kind="svg", scale=4, border=2,
+                                    dark="#111111", light="#ffffff", xmldecl=False)
+
+
+def sezione_amazon(voce, prefisso):
+    """Descrizione completa, scheda tecnica, altri formati e QR code."""
+    url = link_amazon(voce)
+    if not url:
+        return ""
+    e = lambda s: html.escape(str(s), quote=True)
+    a = voce.get("amazon") or {}
+    pezzi = []
+
+    blocchi = []
+    for b in a.get("descrizione", []):
+        if "h" in b:
+            blocchi.append(f"<h4>{e(b['h'])}</h4>")
+        elif "p" in b:
+            blocchi.append(f"<p>{e(b['p'])}</p>")
+        elif "ul" in b:
+            blocchi.append("<ul>" + "".join(f"<li>{e(v)}</li>" for v in b["ul"]) + "</ul>")
+    if blocchi:
+        pezzi.append('<h3>Descrizione</h3>\n                <div class="amazon-desc">'
+                     + "".join(blocchi) + "</div>")
+
+    righe = []
+    def riga(nome, valore):
+        if valore:
+            righe.append(f"<dt>{e(nome)}</dt><dd>{valore}</dd>")
+    riga("Autore", e(", ".join(a.get("autori", []))))
+    riga("Editore", e(voce.get("publisher", "")))
+    riga("Formato", e(a.get("formato", "")))
+    riga("Lingua", e(LINGUE.get(voce.get("lang"), "")))
+    riga("Pagine", e(a.get("pagine", "")))
+    riga("Dimensioni", e(a.get("dimensioni", "")))
+    riga("Peso", e(a.get("peso", "")))
+    riga("File", e(a.get("file", "")))
+    riga("ISBN-13", e(a.get("isbn13", "")))
+    riga("ISBN-10", e(a.get("isbn10", "")))
+    serie = a.get("serie")
+    if serie:
+        riga("Collana", e(f"{serie['nome']}, libro {serie['numero']} di {serie['di']}"))
+    if a.get("prezzo"):
+        quando = data_italiana(a.get("aggiornato"))
+        riga("Prezzo", e(a["prezzo"]) + (f' <span class="nota">al {e(quando)}</span>' if quando else ""))
+    if a.get("stelle"):
+        n = a.get("recensioni")
+        stelle = f"{a['stelle']:.1f}".replace(".", ",")
+        riga("Valutazione", e(f"{stelle} su 5" + (f" ({n} {'recensione' if n == 1 else 'recensioni'})" if n else "")))
+    if a.get("classifica"):
+        riga("Classifica", "<br>".join(e(c) for c in a["classifica"]))
+    if righe:
+        pezzi.append('<h3>Scheda del libro</h3>\n                <dl class="scheda">' + "".join(righe) + "</dl>")
+
+    altri = [f for f in a.get("formati", []) if f.get("asin") and f["asin"] not in url]
+    if altri:
+        base = url.split("/dp/")[0]
+        voci = "".join(
+            f'<li><a href="{e(base)}/dp/{e(f["asin"])}" target="_blank" rel="noopener">{e(f["formato"])}</a>'
+            + (f' <span class="nota">{e(f["prezzo"])}</span>' if f.get("prezzo") else "") + "</li>"
+            for f in altri)
+        pezzi.append(f'<h3>Altri formati</h3>\n                <ul class="formati">{voci}</ul>')
+
+    pezzi.append(f"""<div class="qr">
+                    <img src="{prefisso}qr/{voce['id']}.svg" alt="QR code della scheda Amazon" width="132" height="132">
+                    <p>Inquadra il codice con il telefono per aprire il libro su Amazon,
+                    oppure <a href="{e(url)}" target="_blank" rel="noopener">apri la scheda</a>.</p>
+                </div>""")
+    return ('\n            <section class="content-text amazon-info" aria-label="Scheda Amazon">\n                '
+            + "\n                ".join(pezzi) + "\n            </section>")
 
 
 def meta(prop, content, attr="property"):
@@ -174,7 +262,7 @@ def costruisci_pagina(voce, precedente, successiva, prima, ultima, ids, card_url
             <div class="content-text">
                 <h3>{e(voce.get('caption') or 'Dettagli')}</h3>
                 <p>{e(descrizione)}</p>
-            </div>
+            </div>{sezione_amazon(voce, "../")}
         </article>
     </main>
 
@@ -216,6 +304,9 @@ def main():
     shutil.rmtree(PAGES_DIR, ignore_errors=True)
     os.makedirs(PAGES_DIR)
     os.makedirs(CARDS_DIR, exist_ok=True)
+    # Anche i QR sono deterministici: si rifanno tutti.
+    shutil.rmtree(QR_DIR, ignore_errors=True)
+    os.makedirs(QR_DIR)
 
     # Le card invece si rifanno solo se serve: due compressioni JPEG della stessa
     # immagine non danno file identici, e senza questo controllo ogni esecuzione
@@ -227,7 +318,7 @@ def main():
         manifest = {}
 
     ids = [v["id"] for v in voci]
-    pagine = card = rifatte = 0
+    pagine = card = rifatte = qr = 0
 
     for i, voce in enumerate(voci):
         card_url = None
@@ -246,6 +337,10 @@ def main():
                 card += 1
             else:
                 print(f"  ! immagine mancante: {voce['image']} (voce {voce['id']})")
+
+        if link_amazon(voce):
+            crea_qr(link_amazon(voce), os.path.join(QR_DIR, f"{voce['id']}.svg"))
+            qr += 1
 
         pagina = costruisci_pagina(
             voce,
@@ -276,7 +371,7 @@ def main():
         f.write("\n")
 
     print(f"{pagine} pagine scritte in v/, {card} card in og/ "
-          f"({rifatte} rifatte, {rimosse} rimosse)")
+          f"({rifatte} rifatte, {rimosse} rimosse), {qr} QR code in qr/")
     print(f"Indirizzo da condividere: {BASE_URL}v/<id>.html")
 
 

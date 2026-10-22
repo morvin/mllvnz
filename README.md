@@ -55,6 +55,18 @@ Le copertine si scaricano dall'ASIN con:
 `https://m.media-amazon.com/images/P/ASIN.01._SCLZZZZZZZ_.jpg`
 (conviene salvarle dentro `image/`, così il sito non dipende da Amazon).
 
+Il resto della scheda Amazon (descrizione completa, pagine, ISBN, misure, prezzo,
+altri formati, classifica e recensioni) si legge con:
+
+```
+python3 tools/amazon.py              # tutte le voci con un link Amazon
+python3 tools/amazon.py B0GXKGRKB4   # solo alcuni ASIN
+```
+
+Lo script salva tutto nel campo `amazon` della voce. Le pagine lo mostrano sotto
+la descrizione, insieme a un QR code (`qr/<id>.svg`) che porta alla scheda Amazon.
+Prezzo, classifica e recensioni cambiano nel tempo: basta rilanciarlo.
+
 **Voce con solo link:**
 
 ```json
