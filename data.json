@@ -7154,5 +7154,217 @@
         "image/app/addisababa-6.jpg"
       ]
     }
+  },
+  {
+    "id": 101,
+    "title": "The tree",
+    "date": "2012-12-24",
+    "image": "image/arte/the-tree.jpg",
+    "url": "https://fineartamerica.com/featured/the-tree-vincenzo-morello.html",
+    "alt": "Un grande albero spoglio solo in mezzo a un prato verde, sotto un cielo grigio.",
+    "caption": "Vedi su Fine Art America",
+    "description": "Un albero spoglio, solitario al centro di un campo verde, sotto un cielo bianco e grigio d'inverno.",
+    "publisher": "Vincenzo Morello",
+    "lang": "it",
+    "type": "Fotografia",
+    "category": "Opere d'arte",
+    "famiglia": "Arte",
+    "faa": {
+      "tecnica": "Fotografia",
+      "artista": "Vincenzo Morello",
+      "caricata": "2012-12-24",
+      "tag": [
+        "landscape",
+        "tree"
+      ],
+      "aggiornato": "2026-10-23"
+    }
+  },
+  {
+    "id": 96,
+    "title": "Green period",
+    "date": "2012-12-26",
+    "image": "image/arte/green-period.jpg",
+    "url": "https://fineartamerica.com/featured/green-period-vincenzo-morello.html",
+    "alt": "Dipinto astratto materico in verde acceso, con riquadri rosa e gialli e una piccola figura scura in basso.",
+    "caption": "Vedi su Fine Art America",
+    "description": "Dipinto astratto a strati di verde, con inserti materici, riquadri rosa e gialli e una piccola silhouette umana in basso a destra.",
+    "publisher": "Vincenzo Morello",
+    "lang": "it",
+    "type": "Dipinto",
+    "category": "Opere d'arte",
+    "famiglia": "Arte",
+    "faa": {
+      "tecnica": "Dipinto",
+      "artista": "Vincenzo Morello",
+      "caricata": "2012-12-26",
+      "tag": [],
+      "aggiornato": "2026-10-23"
+    }
+  },
+  {
+    "id": 99,
+    "title": "Pittore scultore poeta anima",
+    "date": "2014-12-28",
+    "image": "image/arte/pittore-scultore-poeta-anima.jpg",
+    "url": "https://fineartamerica.com/featured/pittore-scultore-poeta-anima-vincenzo-morello.html",
+    "alt": "Il bancone di un bar con file di bottiglie e, sul muro, una frase scritta in corsivo su pittore, scultore, poeta e anima.",
+    "caption": "Vedi su Fine Art America",
+    "description": "Il bancone di un bar con le sue bottiglie, sotto una frase scritta sul muro: non importa essere pittore, scultore o poeta, ma riversare l'anima in ciò che si crea.",
+    "publisher": "Vincenzo Morello",
+    "lang": "it",
+    "type": "Fotografia",
+    "category": "Opere d'arte",
+    "famiglia": "Arte",
+    "faa": {
+      "tecnica": "Fotografia",
+      "artista": "Vincenzo Morello",
+      "caricata": "2014-12-28",
+      "tag": [],
+      "aggiornato": "2026-10-23"
+    }
+  },
+  {
+    "id": 97,
+    "title": "Naples",
+    "date": "2016-04-18",
+    "image": "image/arte/naples.jpg",
+    "url": "https://fineartamerica.com/featured/naples-vincenzo-morello.html",
+    "alt": "Napoli al tramonto: le luci della città sotto il Vesuvio, in un cielo blu intenso con la cornice di una pellicola.",
+    "caption": "Vedi su Fine Art America",
+    "description": "Le luci di Napoli all'imbrunire, con il Vesuvio sullo sfondo e un cielo blu profondo, nella cornice di un fotogramma su pellicola.",
+    "publisher": "Vincenzo Morello",
+    "lang": "it",
+    "type": "Dipinto",
+    "category": "Opere d'arte",
+    "famiglia": "Arte",
+    "faa": {
+      "tecnica": "Dipinto",
+      "artista": "Vincenzo Morello",
+      "caricata": "2016-04-18",
+      "tag": [
+        "landscape"
+      ],
+      "aggiornato": "2026-10-23"
+    }
+  },
+  {
+    "id": 98,
+    "title": "Nosadella",
+    "date": "2016-04-18",
+    "image": "image/arte/nosadella.jpg",
+    "url": "https://fineartamerica.com/featured/nosadella-vincenzo-morello.html",
+    "alt": "Via Nosadella a Bologna: un portico arancione che corre lungo una strada bagnata dalla pioggia.",
+    "caption": "Vedi su Fine Art America",
+    "description": "Scorcio di via Nosadella a Bologna: i portici color ocra e la strada lucida di pioggia che fugge verso il fondo.",
+    "publisher": "Vincenzo Morello",
+    "lang": "it",
+    "type": "Fotografia",
+    "category": "Opere d'arte",
+    "famiglia": "Arte",
+    "faa": {
+      "tecnica": "Fotografia",
+      "artista": "Vincenzo Morello",
+      "caricata": "2016-04-18",
+      "tag": [],
+      "aggiornato": "2026-10-23"
+    }
+  },
+  {
+    "id": 103,
+    "title": "Tramonto",
+    "date": "2016-04-18",
+    "image": "image/arte/tramonto.jpg",
+    "url": "https://fineartamerica.com/featured/tramonto-vincenzo-morello.html",
+    "alt": "Tramonto in bianco e nero: il sole dietro le sagome scure degli alberi e delle montagne.",
+    "caption": "Vedi su Fine Art America",
+    "description": "Un tramonto in bianco e nero: il sole che scende dietro le sagome degli alberi, con le montagne all'orizzonte.",
+    "publisher": "Vincenzo Morello",
+    "lang": "it",
+    "type": "Fotografia",
+    "category": "Opere d'arte",
+    "famiglia": "Arte",
+    "faa": {
+      "tecnica": "Fotografia",
+      "artista": "Vincenzo Morello",
+      "caricata": "2016-04-18",
+      "tag": [
+        "sunset",
+        "black",
+        "white"
+      ],
+      "aggiornato": "2026-10-23"
+    }
+  },
+  {
+    "id": 100,
+    "title": "Principato Citra olim Picentia",
+    "date": "2020-12-09",
+    "image": "image/arte/principato-citra-olim-picentia.jpg",
+    "url": "https://fineartamerica.com/featured/principato-citra-olim-picentia-vincenzo-morello.html",
+    "alt": "Antica carta geografica del Principato Citra, l'attuale provincia di Salerno, con cartiglio decorato, navi e una rosa dei venti.",
+    "caption": "Vedi su Fine Art America",
+    "description": "Antica carta geografica del Principato Citra, l'odierna provincia di Salerno: costa, golfo, navi, rosa dei venti e un cartiglio barocco.",
+    "publisher": "Vincenzo Morello",
+    "lang": "it",
+    "type": "Disegno",
+    "category": "Opere d'arte",
+    "famiglia": "Arte",
+    "faa": {
+      "tecnica": "Disegno",
+      "artista": "Vincenzo Morello",
+      "caricata": "2020-12-09",
+      "tag": [],
+      "aggiornato": "2026-10-23"
+    }
+  },
+  {
+    "id": 102,
+    "title": "The World's Industrial And Cotton Centennial Exposition",
+    "date": "2020-12-09",
+    "image": "image/arte/the-worlds-industrial-and-cotton-centennial-exposition.jpg",
+    "url": "https://fineartamerica.com/featured/the-worlds-industrial-and-cotton-centennial-exposition-vincenzo-morello.html",
+    "alt": "Mappa antica di New Orleans per l'Esposizione Universale del cotone del 1884, con il Mississippi e vignette degli edifici.",
+    "caption": "Vedi su Fine Art America",
+    "description": "Mappa d'epoca di New Orleans realizzata per l'Esposizione Industriale e del Cotone del 1884-85, con l'ansa del Mississippi e le vignette dei padiglioni.",
+    "publisher": "Vincenzo Morello",
+    "lang": "it",
+    "type": "Disegno",
+    "category": "Opere d'arte",
+    "famiglia": "Arte",
+    "faa": {
+      "tecnica": "Disegno",
+      "artista": "Vincenzo Morello",
+      "caricata": "2020-12-09",
+      "tag": [
+        "currier and ives",
+        "new orleans"
+      ],
+      "aggiornato": "2026-10-23"
+    }
+  },
+  {
+    "id": 95,
+    "title": "Bust of a Classical Woman",
+    "date": "2026-05-23",
+    "image": "image/arte/bust-of-a-classical-woman.jpg",
+    "url": "https://fineartamerica.com/featured/bust-of-a-classical-woman-vincenzo-morello.html",
+    "alt": "Disegno a china di una strada romana lastricata tra colonne e rovine, con un vulcano sullo sfondo.",
+    "caption": "Vedi su Fine Art America",
+    "description": "Disegno a china in bianco e nero: una strada antica lastricata tra colonne e archi in rovina, con il profilo di un vulcano all'orizzonte.",
+    "publisher": "Vincenzo Morello",
+    "lang": "it",
+    "type": "Disegno",
+    "category": "Opere d'arte",
+    "famiglia": "Arte",
+    "faa": {
+      "tecnica": "Disegno",
+      "artista": "Vincenzo Morello",
+      "caricata": "2026-05-23",
+      "tag": [
+        "black and white"
+      ],
+      "aggiornato": "2026-10-23"
+    }
   }
 ]

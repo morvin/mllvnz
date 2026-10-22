@@ -261,6 +261,26 @@ h2 {
     border: 1px solid var(--rule); background: var(--card);
 }
 .tags { align-items: center; }
+.cover.opera { background: var(--card); padding: 10px; }
+
+/* Indice delle sezioni in home */
+.tessere { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.tessera {
+    display: grid; gap: 14px; align-content: start; padding: 16px;
+    background: var(--card); border: 1px solid var(--rule); border-radius: 8px;
+    color: var(--muted); text-decoration: none; font-size: var(--step--1); line-height: 1.45;
+    transition: border-color .15s, transform .15s;
+}
+.tessera:hover { border-color: var(--accent); transform: translateY(-2px); }
+.mini { display: flex; gap: 6px; height: 92px; }
+.mini img { flex: 1; min-width: 0; height: 100%; object-fit: cover; border-radius: 4px; background: var(--cell); }
+.t-arte .mini img { object-fit: contain; }
+.t-testo { display: grid; gap: 2px; }
+.t-testo b { font-family: var(--font-display); font-weight: 400; font-size: 1.6rem; color: var(--ink); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.t-testo strong { color: var(--ink); font-size: var(--step-0); }
+.tessera:hover strong { color: var(--accent); }
+.famiglia { scroll-margin-top: 20px; }
+.sez-head p { margin: 4px 0 0; color: var(--muted); font-size: var(--step--1); }
 
 /* ------------------------------------------------------------------ */
 /* Home                                                                */
@@ -345,6 +365,7 @@ h2 {
 }
 .card:hover img { transform: translateY(-3px); }
 .card-app img { object-position: center 45%; border-radius: 14px; }
+.card-arte img { object-fit: contain; background: var(--cell); padding: 8px; }
 .card-placeholder {
     display: grid; place-items: center; aspect-ratio: 387 / 500;
     border: 1px dashed var(--rule); border-radius: 3px; color: var(--muted); font-weight: 600;
@@ -362,6 +383,7 @@ h2 {
     .hero { grid-template-columns: 1fr; gap: 28px; }
     .board { font-size: clamp(8px, 2.4vw, 12px); gap: 2px; }
     .porte { grid-template-columns: 1fr; }
+    .tessere { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .book { grid-template-columns: 1fr; gap: 28px; }
     .aside { position: static; max-width: 340px; margin: 0 auto; width: 100%; }
     .pager { grid-template-columns: auto 1fr auto; }

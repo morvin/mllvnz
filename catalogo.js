@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const buildCard = (entry) => {
                 const card = document.createElement('a');
-                card.className = entry.play ? 'card card-app' : 'card';
+                card.className = entry.play ? 'card card-app' : entry.faa ? 'card card-arte' : 'card';
                 // Rimandiamo alla pagina statica della voce: e' quella con le
                 // anteprime social gia' scritte nell'HTML, quindi e' l'indirizzo
                 // giusto da condividere.

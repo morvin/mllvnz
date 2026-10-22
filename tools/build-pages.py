@@ -187,10 +187,38 @@ def nome_sito(url):
         return "Facebook"
     if "play.google." in d:
         return "Google Play"
+    if "fineartamerica." in d:
+        return "Fine Art America"
     return d
 
 
-FAMIGLIE = ["Libri", "App", "Progetti"]
+FAMIGLIE = ["Libri", "App", "Arte", "Progetti"]
+# Come si presenta ogni famiglia in home: titolo della sezione e una riga
+DESCRIZIONI_FAMIGLIE = {
+    "Libri": ("Libri", "Parole intrecciate, quaderni, guide di viaggio e libri di cinema, su Amazon."),
+    "App": ("App per Android", "Mappe dei trasporti per le città del mondo, su Google Play."),
+    "Arte": ("Opere d'arte", "Dipinti, disegni e fotografie, in vendita come stampe su Fine Art America."),
+    "Progetti": ("Progetti", "Le pagine nate intorno all'archivio."),
+}
+
+
+def scheda_arte(voce, f):
+    """Scheda di un'opera su Fine Art America."""
+    righe = []
+
+    def riga(nome, valore, testo=False):
+        if valore:
+            classe = ' class="txt"' if testo else ""
+            righe.append(f"<dt>{e(nome)}</dt><dd{classe}>{valore}</dd>")
+
+    riga("Artista", e(f.get("artista", "")), testo=True)
+    riga("Tecnica", e(f.get("tecnica", "")), testo=True)
+    riga("Pubblicata", e(data_italiana(f.get("caricata"))))
+    riga("Tag", e(", ".join(f.get("tag", []))), testo=True)
+    riga("Disponibile come", "Stampa su tela, stampa incorniciata, poster, stampa su metallo e legno, biglietti", testo=True)
+    return (f'\n            <section aria-labelledby="h-scheda">\n'
+            f'                <h2 id="h-scheda">Scheda dell\'opera</h2>\n'
+            f'                <dl class="scheda">{"".join(righe)}</dl>\n            </section>')
 
 
 def famiglia(voce):
@@ -374,6 +402,7 @@ def costruisci_pagina(voce, indice, voci, card_url, prefisso, collane):
     url = voce.get("url", "")
     a = voce.get("amazon") or {}
     p = voce.get("play")
+    arte = voce.get("faa")
     sito = nome_sito(url)
 
     testa = ""
@@ -423,14 +452,14 @@ def costruisci_pagina(voce, indice, voci, card_url, prefisso, collane):
     # --- Colonna sinistra: copertina e QR ---
     if voce.get("image"):
         img = (f'<img src="{prefisso}{e(voce["image"])}" alt="{e(voce.get("alt") or titolo)}" decoding="async">')
-        copertina = (f'<a class="cover{" phone" if p else ""}" href="{e(url)}" target="_blank" rel="noopener" '
+        copertina = (f'<a class="cover{" phone" if p else " opera" if arte else ""}" href="{e(url)}" target="_blank" rel="noopener" '
                      f'aria-label="{e(principale)}: apri su {e(sito)}">{img}</a>' if url
                      else f'<span class="cover">{img}</span>')
     else:
         copertina = ""
     qr = ""
     if url:
-        cosa = "il libro" if sito == "Amazon" else "l'app" if p else "la pagina"
+        cosa = "il libro" if sito == "Amazon" else "l'app" if p else "l'opera" if arte else "la pagina"
         qr = f"""<div class="qr">
                 <img src="{prefisso}qr/{voce['id']}.svg" alt="QR code: {e(url)}" width="96" height="96">
                 <div><strong>Inquadra col telefono</strong>e {cosa} si apre su {e(sito)}.</div>
@@ -441,11 +470,13 @@ def costruisci_pagina(voce, indice, voci, card_url, prefisso, collane):
     for campo, param, valore in (("type", "tipo", voce.get("type")),
                                  ("category", "categoria", voce.get("category")),
                                  ("lang", "lingua", voce.get("lang"))):
-        if valore:
+        if valore and not (campo == "lang" and arte):
             testo = LINGUE.get(valore, valore) if campo == "lang" else valore
             tag.append(f'<a class="tag" href="{prefisso}catalogo.html?{param}={quote(valore)}">{e(testo)}</a>')
 
-    if p:
+    if arte:
+        quando = f"Pubblicata il {data_italiana(voce.get('date'))} · {arte.get('artista', '')}"
+    elif p:
         quando = f"Uscita il {data_italiana(voce.get('date'))}"
         if voce.get("publisher"):
             quando += f" · {voce['publisher']}"
@@ -472,7 +503,10 @@ def costruisci_pagina(voce, indice, voci, card_url, prefisso, collane):
                 {prezzo}
             </div>"""
 
-    if p:
+    if arte:
+        corpo = scheda_arte(voce, arte)
+        icona_app = ""
+    elif p:
         corpo = schermate(p, prefisso, principale) + scheda_app(voce, p) + descrizione(p) + novita(p)
         icona_app = (f'<img class="app-icon" src="{prefisso}{e(p["icona"])}" alt="" width="40" height="40">'
                      if p.get("icona") else "")
@@ -610,35 +644,51 @@ def costruisci_home(voci, collane, card_url):
         categorie[v.get("category") or "Varie"] = categorie.get(v.get("category") or "Varie", 0) + 1
     per_famiglia = {f: [v for v in voci if famiglia(v) == f] for f in FAMIGLIE}
     numeri = [(len(per_famiglia["Libri"]), "libri"), (len(per_famiglia["App"]), "app"),
-              (len(categorie), "categorie"), (len(collane), "collane")]
+              (len(per_famiglia["Arte"]), "opere"), (len(collane), "collane")]
     numeri_html = "".join(f"<div><b>{n}</b><span>{nome}</span></div>" for n, nome in numeri)
 
-    def vetrina(titolo, elenco, filtro, quante=6):
+    def classe_card(v):
+        return "card card-app" if v.get("play") else "card card-arte" if v.get("faa") else "card"
+
+    def vetrina(fam, quante=6):
+        elenco = per_famiglia[fam]
+        titolo, riga = DESCRIZIONI_FAMIGLIE[fam]
         ultime = sorted(elenco, key=lambda v: (v.get("date", ""), v["id"]), reverse=True)[:quante]
         if not ultime:
             return ""
         schede = "".join(
-            f'<a class="card{" card-app" if v.get("play") else ""}" href="v/{v["id"]}.html">'
+            f'<a class="{classe_card(v)}" href="v/{v["id"]}.html">'
             f'<img src="{e(v["image"])}" alt="{e(v.get("alt") or v["title"])}" loading="lazy" decoding="async">'
             f'<span class="card-title">{e(dividi_titolo(v["title"])[0])}</span>'
             f'<span class="card-date">{e(data_italiana(v.get("date")))}</span></a>'
             for v in ultime if v.get("image"))
+        tutti = f'Vedi {"tutte" if fam in ("App", "Arte") else "tutti"} ({len(elenco)}) &rarr;'
         return f"""
-        <section aria-label="{e(titolo)}">
-            <div class="sez-head"><h2>{e(titolo)}</h2><a href="catalogo.html?famiglia={quote(filtro)}">Vedi tutti ({len(elenco)}) &rarr;</a></div>
+        <section class="famiglia" id="{fam.lower()}" aria-labelledby="h-{fam.lower()}">
+            <div class="sez-head"><div><h2 id="h-{fam.lower()}">{e(titolo)}</h2><p>{e(riga)}</p></div>
+            <a href="catalogo.html?famiglia={quote(fam)}">{tutti}</a></div>
             <div class="grid">{schede}</div>
         </section>"""
 
-    vetrine = vetrina("Ultimi libri", per_famiglia["Libri"], "Libri") + vetrina("App per Android", per_famiglia["App"], "App")
+    vetrine = "".join(vetrina(f) for f in FAMIGLIE)
 
-    trovate = "".join(
-        f'<a class="tag" href="catalogo.html?categoria={quote(cat)}">{e(parola.capitalize())}</a>'
-        for parola, _, _, cat in PAROLE_HOME if cat)
+    # Indice delle sezioni: una tessera per famiglia, con tre immagini
+    def tessera(fam):
+        elenco = per_famiglia[fam]
+        if not elenco:
+            return ""
+        titolo, riga = DESCRIZIONI_FAMIGLIE[fam]
+        mini = sorted([v for v in elenco if v.get("image")], key=lambda v: v.get("date", ""), reverse=True)[:3]
+        foto = "".join(f'<img src="{e(v["image"])}" alt="" loading="lazy">' for v in mini)
+        return (f'<a class="tessera t-{fam.lower()}" href="#{fam.lower()}"><span class="mini">{foto}</span>'
+                f'<span class="t-testo"><b>{len(elenco)}</b><strong>{e(titolo)}</strong><span>{e(riga)}</span></span></a>')
+
+    sezioni = "".join(tessera(f) for f in FAMIGLIE)
 
     primo = voci[0]
     titolo = "Il Mio Archivio"
-    breve = (f"{len(voci)} voci da sfogliare: libri di parole intrecciate, quaderni, guide di viaggio "
-             "e app di mappe per le città del mondo, ognuno con la sua scheda.")
+    breve = (f"{len(voci)} voci da sfogliare: libri, app di mappe per le città del mondo e opere "
+             "d'arte, ognuna con la sua scheda.")
     testa = ""
     testa += meta("description", breve, attr="name")
     testa += meta("og:site_name", titolo)
@@ -683,12 +733,14 @@ def costruisci_home(voci, collane, card_url):
             {griglia_home()}
             <div class="intro">
                 <h1>Il Mio Archivio</h1>
-                <p class="lead">Un posto per collezionare le mie cose: libri di parole intrecciate,
-                quaderni, guide di viaggio e cinema, e app di mappe per le città del mondo.
-                Ogni voce ha la sua scheda, con le immagini, i dettagli e il link per averla.</p>
+                <p class="lead">Un posto per collezionare le mie cose: libri, app per Android
+                e opere d'arte. Ogni voce ha la sua scheda, con le immagini, i dettagli e il
+                link per averla.</p>
                 <div class="numeri">{numeri_html}</div>
             </div>
         </section>
+
+        <nav class="tessere" aria-label="Le sezioni dell'archivio">{sezioni}</nav>
 
         <nav class="porte" id="porte" aria-label="Da dove cominciare">
             <a class="porta" href="v/{primo['id']}.html">
@@ -704,14 +756,9 @@ def costruisci_home(voci, collane, card_url):
             <a class="porta" href="catalogo.html">
                 <span class="porta-n">{len(categorie)} categorie</span>
                 <strong>Apri il catalogo</strong>
-                <span>Tutte le voci insieme, da filtrare per categoria, tipo e lingua.</span>
+                <span>Tutte le voci insieme, da filtrare per sezione, categoria, tipo e lingua.</span>
             </a>
         </nav>
-
-        <section class="trovate" aria-labelledby="h-trovate">
-            <h2 id="h-trovate">Parole trovate nella griglia</h2>
-            <div class="tags">{trovate}</div>
-        </section>
 
 {vetrine}
     </main>
