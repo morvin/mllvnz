@@ -3,9 +3,33 @@
     "id": 1,
     "title": "Il Diritto all'Ozio",
     "date": "2026-01-01",
+    "image": "image/diritto-ozio.jpg",
     "url": "https://www.facebook.com/ildirittoallozio/",
-    "caption": "Visita la pagina ufficiale",
-    "description": "Il punto di partenza del nostro archivio: un link alla pagina Facebook 'Il Diritto all'Ozio'.",
+    "alt": "Immagine della pagina 'Diritto all'ozio': una trama fitta di riccioli rossi e rosa che si ripete come un tessuto.",
+    "caption": "Apri la pagina Facebook",
+    "description": "La pagina Facebook da cui partono i libri di questo archivio. Il motto è uno solo: sdraiati! Ogni post propone qualcosa da godersi senza fretta: un crucipuzzle, un quaderno, una guida per partire.",
+    "scheda": [
+      [
+        "Dove",
+        "Pagina Facebook"
+      ],
+      [
+        "Indirizzo",
+        "facebook.com/ildirittoallozio"
+      ],
+      [
+        "Motto",
+        "Sdraiati!"
+      ],
+      [
+        "Cosa trovi",
+        "Un libro dell'archivio per ogni post, con il link alla sua scheda"
+      ],
+      [
+        "Il nome",
+        "Richiama Il diritto all'ozio di Paul Lafargue (1880), il libello che difendeva il tempo libero come una conquista"
+      ]
+    ],
     "lang": "it",
     "type": "Link",
     "category": "Varie"

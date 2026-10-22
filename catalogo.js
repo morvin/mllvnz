@@ -5,7 +5,7 @@
  */
 document.addEventListener('DOMContentLoaded', () => {
 
-    const { $, setBackground, formatDate, setFooterYear, loadData } = Archivio;
+    const { $, formatDate, loadData } = Archivio;
 
     const LANG_NAMES = { it: 'Italiano', en: 'English', de: 'Deutsch' };
     const TUTTI = '__tutti__';
@@ -16,9 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { param: 'tipo', field: 'type', listId: 'filter-type', all: 'Tutti' },
         { param: 'lingua', field: 'lang', listId: 'filter-lang', all: 'Tutte' }
     ];
-
-    setBackground();
-    setFooterYear();
 
     const label = (field, value) =>
         field === 'lang' ? (LANG_NAMES[value] || value) : value;

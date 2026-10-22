@@ -4,9 +4,11 @@ Sito statico pubblicato su GitHub Pages: <https://morvin.github.io/mllvnz/>
 
 Due pagine:
 
-- **Archivio** (`index.html`): un contenuto per pagina, sfogliabile con i pulsanti
-  `Primo / Indietro / Casuale / Avanti / Ultimo` (funzionano anche le frecce ← →
-  della tastiera). Si apre sulla voce più vecchia; `?p=ID` apre una voce precisa.
+- **Archivio** (`index.html` e `v/<id>.html`): una scheda per voce, con copertina,
+  QR code, scheda Amazon, link per condividere sui social e i pulsanti
+  `Primo / Indietro / Casuale / Avanti / Ultimo` (funzionano anche le frecce ← →).
+  Le pagine sono generate da `tools/build-pages.py`; `index.html` è la pagina della
+  prima voce, e i vecchi indirizzi `?p=ID` portano alla pagina della voce.
 - **Catalogo** (`catalogo.html`): tutte le voci insieme, raggruppate per categoria,
   con filtri per categoria, tipo e lingua. I filtri finiscono nell'indirizzo
   (`catalogo.html?categoria=Miti e classici&lingua=it`), quindi una selezione si
@@ -66,6 +68,10 @@ python3 tools/amazon.py B0GXKGRKB4   # solo alcuni ASIN
 Lo script salva tutto nel campo `amazon` della voce. Le pagine lo mostrano sotto
 la descrizione, insieme a un QR code (`qr/<id>.svg`) che porta alla scheda Amazon.
 Prezzo, classifica e recensioni cambiano nel tempo: basta rilanciarlo.
+
+Una voce può avere anche un campo `scheda`, un elenco di coppie
+`["Etichetta", "valore"]` mostrate nella scheda della pagina (lo usa la prima voce,
+che è un link e non un libro).
 
 **Voce con solo link:**
 

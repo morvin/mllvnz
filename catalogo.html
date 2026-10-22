@@ -2,31 +2,35 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Catalogo - Il Mio Archivio</title>
     <meta name="description" content="Tutti i contenuti dell'archivio, divisi per categoria.">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#2c6a4e">
 
     <meta property="og:site_name" content="Il Mio Archivio">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Catalogo - Il Mio Archivio">
     <meta property="og:description" content="Tutti i contenuti dell'archivio, divisi per categoria.">
 
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23fff'/%3E%3Crect x='2.5' y='2.5' width='11' height='11' fill='none' stroke='%23111' stroke-width='1.5'/%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%232c6a4e'/%3E%3Crect x='4' y='4' width='8' height='8' fill='none' stroke='%23fff' stroke-width='1.5'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="is-loading">
-    <a href="#main-content" class="skip-link">Salta al contenuto principale</a>
-
-    <header class="site-header">
-        <h1>Il Mio Archivio</h1>
-        <p>Un posto per collezionare le mie cose.</p>
-        <p class="site-nav"><a href="./">Torna all'archivio</a></p>
+<a href="#main-content" class="skip-link">Salta al contenuto principale</a>
+<div class="wrap">
+    <header class="top">
+        <a class="brand" href="./">Il Mio Archivio <small>un posto per collezionare le mie cose</small></a>
+        <nav aria-label="Sezioni"><a href="./">Archivio</a><a href="catalogo.html" aria-current="page">Catalogo</a></nav>
     </header>
 
-    <main id="main-content" class="container container-wide">
-        <h2 id="catalog-title">Catalogo</h2>
-        <p id="catalog-count" class="post-date"></p>
+    <main id="main-content">
+        <div class="catalog-head">
+            <h1 id="catalog-title">Catalogo</h1>
+            <p id="catalog-count"></p>
+        </div>
 
         <noscript>
             <p class="noscript-msg">
@@ -55,9 +59,8 @@
         <div id="catalog"></div>
     </main>
 
-    <footer class="site-footer">
-        <p>&copy; <span id="footer-year">2026</span> Il Mio Archivio.</p>
-    </footer>
+    <footer class="foot"><span>&copy; 2026 Il Mio Archivio</span><span>Tutte le voci, divise per categoria</span></footer>
+</div>
 
     <script src="common.js"></script>
     <script src="catalogo.js"></script>

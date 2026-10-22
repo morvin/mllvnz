@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """
-Genera una pagina statica per ogni voce di data.json, dentro la cartella v/.
+Genera una pagina statica per ogni voce di data.json, dentro la cartella v/,
+e la home dell'archivio (index.html), che e' la pagina della prima voce.
 
-Serve per le anteprime dei social: Facebook, WhatsApp e compagnia non eseguono
-JavaScript, quindi titolo, descrizione e copertina devono stare gia' scritti
-nell'HTML. Le pagine v/<id>.html hanno tutto dentro, e funzionano anche a
-JavaScript spento.
+Le pagine sono complete gia' nell'HTML: Facebook, WhatsApp e compagnia non
+eseguono JavaScript, quindi titolo, descrizione e copertina devono stare scritti
+li'. JavaScript (voce.js) aggiunge solo comodita': Casuale, frecce della
+tastiera, condivisione e copia del link.
 
 Genera anche og/<id>.jpg: la copertina su una card 1200x630, la misura che
 Facebook mostra grande invece di ridurre a francobollo, e qr/<id>.svg: il QR
-code che porta alla scheda Amazon del libro.
+code che porta al link della voce (la scheda Amazon, per i libri).
 
 I dati della scheda Amazon (descrizione completa, pagine, ISBN, prezzo...) si
 leggono a parte con tools/amazon.py, che li salva in data.json.
@@ -22,8 +23,13 @@ import hashlib
 import html
 import json
 import os
+import random
+import re
 import shutil
 import sys
+import unicodedata
+from urllib.parse import quote
+
 import segno
 from PIL import Image, ImageFilter, ImageEnhance
 
@@ -40,6 +46,14 @@ MANIFEST = os.path.join(CARDS_DIR, "manifest.json")
 
 MESI = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno",
         "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre"]
+LINGUE = {"it": "Italiano", "en": "Inglese", "de": "Tedesco"}
+FONTS = ("https://fonts.googleapis.com/css2?family=Young+Serif&family=Public+Sans:"
+         "ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap")
+ICONA = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E"
+         "%3Crect width='16' height='16' rx='3' fill='%232c6a4e'/%3E%3Crect x='4' y='4' width='8' "
+         "height='8' fill='none' stroke='%23fff' stroke-width='1.5'/%3E%3C/svg%3E")
+
+e = lambda s: html.escape(str(s), quote=True)
 
 
 def data_italiana(value):
@@ -78,107 +92,205 @@ def crea_card(cover_path, dest_path):
     sfondo.save(dest_path, "JPEG", quality=82, optimize=True, progressive=True)
 
 
-LINGUE = {"it": "Italiano", "en": "Inglese", "de": "Tedesco"}
-
-
-def link_amazon(voce):
-    url = voce.get("url") or ""
-    return url if "amazon." in url else None
-
-
 def crea_qr(url, dest_path):
     # Bordo e colori pieni: i lettori di QR vogliono contrasto, non stile.
     segno.make(url, error="m").save(dest_path, kind="svg", scale=4, border=2,
                                     dark="#111111", light="#ffffff", xmldecl=False)
 
 
-def sezione_amazon(voce, prefisso):
-    """Descrizione completa, scheda tecnica, altri formati e QR code."""
-    url = link_amazon(voce)
-    if not url:
+def meta(prop, content, attr="property"):
+    if not content:
         return ""
-    e = lambda s: html.escape(str(s), quote=True)
-    a = voce.get("amazon") or {}
-    pezzi = []
+    return f'    <meta {attr}="{prop}" content="{e(content)}">\n'
 
-    blocchi = []
-    for b in a.get("descrizione", []):
-        if "h" in b:
-            blocchi.append(f"<h4>{e(b['h'])}</h4>")
-        elif "p" in b:
-            blocchi.append(f"<p>{e(b['p'])}</p>")
-        elif "ul" in b:
-            blocchi.append("<ul>" + "".join(f"<li>{e(v)}</li>" for v in b["ul"]) + "</ul>")
-    if blocchi:
-        pezzi.append('<h3>Descrizione</h3>\n                <div class="amazon-desc">'
-                     + "".join(blocchi) + "</div>")
 
+# ---------------------------------------------------------------------------
+# Pezzi della pagina
+# ---------------------------------------------------------------------------
+
+def dividi_titolo(titolo):
+    """'Miti Greci - Parole Intrecciate (Vol. 122)' -> ('Miti Greci', 'Parole Intrecciate · Vol. 122')"""
+    vol = re.search(r"\s*\(Vol\.\s*(\d+)\)", titolo)
+    resto = titolo.replace(vol.group(0), "") if vol else titolo
+    parti = re.split(r" - |: ", resto, maxsplit=1)
+    sotto = [parti[1]] if len(parti) > 1 else []
+    if vol:
+        sotto.append(f"Vol. {vol.group(1)}")
+    return parti[0].strip(), " · ".join(sotto)
+
+
+ARTICOLI = {"il", "lo", "la", "l", "i", "gli", "le", "the", "a", "an", "der", "die", "das"}
+VUOTE = {"di", "del", "della", "dei", "e", "a", "al", "all", "alla", "per", "con", "in",
+         "of", "and", "for", "to", "und", "fur"}
+
+
+def parola_trovata(principale):
+    """Le lettere che si 'illuminano' nella riga del crucipuzzle."""
+    s = unicodedata.normalize("NFKD", principale).encode("ascii", "ignore").decode()
+    parole = [p for p in re.split(r"[^A-Za-z0-9]+", s) if p]
+    if parole and parole[0].lower() in ARTICOLI:
+        parole = parole[1:]
+    lettere = ""
+    for p in parole:
+        if p.lower() in VUOTE:
+            continue
+        if lettere and len(lettere) + len(p) > 14:
+            break
+        lettere += p.upper()
+    return lettere[:16] or "ARCHIVIO"
+
+
+def riga_lettere(voce, principale):
+    parola = parola_trovata(principale)
+    caso = random.Random(voce["id"])
+    alfabeto = "ABCDEFGHILMNOPRSTUVZ"
+    totale, inizio = 48, 20
+    celle = []
+    for i in range(totale):
+        k = i - inizio
+        if 0 <= k < len(parola):
+            celle.append(f'<span class="hit" style="--i:{k}">{parola[k]}</span>')
+        else:
+            celle.append(f"<span>{caso.choice(alfabeto)}</span>")
+    return f'<div class="grid-strip" aria-hidden="true">{"".join(celle)}</div>'
+
+
+def dominio(url):
+    m = re.search(r"https?://(?:www\.)?([^/]+)", url or "")
+    return m.group(1) if m else ""
+
+
+def nome_sito(url):
+    d = dominio(url)
+    if "amazon." in d:
+        return "Amazon"
+    if "facebook." in d:
+        return "Facebook"
+    return d
+
+
+def scheda(voce, a):
     righe = []
-    def riga(nome, valore):
+
+    def riga(nome, valore, testo=False):
         if valore:
-            righe.append(f"<dt>{e(nome)}</dt><dd>{valore}</dd>")
-    riga("Autore", e(", ".join(a.get("autori", []))))
-    riga("Editore", e(voce.get("publisher", "")))
-    riga("Formato", e(a.get("formato", "")))
-    riga("Lingua", e(LINGUE.get(voce.get("lang"), "")))
+            classe = ' class="txt"' if testo else ""
+            righe.append(f"<dt>{e(nome)}</dt><dd{classe}>{valore}</dd>")
+
+    for nome, valore in voce.get("scheda", []):
+        riga(nome, e(valore), testo=True)
+    riga("Autore", e(", ".join(a.get("autori", []))), testo=True)
+    if voce.get("publisher") and voce.get("publisher") not in a.get("autori", []):
+        riga("Editore", e(voce["publisher"]), testo=True)
+    riga("Formato", e(a.get("formato", "")), testo=True)
+    serie = a.get("serie")
+    if serie:
+        puntini = ""
+        if serie["di"] <= 60:
+            puntini = ('<span class="dots" aria-hidden="true">'
+                       + "".join('<i class="on"></i>' if n == serie["numero"] else "<i></i>"
+                                 for n in range(1, serie["di"] + 1)) + "</span>")
+        riga("Collana", f'<div class="serie">{e(serie["nome"])}, libro {serie["numero"]} di {serie["di"]} {puntini}</div>', testo=True)
     riga("Pagine", e(a.get("pagine", "")))
     riga("Dimensioni", e(a.get("dimensioni", "")))
     riga("Peso", e(a.get("peso", "")))
     riga("File", e(a.get("file", "")))
     riga("ISBN-13", e(a.get("isbn13", "")))
     riga("ISBN-10", e(a.get("isbn10", "")))
-    serie = a.get("serie")
-    if serie:
-        riga("Collana", e(f"{serie['nome']}, libro {serie['numero']} di {serie['di']}"))
-    if a.get("prezzo"):
-        quando = data_italiana(a.get("aggiornato"))
-        riga("Prezzo", e(a["prezzo"]) + (f' <span class="nota">al {e(quando)}</span>' if quando else ""))
+    asin = re.search(r"/dp/([A-Z0-9]{10})", voce.get("url", ""))
+    if asin:
+        riga("ASIN", e(asin.group(1)))
     if a.get("stelle"):
         n = a.get("recensioni")
         stelle = f"{a['stelle']:.1f}".replace(".", ",")
         riga("Valutazione", e(f"{stelle} su 5" + (f" ({n} {'recensione' if n == 1 else 'recensioni'})" if n else "")))
     if a.get("classifica"):
-        riga("Classifica", "<br>".join(e(c) for c in a["classifica"]))
-    if righe:
-        pezzi.append('<h3>Scheda del libro</h3>\n                <dl class="scheda">' + "".join(righe) + "</dl>")
-
-    altri = [f for f in a.get("formati", []) if f.get("asin") and f["asin"] not in url]
-    if altri:
-        base = url.split("/dp/")[0]
-        voci = "".join(
-            f'<li><a href="{e(base)}/dp/{e(f["asin"])}" target="_blank" rel="noopener">{e(f["formato"])}</a>'
-            + (f' <span class="nota">{e(f["prezzo"])}</span>' if f.get("prezzo") else "") + "</li>"
-            for f in altri)
-        pezzi.append(f'<h3>Altri formati</h3>\n                <ul class="formati">{voci}</ul>')
-
-    pezzi.append(f"""<div class="qr">
-                    <img src="{prefisso}qr/{voce['id']}.svg" alt="QR code della scheda Amazon" width="132" height="132">
-                    <p>Inquadra il codice con il telefono per aprire il libro su Amazon,
-                    oppure <a href="{e(url)}" target="_blank" rel="noopener">apri la scheda</a>.</p>
-                </div>""")
-    return ('\n            <section class="content-text amazon-info" aria-label="Scheda Amazon">\n                '
-            + "\n                ".join(pezzi) + "\n            </section>")
-
-
-def meta(prop, content, attr="property"):
-    if not content:
+        voci = []
+        for c in a["classifica"]:
+            m = re.match(r"^((?:n\.|#)\s?[\d.,]+) (in .+)$", c)
+            voci.append(f"<li>{e(m.group(1))} <span>{e(m.group(2))}</span></li>" if m else f"<li>{e(c)}</li>")
+        riga("Classifica", f'<ul class="rank">{"".join(voci)}</ul>')
+    if not righe:
         return ""
-    return f'    <meta {attr}="{prop}" content="{html.escape(str(content), quote=True)}">\n'
+    titolo = "Scheda del libro" if a else "Scheda"
+    return (f'\n            <section aria-labelledby="h-scheda">\n'
+            f'                <h2 id="h-scheda">{titolo}</h2>\n'
+            f'                <dl class="scheda">{"".join(righe)}</dl>\n            </section>')
 
 
-def costruisci_pagina(voce, precedente, successiva, prima, ultima, ids, card_url):
+def descrizione(a):
+    blocchi = []
+    for b in a.get("descrizione", []):
+        if "h" in b:
+            blocchi.append(f"<h3>{e(b['h'])}</h3>")
+        elif "p" in b:
+            blocchi.append(f"<p>{e(b['p'])}</p>")
+        elif "ul" in b:
+            blocchi.append("<ul>" + "".join(f"<li>{e(v)}</li>" for v in b["ul"]) + "</ul>")
+    if not blocchi:
+        return ""
+    return ('\n            <section aria-labelledby="h-desc">\n'
+            '                <h2 id="h-desc">Descrizione</h2>\n'
+            f'                <div class="desc">{"".join(blocchi)}</div>\n            </section>')
+
+
+def altri_formati(voce, a):
+    url = voce.get("url", "")
+    altri = [f for f in a.get("formati", []) if f.get("asin") and f["asin"] not in url]
+    if not altri:
+        return ""
+    base = url.split("/dp/")[0]
+    voci = "".join(
+        f'<li><a href="{e(base)}/dp/{e(f["asin"])}" target="_blank" rel="noopener">{e(f["formato"])}'
+        + (f' <span>{e(f["prezzo"])}</span>' if f.get("prezzo") else "") + "</a></li>"
+        for f in altri)
+    return ('\n            <section aria-labelledby="h-formati">\n'
+            '                <h2 id="h-formati">Altri formati</h2>\n'
+            f'                <ul class="formati">{voci}</ul>\n            </section>')
+
+
+def condivisione(url_voce, titolo, descrizione_breve, card_url):
+    u = quote(url_voce, safe="")
+    t = quote(f"{titolo}: {descrizione_breve}" if descrizione_breve else titolo, safe="")
+    social = [
+        ("Facebook", f"https://www.facebook.com/sharer/sharer.php?u={u}"),
+        ("WhatsApp", f"https://wa.me/?text={t}%20{u}"),
+        ("X", f"https://twitter.com/intent/tweet?url={u}&text={t}"),
+        ("Telegram", f"https://t.me/share/url?url={u}&text={t}"),
+    ]
+    if card_url:
+        social.append(("Pinterest", f"https://pinterest.com/pin/create/button/?url={u}"
+                                    f"&media={quote(card_url, safe='')}&description={t}"))
+    social.append(("LinkedIn", f"https://www.linkedin.com/sharing/share-offsite/?url={u}"))
+    link = "".join(f'<a class="soc" href="{e(h)}" target="_blank" rel="noopener">{n}</a>' for n, h in social)
+    return f"""
+            <div class="share" aria-label="Condividi questa pagina">
+                <span class="share-lbl">Condividi</span>
+                <button type="button" class="soc native" data-azione="sistema" hidden>Condividi&hellip;</button>
+                {link}
+                <button type="button" class="soc" data-azione="instagram">Instagram</button>
+                <button type="button" class="soc" data-azione="copia">Copia link</button>
+                <span class="share-msg" role="status"></span>
+            </div>"""
+
+
+def costruisci_pagina(voce, indice, voci, card_url, prefisso):
+    """prefisso: '../' per le pagine in v/, '' per la home."""
+    ids = [v["id"] for v in voci]
     titolo = voce.get("title", "Senza titolo")
-    descrizione = voce.get("description", "")
+    principale, sotto = dividi_titolo(titolo)
+    breve = voce.get("description", "")
     url_voce = f"{BASE_URL}v/{voce['id']}.html"
-
-    e = lambda s: html.escape(str(s), quote=True)
+    url = voce.get("url", "")
+    a = voce.get("amazon") or {}
+    sito = nome_sito(url)
 
     testa = ""
-    testa += meta("description", descrizione, attr="name")
+    testa += meta("description", breve, attr="name")
     testa += meta("og:site_name", "Il Mio Archivio")
     testa += meta("og:type", "article")
     testa += meta("og:title", titolo)
-    testa += meta("og:description", descrizione)
+    testa += meta("og:description", breve)
     testa += meta("og:url", url_voce)
     if card_url:
         testa += meta("og:image", card_url)
@@ -189,104 +301,136 @@ def costruisci_pagina(voce, precedente, successiva, prima, ultima, ids, card_url
     else:
         testa += meta("twitter:card", "summary", attr="name")
     testa += meta("twitter:title", titolo, attr="name")
-    testa += meta("twitter:description", descrizione, attr="name")
+    testa += meta("twitter:description", breve, attr="name")
 
-    # --- Navigazione: link statici alle altre pagine ---
-    def bottone(classe, testo, target, etichetta):
+    # --- Navigazione ---
+    pagina = lambda i: f"{prefisso}v/{i}.html"
+
+    def bottone(classe, testo, target, etichetta, icona=False):
+        cls = f"btn{' icon' if icona else ''} {classe}"
         if target is None:
-            return (f'<li><a class="nav-btn {classe} disabled" aria-disabled="true"'
-                    f' aria-label="{e(etichetta)}">{testo}</a></li>')
-        return (f'<li><a class="nav-btn {classe}" href="{target}.html"'
-                f' aria-label="{e(etichetta)}">{testo}</a></li>')
+            return f'<span class="{cls} disabled" aria-disabled="true" aria-label="{e(etichetta)}">{testo}</span>'
+        return f'<a class="{cls}" href="{pagina(target)}" aria-label="{e(etichetta)}">{testo}</a>'
 
-    casuale = ids[0] if len(ids) == 1 else next(i for i in ids if i != voce["id"])
+    prec = ids[indice - 1] if indice > 0 else None
+    succ = ids[indice + 1] if indice < len(ids) - 1 else None
+    casuale = next((i for i in ids if i != voce["id"]), voce["id"])
+    nome_prec = voci[indice - 1]["title"] if prec else ""
+    nome_succ = voci[indice + 1]["title"] if succ else ""
+    pager = f"""<nav class="pager" aria-label="Navigazione tra le voci">
+        <div class="side">
+            {bottone('first', '|&lsaquo;', ids[0] if indice > 0 else None, 'Prima voce', icona=True)}
+            {bottone('prev', '&lsaquo; <span class="lbl">Indietro</span>', prec, f'Voce precedente: {nome_prec}')}
+        </div>
+        <div class="where"><b>{indice + 1}</b> di {len(ids)} <a class="btn random" href="{pagina(casuale)}" data-azione="casuale">Casuale</a></div>
+        <div class="side end">
+            {bottone('next', '<span class="lbl">Avanti</span> &rsaquo;', succ, f'Voce successiva: {nome_succ}')}
+            {bottone('last', '&rsaquo;|', ids[-1] if succ else None, 'Ultima voce', icona=True)}
+        </div>
+    </nav>"""
 
-    def barra(nascosta=False):
-        aria = ' aria-hidden="true"' if nascosta else ' aria-label="Navigazione contenuti"'
-        return f"""            <nav class="post-nav"{aria}>
-                <ul>
-                    {bottone('nav-first', '|&lt; Primo', prima, 'Primo contenuto')}
-                    {bottone('nav-prev', '&lt; Indietro', precedente, 'Contenuto precedente')}
-                    <li><a class="nav-btn nav-random" href="{casuale}.html" aria-label="Contenuto casuale">Casuale</a></li>
-                    {bottone('nav-next', 'Avanti &gt;', successiva, 'Contenuto successivo')}
-                    {bottone('nav-last', 'Ultimo &gt;|', ultima, 'Ultimo contenuto')}
-                </ul>
-            </nav>"""
-
-    # --- Contenuto: copertina cliccabile, immagine sola o link in evidenza ---
+    # --- Colonna sinistra: copertina e QR ---
     if voce.get("image"):
-        alt = e(voce.get("alt") or titolo)
-        img = f'<img src="../{e(voce["image"])}" alt="{alt}" decoding="async">'
-        if voce.get("url"):
-            media = (f'<a class="image-link" href="{e(voce["url"])}" target="_blank"'
-                     f' rel="noopener" aria-label="{e(titolo)}: apri il link">{img}</a>')
-        else:
-            media = f'<span class="image-link">{img}</span>'
+        img = (f'<img src="{prefisso}{e(voce["image"])}" alt="{e(voce.get("alt") or titolo)}" decoding="async">')
+        copertina = (f'<a class="cover" href="{e(url)}" target="_blank" rel="noopener" '
+                     f'aria-label="{e(principale)}: apri su {e(sito)}">{img}</a>' if url
+                     else f'<span class="cover">{img}</span>')
     else:
-        media = (f'<a class="big-link" style="display:block" href="{e(voce["url"])}"'
-                 f' target="_blank" rel="noopener">{e(voce["url"])}</a>')
+        copertina = ""
+    qr = ""
+    if url:
+        cosa = "il libro" if sito == "Amazon" else "la pagina"
+        qr = f"""<div class="qr">
+                <img src="{prefisso}qr/{voce['id']}.svg" alt="QR code: {e(url)}" width="96" height="96">
+                <div><strong>Inquadra col telefono</strong>e {cosa} si apre su {e(sito)}.</div>
+            </div>"""
+
+    # --- Etichette, che portano al catalogo filtrato ---
+    tag = []
+    for campo, param, valore in (("type", "tipo", voce.get("type")),
+                                 ("category", "categoria", voce.get("category")),
+                                 ("lang", "lingua", voce.get("lang"))):
+        if valore:
+            testo = LINGUE.get(valore, valore) if campo == "lang" else valore
+            tag.append(f'<a class="tag" href="{prefisso}catalogo.html?{param}={quote(valore)}">{e(testo)}</a>')
+
+    if a:
+        quando = f"Pubblicato il {data_italiana(voce.get('date'))}"
+        if voce.get("publisher"):
+            quando += f" · {voce['publisher']}"
+    else:
+        quando = f"In archivio dal {data_italiana(voce.get('date'))}"
+
+    cta = ""
+    if url:
+        etichetta = "Apri su Amazon" if sito == "Amazon" else (voce.get("caption") or f"Apri su {sito}")
+        prezzo = ""
+        if a.get("prezzo"):
+            prezzo = (f'<div class="price">{e(a["prezzo"])}'
+                      f'<small>prezzo al {e(data_italiana(a.get("aggiornato")))}</small></div>')
+        cta = f"""
+            <div class="buy">
+                <a class="cta" href="{e(url)}" target="_blank" rel="noopener">{e(etichetta)} &rarr;</a>
+                {prezzo}
+            </div>"""
+
+    dati_js = json.dumps({
+        "id": voce["id"], "voci": ids, "url": url_voce, "titolo": titolo,
+        "immagine": f"{prefisso}{voce['image']}" if voce.get("image") else "",
+        "prec": pagina(prec) if prec else "", "succ": pagina(succ) if succ else "",
+        "base": f"{prefisso}v/",
+    }, ensure_ascii=False)
+
+    # Sulla home, i vecchi indirizzi ?p=ID portano alla pagina della voce
+    redirect = ""
+    if prefisso == "":
+        redirect = ("\n    <script>(function () { var p = new URLSearchParams(location.search).get('p');"
+                    " if (p && /^\\d+$/.test(p)) location.replace('v/' + p + '.html'); })();</script>")
 
     return f"""<!DOCTYPE html>
 <html lang="{e(voce.get('lang', 'it'))}">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{e(titolo)} - Il Mio Archivio</title>
-{testa}    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>{e(titolo)} - Il Mio Archivio</title>{redirect}
+{testa}    <meta name="theme-color" content="#2c6a4e">
     <link rel="canonical" href="{url_voce}">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23fff'/%3E%3Crect x='2.5' y='2.5' width='11' height='11' fill='none' stroke='%23111' stroke-width='1.5'/%3E%3C/svg%3E">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="{ICONA}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="{FONTS}">
+    <link rel="stylesheet" href="{prefisso}style.css">
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Salta al contenuto principale</a>
-
-    <header class="site-header">
-        <h1><a href="../">Il Mio Archivio</a></h1>
-        <p>Un posto per collezionare le mie cose.</p>
-        <p class="site-nav"><a href="../catalogo.html">Vedi tutto il catalogo</a></p>
+<a href="#scheda" class="skip-link">Salta al contenuto</a>
+<div class="wrap">
+    <header class="top">
+        <a class="brand" href="{prefisso or './'}">Il Mio Archivio <small>un posto per collezionare le mie cose</small></a>
+        <nav aria-label="Sezioni"><a href="{prefisso or './'}"{' aria-current="page"' if indice == 0 else ''}>Archivio</a><a href="{prefisso}catalogo.html">Catalogo</a></nav>
     </header>
 
-    <main id="main-content" class="container">
-        <article class="content-post">
-            <h2 id="post-title">{e(titolo)}</h2>
-            <p class="post-date">{e(data_italiana(voce.get('date')))}</p>
+    {pager}
 
-{barra()}
+    {riga_lettere(voce, principale)}
 
-            <div class="content-media">
-                {media}
-            </div>
+    <main class="book" id="scheda">
+        <aside class="aside">
+            {copertina}
+            {qr}
+        </aside>
 
-{barra(nascosta=True)}
-
-            <div class="content-text">
-                <h3>{e(voce.get('caption') or 'Dettagli')}</h3>
-                <p>{e(descrizione)}</p>
-            </div>{sezione_amazon(voce, "../")}
+        <article>
+            <div class="tags">{"".join(tag)}</div>
+            <h1>{e(principale)}{f'<span class="vol">{e(sotto)}</span>' if sotto else ''}</h1>
+            <p class="date">{e(quando)}</p>
+            <p class="lead">{e(breve)}</p>{cta}{condivisione(url_voce, titolo, breve, card_url)}{scheda(voce, a)}{descrizione(a)}{altri_formati(voce, a)}
         </article>
     </main>
 
-    <footer class="site-footer">
-        <p>&copy; <span id="footer-year">2026</span> Il Mio Archivio.</p>
-    </footer>
-
-    <script src="../common.js"></script>
-    <script>
-        // Sfondo casuale e anno del footer, come nel resto del sito.
-        Archivio.setBackground();
-        Archivio.setFooterYear();
-        // Senza JavaScript "Casuale" porta comunque a un'altra voce;
-        // con JavaScript ne sceglie una diversa ad ogni clic.
-        var VOCI = {json.dumps(ids)};
-        document.querySelectorAll('.nav-random').forEach(function (btn) {{
-            btn.addEventListener('click', function (ev) {{
-                ev.preventDefault();
-                var altre = VOCI.filter(function (i) {{ return i !== {voce['id']}; }});
-                if (!altre.length) return;
-                window.location.href = altre[Math.floor(Math.random() * altre.length)] + '.html';
-            }});
-        }});
-    </script>
+    <footer class="foot"><span>&copy; 2026 Il Mio Archivio</span><span>Voce {indice + 1} di {len(ids)}</span></footer>
+</div>
+<script>window.VOCE = {dati_js};</script>
+<script src="{prefisso}voce.js"></script>
 </body>
 </html>
 """
@@ -300,28 +444,26 @@ def main():
     if not voci:
         sys.exit("data.json non contiene voci utilizzabili")
 
-    # Le pagine sono testo: si riscrivono sempre, sono veloci e deterministiche.
+    # Le pagine e i QR sono testo: si riscrivono sempre, sono veloci e deterministici.
     shutil.rmtree(PAGES_DIR, ignore_errors=True)
     os.makedirs(PAGES_DIR)
-    os.makedirs(CARDS_DIR, exist_ok=True)
-    # Anche i QR sono deterministici: si rifanno tutti.
     shutil.rmtree(QR_DIR, ignore_errors=True)
     os.makedirs(QR_DIR)
+    os.makedirs(CARDS_DIR, exist_ok=True)
 
     # Le card invece si rifanno solo se serve: due compressioni JPEG della stessa
     # immagine non danno file identici, e senza questo controllo ogni esecuzione
-    # sporcherebbe il repository con 50 immagini "modificate" ma uguali.
+    # sporcherebbe il repository con 70 immagini "modificate" ma uguali.
     try:
         with open(MANIFEST, encoding="utf-8") as f:
             manifest = json.load(f)
     except (OSError, ValueError):
         manifest = {}
 
-    ids = [v["id"] for v in voci]
     pagine = card = rifatte = qr = 0
+    card_urls = {}
 
-    for i, voce in enumerate(voci):
-        card_url = None
+    for voce in voci:
         if voce.get("image"):
             sorgente = os.path.join(ROOT, voce["image"])
             if os.path.exists(sorgente):
@@ -333,27 +475,23 @@ def main():
                     crea_card(sorgente, destinazione)
                     manifest[nome] = impronta
                     rifatte += 1
-                card_url = f"{BASE_URL}og/{nome}"
+                card_urls[voce["id"]] = f"{BASE_URL}og/{nome}"
                 card += 1
             else:
                 print(f"  ! immagine mancante: {voce['image']} (voce {voce['id']})")
-
-        if link_amazon(voce):
-            crea_qr(link_amazon(voce), os.path.join(QR_DIR, f"{voce['id']}.svg"))
+        if voce.get("url"):
+            crea_qr(voce["url"], os.path.join(QR_DIR, f"{voce['id']}.svg"))
             qr += 1
 
-        pagina = costruisci_pagina(
-            voce,
-            precedente=ids[i - 1] if i > 0 else None,
-            successiva=ids[i + 1] if i < len(voci) - 1 else None,
-            prima=ids[0] if i > 0 else None,
-            ultima=ids[-1] if i < len(voci) - 1 else None,
-            ids=ids,
-            card_url=card_url,
-        )
+    for i, voce in enumerate(voci):
+        html_pagina = costruisci_pagina(voce, i, voci, card_urls.get(voce["id"]), "../")
         with open(os.path.join(PAGES_DIR, f"{voce['id']}.html"), "w", encoding="utf-8") as f:
-            f.write(pagina)
+            f.write(html_pagina)
         pagine += 1
+
+    # La home dell'archivio e' la pagina della prima voce.
+    with open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8") as f:
+        f.write(costruisci_pagina(voci[0], 0, voci, card_urls.get(voci[0]["id"]), ""))
 
     # Via le card di voci cancellate o rimaste senza immagine.
     attese = {f"{v['id']}.jpg" for v in voci if v.get("image")}
@@ -370,7 +508,7 @@ def main():
         json.dump(manifest, f, indent=2, sort_keys=True)
         f.write("\n")
 
-    print(f"{pagine} pagine scritte in v/, {card} card in og/ "
+    print(f"{pagine} pagine scritte in v/ più index.html, {card} card in og/ "
           f"({rifatte} rifatte, {rimosse} rimosse), {qr} QR code in qr/")
     print(f"Indirizzo da condividere: {BASE_URL}v/<id>.html")
 
