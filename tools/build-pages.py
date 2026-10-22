@@ -434,7 +434,7 @@ def costruisci_pagina(voce, indice, voci, card_url, prefisso, collane):
 <div class="wrap">
     <header class="top">
         <a class="brand" href="{prefisso or './'}">Il Mio Archivio <small>un posto per collezionare le mie cose</small></a>
-        <nav aria-label="Sezioni"><a href="{prefisso or './'}"{' aria-current="page"' if indice == 0 else ''}>Archivio</a><a href="{prefisso}catalogo.html">Catalogo</a></nav>
+        <nav aria-label="Sezioni"><a href="{pagina(ids[0])}" aria-current="page">Sfoglia</a><a href="{prefisso}catalogo.html">Catalogo</a></nav>
     </header>
 
     {pager}
@@ -459,6 +459,179 @@ def costruisci_pagina(voce, indice, voci, card_url, prefisso, collane):
 </div>
 <script>window.VOCE = {dati_js};</script>
 <script src="{prefisso}voce.js?v={versione('voce.js')}"></script>
+</body>
+</html>
+"""
+
+
+# ---------------------------------------------------------------------------
+# Home: presentazione dell'archivio
+# ---------------------------------------------------------------------------
+
+# Parole nascoste nella griglia della home: (parola, riga, colonna, categoria)
+PAROLE_HOME = [
+    ("NATURA", 0, 9, "Natura e stagioni"),
+    ("MITI", 1, 2, "Miti e classici"),
+    ("ARCHIVIO", 3, 5, None),
+    ("VIAGGI", 4, 0, "Luoghi e viaggi"),
+    ("VINO", 4, 13, "Cucina e vino"),
+    ("CINEMA", 6, 9, "Cinema"),
+    ("MUSICA", 7, 1, "Musica"),
+]
+GRIGLIA_COLONNE, GRIGLIA_RIGHE = 18, 8
+
+
+def griglia_home():
+    caso = random.Random(2026)
+    alfabeto = "ABCDEFGHILMNOPRSTUVZ"
+    celle = [[(caso.choice(alfabeto), "") for _ in range(GRIGLIA_COLONNE)] for _ in range(GRIGLIA_RIGHE)]
+    for parola, r, c, categoria in PAROLE_HOME:
+        classe = "hit" if categoria is None else "word"
+        for k, lettera in enumerate(parola):
+            celle[r][c + k] = (lettera, classe)
+    out = []
+    ordine = 0
+    for riga in celle:
+        for lettera, classe in riga:
+            if classe == "hit":
+                out.append(f'<span class="hit" style="--i:{ordine}">{lettera}</span>')
+                ordine += 1
+            elif classe:
+                out.append(f'<span class="{classe}">{lettera}</span>')
+            else:
+                out.append(f"<span>{lettera}</span>")
+    return (f'<div class="board" aria-hidden="true" style="--cols:{GRIGLIA_COLONNE}">'
+            + "".join(out) + "</div>")
+
+
+def crea_card_home(voci, dest_path):
+    """Anteprima social della home: le ultime copertine in fila su carta da schedario."""
+    sfondo = Image.new("RGB", (CARD_W, CARD_H), (242, 244, 241))
+    ultime = [v for v in sorted(voci, key=lambda v: v.get("date", ""), reverse=True) if v.get("image")][:5]
+    altezza = 400
+    copertine = []
+    for v in ultime:
+        img = Image.open(os.path.join(ROOT, v["image"])).convert("RGB")
+        copertine.append(img.resize((round(img.width * altezza / img.height), altezza), Image.LANCZOS))
+    spazio = 24
+    totale = sum(c.width for c in copertine) + spazio * (len(copertine) - 1)
+    x = (CARD_W - totale) // 2
+    y = (CARD_H - altezza) // 2
+    for c in copertine:
+        ombra = Image.new("RGB", (c.width + 4, c.height + 4), (205, 212, 207))
+        sfondo.paste(ombra, (x - 2, y + 2))
+        sfondo.paste(c, (x, y))
+        x += c.width + spazio
+    sfondo.save(dest_path, "JPEG", quality=84, optimize=True, progressive=True)
+
+
+def costruisci_home(voci, collane, card_url):
+    ids = [v["id"] for v in voci]
+    categorie = {}
+    for v in voci:
+        categorie[v.get("category") or "Varie"] = categorie.get(v.get("category") or "Varie", 0) + 1
+    numeri = [(len(voci), "voci"), (len(categorie), "categorie"), (len(collane), "collane")]
+    numeri_html = "".join(f"<div><b>{n}</b><span>{nome}</span></div>" for n, nome in numeri)
+
+    ultime = [v for v in sorted(voci, key=lambda v: (v.get("date", ""), v["id"]), reverse=True) if v.get("image")][:6]
+    ultime_html = "".join(
+        f'<a class="card" href="v/{v["id"]}.html"><img src="{e(v["image"])}" alt="{e(v.get("alt") or v["title"])}" '
+        f'loading="lazy" decoding="async"><span class="card-title">{e(dividi_titolo(v["title"])[0])}</span>'
+        f'<span class="card-date">{e(data_italiana(v.get("date")))}</span></a>'
+        for v in ultime)
+
+    trovate = "".join(
+        f'<a class="tag" href="catalogo.html?categoria={quote(cat)}">{e(parola.capitalize())}</a>'
+        for parola, _, _, cat in PAROLE_HOME if cat)
+
+    primo = voci[0]
+    titolo = "Il Mio Archivio"
+    breve = (f"{len(voci)} voci da sfogliare: parole intrecciate, quaderni, guide di viaggio e libri "
+             "di cinema, ognuno con la sua scheda.")
+    testa = ""
+    testa += meta("description", breve, attr="name")
+    testa += meta("og:site_name", titolo)
+    testa += meta("og:type", "website")
+    testa += meta("og:title", titolo)
+    testa += meta("og:description", breve)
+    testa += meta("og:url", BASE_URL)
+    if card_url:
+        testa += meta("og:image", card_url)
+        testa += meta("og:image:width", CARD_W)
+        testa += meta("og:image:height", CARD_H)
+        testa += meta("twitter:card", "summary_large_image", attr="name")
+    dati_js = json.dumps({"id": None, "voci": ids, "url": BASE_URL, "titolo": titolo,
+                          "immagine": "", "prec": "", "succ": "", "base": "v/"})
+
+    return f"""<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>{titolo}</title>
+    <script>(function () {{ var p = new URLSearchParams(location.search).get('p');
+        if (p && /^\\d+$/.test(p)) location.replace('v/' + p + '.html'); }})();</script>
+{testa}    <meta name="theme-color" content="#2c6a4e">
+    <link rel="canonical" href="{BASE_URL}">
+    <link rel="icon" href="{ICONA}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="{FONTS}">
+    <link rel="stylesheet" href="style.css?v={versione('style.css')}">
+</head>
+<body>
+<a href="#porte" class="skip-link">Salta al contenuto</a>
+<div class="wrap">
+    <header class="top">
+        <a class="brand" href="./">Il Mio Archivio <small>un posto per collezionare le mie cose</small></a>
+        <nav aria-label="Sezioni"><a href="v/{primo['id']}.html">Sfoglia</a><a href="catalogo.html">Catalogo</a></nav>
+    </header>
+
+    <main class="home">
+        <section class="hero">
+            {griglia_home()}
+            <div class="intro">
+                <h1>Il Mio Archivio</h1>
+                <p class="lead">Un posto per collezionare le mie cose: libri di parole intrecciate,
+                quaderni, guide di viaggio e cinema. Ogni voce ha la sua scheda, con la copertina,
+                i dettagli e il link per averla.</p>
+                <div class="numeri">{numeri_html}</div>
+            </div>
+        </section>
+
+        <nav class="porte" id="porte" aria-label="Da dove cominciare">
+            <a class="porta" href="v/{primo['id']}.html">
+                <span class="porta-n">1 di {len(ids)}</span>
+                <strong>Comincia dal primo</strong>
+                <span>Si parte da {e(primo['title'])} e si va avanti una voce alla volta.</span>
+            </a>
+            <a class="porta" href="v/{ids[len(ids) // 2]}.html" data-azione="casuale">
+                <span class="porta-n">? di {len(ids)}</span>
+                <strong>Pesca a caso</strong>
+                <span>Una voce qualsiasi dell'archivio, diversa a ogni clic.</span>
+            </a>
+            <a class="porta" href="catalogo.html">
+                <span class="porta-n">{len(categorie)} categorie</span>
+                <strong>Apri il catalogo</strong>
+                <span>Tutte le voci insieme, da filtrare per categoria, tipo e lingua.</span>
+            </a>
+        </nav>
+
+        <section class="trovate" aria-labelledby="h-trovate">
+            <h2 id="h-trovate">Parole trovate nella griglia</h2>
+            <div class="tags">{trovate}</div>
+        </section>
+
+        <section aria-labelledby="h-ultimi">
+            <h2 id="h-ultimi">Ultimi arrivi</h2>
+            <div class="grid">{ultime_html}</div>
+        </section>
+    </main>
+
+    <footer class="foot"><span>&copy; 2026 Il Mio Archivio</span><span>{len(voci)} voci</span></footer>
+</div>
+<script>window.VOCE = {dati_js};</script>
+<script src="voce.js?v={versione('voce.js')}"></script>
 </body>
 </html>
 """
@@ -524,9 +697,10 @@ def main():
             f.write(html_pagina)
         pagine += 1
 
-    # La home dell'archivio e' la pagina della prima voce.
+    # La home: presentazione dell'archivio, con la sua anteprima social.
+    crea_card_home(voci, os.path.join(CARDS_DIR, "home.jpg"))
     with open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8") as f:
-        f.write(costruisci_pagina(voci[0], 0, voci, card_urls.get(voci[0]["id"]), "", collane))
+        f.write(costruisci_home(voci, collane, f"{BASE_URL}og/home.jpg"))
 
     aggiorna_versioni("catalogo.html")
 
@@ -537,7 +711,7 @@ def main():
             del manifest[nome]
     rimosse = 0
     for nome in os.listdir(CARDS_DIR):
-        if nome.endswith(".jpg") and nome not in attese:
+        if nome.endswith(".jpg") and nome not in attese and nome != "home.jpg":
             os.remove(os.path.join(CARDS_DIR, nome))
             rimosse += 1
 
