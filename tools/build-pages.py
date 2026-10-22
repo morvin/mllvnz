@@ -188,7 +188,7 @@ def nome_sito(url):
     return d
 
 
-def scheda(voce, a):
+def scheda(voce, a, collane, prefisso):
     righe = []
 
     def riga(nome, valore, testo=False):
@@ -204,12 +204,21 @@ def scheda(voce, a):
     riga("Formato", e(a.get("formato", "")), testo=True)
     serie = a.get("serie")
     if serie:
-        puntini = ""
-        if serie["di"] <= 60:
-            puntini = ('<span class="dots" aria-hidden="true">'
-                       + "".join('<i class="on"></i>' if n == serie["numero"] else "<i></i>"
-                                 for n in range(1, serie["di"] + 1)) + "</span>")
-        riga("Collana", f'<div class="serie">{e(serie["nome"])}, libro {serie["numero"]} di {serie["di"]} {puntini}</div>', testo=True)
+        # Una casella per volume: porta alla pagina di quel volume nell'archivio
+        volumi = collane.get(serie["nome"], {})
+        caselle = []
+        for n in range(1, serie["di"] + 1):
+            if n == serie["numero"]:
+                caselle.append(f'<span class="on" aria-current="page" title="Questo volume">{n}</span>')
+            elif n in volumi:
+                vid, vtitolo = volumi[n]
+                caselle.append(f'<a href="{prefisso}v/{vid}.html" title="{e(vtitolo)}" '
+                               f'aria-label="Libro {n}: {e(vtitolo)}">{n}</a>')
+            else:
+                caselle.append(f'<span class="assente" title="Non ancora in archivio">{n}</span>')
+        riga("Collana", f'<div class="serie">{e(serie["nome"])}, libro {serie["numero"]} di {serie["di"]}</div>'
+                        + (f'<nav class="volumi" aria-label="Altri libri della collana">{"".join(caselle)}</nav>'
+                           if serie["di"] > 1 else ""), testo=True)
     riga("Pagine", e(a.get("pagine", "")))
     riga("Dimensioni", e(a.get("dimensioni", "")))
     riga("Peso", e(a.get("peso", "")))
@@ -293,7 +302,7 @@ def condivisione(url_voce, titolo, descrizione_breve, card_url):
             </div>"""
 
 
-def costruisci_pagina(voce, indice, voci, card_url, prefisso):
+def costruisci_pagina(voce, indice, voci, card_url, prefisso, collane):
     """prefisso: '../' per le pagine in v/, '' per la home."""
     ids = [v["id"] for v in voci]
     titolo = voce.get("title", "Senza titolo")
@@ -442,7 +451,7 @@ def costruisci_pagina(voce, indice, voci, card_url, prefisso):
             <div class="tags">{"".join(tag)}</div>
             <h1>{e(principale)}{f'<span class="vol">{e(sotto)}</span>' if sotto else ''}</h1>
             <p class="date">{e(quando)}</p>
-            <p class="lead">{e(breve)}</p>{cta}{condivisione(url_voce, titolo, breve, card_url)}{scheda(voce, a)}{descrizione(a)}{altri_formati(voce, a)}
+            <p class="lead">{e(breve)}</p>{cta}{condivisione(url_voce, titolo, breve, card_url)}{scheda(voce, a, collane, prefisso)}{descrizione(a)}{altri_formati(voce, a)}
         </article>
     </main>
 
@@ -502,15 +511,22 @@ def main():
             crea_qr(voce["url"], os.path.join(QR_DIR, f"{voce['id']}.svg"))
             qr += 1
 
+    # Collane: nome -> {numero del libro: (id, titolo)}
+    collane = {}
+    for voce in voci:
+        sr = (voce.get("amazon") or {}).get("serie")
+        if sr:
+            collane.setdefault(sr["nome"], {})[sr["numero"]] = (voce["id"], voce.get("title", ""))
+
     for i, voce in enumerate(voci):
-        html_pagina = costruisci_pagina(voce, i, voci, card_urls.get(voce["id"]), "../")
+        html_pagina = costruisci_pagina(voce, i, voci, card_urls.get(voce["id"]), "../", collane)
         with open(os.path.join(PAGES_DIR, f"{voce['id']}.html"), "w", encoding="utf-8") as f:
             f.write(html_pagina)
         pagine += 1
 
     # La home dell'archivio e' la pagina della prima voce.
     with open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8") as f:
-        f.write(costruisci_pagina(voci[0], 0, voci, card_urls.get(voci[0]["id"]), ""))
+        f.write(costruisci_pagina(voci[0], 0, voci, card_urls.get(voci[0]["id"]), "", collane))
 
     aggiorna_versioni("catalogo.html")
 

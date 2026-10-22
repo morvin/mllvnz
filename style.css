@@ -215,10 +215,15 @@ h2 {
 .scheda dd.txt { font-family: var(--font-body); font-size: var(--step-0); }
 .rank { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
 .rank li span { color: var(--muted); font-family: var(--font-body); font-size: var(--step--1); }
-.serie { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.dots { display: flex; gap: 2px; flex-wrap: wrap; max-width: 220px; }
-.dots i { width: 5px; height: 5px; border-radius: 1px; background: var(--rule); }
-.dots i.on { background: var(--accent); }
+.volumi { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 8px; }
+.volumi a, .volumi span {
+    width: 26px; height: 26px; display: grid; place-items: center; border-radius: 3px;
+    font-family: var(--font-mono); font-size: 11px; font-variant-numeric: tabular-nums;
+    background: var(--cell); color: var(--ink); text-decoration: none;
+}
+.volumi a:hover { background: var(--accent-soft); color: var(--accent); outline: 1px solid var(--accent); }
+.volumi .on { background: var(--accent); color: var(--on-accent); font-weight: 500; }
+.volumi .assente { background: transparent; color: var(--muted); border: 1px dashed var(--rule); }
 
 .desc { max-width: 64ch; }
 .desc h3 { font-size: var(--step-0); font-weight: 700; margin: 22px 0 6px; }
