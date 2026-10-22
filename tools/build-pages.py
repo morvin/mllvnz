@@ -56,6 +56,25 @@ ICONA = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='
 e = lambda s: html.escape(str(s), quote=True)
 
 
+def versione(nome):
+    """Impronta corta del file: va nell'indirizzo (style.css?v=...) cosi' browser
+    e Cloudflare riscaricano il file appena cambia, invece di tenerlo in cache ore."""
+    with open(os.path.join(ROOT, nome), "rb") as f:
+        return hashlib.sha1(f.read()).hexdigest()[:8]
+
+
+def aggiorna_versioni(nome_html):
+    """Stesse versioni nei file HTML scritti a mano (il catalogo)."""
+    percorso = os.path.join(ROOT, nome_html)
+    with open(percorso, encoding="utf-8") as f:
+        testo = f.read()
+    for risorsa in ("style.css", "common.js", "catalogo.js"):
+        testo = re.sub(rf'(["\'])({re.escape(risorsa)})(\?v=[0-9a-f]+)?(["\'])',
+                       rf"\1\2?v={versione(risorsa)}\4", testo)
+    with open(percorso, "w", encoding="utf-8") as f:
+        f.write(testo)
+
+
 def data_italiana(value):
     """2026-04-17 -> 17 aprile 2026"""
     try:
@@ -399,7 +418,7 @@ def costruisci_pagina(voce, indice, voci, card_url, prefisso):
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="{FONTS}">
-    <link rel="stylesheet" href="{prefisso}style.css">
+    <link rel="stylesheet" href="{prefisso}style.css?v={versione('style.css')}">
 </head>
 <body>
 <a href="#scheda" class="skip-link">Salta al contenuto</a>
@@ -430,7 +449,7 @@ def costruisci_pagina(voce, indice, voci, card_url, prefisso):
     <footer class="foot"><span>&copy; 2026 Il Mio Archivio</span><span>Voce {indice + 1} di {len(ids)}</span></footer>
 </div>
 <script>window.VOCE = {dati_js};</script>
-<script src="{prefisso}voce.js"></script>
+<script src="{prefisso}voce.js?v={versione('voce.js')}"></script>
 </body>
 </html>
 """
@@ -492,6 +511,8 @@ def main():
     # La home dell'archivio e' la pagina della prima voce.
     with open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8") as f:
         f.write(costruisci_pagina(voci[0], 0, voci, card_urls.get(voci[0]["id"]), ""))
+
+    aggiorna_versioni("catalogo.html")
 
     # Via le card di voci cancellate o rimaste senza immagine.
     attese = {f"{v['id']}.jpg" for v in voci if v.get("image")}
