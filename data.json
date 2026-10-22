@@ -709,5 +709,19 @@
     "lang": "en",
     "type": "Parole intrecciate",
     "category": "Animali"
+  },
+  {
+    "id": 52,
+    "title": "Quaderno di Cinema - Recensioni e appunti",
+    "date": "2026-10-22",
+    "image": "image/quaderno-cinema.jpg",
+    "url": "https://www.amazon.it/dp/B0HH457M3N",
+    "alt": "Copertina di 'Quaderno di Cinema': sfondo nero effetto pelle con cornice dorata, titolo in oro e una cinepresa d'epoca dorata.",
+    "caption": "Apri la scheda su Amazon",
+    "description": "Diario di bordo cinematografico: 100 schede guidate per recensire e collezionare i tuoi film preferiti.",
+    "publisher": "La Quercia Edizioni",
+    "lang": "it",
+    "type": "Diari e taccuini",
+    "category": "Cinema"
   }
 ]
