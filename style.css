@@ -244,6 +244,24 @@ h2 {
 .formati a:hover { border-color: var(--accent); color: var(--accent); }
 .formati span { font-family: var(--font-mono); font-weight: 400; color: var(--muted); font-size: var(--step--1); }
 
+/* App: telefono, icona, schermate */
+.cover.phone {
+    border: 7px solid #111; border-radius: 26px; background: #111;
+    max-width: 280px; margin: 0 auto; width: 100%;
+}
+.cover.phone img { border-radius: 19px; }
+.app-icon { width: 40px; height: 40px; border-radius: 10px; margin-right: 4px; align-self: center; }
+.shots {
+    display: flex; gap: 10px; overflow-x: auto; padding-bottom: 8px;
+    scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+}
+.shots a { flex: none; scroll-snap-align: start; }
+.shots img {
+    display: block; width: 150px; height: auto; border-radius: 12px;
+    border: 1px solid var(--rule); background: var(--card);
+}
+.tags { align-items: center; }
+
 /* ------------------------------------------------------------------ */
 /* Home                                                                */
 /* ------------------------------------------------------------------ */
@@ -278,7 +296,13 @@ h2 {
 .porta strong { font-family: var(--font-display); font-weight: 400; font-size: var(--step-1); color: var(--ink); }
 .porta:hover strong { color: var(--accent); }
 .porta-n { font-family: var(--font-mono); font-size: 12px; color: var(--accent); letter-spacing: .02em; }
-.home h2 { margin-bottom: 18px; }
+.home h2 { margin-bottom: 0; border-bottom: 0; padding-bottom: 0; }
+.sez-head {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    margin-bottom: 18px; padding-bottom: 8px; border-bottom: 1px solid var(--rule);
+}
+.sez-head a { font-size: var(--step--1); font-weight: 600; text-decoration: none; }
+.sez-head a:hover { text-decoration: underline; }
 
 /* ------------------------------------------------------------------ */
 /* Catalogo                                                            */
@@ -320,6 +344,7 @@ h2 {
     transition: transform .2s;
 }
 .card:hover img { transform: translateY(-3px); }
+.card-app img { object-position: center 45%; border-radius: 14px; }
 .card-placeholder {
     display: grid; place-items: center; aspect-ratio: 387 / 500;
     border: 1px dashed var(--rule); border-radius: 3px; color: var(--muted); font-weight: 600;

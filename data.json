@@ -32,7 +32,8 @@
     ],
     "lang": "it",
     "type": "Link",
-    "category": "Varie"
+    "category": "Varie",
+    "famiglia": "Progetti"
   },
   {
     "id": 53,
@@ -93,7 +94,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 54,
@@ -180,7 +182,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 55,
@@ -217,7 +220,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 56,
@@ -248,7 +252,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 50,
@@ -308,7 +313,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 51,
@@ -384,7 +390,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 49,
@@ -465,7 +472,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 48,
@@ -539,7 +547,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 46,
@@ -616,7 +625,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 47,
@@ -693,7 +703,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 45,
@@ -773,7 +784,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 44,
@@ -849,7 +861,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 43,
@@ -916,7 +929,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 42,
@@ -983,7 +997,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 41,
@@ -1044,7 +1059,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 33,
@@ -1114,7 +1130,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 34,
@@ -1178,7 +1195,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 40,
@@ -1234,7 +1252,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 32,
@@ -1301,7 +1320,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 37,
@@ -1362,7 +1382,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 38,
@@ -1420,7 +1441,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 39,
@@ -1484,7 +1506,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 35,
@@ -1551,7 +1574,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 36,
@@ -1632,7 +1656,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 31,
@@ -1702,7 +1727,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 28,
@@ -1755,7 +1781,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 29,
@@ -1808,7 +1835,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 30,
@@ -1876,7 +1904,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 26,
@@ -1929,7 +1958,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 27,
@@ -1982,7 +2012,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 20,
@@ -2033,7 +2064,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 25,
@@ -2086,7 +2118,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 22,
@@ -2138,7 +2171,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 23,
@@ -2190,7 +2224,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 24,
@@ -2242,7 +2277,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 18,
@@ -2309,7 +2345,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 21,
@@ -2372,7 +2409,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 2,
@@ -2439,7 +2477,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 10,
@@ -2513,7 +2552,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 14,
@@ -2581,7 +2621,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 15,
@@ -2649,7 +2690,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 19,
@@ -2712,7 +2754,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 17,
@@ -2775,7 +2818,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 16,
@@ -2828,7 +2872,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 12,
@@ -2902,7 +2947,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 3,
@@ -2970,7 +3016,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 4,
@@ -3037,7 +3084,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 13,
@@ -3106,7 +3154,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 11,
@@ -3174,7 +3223,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 5,
@@ -3241,7 +3291,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 6,
@@ -3308,7 +3359,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 7,
@@ -3374,7 +3426,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 8,
@@ -3442,7 +3495,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 9,
@@ -3495,7 +3549,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 57,
@@ -3563,7 +3618,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 58,
@@ -3628,7 +3684,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 59,
@@ -3706,7 +3763,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 60,
@@ -3771,7 +3829,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 61,
@@ -3839,7 +3898,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 62,
@@ -3913,7 +3973,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 63,
@@ -3987,7 +4048,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 64,
@@ -4054,7 +4116,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 65,
@@ -4116,7 +4179,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 66,
@@ -4211,7 +4275,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 67,
@@ -4286,7 +4351,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 68,
@@ -4361,7 +4427,8 @@
         "numero": 2,
         "di": 3
       }
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 52,
@@ -4441,7 +4508,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 69,
@@ -4544,7 +4612,8 @@
         "n. 674 in Guide e recensioni cinematografiche",
         "n. 1.574 in Giochi per feste"
       ]
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 70,
@@ -4611,7 +4680,8 @@
         "n. 9.165 in Studio e riferimento linguistico",
         "n. 37.778 in Arte, cinema e fotografia (Libri)"
       ]
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 71,
@@ -4687,7 +4757,8 @@
         "n. 524.213 in Libri",
         "n. 121 in Birre"
       ]
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 72,
@@ -4761,7 +4832,8 @@
         }
       ],
       "aggiornato": "2026-10-22"
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 73,
@@ -4825,7 +4897,8 @@
         "n. 141 in Enologia e viticoltura",
         "n. 542 in Vino (Libri)"
       ]
-    }
+    },
+    "famiglia": "Libri"
   },
   {
     "id": 74,
@@ -4897,6 +4970,2188 @@
         "n. 1.863 in Narrativa sulla vita sociale",
         "n. 4.844 in Letteratura di viaggio (Libri)",
         "n. 24.137 in Libri sulla sociologia della cultura"
+      ]
+    },
+    "famiglia": "Libri"
+  },
+  {
+    "id": 78,
+    "title": "Napoli Transit Map - Traffico",
+    "date": "2026-01-14",
+    "image": "image/app/napoli-2.jpg",
+    "url": "https://play.google.com/store/apps/details?id=com.ollerom.napoli",
+    "alt": "Schermata dell'app Napoli Transit Map - Traffico: la mappa con le strade e i punti di interesse.",
+    "caption": "Apri su Google Play",
+    "description": "Mappa Transit Napoli Offline, Treni e Traffico in tempo reale.",
+    "publisher": "Ollerom Apps",
+    "lang": "it",
+    "type": "App",
+    "category": "App Trasporti",
+    "famiglia": "App",
+    "play": {
+      "pacchetto": "com.ollerom.napoli",
+      "nome": "Napoli Transit Map - Traffico",
+      "breve": "Mappa Transit Napoli Offline, Treni e Traffico in tempo reale.",
+      "pegi": "PEGI 3",
+      "sviluppatore": "Ollerom Apps",
+      "sito": "https://ollerom.github.io/",
+      "prezzo": "Gratis",
+      "descrizione": [
+        {
+          "p": "Scopri Napoli e la Campania con la guida più semplice e completa ai trasporti pubblici! Che tu sia un turista in visita a Spaccanapoli o un pendolare che si sposta ogni giorno, Metro Map Napoli è l'applicazione essenziale per muoversi in città senza stress."
+        },
+        {
+          "p": "L'app unisce la comodità delle mappe offline (consultabili ovunque, anche senza internet) alla potenza dei dati online in tempo reale."
+        },
+        {
+          "h": "🚆 MAPPE OFFLINE (Nessuna connessione richiesta)"
+        },
+        {
+          "p": "Non consumare i tuoi Giga! Consulta le mappe ufficiali ad alta risoluzione ovunque ti trovi, anche in metropolitana dove il telefono non prende:"
+        },
+        {
+          "p": "Mappa Metropolitana: Linea 1, Linea 6 e collegamenti funicolari."
+        },
+        {
+          "p": "Mappa Ferroviaria: Circumvesuviana, Cumana, Circumflegrea e treni regionali per Pompei, Sorrento e Caserta."
+        },
+        {
+          "p": "Mappa Centro Storico: Per orientarti tra i vicoli e le piazze principali."
+        },
+        {
+          "p": "Mappa Turistica: I punti di interesse da non perdere."
+        },
+        {
+          "h": "🚦 MAPPE ONLINE & TRAFFICO IN TEMPO REALE"
+        },
+        {
+          "p": "Hai una connessione attiva? Sfrutta la potenza delle mappe Google integrate direttamente nell'app!"
+        },
+        {
+          "p": "Traffico Live: Visualizza la situazione del traffico in tempo reale su tutta la città. Le strade colorate (verde, arancione, rosso) ti aiutano a capire subito dove ci sono ingorghi o rallentamenti, permettendoti di scegliere il percorso migliore se ti muovi in autobus o taxi."
+        },
+        {
+          "p": "Viste Satellitari: Esplora Napoli dall'alto con la vista Satellite, Ibrida o Terreno."
+        },
+        {
+          "h": "☀️ METEO SATELLITARE"
+        },
+        {
+          "p": "Pianifica la tua giornata con la mappa meteo satellitare aggiornata, per vedere l'evoluzione delle nuvole sull'Italia e l'Europa."
+        },
+        {
+          "h": "CARATTERISTICHE PRINCIPALI"
+        },
+        {
+          "ul": [
+            "Zoom fluido e veloce per vedere ogni dettaglio delle stazioni.",
+            "Interfaccia intuitiva e facile da usare.",
+            "Leggera: occupa poco spazio sul tuo telefono.",
+            "Completamente Gratuita."
+          ]
+        },
+        {
+          "p": "Scarica ora Transit Map Napoli e porta la città in tasca!"
+        }
+      ],
+      "download": "50+",
+      "aggiornata": "2026-02-06",
+      "uscita": "2026-01-14",
+      "annunci": true,
+      "acquisti": false,
+      "novita": [
+        "Aggiornamento importante:",
+        "Nuovo nome app: \"Napoli Transit Map\".",
+        "Etichette aggiornate a \"Transit\" per maggiore chiarezza.",
+        "Nuova sezione Guida Turistica e Info Biglietti (UnicoCampania).",
+        "Aggiunto menu Privacy (GDPR) e Disclaimer app indipendente.",
+        "Miglioramenti delle prestazioni e correzione bug minori."
+      ],
+      "aggiornato": "2026-10-23",
+      "icona": "image/app/napoli.png",
+      "schermate": [
+        "image/app/napoli-1.jpg",
+        "image/app/napoli-2.jpg",
+        "image/app/napoli-3.jpg",
+        "image/app/napoli-4.jpg",
+        "image/app/napoli-5.jpg",
+        "image/app/napoli-6.jpg"
+      ]
+    }
+  },
+  {
+    "id": 81,
+    "title": "Mandalay Metro Map",
+    "date": "2026-01-20",
+    "image": "image/app/mandalay-2.jpg",
+    "url": "https://play.google.com/store/apps/details?id=com.ollerom.mandalay",
+    "alt": "Schermata dell'app Mandalay Metro Map: la mappa con le strade e i punti di interesse.",
+    "caption": "Apri su Google Play",
+    "description": "Mappa della metropolitana e del traffico di Mandalay. Mappe offline, non richiede GPS. Semplice e veloce.",
+    "publisher": "Ollerom Apps",
+    "lang": "it",
+    "type": "App",
+    "category": "App Trasporti",
+    "famiglia": "App",
+    "play": {
+      "pacchetto": "com.ollerom.mandalay",
+      "nome": "Mandalay Metro Map",
+      "breve": "Mappa della metropolitana e del traffico di Mandalay. Mappe offline, non richiede GPS. Semplice e veloce.",
+      "pegi": "PEGI 3",
+      "sviluppatore": "Ollerom Apps",
+      "sito": "https://ollerom.github.io/",
+      "prezzo": "Gratis",
+      "descrizione": [
+        {
+          "p": "Esplora Mandalay con facilità grazie al compagno di viaggio definitivo!"
+        },
+        {
+          "p": "Questa app è progettata per aiutare sia i turisti che la gente del posto a spostarsi a Mandalay, in Myanmar, senza bisogno di una connessione internet o di permessi invasivi. Che tu stia viaggiando o visitando la città, le nostre mappe sono pronte a guidarti."
+        },
+        {
+          "h": "🚀 CARATTERISTICHE PRINCIPALI"
+        },
+        {
+          "p": "🚦 Mappa del traffico in tempo reale: controlla le condizioni del traffico in tempo reale sulla mappa principale per evitare ingorghi e pianificare il percorso più veloce."
+        },
+        {
+          "p": "🔒 Privacy al 100%: rispettiamo la tua privacy. Questa app NON richiede la tua posizione GPS. Puoi consultare tutte le mappe liberamente senza essere tracciato."
+        },
+        {
+          "p": "📂 Accesso offline: mappe di trasporto pubblico e delle aree di alta qualità vengono salvate direttamente nell'app. Nessun roaming dati? Nessun problema!"
+        },
+        {
+          "p": "⚡ Semplice e leggera: nessuna registrazione o configurazione complessa. Basta aprire l'app e trovare la strada."
+        },
+        {
+          "h": "🗺️ MAPPE INCLUSE"
+        },
+        {
+          "p": "Mappa della metropolitana di Mandalay: disposizione chiara delle linee di trasporto pubblico della città. Mappa della zona: vista dettagliata dei quartieri e dei distretti principali."
+        },
+        {
+          "p": "Mappa ferroviaria: collegamento alla rete ferroviaria più ampia."
+        },
+        {
+          "p": "Mappa storica: scoperta del patrimonio culturale della città."
+        },
+        {
+          "p": "Mappa del Myanmar: rimpicciolisci per visualizzare la vista nazionale."
+        },
+        {
+          "p": "Scarica subito la mappa della metropolitana di Mandalay e viaggia senza stress!"
+        }
+      ],
+      "download": "100+",
+      "aggiornata": "2026-01-20",
+      "uscita": "2026-01-20",
+      "annunci": true,
+      "acquisti": false,
+      "novita": [
+        "🚀 New Release: Mandalay Metro Map",
+        "🗺️ Features in this version:",
+        "• Updated Mandalay Metro & Area Maps (Offline).",
+        "• Live Traffic Map integration (No GPS required).",
+        "• Added Railway and Historic maps.",
+        "• Performance improvements and minor bug fixes.",
+        "• Reduced app size for faster download.",
+        "Enjoy your trip in Mandalay!"
+      ],
+      "aggiornato": "2026-10-23",
+      "icona": "image/app/mandalay.png",
+      "schermate": [
+        "image/app/mandalay-1.jpg",
+        "image/app/mandalay-2.jpg",
+        "image/app/mandalay-3.jpg",
+        "image/app/mandalay-4.jpg",
+        "image/app/mandalay-5.jpg",
+        "image/app/mandalay-6.jpg"
+      ]
+    }
+  },
+  {
+    "id": 82,
+    "title": "Samarkand Metro Map",
+    "date": "2026-01-22",
+    "image": "image/app/samarkand-2.jpg",
+    "url": "https://play.google.com/store/apps/details?id=com.ollerom.samarkand",
+    "alt": "Schermata dell'app Samarkand Metro Map: la mappa con le strade e i punti di interesse.",
+    "caption": "Apri su Google Play",
+    "description": "Mappa della metropolitana di Samarcanda: offline, zoom ad alta risoluzione e informazioni sul traffico. 100% gratuita.",
+    "publisher": "Ollerom Apps",
+    "lang": "it",
+    "type": "App",
+    "category": "App Trasporti",
+    "famiglia": "App",
+    "play": {
+      "pacchetto": "com.ollerom.samarkand",
+      "nome": "Samarkand Metro Map",
+      "breve": "Mappa della metropolitana di Samarcanda: offline, zoom ad alta risoluzione e informazioni sul traffico. 100% gratuita.",
+      "pegi": "PEGI 3",
+      "sviluppatore": "Ollerom Apps",
+      "sito": "https://ollerom.github.io/",
+      "prezzo": "Gratis",
+      "descrizione": [
+        {
+          "p": "Esplora Samarcanda con l'applicazione Metro Map più comoda e facile da usare. Che tu sia un turista in visita in Uzbekistan o un residente locale, questa app è la tua compagna di viaggio perfetta per orientarti nel sistema di trasporto pubblico della città."
+        },
+        {
+          "ul": [
+            "100% OFFLINE"
+          ]
+        },
+        {
+          "p": "Funziona completamente senza connessione internet. Risparmia dati e batteria mentre esplori la città. Nessun costo di roaming!"
+        },
+        {
+          "ul": [
+            "ZOOM AD ALTA RISOLUZIONE"
+          ]
+        },
+        {
+          "p": "Mappa cristallina delle linee della metropolitana di Samarcanda. Ingrandisci per vedere il nome di ogni stazione e i dettagli dei collegamenti senza perdere qualità."
+        },
+        {
+          "ul": [
+            "INFORMAZIONI SU TRAFFICO E TRASPORTI"
+          ]
+        },
+        {
+          "p": "Include utili indicazioni su traffico e collegamenti per aiutarti a pianificare meglio il tuo viaggio."
+        },
+        {
+          "ul": [
+            "SEMPLICE E INTUITIVA"
+          ]
+        },
+        {
+          "p": "Non richiede impostazioni complesse o registrazione. Basta aprire l'app e la mappa è pronta all'uso all'istante."
+        },
+        {
+          "ul": [
+            "PROGETTATA PER I VIAGGIATORI"
+          ]
+        },
+        {
+          "p": "Indispensabile per chiunque visiti la storica città di Samarcanda. Esplora la rete metropolitana in tutta sicurezza."
+        },
+        {
+          "p": "Scaricalo ora gratuitamente e inizia il tuo viaggio a Samarcanda!"
+        }
+      ],
+      "download": "10+",
+      "aggiornata": "2026-01-22",
+      "uscita": "2026-01-22",
+      "annunci": true,
+      "acquisti": false,
+      "novita": [
+        "🚀 First official release!",
+        "🗺️ Complete Samarkand Metro Map.",
+        "🚦 Traffic and transport info.",
+        "📶 Works 100% offline (no internet needed).",
+        "🔍 High-resolution zoom."
+      ],
+      "aggiornato": "2026-10-23",
+      "icona": "image/app/samarkand.png",
+      "schermate": [
+        "image/app/samarkand-1.jpg",
+        "image/app/samarkand-2.jpg",
+        "image/app/samarkand-3.jpg",
+        "image/app/samarkand-4.jpg",
+        "image/app/samarkand-5.jpg",
+        "image/app/samarkand-6.jpg"
+      ]
+    }
+  },
+  {
+    "id": 77,
+    "title": "Bangkok Metro Map",
+    "date": "2026-01-23",
+    "image": "image/app/bangkok-2.jpg",
+    "url": "https://play.google.com/store/apps/details?id=com.ollerom.bangkok",
+    "alt": "Schermata dell'app Bangkok Metro Map: la mappa con le strade e i punti di interesse.",
+    "caption": "Apri su Google Play",
+    "description": "Mappa della metropolitana di Bangkok: offline, zoom ad alta risoluzione e informazioni sul traffico. 100% gratuita.",
+    "publisher": "Ollerom Apps",
+    "lang": "it",
+    "type": "App",
+    "category": "App Trasporti",
+    "famiglia": "App",
+    "play": {
+      "pacchetto": "com.ollerom.bangkok",
+      "nome": "Bangkok Metro Map",
+      "breve": "Mappa della metropolitana di Bangkok: offline, zoom ad alta risoluzione e informazioni sul traffico. 100% gratuita.",
+      "pegi": "PEGI 3",
+      "sviluppatore": "Ollerom Apps",
+      "sito": "https://ollerom.github.io/",
+      "prezzo": "Gratis",
+      "descrizione": [
+        {
+          "p": "Esplora Bangkok con l'applicazione Metro Map più comoda e facile da usare. Che tu sia un turista in visita in Thailandia o un residente locale, questa app è la tua compagna di viaggio perfetta per orientarti nel sistema di trasporto pubblico della città (BTS Skytrain, MRT e Airport Rail Link)."
+        },
+        {
+          "ul": [
+            "100% OFFLINE"
+          ]
+        },
+        {
+          "p": "Funziona completamente senza connessione internet. Risparmia dati e batteria mentre esplori la città. Nessun costo di roaming!"
+        },
+        {
+          "ul": [
+            "ZOOM AD ALTA RISOLUZIONE"
+          ]
+        },
+        {
+          "p": "Mappa cristallina delle linee della metropolitana di Bangkok. Ingrandisci per vedere il nome di ogni stazione e i dettagli dei collegamenti senza perdere qualità."
+        },
+        {
+          "ul": [
+            "INFORMAZIONI SU TRAFFICO E TRASPORTI"
+          ]
+        },
+        {
+          "p": "Include utili indicazioni su traffico e collegamenti per aiutarti a pianificare meglio il tuo viaggio."
+        },
+        {
+          "ul": [
+            "SEMPLICE E INTUITIVA"
+          ]
+        },
+        {
+          "p": "Non richiede impostazioni complesse o registrazione. Basta aprire l'app e la mappa è pronta all'uso all'istante."
+        },
+        {
+          "ul": [
+            "PROGETTATA PER I VIAGGIATORI"
+          ]
+        },
+        {
+          "p": "Indispensabile per chiunque visiti la vivace città di Bangkok. Esplora la rete metropolitana in tutta sicurezza."
+        },
+        {
+          "p": "Scaricala ora gratuitamente e inizia il tuo viaggio a Bangkok!"
+        }
+      ],
+      "download": "500+",
+      "aggiornata": "2026-01-23",
+      "uscita": "2026-01-23",
+      "annunci": true,
+      "acquisti": false,
+      "novita": [
+        "🚀 First official release!",
+        "🗺️ Complete Bangkok Metro Map (BTS, MRT & Airport Link).",
+        "🚦 Traffic and transport info.",
+        "📶 Works 100% offline (no internet needed).",
+        "🔍 High-resolution zoom."
+      ],
+      "aggiornato": "2026-10-23",
+      "icona": "image/app/bangkok.png",
+      "schermate": [
+        "image/app/bangkok-1.jpg",
+        "image/app/bangkok-2.jpg",
+        "image/app/bangkok-3.jpg",
+        "image/app/bangkok-4.jpg",
+        "image/app/bangkok-5.jpg",
+        "image/app/bangkok-6.jpg"
+      ]
+    }
+  },
+  {
+    "id": 83,
+    "title": "New York Metro Map",
+    "date": "2026-01-23",
+    "image": "image/app/newyork-2.jpg",
+    "url": "https://play.google.com/store/apps/details?id=com.ollerom.newyork",
+    "alt": "Schermata dell'app New York Metro Map: la mappa con le strade e i punti di interesse.",
+    "caption": "Apri su Google Play",
+    "description": "Mappa della metropolitana di New York: linee MTA. Offline, zoom ad alta risoluzione e traffico. Gratis.",
+    "publisher": "Ollerom Apps",
+    "lang": "it",
+    "type": "App",
+    "category": "App Trasporti",
+    "famiglia": "App",
+    "play": {
+      "pacchetto": "com.ollerom.newyork",
+      "nome": "New York Metro Map",
+      "breve": "Mappa della metropolitana di New York: linee MTA. Offline, zoom ad alta risoluzione e traffico. Gratis.",
+      "pegi": "PEGI 3",
+      "sviluppatore": "Ollerom Apps",
+      "sito": "https://ollerom.github.io/",
+      "prezzo": "Gratis",
+      "descrizione": [
+        {
+          "p": "Esplora New York City con l'applicazione mappe più comoda e facile da usare. Che tu sia un turista in visita alla Grande Mela o un residente, questa app è la tua compagna di viaggio perfetta per orientarti nel sistema di trasporto pubblico della città (MTA Subway)."
+        },
+        {
+          "ul": [
+            "100% OFFLINE"
+          ]
+        },
+        {
+          "p": "Funziona completamente senza connessione internet. Risparmia dati e batteria mentre esplori la città. Nessun costo di roaming!"
+        },
+        {
+          "ul": [
+            "ZOOM AD ALTA RISOLUZIONE"
+          ]
+        },
+        {
+          "p": "Mappa cristallina delle linee della metropolitana di New York. Ingrandisci per vedere il nome di ogni stazione e i dettagli dei collegamenti senza perdere qualità."
+        },
+        {
+          "ul": [
+            "INFORMAZIONI SU TRAFFICO E TRASPORTI"
+          ]
+        },
+        {
+          "p": "Include utili indicazioni su traffico e collegamenti per aiutarti a pianificare meglio il tuo viaggio."
+        },
+        {
+          "ul": [
+            "SEMPLICE E INTUITIVA"
+          ]
+        },
+        {
+          "p": "Non richiede impostazioni complesse o registrazione. Basta aprire l'app e la mappa è pronta all'uso all'istante."
+        },
+        {
+          "ul": [
+            "PROGETTATA PER I VIAGGIATORI"
+          ]
+        },
+        {
+          "p": "Indispensabile per chiunque visiti New York. Naviga nella rete in tutta sicurezza."
+        },
+        {
+          "p": "Scaricalo subito gratuitamente e inizia il tuo viaggio a New York!"
+        }
+      ],
+      "download": "50+",
+      "aggiornata": "2026-01-23",
+      "uscita": "2026-01-23",
+      "annunci": true,
+      "acquisti": false,
+      "novita": [
+        "🚀 First official release!",
+        "🗺️ Complete New York Subway Map (MTA).",
+        "🚦 Traffic and transport info.",
+        "📶 Works 100% offline (no internet needed).",
+        "🔍 High-resolution zoom."
+      ],
+      "aggiornato": "2026-10-23",
+      "icona": "image/app/newyork.png",
+      "schermate": [
+        "image/app/newyork-1.jpg",
+        "image/app/newyork-2.jpg",
+        "image/app/newyork-3.jpg",
+        "image/app/newyork-4.jpg",
+        "image/app/newyork-5.jpg",
+        "image/app/newyork-6.jpg"
+      ]
+    }
+  },
+  {
+    "id": 84,
+    "title": "Lahore Metro Map",
+    "date": "2026-01-23",
+    "image": "image/app/lahore-2.jpg",
+    "url": "https://play.google.com/store/apps/details?id=com.ollerom.lahore",
+    "alt": "Schermata dell'app Lahore Metro Map: la mappa con le strade e i punti di interesse.",
+    "caption": "Apri su Google Play",
+    "description": "Metropolitana di Lahore: Linea Arancione. Offline, zoom ad alta risoluzione e traffico. Gratis.",
+    "publisher": "Ollerom Apps",
+    "lang": "it",
+    "type": "App",
+    "category": "App Trasporti",
+    "famiglia": "App",
+    "play": {
+      "pacchetto": "com.ollerom.lahore",
+      "nome": "Lahore Metro Map",
+      "breve": "Metropolitana di Lahore: Linea Arancione. Offline, zoom ad alta risoluzione e traffico. Gratis.",
+      "pegi": "PEGI 3",
+      "sviluppatore": "Ollerom Apps",
+      "sito": "https://ollerom.github.io/",
+      "prezzo": "Gratis",
+      "descrizione": [
+        {
+          "p": "Esplora Lahore con l'applicazione mappe più comoda e facile da usare. Che tu sia un turista in visita in Pakistan o un residente locale, questa app è la tua compagna di viaggio perfetta per orientarti nel sistema di trasporto pubblico della città (linea arancione della metropolitana)."
+        },
+        {
+          "ul": [
+            "100% OFFLINE"
+          ]
+        },
+        {
+          "p": "Funziona completamente senza connessione internet. Risparmia dati e batteria mentre esplori la città. Nessun costo di roaming!"
+        },
+        {
+          "ul": [
+            "ZOOM AD ALTA RISOLUZIONE"
+          ]
+        },
+        {
+          "p": "Mappa cristallina delle linee della metropolitana di Lahore. Ingrandisci per vedere il nome di ogni stazione e i dettagli dei collegamenti senza perdere qualità."
+        },
+        {
+          "ul": [
+            "INFORMAZIONI SU TRAFFICO E TRASPORTI"
+          ]
+        },
+        {
+          "p": "Include utili indicazioni su traffico e collegamenti per aiutarti a pianificare meglio il tuo viaggio."
+        },
+        {
+          "ul": [
+            "SEMPLICE E INTUITIVA"
+          ]
+        },
+        {
+          "p": "Non richiede impostazioni complesse o registrazione. Basta aprire l'app e la mappa è pronta all'uso all'istante."
+        },
+        {
+          "ul": [
+            "PROGETTATA PER I VIAGGIATORI"
+          ]
+        },
+        {
+          "p": "Indispensabile per chiunque visiti la storica città di Lahore. Naviga in rete con sicurezza."
+        },
+        {
+          "p": "Scaricalo ora gratuitamente e inizia il tuo viaggio a Lahore!"
+        }
+      ],
+      "download": "500+",
+      "aggiornata": "2026-01-23",
+      "uscita": "2026-01-23",
+      "annunci": true,
+      "acquisti": false,
+      "novita": [
+        "🚀 First official release!",
+        "🗺️ Complete Lahore Metro Map (Orange Line).",
+        "🚦 Traffic and transport info.",
+        "📶 Works 100% offline (no internet needed).",
+        "🔍 High-resolution zoom."
+      ],
+      "aggiornato": "2026-10-23",
+      "icona": "image/app/lahore.png",
+      "schermate": [
+        "image/app/lahore-1.jpg",
+        "image/app/lahore-2.jpg",
+        "image/app/lahore-3.jpg",
+        "image/app/lahore-4.jpg",
+        "image/app/lahore-5.jpg",
+        "image/app/lahore-6.jpg"
+      ]
+    }
+  },
+  {
+    "id": 90,
+    "title": "Minneapolis Metro Map",
+    "date": "2026-01-23",
+    "image": "image/app/minneapolis-2.jpg",
+    "url": "https://play.google.com/store/apps/details?id=com.ollerom.minneapolis",
+    "alt": "Schermata dell'app Minneapolis Metro Map: la mappa con le strade e i punti di interesse.",
+    "caption": "Apri su Google Play",
+    "description": "Mappa della metropolitana di Minneapolis: linee della metropolitana leggera. Offline, zoom ad alta risoluzione e traffico. Gratis.",
+    "publisher": "Ollerom Apps",
+    "lang": "it",
+    "type": "App",
+    "category": "App Trasporti",
+    "famiglia": "App",
+    "play": {
+      "pacchetto": "com.ollerom.minneapolis",
+      "nome": "Minneapolis Metro Map",
+      "breve": "Mappa della metropolitana di Minneapolis: linee della metropolitana leggera. Offline, zoom ad alta risoluzione e traffico. Gratis.",
+      "pegi": "PEGI 3",
+      "sviluppatore": "Ollerom Apps",
+      "sito": "https://ollerom.github.io/",
+      "prezzo": "Gratis",
+      "descrizione": [
+        {
+          "p": "Esplora Minneapolis con l'applicazione mappe più comoda e facile da usare. Che tu sia un turista in visita alle Twin Cities o un residente locale, questa app è la tua compagna di viaggio perfetta per orientarti nel sistema di trasporto pubblico cittadino (Metro Transit Light Rail)."
+        },
+        {
+          "ul": [
+            "100% OFFLINE"
+          ]
+        },
+        {
+          "p": "Funziona completamente senza connessione internet. Risparmia dati e batteria mentre esplori la città. Nessun costo di roaming!"
+        },
+        {
+          "ul": [
+            "ZOOM AD ALTA RISOLUZIONE"
+          ]
+        },
+        {
+          "p": "Mappa cristallina delle linee della metropolitana di Minneapolis (linee blu e verde). Ingrandisci per vedere il nome di ogni stazione e i dettagli dei collegamenti senza perdere qualità."
+        },
+        {
+          "ul": [
+            "INFORMAZIONI SU TRAFFICO E TRASPORTI"
+          ]
+        },
+        {
+          "p": "Include utili indicazioni su traffico e collegamenti per aiutarti a pianificare al meglio il tuo viaggio."
+        },
+        {
+          "ul": [
+            "SEMPLICE E INTUITIVA"
+          ]
+        },
+        {
+          "p": "Non richiede impostazioni complesse o registrazione. Basta aprire l'app e la mappa è pronta all'uso all'istante."
+        },
+        {
+          "ul": [
+            "PROGETTATO PER I VIAGGIATORI"
+          ]
+        },
+        {
+          "p": "Indispensabile per chiunque visiti Minneapolis e Saint Paul. Naviga in tutta sicurezza."
+        },
+        {
+          "p": "Scaricalo ora gratuitamente e inizia il tuo viaggio a Minneapolis!"
+        }
+      ],
+      "download": "10+",
+      "aggiornata": "2026-01-24",
+      "uscita": "2026-01-23",
+      "annunci": true,
+      "acquisti": false,
+      "novita": [
+        "🚀 First official release!",
+        "🗺️ Complete Minneapolis Metro Map (Light Rail).",
+        "🚦 Traffic and transport info.",
+        "📶 Works 100% offline (no internet needed).",
+        "🔍 High-resolution zoom."
+      ],
+      "aggiornato": "2026-10-23",
+      "icona": "image/app/minneapolis.png",
+      "schermate": [
+        "image/app/minneapolis-1.jpg",
+        "image/app/minneapolis-2.jpg",
+        "image/app/minneapolis-3.jpg",
+        "image/app/minneapolis-4.jpg",
+        "image/app/minneapolis-5.jpg",
+        "image/app/minneapolis-6.jpg"
+      ]
+    }
+  },
+  {
+    "id": 91,
+    "title": "Casablanca Metro Map",
+    "date": "2026-01-23",
+    "image": "image/app/casablanca-2.jpg",
+    "url": "https://play.google.com/store/apps/details?id=com.ollerom.casablanca",
+    "alt": "Schermata dell'app Casablanca Metro Map: la mappa con le strade e i punti di interesse.",
+    "caption": "Apri su Google Play",
+    "description": "Mappa di Casablanca: tram e treno. Offline, zoom ad alta risoluzione e traffico. Gratis.",
+    "publisher": "Ollerom Apps",
+    "lang": "it",
+    "type": "App",
+    "category": "App Trasporti",
+    "famiglia": "App",
+    "play": {
+      "pacchetto": "com.ollerom.casablanca",
+      "nome": "Casablanca Metro Map",
+      "breve": "Mappa di Casablanca: tram e treno. Offline, zoom ad alta risoluzione e traffico. Gratis.",
+      "pegi": "PEGI 3",
+      "sviluppatore": "Ollerom Apps",
+      "sito": "https://ollerom.github.io/",
+      "prezzo": "Gratis",
+      "descrizione": [
+        {
+          "p": "Esplora Casablanca con l'applicazione mappe più comoda e facile da usare. Che tu sia un turista in visita in Marocco o un residente locale, questa app è la tua compagna di viaggio perfetta per orientarti nel sistema di trasporto pubblico della città (tram e treno)."
+        },
+        {
+          "ul": [
+            "100% OFFLINE"
+          ]
+        },
+        {
+          "p": "Funziona completamente senza connessione internet. Risparmia dati e batteria mentre esplori la città. Nessun costo di roaming!"
+        },
+        {
+          "ul": [
+            "ZOOM AD ALTA RISOLUZIONE"
+          ]
+        },
+        {
+          "p": "Mappa cristallina delle linee di trasporto di Casablanca (tram T1, T2). Ingrandisci per vedere il nome di ogni stazione e i dettagli dei collegamenti senza perdere qualità."
+        },
+        {
+          "ul": [
+            "INFORMAZIONI SU TRAFFICO E TRASPORTI"
+          ]
+        },
+        {
+          "p": "Include utili indicazioni su traffico e collegamenti per aiutarti a pianificare meglio il tuo viaggio."
+        },
+        {
+          "ul": [
+            "SEMPLICE E INTUITIVA"
+          ]
+        },
+        {
+          "p": "Non richiede impostazioni complesse o registrazione. Basta aprire l'app e la mappa è pronta all'uso all'istante."
+        },
+        {
+          "ul": [
+            "PROGETTATA PER I VIAGGIATORI"
+          ]
+        },
+        {
+          "p": "Indispensabile per chiunque visiti la vivace città di Casablanca. Naviga in rete in tutta sicurezza."
+        },
+        {
+          "p": "Scaricalo ora gratuitamente e inizia il tuo viaggio a Casablanca!"
+        }
+      ],
+      "download": "50+",
+      "aggiornata": "2026-01-23",
+      "uscita": "2026-01-23",
+      "annunci": true,
+      "acquisti": false,
+      "novita": [
+        "🚀 First official release!",
+        "🗺️ Complete Casablanca Map (Tramway & Train).",
+        "🚦 Traffic and transport info.",
+        "📶 Works 100% offline (no internet needed).",
+        "🔍 High-resolution zoom."
+      ],
+      "aggiornato": "2026-10-23",
+      "icona": "image/app/casablanca.png",
+      "schermate": [
+        "image/app/casablanca-1.jpg",
+        "image/app/casablanca-2.jpg",
+        "image/app/casablanca-3.jpg",
+        "image/app/casablanca-4.jpg",
+        "image/app/casablanca-5.jpg",
+        "image/app/casablanca-6.jpg"
+      ]
+    }
+  },
+  {
+    "id": 92,
+    "title": "Accra Meteo Map",
+    "date": "2026-01-23",
+    "image": "image/app/accra-2.jpg",
+    "url": "https://play.google.com/store/apps/details?id=com.ollerom.accra",
+    "alt": "Schermata dell'app Accra Meteo Map: la mappa con le strade e i punti di interesse.",
+    "caption": "Apri su Google Play",
+    "description": "Mappa di Accra: TroTro e percorsi degli autobus. Offline, zoom ad alta risoluzione e informazioni sul traffico. Gratis.",
+    "publisher": "Ollerom Apps",
+    "lang": "it",
+    "type": "App",
+    "category": "App Trasporti",
+    "famiglia": "App",
+    "play": {
+      "pacchetto": "com.ollerom.accra",
+      "nome": "Accra Meteo Map",
+      "breve": "Mappa di Accra: TroTro e percorsi degli autobus. Offline, zoom ad alta risoluzione e informazioni sul traffico. Gratis.",
+      "pegi": "PEGI 3",
+      "sviluppatore": "Ollerom Apps",
+      "sito": "https://ollerom.github.io/",
+      "prezzo": "Gratis",
+      "descrizione": [
+        {
+          "p": "Esplora Accra con l'applicazione mappe più comoda e facile da usare. Che tu sia un turista in visita in Ghana o un residente locale, questa app è la tua compagna di viaggio perfetta per orientarti nel sistema di trasporto pubblico della città."
+        },
+        {
+          "ul": [
+            "100% OFFLINE"
+          ]
+        },
+        {
+          "p": "Funziona completamente senza connessione internet. Risparmia dati e batteria mentre esplori la città. Nessun costo di roaming!"
+        },
+        {
+          "ul": [
+            "ZOOM AD ALTA RISOLUZIONE"
+          ]
+        },
+        {
+          "p": "Mappa cristallina delle principali linee di Accra. Ingrandisci per vedere ogni dettaglio senza perdere qualità."
+        },
+        {
+          "ul": [
+            "INFORMAZIONI SU TRAFFICO E TRASPORTI"
+          ]
+        },
+        {
+          "p": "Include indicazioni utili su traffico e collegamenti di trasporto (linee TroTro, fermate degli autobus) per aiutarti a pianificare meglio il tuo viaggio."
+        },
+        {
+          "ul": [
+            "SEMPLICE E INTUITIVA"
+          ]
+        },
+        {
+          "p": "Non richiede impostazioni complesse o registrazione. Basta aprire l'app e la mappa è pronta all'uso all'istante."
+        },
+        {
+          "ul": [
+            "PROGETTATA PER I VIAGGIATORI"
+          ]
+        },
+        {
+          "p": "Indispensabile per chiunque visiti la vivace città di Accra. Naviga in rete in tutta sicurezza."
+        },
+        {
+          "p": "Scaricalo ora gratuitamente e inizia il tuo viaggio ad Accra!"
+        }
+      ],
+      "download": "10+",
+      "aggiornata": "2026-01-23",
+      "uscita": "2026-01-23",
+      "annunci": true,
+      "acquisti": false,
+      "novita": [
+        "🚀 First official release!",
+        "🗺️ Complete Accra Map.",
+        "🚦 Traffic and transport info.",
+        "📶 Works 100% offline (no internet needed).",
+        "🔍 High-resolution zoom."
+      ],
+      "aggiornato": "2026-10-23",
+      "icona": "image/app/accra.png",
+      "schermate": [
+        "image/app/accra-1.jpg",
+        "image/app/accra-2.jpg",
+        "image/app/accra-3.jpg",
+        "image/app/accra-4.jpg",
+        "image/app/accra-5.jpg",
+        "image/app/accra-6.jpg"
+      ]
+    }
+  },
+  {
+    "id": 88,
+    "title": "Singapore Metro Map",
+    "date": "2026-01-24",
+    "image": "image/app/singapore-2.jpg",
+    "url": "https://play.google.com/store/apps/details?id=com.ollerom.singapore",
+    "alt": "Schermata dell'app Singapore Metro Map: la mappa con le strade e i punti di interesse.",
+    "caption": "Apri su Google Play",
+    "description": "Mappa MRT e LRT di Singapore. Offline, zoom ad alta risoluzione e traffico. Gratis.",
+    "publisher": "Ollerom Apps",
+    "lang": "it",
+    "type": "App",
+    "category": "App Trasporti",
+    "famiglia": "App",
+    "play": {
+      "pacchetto": "com.ollerom.singapore",
+      "nome": "Singapore Metro Map",
+      "breve": "Mappa MRT e LRT di Singapore. Offline, zoom ad alta risoluzione e traffico. Gratis.",
+      "pegi": "PEGI 3",
+      "sviluppatore": "Ollerom Apps",
+      "sito": "https://ollerom.github.io/",
+      "prezzo": "Gratis",
+      "descrizione": [
+        {
+          "p": "Esplora Singapore con l'applicazione mappe più comoda e facile da usare. Che tu sia un turista in visita alla Città del Leone o un residente locale, questa app è la tua compagna di viaggio perfetta per orientarti nel sistema di trasporto pubblico cittadino (MRT e LRT)."
+        },
+        {
+          "ul": [
+            "100% OFFLINE"
+          ]
+        },
+        {
+          "p": "Funziona completamente senza connessione internet. Risparmia dati e batteria mentre esplori la città. Nessun costo di roaming!"
+        },
+        {
+          "ul": [
+            "ZOOM AD ALTA RISOLUZIONE"
+          ]
+        },
+        {
+          "p": "Mappa cristallina delle linee MRT e LRT di Singapore. Ingrandisci per vedere il nome di ogni stazione e i dettagli dei collegamenti senza perdere qualità."
+        },
+        {
+          "ul": [
+            "INFORMAZIONI SU TRAFFICO E TRASPORTI"
+          ]
+        },
+        {
+          "p": "Include utili indicazioni su traffico e collegamenti per aiutarti a pianificare meglio il tuo viaggio."
+        },
+        {
+          "ul": [
+            "SEMPLICE E INTUITIVA"
+          ]
+        },
+        {
+          "p": "Non richiede impostazioni complesse o registrazione. Basta aprire l'app e la mappa è pronta all'uso all'istante."
+        },
+        {
+          "ul": [
+            "PROGETTATA PER I VIAGGIATORI"
+          ]
+        },
+        {
+          "p": "Indispensabile per chiunque visiti Singapore. Naviga nella rete in tutta sicurezza."
+        },
+        {
+          "p": "Scaricalo ora gratuitamente e inizia il tuo viaggio a Singapore!"
+        }
+      ],
+      "download": "10+",
+      "aggiornata": "2026-01-24",
+      "uscita": "2026-01-24",
+      "annunci": true,
+      "acquisti": false,
+      "novita": [
+        "🚀 First official release!",
+        "🗺️ Complete Singapore MRT & LRT Map.",
+        "🚦 Traffic and transport info.",
+        "📶 Works 100% offline (no internet needed).",
+        "🔍 High-resolution zoom."
+      ],
+      "aggiornato": "2026-10-23",
+      "icona": "image/app/singapore.png",
+      "schermate": [
+        "image/app/singapore-1.jpg",
+        "image/app/singapore-2.jpg",
+        "image/app/singapore-3.jpg",
+        "image/app/singapore-4.jpg",
+        "image/app/singapore-5.jpg",
+        "image/app/singapore-6.jpg"
+      ]
+    }
+  },
+  {
+    "id": 76,
+    "title": "Sydney Metro Map",
+    "date": "2026-01-27",
+    "image": "image/app/sydney-2.jpg",
+    "url": "https://play.google.com/store/apps/details?id=com.ollerom.sydney",
+    "alt": "Schermata dell'app Sydney Metro Map: la mappa con le strade e i punti di interesse.",
+    "caption": "Apri su Google Play",
+    "description": "Mappa della metropolitana, dei treni e dei traghetti di Sydney. Offline, zoom ad alta risoluzione e traffico. Gratis.",
+    "publisher": "Ollerom Apps",
+    "lang": "it",
+    "type": "App",
+    "category": "App Trasporti",
+    "famiglia": "App",
+    "play": {
+      "pacchetto": "com.ollerom.sydney",
+      "nome": "Sydney Metro Map",
+      "breve": "Mappa della metropolitana, dei treni e dei traghetti di Sydney. Offline, zoom ad alta risoluzione e traffico. Gratis.",
+      "pegi": "PEGI 3",
+      "sviluppatore": "Ollerom Apps",
+      "sito": "https://ollerom.github.io/",
+      "prezzo": "Gratis",
+      "descrizione": [
+        {
+          "p": "Esplora Sydney con l'applicazione mappe più comoda e facile da usare. Che tu sia un turista in visita alla Harbour City o un residente locale, questa app è la tua compagna di viaggio perfetta per orientarti nel sistema di trasporto pubblico cittadino (metropolitana, treni e traghetti)."
+        },
+        {
+          "ul": [
+            "100% OFFLINE"
+          ]
+        },
+        {
+          "p": "Funziona completamente senza connessione internet. Risparmia dati e batteria mentre esplori la città. Nessun costo di roaming!"
+        },
+        {
+          "ul": [
+            "ZOOM AD ALTA RISOLUZIONE"
+          ]
+        },
+        {
+          "p": "Mappa cristallina della rete di trasporto di Sydney. Ingrandisci per vedere ogni nome di stazione e i dettagli dei collegamenti senza perdere qualità."
+        },
+        {
+          "ul": [
+            "INFORMAZIONI SU TRAFFICO E TRASPORTI"
+          ]
+        },
+        {
+          "p": "Include utili indicazioni su traffico e collegamenti per aiutarti a pianificare meglio il tuo viaggio."
+        },
+        {
+          "ul": [
+            "SEMPLICE E INTUITIVA"
+          ]
+        },
+        {
+          "p": "Non richiede impostazioni complesse o registrazione. Basta aprire l'app e la mappa è pronta all'uso all'istante."
+        },
+        {
+          "ul": [
+            ""
+          ]
+        },
+        {
+          "h": "🇦🇺 GUIDA DI VIAGGIO E CONSIGLI DI SYDNEY"
+        },
+        {
+          "p": "🎫 Biglietti e pagamenti"
+        },
+        {
+          "ul": [
+            "Carta Opal e Contactless: non serve un biglietto cartaceo. Basta avvicinare la carta di credito/debito Contactless o il telefono (Apple/Google Pay) ai lettori gialli.",
+            "⚠️ Importante: Tap On e Tap Off: avvicina sempre la carta all'inizio e alla fine del viaggio (treni, metropolitana e traghetti). Se dimentichi di passare la carta, ti verrà addebitata la tariffa massima!"
+          ]
+        },
+        {
+          "p": "🚇 Come muoversi"
+        },
+        {
+          "ul": [
+            "Metropolitana di Sydney (M): i nuovi treni completamente automatizzati e senza conducente. Veloci e frequenti.",
+            "Treni di Sydney (T): gli iconici treni a due piani. Ottimi per ammirare la città dal ponte superiore!",
+            "Traghetti di Sydney (F): il modo più panoramico di viaggiare. Il viaggio da Circular Quay a Manly è un must per ogni visitatore. 🚢"
+          ]
+        },
+        {
+          "p": "📍 Fermate principali"
+        },
+        {
+          "ul": [
+            "Circular Quay: per l'Opera House, l'Harbour Bridge e tutti i moli dei traghetti.",
+            "Stazione Centrale: il principale snodo che collega tutte le linee urbane e regionali.",
+            "Municipio: il cuore del quartiere dello shopping e il Queen Victoria Building."
+          ]
+        },
+        {
+          "p": "🕰️ Macchina del tempo di Sydney: 1909"
+        },
+        {
+          "p": "Esplora Sydney com'era oltre un secolo fa con la nostra \"Modalità Storia\"."
+        },
+        {
+          "ul": [
+            "Niente Harbour Bridge: guarda il porto: all'epoca era attraversato solo dai traghetti!",
+            "Fort Macquarie: dove oggi sorge l'Opera House, un tempo c'era un deposito di tram fortificato."
+          ]
+        },
+        {
+          "p": "Scaricalo ora gratuitamente e inizia il tuo viaggio a Sydney!"
+        }
+      ],
+      "download": "100+",
+      "aggiornata": "2026-01-27",
+      "uscita": "2026-01-27",
+      "annunci": true,
+      "acquisti": false,
+      "novita": [
+        "🚀 First official release!",
+        "🗺️ Complete Sydney Metro, Train & Ferry Map.",
+        "💡 New: Info & Tips section with travel guide.",
+        "🚦 Traffic and transport info.",
+        "📶 Works 100% offline (no internet needed).",
+        "🔍 High-resolution zoom."
+      ],
+      "aggiornato": "2026-10-23",
+      "icona": "image/app/sydney.png",
+      "schermate": [
+        "image/app/sydney-1.jpg",
+        "image/app/sydney-2.jpg",
+        "image/app/sydney-3.jpg",
+        "image/app/sydney-4.jpg",
+        "image/app/sydney-5.jpg",
+        "image/app/sydney-6.jpg"
+      ]
+    }
+  },
+  {
+    "id": 79,
+    "title": "Medellin Transit Map",
+    "date": "2026-01-29",
+    "image": "image/app/medellin-2.jpg",
+    "url": "https://play.google.com/store/apps/details?id=com.ollerom.medellin",
+    "alt": "Schermata dell'app Medellin Transit Map: la mappa con le strade e i punti di interesse.",
+    "caption": "Apri su Google Play",
+    "description": "Mappa dei trasporti di Medellín. Offline, zoom ad alta risoluzione e guida turistica.",
+    "publisher": "Ollerom Apps",
+    "lang": "it",
+    "type": "App",
+    "category": "App Trasporti",
+    "famiglia": "App",
+    "play": {
+      "pacchetto": "com.ollerom.medellin",
+      "nome": "Medellin Transit Map",
+      "breve": "Mappa dei trasporti di Medellín. Offline, zoom ad alta risoluzione e guida turistica.",
+      "pegi": "PEGI 3",
+      "sviluppatore": "Ollerom Apps",
+      "sito": "https://ollerom.github.io/",
+      "prezzo": "Gratis",
+      "descrizione": [
+        {
+          "p": "Esplora Medellín con l'applicazione mappe più comoda e facile da usare. Che tu sia un turista in visita alla Città dell'Eterna Primavera o un residente locale, questa app è la tua compagna di viaggio perfetta per navigare nel rinomato sistema di trasporto pubblico cittadino (SITVA)."
+        },
+        {
+          "ul": [
+            "100% OFFLINE"
+          ]
+        },
+        {
+          "p": "Funziona completamente senza connessione internet. Risparmia dati e batteria mentre esplori la città. Nessun costo di roaming!"
+        },
+        {
+          "ul": [
+            "ZOOM AD ALTA RISOLUZIONE"
+          ]
+        },
+        {
+          "p": "Mappa cristallina delle linee di trasporto pubblico, Metrocable e tram di Medellín. Ingrandisci per vedere il nome di ogni stazione e i dettagli dei collegamenti senza perdere qualità."
+        },
+        {
+          "ul": [
+            "INFORMAZIONI SU TRAFFICO E TRASPORTI"
+          ]
+        },
+        {
+          "p": "Include utili indicazioni su traffico e collegamenti per aiutarti a pianificare al meglio il tuo viaggio."
+        },
+        {
+          "ul": [
+            "SEMPLICE E INTUITIVA"
+          ]
+        },
+        {
+          "p": "Non sono necessarie impostazioni complesse o registrazioni. Basta aprire l'app e la mappa è pronta all'uso all'istante."
+        },
+        {
+          "ul": [
+            ""
+          ]
+        },
+        {
+          "h": "🇨🇴 GUIDA AI TRASPORTI E AI VIAGGI DI MEDELLÍN 2026"
+        },
+        {
+          "p": "🚇 La Metropolitana (SITVA)"
+        },
+        {
+          "p": "Medellín è l'unica città della Colombia dotata di una metropolitana. È un modello di integrazione di fama mondiale:"
+        },
+        {
+          "ul": [
+            "Linee A e B: le principali linee ferroviarie pesanti. La Linea A corre da nord a sud lungo il corridoio fluviale.",
+            "Metrocable (🚠): funivie integrate che collegano i quartieri collinari. La Linea L vi porta allo splendido Parco Arví (richiede una tariffa speciale).",
+            "Tram (🚃): un moderno sistema di metropolitana leggera che attraversa il centro storico (Linea T)."
+          ]
+        },
+        {
+          "p": "🎫 Biglietti e pagamenti"
+        },
+        {
+          "ul": [
+            "Carta Cívica: questa è la smart card ricaricabile essenziale. Potete acquistarla e ricaricarla nelle stazioni principali.",
+            "Metro Cultura: noterete che le stazioni sono pulitissime. A Medellín, la metropolitana è un simbolo di orgoglio. Si prega di rispettare la regola del \"vietato mangiare o bere\" a bordo! 🚫🍔"
+          ]
+        },
+        {
+          "p": "🎨 Omaggio al Maestro Fernando Botero"
+        },
+        {
+          "p": "Medellín è la città natale del più grande artista colombiano. Il tuo viaggio non è completo senza visitare:"
+        },
+        {
+          "ul": [
+            "Plaza Botero: esci alla stazione Parque Berrío. Troverai 23 monumentali sculture in bronzo donate dal Maestro alla sua città natale.",
+            "Consiglio: è una tappa obbligata per ammirare lo stile \"voluminoso\" che ha reso Botero un'icona mondiale. 🎨✨"
+          ]
+        },
+        {
+          "p": "🕰️ Macchina del tempo: Medellín 1889"
+        },
+        {
+          "p": "Esplora la nostra sezione storica per visualizzare il \"Plano de Medellín de 1889\"."
+        },
+        {
+          "ul": [
+            "Curiosità: questa mappa mostra una città di soli 40.000 abitanti (oggi sono quasi 3 milioni!).",
+            "Fonte: Wikimedia Commons / Archivio storico di Medellín."
+          ]
+        },
+        {
+          "p": "🚠 Gite di un giorno (Dintorni)"
+        },
+        {
+          "p": "Per esplorare gemme vicine come Guatapé o Jardín, usa i terminal degli autobus:"
+        },
+        {
+          "ul": [
+            "Terminal Norte: Collegato alla stazione della metropolitana Caribe.",
+            "Terminal Sur: Vicino alla stazione della metropolitana Poblado (è necessario un breve tragitto in taxi o in autobus)."
+          ]
+        },
+        {
+          "p": "Scarica ora gratuitamente e inizia il tuo viaggio a Medellín!"
+        }
+      ],
+      "download": "500+",
+      "aggiornata": "2026-01-29",
+      "uscita": "2026-01-29",
+      "annunci": true,
+      "acquisti": false,
+      "novita": [
+        "🚀 First official release!",
+        "🗺️ Complete Medellín Metro, Metrocable & Tram Map.",
+        "💡 New: Info & Tips section with travel guide.",
+        "🚦 Traffic and transport info.",
+        "📶 Works 100% offline (no internet needed).",
+        "🔍 High-resolution zoom."
+      ],
+      "aggiornato": "2026-10-23",
+      "icona": "image/app/medellin.png",
+      "schermate": [
+        "image/app/medellin-1.jpg",
+        "image/app/medellin-2.jpg",
+        "image/app/medellin-3.jpg",
+        "image/app/medellin-4.jpg",
+        "image/app/medellin-5.jpg",
+        "image/app/medellin-6.jpg"
+      ]
+    }
+  },
+  {
+    "id": 87,
+    "title": "Tokyo Metro Map",
+    "date": "2026-01-29",
+    "image": "image/app/tokyo-2.jpg",
+    "url": "https://play.google.com/store/apps/details?id=com.ollerom.tokyo",
+    "alt": "Schermata dell'app Tokyo Metro Map: la mappa con le strade e i punti di interesse.",
+    "caption": "Apri su Google Play",
+    "description": "Mappa della metropolitana di Tokyo e della stazione JR Yamanote. Guida turistica offline, zoom ad alta risoluzione.",
+    "publisher": "Ollerom Apps",
+    "lang": "it",
+    "type": "App",
+    "category": "App Trasporti",
+    "famiglia": "App",
+    "play": {
+      "pacchetto": "com.ollerom.tokyo",
+      "nome": "Tokyo Metro Map",
+      "breve": "Mappa della metropolitana di Tokyo e della stazione JR Yamanote. Guida turistica offline, zoom ad alta risoluzione.",
+      "pegi": "PEGI 3",
+      "sviluppatore": "Ollerom Apps",
+      "sito": "https://ollerom.github.io/",
+      "prezzo": "Gratis",
+      "descrizione": [
+        {
+          "p": "Esplora Tokyo con l'applicazione mappe più comoda e facile da usare. Che tu sia un turista in visita in Giappone o un residente locale, questa app è la compagna di viaggio perfetta per esplorare il leggendario sistema di trasporto pubblico della città."
+        },
+        {
+          "ul": [
+            "100% OFFLINE"
+          ]
+        },
+        {
+          "p": "Funziona completamente senza connessione internet. Risparmia dati e batteria mentre esplori la città. Nessun costo di roaming!"
+        },
+        {
+          "ul": [
+            "ZOOM AD ALTA RISOLUZIONE"
+          ]
+        },
+        {
+          "p": "Mappa cristallina della metropolitana di Tokyo, della metropolitana Toei e delle linee JR. Ingrandisci per vedere il nome di ogni stazione e i dettagli dei collegamenti senza perdere qualità."
+        },
+        {
+          "ul": [
+            "INFORMAZIONI SU TRAFFICO E TRASPORTI"
+          ]
+        },
+        {
+          "p": "Include utili indicazioni su traffico e collegamenti per aiutarti a pianificare al meglio il tuo viaggio."
+        },
+        {
+          "ul": [
+            "SEMPLICE E INTUITIVA"
+          ]
+        },
+        {
+          "p": "Non sono necessarie impostazioni complesse o registrazioni. Basta aprire l'app e la mappa è subito pronta all'uso."
+        },
+        {
+          "ul": [
+            ""
+          ]
+        },
+        {
+          "h": "🇯🇵 METROPOLITANA DI TOKYO E GUIDA TURISTICA 2026"
+        },
+        {
+          "p": "🚇 La rete"
+        },
+        {
+          "p": "La metropolitana di Tokyo è leggendaria. È composta da due operatori principali:"
+        },
+        {
+          "ul": [
+            "Metropolitana di Tokyo (9 linee)",
+            "Metropolitana Toei (4 linee)"
+          ]
+        },
+        {
+          "p": "+ la linea JR Yamanote (anello verde) che collega i principali snodi."
+        },
+        {
+          "p": "🎫 Biglietti e tessere ricaricabili"
+        },
+        {
+          "ul": [
+            "Suica / Pasmo: queste tessere ricaricabili sono essenziali. Non è necessario acquistare biglietti singoli. Basta passarle e estrarle.",
+            "Biglietti giornalieri: disponibili per i turisti (biglietto della metropolitana di Tokyo) che offrono viaggi illimitati sulle linee Metro e Toei."
+          ]
+        },
+        {
+          "p": "⚠️ Galateo in treno"
+        },
+        {
+          "ul": [
+            "Silenzio: parlare al telefono è malvisto. Mantenete un tono di voce basso.",
+            "Code: mettetevi sempre in fila alle indicazioni sulla banchina.",
+            "Ora di punta: evitate, se possibile, le 7:30 - 9:30. Diventa incredibilmente affollato! 🚃"
+          ]
+        },
+        {
+          "p": "📍 Le migliori tappe"
+        },
+        {
+          "ul": [
+            "Shibuya: famosa per l'incrocio pedonale (uscita Hachiko).",
+            "Asakusa: visita il tempio Senso-ji (linea Ginza).",
+            "Shinjuku: la stazione ferroviaria più trafficata del mondo. Una città nella città.",
+            "Akihabara: il centro della cultura anime ed elettronica."
+          ]
+        },
+        {
+          "p": "Scarica ora gratuitamente e inizia il tuo viaggio a Tokyo!"
+        }
+      ],
+      "download": "50+",
+      "aggiornata": "2026-01-29",
+      "uscita": "2026-01-29",
+      "annunci": true,
+      "acquisti": false,
+      "novita": [
+        "🚀 First official release!",
+        "🗺️ Complete Tokyo Metro, Toei Subway & JR Map.",
+        "💡 New: Info & Tips section with travel guide.",
+        "🚦 Traffic and transport info.",
+        "📶 Works 100% offline (no internet needed).",
+        "🔍 High-resolution zoom."
+      ],
+      "aggiornato": "2026-10-23",
+      "icona": "image/app/tokyo.png",
+      "schermate": [
+        "image/app/tokyo-1.jpg",
+        "image/app/tokyo-2.jpg",
+        "image/app/tokyo-3.jpg",
+        "image/app/tokyo-4.jpg",
+        "image/app/tokyo-5.jpg",
+        "image/app/tokyo-6.jpg"
+      ]
+    }
+  },
+  {
+    "id": 94,
+    "title": "Seoul Metro Map",
+    "date": "2026-01-30",
+    "image": "image/app/seoul-2.jpg",
+    "url": "https://play.google.com/store/apps/details?id=com.ollerom.seoul",
+    "alt": "Schermata dell'app Seoul Metro Map: la mappa con le strade e i punti di interesse.",
+    "caption": "Apri su Google Play",
+    "description": "Metropolitana di Seul e mappa AREX. Guida turistica offline, zoom ad alta risoluzione.",
+    "publisher": "Ollerom Apps",
+    "lang": "it",
+    "type": "App",
+    "category": "App Trasporti",
+    "famiglia": "App",
+    "play": {
+      "pacchetto": "com.ollerom.seoul",
+      "nome": "Seoul Metro Map",
+      "breve": "Metropolitana di Seul e mappa AREX. Guida turistica offline, zoom ad alta risoluzione.",
+      "pegi": "PEGI 3",
+      "sviluppatore": "Ollerom Apps",
+      "sito": "https://ollerom.github.io",
+      "prezzo": "Gratis",
+      "descrizione": [
+        {
+          "p": "Esplora Seul con l'applicazione mappe più comoda e facile da usare. Che tu sia un turista in visita in Corea del Sud o un residente locale, questa app è la compagna di viaggio perfetta per orientarti nell'avanzato sistema di trasporto pubblico della città."
+        },
+        {
+          "ul": [
+            "100% OFFLINE"
+          ]
+        },
+        {
+          "p": "Funziona completamente senza connessione internet. Risparmia dati e batteria mentre esplori la città. Nessun costo di roaming!"
+        },
+        {
+          "ul": [
+            "ZOOM AD ALTA RISOLUZIONE"
+          ]
+        },
+        {
+          "p": "Mappa cristallina della metropolitana di Seul. Ingrandisci per vedere il nome di ogni stazione e i dettagli dei collegamenti senza perdere qualità."
+        },
+        {
+          "ul": [
+            "INFORMAZIONI SU TRAFFICO E TRASPORTI"
+          ]
+        },
+        {
+          "p": "Include utili indicazioni su traffico e collegamenti per aiutarti a pianificare al meglio il tuo viaggio."
+        },
+        {
+          "ul": [
+            "SEMPLICE E INTUITIVA"
+          ]
+        },
+        {
+          "p": "Non sono necessarie impostazioni complesse o registrazioni. Basta aprire l'app e la mappa è subito pronta all'uso."
+        },
+        {
+          "ul": [
+            ""
+          ]
+        },
+        {
+          "h": "🇰🇷 METROPOLITANA DI SEUL E GUIDA DI VIAGGIO 2026"
+        },
+        {
+          "p": "🚇 La rete"
+        },
+        {
+          "p": "La metropolitana metropolitana di Seul è una delle più efficienti al mondo."
+        },
+        {
+          "ul": [
+            "Linea 2 (Green Loop): collega le principali aree come Gangnam, Hongdae e il Municipio.",
+            "Linea 1 (Blu scuro): la linea più antica, che collega Seul a Incheon e Suwon.",
+            "AREX: l'Airport Railroad Express che collega l'aeroporto internazionale di Incheon alla stazione di Seul."
+          ]
+        },
+        {
+          "p": "🎫 Biglietti e carte"
+        },
+        {
+          "ul": [
+            "Carta T-money: la carta ricaricabile essenziale per i trasporti pubblici. Usala per metropolitana, autobus e persino taxi o minimarket.",
+            "Biglietto di sola andata: richiede un deposito (500 KRW) che puoi ritirare al \"Deposit Refund Device\" dopo il viaggio."
+          ]
+        },
+        {
+          "p": "⚠️ Etichetta"
+        },
+        {
+          "ul": [
+            "Posti a sedere prioritari: le estremità della carrozza sono riservate ad anziani/donne incinte. Non sederti lì, anche se sono vuoti!",
+            "Posti Rosa: Riservati specificamente alle donne incinte.",
+            "Silenzio: Mantieni un tono di voce basso e metti il ​​telefono in modalità silenziosa."
+          ]
+        },
+        {
+          "p": "📍 Fermate principali"
+        },
+        {
+          "ul": [
+            "Myeongdong (Linea 4): Paradiso dello shopping e dello street food.",
+            "Gangnam (Linea 2): Grattacieli moderni e vita notturna.",
+            "Gyeongbokgung (Linea 3): Il principale palazzo reale.",
+            "Hongik University (Linea 2): Cultura giovanile, musica indie e moda."
+          ]
+        },
+        {
+          "p": "Scarica ora gratuitamente e inizia il tuo viaggio a Seul!"
+        }
+      ],
+      "download": "50+",
+      "aggiornata": "2026-01-30",
+      "uscita": "2026-01-30",
+      "annunci": true,
+      "acquisti": false,
+      "novita": [
+        "🚀 First official release!",
+        "🗺️ Complete Seoul Metro & AREX Map.",
+        "💡 New: Info & Tips section with travel guide.",
+        "🚦 Traffic and transport info.",
+        "📶 Works 100% offline (no internet needed).",
+        "🔍 High-resolution zoom."
+      ],
+      "aggiornato": "2026-10-23",
+      "icona": "image/app/seoul.png",
+      "schermate": [
+        "image/app/seoul-1.jpg",
+        "image/app/seoul-2.jpg",
+        "image/app/seoul-3.jpg",
+        "image/app/seoul-4.jpg",
+        "image/app/seoul-5.jpg",
+        "image/app/seoul-6.jpg"
+      ]
+    }
+  },
+  {
+    "id": 85,
+    "title": "Baku Metro Map",
+    "date": "2026-01-31",
+    "image": "image/app/baku-2.jpg",
+    "url": "https://play.google.com/store/apps/details?id=com.ollerom.baku",
+    "alt": "Schermata dell'app Baku Metro Map: la mappa con le strade e i punti di interesse.",
+    "caption": "Apri su Google Play",
+    "description": "Mappa e guida della metropolitana di Baku. Offline, zoom ad alta risoluzione e consigli di viaggio.",
+    "publisher": "Ollerom Apps",
+    "lang": "it",
+    "type": "App",
+    "category": "App Trasporti",
+    "famiglia": "App",
+    "play": {
+      "pacchetto": "com.ollerom.baku",
+      "nome": "Baku Metro Map",
+      "breve": "Mappa e guida della metropolitana di Baku. Offline, zoom ad alta risoluzione e consigli di viaggio.",
+      "pegi": "PEGI 3",
+      "sviluppatore": "Ollerom Apps",
+      "sito": "https://ollerom.github.io",
+      "prezzo": "Gratis",
+      "descrizione": [
+        {
+          "p": "Esplora Baku con l'applicazione mappe più comoda e facile da usare. Che tu sia un turista in visita in Azerbaigian o un residente locale, questa app è la compagna di viaggio perfetta per esplorare la \"Città dei Venti\" e la sua storica rete metropolitana."
+        },
+        {
+          "ul": [
+            "100% OFFLINE"
+          ]
+        },
+        {
+          "p": "Funziona completamente senza connessione internet. Risparmia dati e batteria mentre esplori la città. Nessun costo di roaming!"
+        },
+        {
+          "ul": [
+            "ZOOM AD ALTA RISOLUZIONE"
+          ]
+        },
+        {
+          "p": "Mappa cristallina delle linee della metropolitana di Baku. Ingrandisci per vedere il nome di ogni stazione e i dettagli dei collegamenti senza perdere qualità."
+        },
+        {
+          "ul": [
+            "INFORMAZIONI SU TRAFFICO E TRASPORTI"
+          ]
+        },
+        {
+          "p": "Include utili indicazioni su traffico e collegamenti per aiutarti a pianificare al meglio il tuo viaggio."
+        },
+        {
+          "ul": [
+            "SEMPLICE E INTUITIVA"
+          ]
+        },
+        {
+          "p": "Non richiede impostazioni complesse o registrazione. Basta aprire l'app e la mappa è pronta all'uso all'istante."
+        },
+        {
+          "ul": [
+            ""
+          ]
+        },
+        {
+          "h": "🇦🇿 METROPOLITANA DI BAKU E GUIDA TURISTICA 2026"
+        },
+        {
+          "p": "🚇 La rete"
+        },
+        {
+          "p": "La metropolitana di Baku è la più antica della regione ed è molto efficiente."
+        },
+        {
+          "ul": [
+            "Linea Rossa: collega Icherisheher (Città Vecchia) a Hazi Aslanov.",
+            "Linea Verde: corre parallela e interseca la Linea Rossa.",
+            "Linea Viola: la linea più recente, che collega Avtovagzal a 8 Noyabr."
+          ]
+        },
+        {
+          "p": "🎫 Biglietti e tessere"
+        },
+        {
+          "ul": [
+            "BakiKart: la tessera unificata per i trasporti pubblici per metropolitana e autobus.",
+            "Acquisto: disponibile presso le biglietterie automatiche in tutte le stazioni.",
+            "Costo: la tessera costa 2 AZN e le corse sono molto convenienti (0,40 AZN)."
+          ]
+        },
+        {
+          "p": "📍 Fermate principali"
+        },
+        {
+          "ul": [
+            "Icherisheher (Linea Rossa): porta d'accesso alla Città Vecchia e alla Torre della Vergine, patrimonio dell'UNESCO.",
+            "28 maggio: snodo centrale e punto di interscambio tra la linea Rossa e la linea Verde.",
+            "Sahil: Vicino al Boulevard e al lungomare del Mar Caspio.",
+            "Nariman Narimanov: Vicino all'iconico Centro Heydar Aliyev."
+          ]
+        },
+        {
+          "p": "Scaricalo ora gratuitamente e inizia il tuo viaggio a Baku!"
+        }
+      ],
+      "download": "100+",
+      "aggiornata": "2026-01-31",
+      "uscita": "2026-01-31",
+      "annunci": true,
+      "acquisti": false,
+      "novita": [
+        "🚀 First official release!",
+        "🗺️ Complete Baku Metro Map.",
+        "💡 New: Info & Tips section with travel guide.",
+        "🚦 Traffic and transport info.",
+        "📶 Works 100% offline (no internet needed).",
+        "🔍 High-resolution zoom."
+      ],
+      "aggiornato": "2026-10-23",
+      "icona": "image/app/baku.png",
+      "schermate": [
+        "image/app/baku-1.jpg",
+        "image/app/baku-2.jpg",
+        "image/app/baku-3.jpg",
+        "image/app/baku-4.jpg",
+        "image/app/baku-5.jpg",
+        "image/app/baku-6.jpg"
+      ]
+    }
+  },
+  {
+    "id": 75,
+    "title": "Yellowstone Park Map",
+    "date": "2026-02-05",
+    "image": "image/app/yellowstone-2.jpg",
+    "url": "https://play.google.com/store/apps/details?id=com.ollerom.yellowstone",
+    "alt": "Schermata dell'app Yellowstone Park Map: la mappa con le strade e i punti di interesse.",
+    "caption": "Apri su Google Play",
+    "description": "Mappe offline per il Parco Nazionale di Yellowstone. Guida e caratteristiche geotermiche.",
+    "publisher": "Ollerom Apps",
+    "lang": "it",
+    "type": "App",
+    "category": "App Trasporti",
+    "famiglia": "App",
+    "play": {
+      "pacchetto": "com.ollerom.yellowstone",
+      "nome": "Yellowstone Park Map",
+      "breve": "Mappe offline per il Parco Nazionale di Yellowstone. Guida e caratteristiche geotermiche.",
+      "pegi": "PEGI 3",
+      "sviluppatore": "Ollerom Apps",
+      "sito": "https://ollerom.github.io/",
+      "prezzo": "Gratis",
+      "descrizione": [
+        {
+          "p": "Esplora il Parco Nazionale di Yellowstone con la mappa offline più completa e la guida turistica essenziale. Esplora il parco facilmente con mappe ad alta risoluzione di sentieri e aree geotermiche, senza bisogno di una connessione Internet."
+        },
+        {
+          "h": "⚠️ ESCLUSIONE DI RESPONSABILITÀ DELL'APP INDIPENDENTE"
+        },
+        {
+          "p": "Questa applicazione è uno strumento educativo indipendente e NON è affiliata, approvata o collegata al National Park Service (NPS), al Parco Nazionale di Yellowstone o ad alcuna agenzia governativa. Questa app non rappresenta un ente governativo."
+        },
+        {
+          "h": "FONTI DI DATI UFFICIALI"
+        },
+        {
+          "p": "Tutte le mappe e le informazioni di viaggio provengono da dati di pubblico dominio forniti dal National Park Service (NPS). Le informazioni originali sono disponibili su:"
+        },
+        {
+          "p": "Sito web ufficiale del parco: https://www.nps.gov/yell/index.htm"
+        },
+        {
+          "p": "Mappe ufficiali: https://www.nps.gov/yell/planyourvisit/maps.htm"
+        },
+        {
+          "h": "CARATTERISTICHE PRINCIPALI"
+        },
+        {
+          "p": "🌲 Mappe offline: accedi a mappe del parco di alta qualità ovunque. Nessun segnale? Nessun problema! 🌋 Guida geotermica: scopri Old Faithful, Grand Prismatic Spring e Mammoth Hot Springs. 🐻 Sicurezza della fauna selvatica: consigli essenziali per l'osservazione sicura di orsi, bisonti e alci. ☀️ Meteo satellitare: visualizza immagini satellitari aggiornate della regione. 🛡️ Privacy: include impostazioni sulla privacy conformi al GDPR."
+        },
+        {
+          "h": "PERCHÉ"
+        },
+        {
+          "p": "SCARICARE? • Semplice, veloce e intuitivo. • Progettato per escursionisti e amanti della natura. • Funziona offline. • Aggiornato per il 2026."
+        },
+        {
+          "p": "Scarica subito la \"Mappa del Parco di Yellowstone\" ed esplora il primo parco nazionale al mondo in sicurezza!"
+        }
+      ],
+      "download": "500+",
+      "aggiornata": "2026-02-13",
+      "uscita": "2026-02-05",
+      "annunci": true,
+      "acquisti": false,
+      "aggiornato": "2026-10-23",
+      "icona": "image/app/yellowstone.png",
+      "schermate": [
+        "image/app/yellowstone-1.jpg",
+        "image/app/yellowstone-2.jpg",
+        "image/app/yellowstone-3.jpg",
+        "image/app/yellowstone-4.jpg",
+        "image/app/yellowstone-5.jpg",
+        "image/app/yellowstone-6.jpg"
+      ]
+    }
+  },
+  {
+    "id": 86,
+    "title": "Buenos Aires Transit Map",
+    "date": "2026-02-05",
+    "image": "image/app/buenosaires-2.jpg",
+    "url": "https://play.google.com/store/apps/details?id=com.ollerom.buenosaires",
+    "alt": "Schermata dell'app Buenos Aires Transit Map: la mappa con le strade e i punti di interesse.",
+    "caption": "Apri su Google Play",
+    "description": "Mappe offline della metropolitana e dei treni di Buenos Aires. Guida turistica e informazioni utili.",
+    "publisher": "Ollerom Apps",
+    "lang": "it",
+    "type": "App",
+    "category": "App Trasporti",
+    "famiglia": "App",
+    "play": {
+      "pacchetto": "com.ollerom.buenosaires",
+      "nome": "Buenos Aires Transit Map",
+      "breve": "Mappe offline della metropolitana e dei treni di Buenos Aires. Guida turistica e informazioni utili.",
+      "pegi": "PEGI 3",
+      "sviluppatore": "Ollerom Apps",
+      "sito": "https://ollerom.github.io/",
+      "prezzo": "Gratis",
+      "descrizione": [
+        {
+          "p": "Esplora Buenos Aires con la mappa offline dei trasporti pubblici più completa e la guida turistica essenziale."
+        },
+        {
+          "p": "Esplora la città facilmente con le mappe ad alta risoluzione della rete Subte (metropolitana) e ferroviaria, senza bisogno di una connessione internet."
+        },
+        {
+          "h": "CARATTERISTICHE PRINCIPALI"
+        },
+        {
+          "p": "🚇 Mappe offline: accedi alle mappe ufficiali della Subte e delle ferrovie ovunque. Non hai dati? Nessun problema!"
+        },
+        {
+          "p": "🎫 Guida ai trasporti pubblici: tutto ciò che devi sapere sulla carta SUBE, dove acquistarla e come ricaricarla."
+        },
+        {
+          "p": "📍 Principali attrazioni: scopri i monumenti imperdibili come l'Obelisco, Plaza de Mayo e il colorato La Boca (Caminito)."
+        },
+        {
+          "p": "☀️ Meteo satellitare: visualizza immagini satellitari aggiornate per Argentina e Sud America."
+        },
+        {
+          "p": "🛡️ Privacy: include impostazioni sulla privacy conformi al GDPR."
+        },
+        {
+          "h": "PERCHÉ SCARICARE?"
+        },
+        {
+          "ul": [
+            "Semplice, veloce e intuitivo.",
+            "Progettato per turisti e pendolari.",
+            "Funziona offline (mappe e guida).",
+            "Aggiornato per il 2026."
+          ]
+        },
+        {
+          "p": "Scarica subito la \"Mappa dei trasporti di Buenos Aires\" e viaggia in sicurezza nella Parigi del Sud America!"
+        }
+      ],
+      "download": "50+",
+      "aggiornata": "2026-02-05",
+      "uscita": "2026-02-05",
+      "annunci": true,
+      "acquisti": false,
+      "aggiornato": "2026-10-23",
+      "icona": "image/app/buenosaires.png",
+      "schermate": [
+        "image/app/buenosaires-1.jpg",
+        "image/app/buenosaires-2.jpg",
+        "image/app/buenosaires-3.jpg",
+        "image/app/buenosaires-4.jpg",
+        "image/app/buenosaires-5.jpg",
+        "image/app/buenosaires-6.jpg"
+      ]
+    }
+  },
+  {
+    "id": 93,
+    "title": "Dubai Transit Map",
+    "date": "2026-02-12",
+    "image": "image/app/dubai-2.jpg",
+    "url": "https://play.google.com/store/apps/details?id=com.ollerom.dubai",
+    "alt": "Schermata dell'app Dubai Transit Map: la mappa con le strade e i punti di interesse.",
+    "caption": "Apri su Google Play",
+    "description": "Mappe della metropolitana e degli autobus di Dubai. 100% offline. Veloci, semplici e ad alta risoluzione.",
+    "publisher": "Ollerom Apps",
+    "lang": "it",
+    "type": "App",
+    "category": "App Trasporti",
+    "famiglia": "App",
+    "play": {
+      "pacchetto": "com.ollerom.dubai",
+      "nome": "Dubai Transit Map",
+      "breve": "Mappe della metropolitana e degli autobus di Dubai. 100% offline. Veloci, semplici e ad alta risoluzione.",
+      "pegi": "PEGI 3",
+      "sviluppatore": "Ollerom Apps",
+      "sito": "https://ollerom.github.io/",
+      "prezzo": "Gratis",
+      "descrizione": [
+        {
+          "p": "Esplora Dubai con l'applicazione di mappe più comoda e facile da usare. Che tu sia un turista in visita negli Emirati Arabi Uniti o un residente locale, questa app è il tuo compagno di viaggio perfetto per orientarti nella moderna rete di trasporti della città."
+        },
+        {
+          "h": "⚠️ ESCLUSIONE DI RESPONSABILITÀ DELL'APP INDIPENDENTE"
+        },
+        {
+          "p": "Questa applicazione è uno strumento educativo e informativo indipendente. NON è affiliata, approvata o collegata alla Roads and Transport Authority (RTA) di Dubai o ad alcuna agenzia governativa. Questa app non rappresenta un ente governativo."
+        },
+        {
+          "h": "FONTI DI INFORMAZIONI UFFICIALI"
+        },
+        {
+          "p": "Le informazioni sui trasporti pubblici, sulla metropolitana e sui tram fornite in questa app si basano su dati disponibili al pubblico e materiali ufficiali della Roads and Transport Authority (RTA). Gli utenti possono verificare le informazioni ufficiali sul seguente portale istituzionale:"
+        },
+        {
+          "p": "Sito web ufficiale della Roads and Transport Authority (RTA): https://www.rta.ae/"
+        },
+        {
+          "ul": [
+            "100% OFFLINE Funziona completamente senza connessione internet. Risparmia dati e batteria mentre esplori la città. Nessun costo di roaming!",
+            "ZOOM AD ALTA RISOLUZIONE Mappe cristalline della rete metropolitana, tram e autobus di Dubai. Ingrandisci per vedere ogni stazione e punto di riferimento senza perdere qualità.",
+            "SEMPLICE E INTUITIVA Non sono necessarie impostazioni complesse o registrazioni. Basta aprire l'app e la mappa è pronta all'uso all'istante."
+          ]
+        },
+        {
+          "h": "🇦🇪 GUIDA AI TRASPORTI DI DUBAI"
+        },
+        {
+          "p": "🗺️ La nostra collezione di mappe"
+        },
+        {
+          "p": "Mappa della metropolitana di Dubai: copertura completa della Linea Rossa e della Linea Verde, inclusa l'estensione della Route 2020 fino a Expo City."
+        },
+        {
+          "p": "Tram e monorotaia di Dubai: guida essenziale per le aree di Dubai Marina e Palm Jumeirah."
+        },
+        {
+          "p": "Rete di autobus: panoramica delle principali linee di autobus RTA che collegano la città e la periferia."
+        },
+        {
+          "p": "🚌 Come muoversi"
+        },
+        {
+          "p": "Carta nol: è necessario utilizzare una \"carta nol\" per tutti i trasporti pubblici di Dubai. Non si accettano contanti sugli autobus o sulla metropolitana."
+        },
+        {
+          "p": "Orari della metropolitana: solitamente dalle 5:00 (dal lunedì al sabato) e dalle 8:00 (domenica) fino a mezzanotte o all'1:00."
+        },
+        {
+          "p": "Fermate climatizzate: la maggior parte delle stazioni degli autobus e della metropolitana sono completamente climatizzate per il vostro comfort durante le giornate più calde."
+        },
+        {
+          "p": "📍 Punti di interesse Trova facilmente le stazioni più vicine per:"
+        },
+        {
+          "p": "Burj Khalifa e Dubai Mall"
+        },
+        {
+          "p": "Dubai Marina"
+        },
+        {
+          "p": "Palm Jumeirah"
+        },
+        {
+          "p": "Suk dell'Oro e Old Dubai"
+        },
+        {
+          "p": "💡 Consiglio per i viaggiatori La metropolitana è divisa in cabine: Silver (Standard), Gold Class (Premium) e una sezione dedicata a donne e bambini. Controlla la segnaletica sulla banchina prima di salire!"
+        },
+        {
+          "p": "Scarica ora gratuitamente e inizia il tuo viaggio a Dubai!"
+        }
+      ],
+      "download": "10+",
+      "aggiornata": "2026-02-12",
+      "uscita": "2026-02-12",
+      "annunci": true,
+      "acquisti": false,
+      "novita": [
+        "Offline Maps: Complete Metro network (Red & Green Lines), Dubai Marina Tram, and Palm Jumeirah Monorail.",
+        "2026 Travel Guide: Everything you need to know about Nol Cards, Gold Class, and travel etiquette.",
+        "Satellite Weather: Real-time view over the Indian Ocean.",
+        "Top Stops: Key stations for Burj Khalifa, Dubai Mall, and Souks."
+      ],
+      "aggiornato": "2026-10-23",
+      "icona": "image/app/dubai.png",
+      "schermate": [
+        "image/app/dubai-1.jpg",
+        "image/app/dubai-2.jpg",
+        "image/app/dubai-3.jpg",
+        "image/app/dubai-4.jpg",
+        "image/app/dubai-5.jpg",
+        "image/app/dubai-6.jpg"
+      ]
+    }
+  },
+  {
+    "id": 89,
+    "title": "Bucharest Offline Map Guide",
+    "date": "2026-02-17",
+    "image": "image/app/bucharest-2.jpg",
+    "url": "https://play.google.com/store/apps/details?id=com.ollerom.bucharest",
+    "alt": "Schermata dell'app Bucharest Offline Map Guide: la mappa con le strade e i punti di interesse.",
+    "caption": "Apri su Google Play",
+    "description": "Mappa metro offline di Bucarest. Naviga in città e nel traffico senza dati.",
+    "publisher": "Ollerom Apps",
+    "lang": "it",
+    "type": "App",
+    "category": "App Trasporti",
+    "famiglia": "App",
+    "play": {
+      "pacchetto": "com.ollerom.bucharest",
+      "nome": "Bucharest Offline Map Guide",
+      "breve": "Mappa metro offline di Bucarest. Naviga in città e nel traffico senza dati.",
+      "pegi": "PEGI 3",
+      "sviluppatore": "Ollerom Apps",
+      "sito": "https://ollerom.github.io/",
+      "prezzo": "Gratis",
+      "descrizione": [
+        {
+          "p": "Esplora Bucarest come un abitante del posto con questa guida essenziale con mappe offline. Che tu sia un turista in visita alla \"Piccola Parigi\" dell'Est o un pendolare, la nostra app ti offre gli strumenti necessari per muoverti efficacemente nella capitale rumena."
+        },
+        {
+          "h": "⚠️ DISCLAIMER APP INDIPENDENTE"
+        },
+        {
+          "p": "Questa applicazione è uno strumento educativo e informativo indipendente. NON è affiliata, approvata o collegata a Metrorex, STB (Societatea de Transport București) o a qualsiasi agenzia governativa rumena. Questa app non rappresenta un'entità governativa."
+        },
+        {
+          "h": "FONTI UFFICIALI DI INFORMAZIONE"
+        },
+        {
+          "p": "I dati sui trasporti e le mappe fornite in questa app si basano su informazioni rese pubbliche dalle autorità ufficiali dei trasporti:"
+        },
+        {
+          "p": "* Metrorex: http://www.metrorex.ro/"
+        },
+        {
+          "p": "* STB: https://www.stb.ro/"
+        },
+        {
+          "ul": [
+            "",
+            "NAVIGAZIONE 100% OFFLINE"
+          ]
+        },
+        {
+          "p": "Scarica le mappe e usale ovunque. Risparmia dati mobili e batteria. Non è richiesta alcuna connessione a Internet per visualizzare le mappe della metropolitana e del centro città, ideale per i viaggi sotterranei."
+        },
+        {
+          "ul": [
+            "INFORMAZIONI SUL TRAFFICO IN TEMPO REALE"
+          ]
+        },
+        {
+          "p": "Sebbene le nostre mappe principali siano offline, forniamo un link di accesso rapido ai servizi Google Maps Traffic. Quando hai una connessione internet, puoi monitorare la congestione in tempo reale sui principali viali di Bucarest."
+        },
+        {
+          "ul": [
+            "MAPPE AD ALTA RISOLUZIONE"
+          ]
+        },
+        {
+          "p": "* Rete Metrorex: Mappa completa di tutte le linee della metropolitana (M1, M2, M3, M4, M5)."
+        },
+        {
+          "p": "* Guida del Centro Città: Vista dettagliata dei principali punti di interesse come il Palazzo del Parlamento e il Centro Storico (Lipscani)."
+        },
+        {
+          "p": "* Collegamenti Ferroviari Nazionali: Panoramica dei treni in partenza dalla Gara de Nord per il resto della Romania."
+        },
+        {
+          "p": "* Bonus Storico: Esplora una mappa storica unica di Bucarest per vedere come si è evoluta la città nei secoli."
+        },
+        {
+          "ul": [
+            ""
+          ]
+        },
+        {
+          "h": "🇷🇴 PERCHÉ SCEGLIERE LA GUIDA OFFLINE DI BUCAREST?"
+        },
+        {
+          "p": "* Nessun costo di roaming: perfetta per i viaggiatori internazionali."
+        },
+        {
+          "p": "* Leggera e veloce: progettata per funzionare su tutti i dispositivi."
+        },
+        {
+          "p": "* Pianificazione strategica: usa le mappe offline in metro e passa alla visualizzazione del traffico online quando sei in strada."
+        },
+        {
+          "p": "Scarica ora e inizia il tuo viaggio a Bucarest!"
+        }
+      ],
+      "download": "10+",
+      "aggiornata": "2026-02-18",
+      "uscita": "2026-02-17",
+      "annunci": true,
+      "acquisti": false,
+      "novita": [
+        "Versione iniziale di Bucharest Offline Map Guide.",
+        "Mappe offline ad alta risoluzione per la rete metropolitana Metrorex (M1-M5).",
+        "Aggiornamenti sul traffico in tempo reale integrati tramite Google Maps.",
+        "Mappa storica di Bucarest inclusa per scopi educativi.",
+        "Panoramica della rete ferroviaria nazionale per i viaggiatori.",
+        "Ottimizzazioni delle prestazioni per la navigazione offline e basso consumo di batteria."
+      ],
+      "aggiornato": "2026-10-23",
+      "icona": "image/app/bucharest.png",
+      "schermate": [
+        "image/app/bucharest-1.jpg",
+        "image/app/bucharest-2.jpg",
+        "image/app/bucharest-3.jpg",
+        "image/app/bucharest-4.jpg",
+        "image/app/bucharest-5.jpg",
+        "image/app/bucharest-6.jpg"
+      ]
+    }
+  },
+  {
+    "id": 80,
+    "title": "Addis Ababa Offline Map Guide",
+    "date": "2026-02-18",
+    "image": "image/app/addisababa-2.jpg",
+    "url": "https://play.google.com/store/apps/details?id=com.ollerom.addisababa",
+    "alt": "Schermata dell'app Addis Ababa Offline Map Guide: la mappa con le strade e i punti di interesse.",
+    "caption": "Apri su Google Play",
+    "description": "Addis Abeba offline: metropolitana leggera (LRT), rete di autobus Anbessa e guida storica.",
+    "publisher": "Ollerom Apps",
+    "lang": "it",
+    "type": "App",
+    "category": "App Trasporti",
+    "famiglia": "App",
+    "play": {
+      "pacchetto": "com.ollerom.addisababa",
+      "nome": "Addis Ababa Offline Map Guide",
+      "breve": "Addis Abeba offline: metropolitana leggera (LRT), rete di autobus Anbessa e guida storica.",
+      "pegi": "PEGI 3",
+      "sviluppatore": "Ollerom Apps",
+      "sito": "https://ollerom.github.io/",
+      "prezzo": "Gratis",
+      "descrizione": [
+        {
+          "p": "Mappa offline di Addis Abeba: Metropolitana leggera e guida della città (offline)"
+        },
+        {
+          "p": "Esplora la capitale dell'Etiopia con facilità utilizzando questa essenziale mappa offline. Che tu stia andando al lavoro a Meskel Square, viaggiando verso l'Unione Africana o esplorando i quartieri della città, questa app è progettata per aiutarti a orientarti senza bisogno di un piano dati."
+        },
+        {
+          "h": "⚠️ ESCLUSIONE DI RESPONSABILITÀ PER VIAGGIATORI INDIPENDENTI"
+        },
+        {
+          "p": "Questa applicazione è una risorsa indipendente al 100%. NON è uno strumento governativo ufficiale e NON è affiliata, approvata o collegata all'Ethiopian Railway Corporation (ERC), ad Anbessa City Bus o ad alcuna agenzia governativa etiope. Questa app non rappresenta un ufficio governativo."
+        },
+        {
+          "h": "INFORMAZIONI SU MAPPE E DATI"
+        },
+        {
+          "p": "Trovare informazioni chiare sui trasporti pubblici di Addis Abeba può essere una sfida. Abbiamo fatto le ricerche per te:"
+        },
+        {
+          "h": "MAPPE OFFLINE RECUPERATE"
+        },
+        {
+          "p": "Abbiamo cercato sul web per trovare e recuperare le migliori mappe di trasporto pubblico e i migliori layout di trasporto pubblico disponibili. Una volta scaricata l'app, queste mappe funzionano al 100% OFFLINE."
+        },
+        {
+          "h": "CONTENUTO"
+        },
+        {
+          "p": "\"COSÌ COME SONO\": Queste immagini sono fornite esattamente come si trovano nelle fonti pubbliche. Non le abbiamo \"pulite\", modificate o verificate ufficialmente; le abbiamo semplicemente raccolte in un unico posto per vostra comodità."
+        },
+        {
+          "h": "RICERCA INDIPENDENTE"
+        },
+        {
+          "p": "Punti di interesse e punti di riferimento sono stati compilati attraverso la nostra ricerca indipendente di archivi geografici open source."
+        },
+        {
+          "ul": [
+            "CARATTERISTICHE:"
+          ]
+        },
+        {
+          "h": "METRAGGIO LEGGERO (LRT)"
+        },
+        {
+          "p": "Una guida visiva alle linee Nord-Sud ed Est-Ovest."
+        },
+        {
+          "h": "GUIDA AL TRASPORTO URBANO"
+        },
+        {
+          "p": "Panoramica pratica dei principali corridoi stradali e degli snodi della rete di autobus."
+        },
+        {
+          "h": "MAPPA FERROVIARIA NAZIONALE"
+        },
+        {
+          "p": "Panoramica dei collegamenti ferroviari regionali in partenza dall'area Furi-Labu."
+        },
+        {
+          "h": "MAPPA STORICA"
+        },
+        {
+          "p": "Esplora una vista storica unica della regione per scoprire l'evoluzione della capitale."
+        },
+        {
+          "h": "🇪🇹 PERCHÉ SCEGLIERE QUESTA GUIDA?"
+        },
+        {
+          "h": "NESSUN ROAMING NECESSARIO"
+        },
+        {
+          "p": "Indispensabile per viaggiatori ed espatriati che desiderano risparmiare dati e batteria."
+        },
+        {
+          "h": "ALTA RISOLUZIONE"
+        },
+        {
+          "p": "Visione chiara di strade e fermate dei mezzi pubblici anche in assenza di segnale."
+        },
+        {
+          "h": "LEGGERO E VELOCE"
+        },
+        {
+          "p": "Progettato per funzionare senza problemi su tutti i dispositivi Android."
+        },
+        {
+          "p": "Usa questa guida come pratico riferimento non ufficiale per aiutarti a esplorare la \"Capitale Diplomatica dell'Africa\". Scaricala ora e inizia il tuo viaggio!"
+        }
+      ],
+      "download": "500+",
+      "aggiornata": "2026-02-18",
+      "uscita": "2026-02-18",
+      "annunci": true,
+      "acquisti": false,
+      "novita": [
+        "Initial release of the Addis Ababa Transit Guide.",
+        "High-resolution maps of the Light Rail Transit (LRT) Blue and Green lines.",
+        "Detailed urban transit overview including Anbessa and Sheger bus hubs.",
+        "National railway connections map (Addis Ababa - Djibouti).",
+        "Historic map of the region included for educational context.",
+        "Fully optimized for offline use to save battery and data."
+      ],
+      "aggiornato": "2026-10-23",
+      "icona": "image/app/addisababa.png",
+      "schermate": [
+        "image/app/addisababa-1.jpg",
+        "image/app/addisababa-2.jpg",
+        "image/app/addisababa-3.jpg",
+        "image/app/addisababa-4.jpg",
+        "image/app/addisababa-5.jpg",
+        "image/app/addisababa-6.jpg"
       ]
     }
   }

@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Chiave del filtro nell'indirizzo -> campo della voce in data.json
     const FILTERS = [
+        { param: 'famiglia', field: 'famiglia', listId: 'filter-famiglia', all: 'Tutte' },
         { param: 'categoria', field: 'category', listId: 'filter-category', all: 'Tutte' },
         { param: 'tipo', field: 'type', listId: 'filter-type', all: 'Tutti' },
         { param: 'lingua', field: 'lang', listId: 'filter-lang', all: 'Tutte' }
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Le voci senza categoria finiscono in fondo, sotto "Varie".
             const entries = data.map(d => ({
                 ...d,
+                famiglia: d.famiglia || (d.type === 'Link' ? 'Progetti' : 'Libri'),
                 category: d.category || 'Varie',
                 type: d.type || 'Varie',
                 lang: d.lang || 'it'
@@ -84,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const buildCard = (entry) => {
                 const card = document.createElement('a');
-                card.className = 'card';
+                card.className = entry.play ? 'card card-app' : 'card';
                 // Rimandiamo alla pagina statica della voce: e' quella con le
                 // anteprime social gia' scritte nell'HTML, quindi e' l'indirizzo
                 // giusto da condividere.
