@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const { $, setBackground, formatDate, setFooterYear, loadData } = Archivio;
 
-    const LANG_NAMES = { it: 'Italiano', en: 'English' };
+    const LANG_NAMES = { it: 'Italiano', en: 'English', de: 'Deutsch' };
     const TUTTI = '__tutti__';
 
     // Chiave del filtro nell'indirizzo -> campo della voce in data.json
