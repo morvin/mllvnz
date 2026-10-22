@@ -4327,7 +4327,16 @@
           "p": "\"I Pionieri del Cinema\" celebra l'eredità di questi artisti rivoluzionari — e di molti altri — in una prestigiosa edizione da collezione, pensata per preservare e tramandare la grammatica visiva che ha plasmato il nostro mondo."
         }
       ],
-      "aggiornato": "2026-10-22"
+      "aggiornato": "2026-10-22",
+      "pagine": 104,
+      "isbn13": "979-8194702268",
+      "peso": "200 g",
+      "dimensioni": "17,8 × 0,6 × 25,4 cm",
+      "serie": {
+        "nome": "Cinema",
+        "numero": 2,
+        "di": 3
+      }
     }
   },
   {
@@ -4495,7 +4504,22 @@
           "p": "METTITI ALLA PROVA. IL CINEMA STA PER COMINCIARE."
         }
       ],
-      "aggiornato": "2026-10-22"
+      "aggiornato": "2026-10-22",
+      "pagine": 133,
+      "isbn13": "979-8170544073",
+      "peso": "259 g",
+      "dimensioni": "15,2 × 0,8 × 22,9 cm",
+      "serie": {
+        "nome": "Cinema",
+        "numero": 1,
+        "di": 3
+      },
+      "classifica": [
+        "n. 1.050.936 in Libri",
+        "n. 581 in Cinema europeo",
+        "n. 674 in Guide e recensioni cinematografiche",
+        "n. 1.574 in Giochi per feste"
+      ]
     }
   },
   {
@@ -4625,7 +4649,20 @@
           "p": "Un'idea regalo raffinata ed originale per ogni amante della buona birra e per chiunque desideri trasformare la propria passione in un archivio personale di cultura birraria."
         }
       ],
-      "aggiornato": "2026-10-22"
+      "aggiornato": "2026-10-22",
+      "pagine": 128,
+      "isbn13": "979-8173496409",
+      "peso": "249 g",
+      "dimensioni": "15,2 × 0,8 × 22,9 cm",
+      "serie": {
+        "nome": "Quaderni Morvin",
+        "numero": 2,
+        "di": 5
+      },
+      "classifica": [
+        "n. 524.213 in Libri",
+        "n. 121 in Birre"
+      ]
     }
   },
   {
@@ -4749,7 +4786,21 @@
           "p": "Stappa la tua bottiglia, riempi il calice e inizia a scrivere la tua personale collezione sensoriale!"
         }
       ],
-      "aggiornato": "2026-10-22"
+      "aggiornato": "2026-10-22",
+      "pagine": 128,
+      "isbn13": "979-8173978028",
+      "peso": "249 g",
+      "dimensioni": "15,2 × 0,8 × 22,9 cm",
+      "serie": {
+        "nome": "Quaderni Morvin",
+        "numero": 5,
+        "di": 5
+      },
+      "classifica": [
+        "n. 524.226 in Libri",
+        "n. 141 in Enologia e viticoltura",
+        "n. 542 in Vino (Libri)"
+      ]
     }
   },
   {
@@ -4807,7 +4858,22 @@
           "p": "Il complemento d'arredo indispensabile per ogni proprietario o host che desidera offrire un'esperienza a 5 stelle e trasformare ogni ospite in un ricordo indimenticabile."
         }
       ],
-      "aggiornato": "2026-10-22"
+      "aggiornato": "2026-10-22",
+      "pagine": 110,
+      "isbn13": "979-8173950338",
+      "peso": "222 g",
+      "dimensioni": "15,2 × 0,7 × 22,9 cm",
+      "serie": {
+        "nome": "Quaderni Morvin",
+        "numero": 4,
+        "di": 5
+      },
+      "classifica": [
+        "n. 524.222 in Libri",
+        "n. 1.863 in Narrativa sulla vita sociale",
+        "n. 4.844 in Letteratura di viaggio (Libri)",
+        "n. 24.137 in Libri sulla sociologia della cultura"
+      ]
     }
   }
 ]

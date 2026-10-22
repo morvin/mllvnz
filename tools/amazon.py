@@ -27,11 +27,13 @@ DATA = os.path.join(ROOT, "data.json")
 
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
-# Lingua e valuta per dominio: senza cookie amazon.com mostra i prezzi in euro.
+# Lingua e valuta per dominio. Il cookie serve solo ad amazon.com, che senza
+# mostra i prezzi in euro; su amazon.it lo stesso cookie fa arrivare una pagina
+# ridotta, senza scheda tecnica.
 DOMINI = {
-    "amazon.it": ("it-IT,it;q=0.9", "i18n-prefs=EUR; lc-acbit=it_IT"),
+    "amazon.it": ("it-IT,it;q=0.9", ""),
     "amazon.com": ("en-US,en;q=0.9", "i18n-prefs=USD; lc-main=en_US"),
-    "amazon.de": ("en-GB,en;q=0.9", "i18n-prefs=EUR; lc-acbde=en_GB"),
+    "amazon.de": ("en-GB,en;q=0.9", ""),
 }
 FORMATI = {
     "paperback": "Copertina flessibile", "copertina flessibile": "Copertina flessibile",
@@ -53,9 +55,11 @@ def contesto_ssl():
 def scarica(url):
     dominio = re.search(r"(amazon\.\w+)", url).group(1)
     lingua, cookie = DOMINI.get(dominio, DOMINI["amazon.it"])
-    req = urllib.request.Request(url, headers={
-        "User-Agent": UA, "Accept-Language": lingua, "Cookie": cookie,
-        "Accept": "text/html,application/xhtml+xml"})
+    intestazioni = {"User-Agent": UA, "Accept-Language": lingua,
+                    "Accept": "text/html,application/xhtml+xml"}
+    if cookie:
+        intestazioni["Cookie"] = cookie
+    req = urllib.request.Request(url, headers=intestazioni)
     with urllib.request.urlopen(req, timeout=30, context=contesto_ssl()) as r:
         return r.read().decode("utf-8", "replace")
 
@@ -254,8 +258,8 @@ def leggi(url, asin, tentativi=3):
         time.sleep(random.uniform(8, 15))
     if "captcha" in h.lower() and "productTitle" not in h:
         raise RuntimeError("captcha")
-    if 'id="productTitle"' not in h:
-        raise RuntimeError("pagina senza scheda prodotto")
+    if 'id="productTitle"' not in h or len(h) < 100_000:
+        raise RuntimeError(f"pagina ridotta ({len(h)} byte), riprovare più tardi")
     titolo = testo(re.search(r'id="productTitle"[^>]*>([\s\S]*?)</span>', h).group(1))
     dati = {"titolo": titolo}
     a = autori(h)
