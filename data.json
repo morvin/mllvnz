@@ -80,20 +80,20 @@
     "famiglia": "Progetti",
     "galleria": [
       {
-        "src": "image/galleria/105/portale.jpg",
-        "alt": "La pagina iniziale di Divinazioni con le tre schede degli strumenti: Tarocchi, Smorfia e Rune."
+        "src": "image/galleria/105/01_divinazioni.jpg",
+        "alt": "La carta dell'Appeso in stile Marsiglia accanto alla presentazione di Divinazioni: tarocchi, Smorfia napoletana e rune, senza account e tutto nel browser, in italiano e in inglese."
       },
       {
-        "src": "image/galleria/105/tarot.jpg",
-        "alt": "Una lettura dei tarocchi a tre carte in stile Marsiglia: L'Appeso per il passato, Il Carro capovolto per il presente e L'Imperatore capovolto per il futuro, con il commento di ciascuna."
+        "src": "image/galleria/105/02_tarocchi.jpg",
+        "alt": "Una lettura dei tarocchi a tre carte in stile Marsiglia: L'Appeso per il passato, Il Carro capovolto per il presente e L'Imperatore capovolto per il futuro, accanto alle caratteristiche dello strumento."
       },
       {
-        "src": "image/galleria/105/smorfia.jpg",
-        "alt": "Il responso della Smorfia per un sogno: i numeri 89, 68, 32, 70 e 76, cioè la vecchia, la zuppa cotta, il capitone, il palazzo e la fontana, ognuno con la parola del racconto da cui nasce."
+        "src": "image/galleria/105/03_smorfia.jpg",
+        "alt": "Il responso della Smorfia per un sogno, con i numeri 89, 68, 32, 70 e 76 e la parola del racconto da cui nasce ciascuno, accanto alle caratteristiche dello strumento."
       },
       {
-        "src": "image/galleria/105/rune.jpg",
-        "alt": "Una lettura a tre rune: Eihwaz per il passato, Ansuz capovolta per il presente e Thurisaz capovolta per il futuro, con il significato di ciascuna."
+        "src": "image/galleria/105/04_rune.jpg",
+        "alt": "Una lettura a tre rune, Eihwaz, Ansuz capovolta e Thurisaz capovolta, con il significato di ciascuna, accanto alle caratteristiche dello strumento."
       }
     ]
   },
