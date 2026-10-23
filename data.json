@@ -2429,7 +2429,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/20/01_header.jpg",
+        "alt": "La copertina di 'Italia Anni '90: Storie, Cronaca e Pop Culture' accanto ai punti forti: 80 storie del decennio, quattro parti su società, televisione, cinema e musica, sport, un riquadro di fatti e dati chiave per ogni storia."
+      },
+      {
+        "src": "image/galleria/20/02_storie.jpg",
+        "alt": "Due pagine dell'eBook: le storie del Ciclomotore, delle Sale Giochi e del Game Boy, ognuna con il suo riquadro di fatti e dati chiave."
+      },
+      {
+        "src": "image/galleria/20/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne, una per parte: società e cronaca, la televisione, cinema e musica, lo sport."
+      }
+    ]
   },
   {
     "id": 25,
