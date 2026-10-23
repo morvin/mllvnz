@@ -590,7 +590,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/48/01_header.jpg",
+        "alt": "La copertina di 'Napoli - Diario di Viaggio' accanto ai punti forti: luoghi imperdibili, sapori e regole di sopravvivenza, playlist, libri e film, dizionario minimo e quiz, 100 pagine da riempire a righe, quadretti, puntini, pentagrammi e storyboard."
+      },
+      {
+        "src": "image/galleria/48/02_prima_di_partire.jpg",
+        "alt": "Due pagine affiancate del diario: i sapori di Napoli e le regole di sopravvivenza per vivere la città."
+      },
+      {
+        "src": "image/galleria/48/03_dentro_il_diario.jpg",
+        "alt": "Quattro pagine interne: luoghi imperdibili, la playlist della città, il quiz e una pagina con i pentagrammi."
+      }
+    ]
   },
   {
     "id": 46,
@@ -668,7 +682,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/46/01_header.jpg",
+        "alt": "La copertina di 'Bologna - Diario di Viaggio' accanto ai punti forti: luoghi imperdibili, sapori e regole di sopravvivenza, playlist, libri e film, dizionario minimo e quiz, 100 pagine da riempire a righe, quadretti, puntini, pentagrammi e storyboard."
+      },
+      {
+        "src": "image/galleria/46/02_prima_di_partire.jpg",
+        "alt": "Due pagine affiancate del diario: i sapori di Bologna e le regole di sopravvivenza per vivere la città."
+      },
+      {
+        "src": "image/galleria/46/03_dentro_il_diario.jpg",
+        "alt": "Quattro pagine interne: luoghi imperdibili, la playlist della città, il quiz e una pagina con i pentagrammi."
+      }
+    ]
   },
   {
     "id": 47,
@@ -746,7 +774,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/47/01_header.jpg",
+        "alt": "La copertina di 'Venezia - Diario di Viaggio' accanto ai punti forti: luoghi imperdibili, sapori e regole di sopravvivenza, playlist, libri e film, dizionario minimo e quiz, 100 pagine da riempire a righe, quadretti, puntini, pentagrammi e storyboard."
+      },
+      {
+        "src": "image/galleria/47/02_prima_di_partire.jpg",
+        "alt": "Due pagine affiancate del diario: i sapori di Venezia e le regole di sopravvivenza per vivere la città."
+      },
+      {
+        "src": "image/galleria/47/03_dentro_il_diario.jpg",
+        "alt": "Quattro pagine interne: luoghi imperdibili, la playlist della città, il quiz e una pagina con i pentagrammi."
+      }
+    ]
   },
   {
     "id": 45,
@@ -827,7 +869,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/45/01_header.jpg",
+        "alt": "La copertina di 'Roma - Diario di Viaggio' accanto ai punti forti: luoghi imperdibili, sapori e regole di sopravvivenza, playlist, libri e film, dizionario minimo e quiz, 100 pagine da riempire a righe, quadretti, puntini, pentagrammi e storyboard."
+      },
+      {
+        "src": "image/galleria/45/02_prima_di_partire.jpg",
+        "alt": "Due pagine affiancate del diario: i sapori di Roma e le regole di sopravvivenza per vivere la città."
+      },
+      {
+        "src": "image/galleria/45/03_dentro_il_diario.jpg",
+        "alt": "Quattro pagine interne: luoghi imperdibili, la playlist della città, il quiz e una pagina con i pentagrammi."
+      }
+    ]
   },
   {
     "id": 44,
@@ -904,7 +960,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/44/01_header.jpg",
+        "alt": "La copertina di 'New York - Diario di Viaggio' accanto ai punti forti: luoghi imperdibili, sapori e regole di sopravvivenza, playlist, libri e film, dizionario minimo e quiz, 100 pagine da riempire a righe, quadretti, puntini, pentagrammi e storyboard."
+      },
+      {
+        "src": "image/galleria/44/02_prima_di_partire.jpg",
+        "alt": "Due pagine affiancate del diario: i sapori di New York e le regole di sopravvivenza per vivere la città."
+      },
+      {
+        "src": "image/galleria/44/03_dentro_il_diario.jpg",
+        "alt": "Quattro pagine interne: luoghi imperdibili, la playlist della città, il quiz e una pagina con i pentagrammi."
+      }
+    ]
   },
   {
     "id": 43,
