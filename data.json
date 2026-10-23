@@ -1060,7 +1060,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/41/01_header.jpg",
+        "alt": "La copertina di 'Parole Intrecciate Estate' accanto ai punti forti: 80 puzzle a tema con una scheda di curiosità per ogni schema, stampa a caratteri grandi per una lettura senza fatica, quattro sezioni per esplorare il tema passo dopo passo, soluzioni complete in fondo al libro."
+      },
+      {
+        "src": "image/galleria/41/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «Paesaggio Marino» e «La Borsa da Spiaggia», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/41/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: quattro sezioni a tema, schemi a tema, schemi a tema e soluzioni."
+      }
+    ]
   },
   {
     "id": 33,
@@ -1131,7 +1145,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/33/01_header.jpg",
+        "alt": "La copertina di 'Miti e Leggende - Parole Intrecciate' accanto ai punti forti: 80 puzzle a tema con una scheda di curiosità per ogni schema, stampa a caratteri grandi per una lettura senza fatica, quattro sezioni per esplorare il tema passo dopo passo, soluzioni complete in fondo al libro."
+      },
+      {
+        "src": "image/galleria/33/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «Gli dei dell'Olimpo» e «Ercole e le Sue Fatiche», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/33/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: quattro sezioni a tema, schemi a tema, schemi a tema e soluzioni."
+      }
+    ]
   },
   {
     "id": 34,
@@ -1196,7 +1224,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/34/01_header.jpg",
+        "alt": "La copertina di 'Giappone - Parole Intrecciate' accanto ai punti forti: 80 puzzle a tema con una scheda di curiosità per ogni schema, un passatempo rilassante per allenare la mente con calma, quattro sezioni per esplorare il tema passo dopo passo, soluzioni complete in fondo al libro."
+      },
+      {
+        "src": "image/galleria/34/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «Tokyo di Notte» e «Lo Shinkansen», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/34/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: quattro sezioni a tema, schemi a tema, schemi a tema e soluzioni."
+      }
+    ]
   },
   {
     "id": 40,
@@ -1253,7 +1295,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/40/01_header.jpg",
+        "alt": "La copertina di 'Parole Intrecciate Primavera' accanto ai punti forti: 80 puzzle a tema con una scheda di curiosità per ogni schema, stampa a caratteri grandi per una lettura senza fatica, quattro sezioni per esplorare il tema passo dopo passo, soluzioni complete in fondo al libro."
+      },
+      {
+        "src": "image/galleria/40/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «Primi Germogli» e «Il Ritorno delle Rondini», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/40/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: quattro sezioni a tema, schemi a tema, schemi a tema e soluzioni."
+      }
+    ]
   },
   {
     "id": 32,
@@ -1321,7 +1377,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/32/01_header.jpg",
+        "alt": "La copertina di 'Cucina Italiana - Parole Intrecciate' accanto ai punti forti: 80 puzzle a tema con una scheda di curiosità per ogni schema, stampa a caratteri grandi per una lettura senza fatica, quattro sezioni per esplorare il tema passo dopo passo, soluzioni complete in fondo al libro."
+      },
+      {
+        "src": "image/galleria/32/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «La Carbonara» e «Formati di Pasta», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/32/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: quattro sezioni a tema, schemi a tema, schemi a tema e soluzioni."
+      }
+    ]
   },
   {
     "id": 37,
@@ -1383,7 +1453,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/37/01_header.jpg",
+        "alt": "La copertina di 'Parole Intrecciate Autunno' accanto ai punti forti: 80 puzzle a tema con una scheda di curiosità per ogni schema, stampa a caratteri grandi per una lettura senza fatica, quattro sezioni per esplorare il tema passo dopo passo, soluzioni complete in fondo al libro."
+      },
+      {
+        "src": "image/galleria/37/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «Foliage Incantato» e «Tappeto di Foglie», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/37/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: quattro sezioni a tema, schemi a tema, schemi a tema e soluzioni."
+      }
+    ]
   },
   {
     "id": 38,
@@ -1442,7 +1526,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/38/01_header.jpg",
+        "alt": "La copertina di 'Crucipuzzle Italia Anni '80 (Vol. 103)' accanto ai punti forti: puzzle a tema con una scheda di curiosità per ogni schema, stampa a caratteri grandi per una lettura senza fatica, quattro sezioni per esplorare il tema passo dopo passo, soluzioni complete in fondo al libro."
+      },
+      {
+        "src": "image/galleria/38/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «Bim Bum Bam» e «Drive In», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/38/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: quattro sezioni a tema, schemi a tema, schemi a tema e soluzioni."
+      }
+    ]
   },
   {
     "id": 39,
@@ -1507,7 +1605,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/39/01_header.jpg",
+        "alt": "La copertina di 'Crucipuzzle Italia Anni '70' accanto ai punti forti: 80 puzzle a tema con una scheda di curiosità per ogni schema, stampa a caratteri grandi per una lettura senza fatica, quattro sezioni per esplorare il tema passo dopo passo, soluzioni complete in fondo al libro."
+      },
+      {
+        "src": "image/galleria/39/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «La Tv a Colori» e «Le Radio Libere», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/39/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: quattro sezioni a tema, schemi a tema, schemi a tema e soluzioni."
+      }
+    ]
   },
   {
     "id": 35,
@@ -1575,7 +1687,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/35/01_header.jpg",
+        "alt": "La copertina di 'Crucipuzzle d'Inverno' accanto ai punti forti: 80 puzzle a tema con una scheda di curiosità per ogni schema, stampa a caratteri grandi per una lettura senza fatica, quattro sezioni per esplorare il tema passo dopo passo, soluzioni complete in fondo al libro."
+      },
+      {
+        "src": "image/galleria/35/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «Primi Fiocchi» e «Paesaggio Imbiancato», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/35/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: quattro sezioni a tema, schemi a tema, schemi a tema e soluzioni."
+      }
+    ]
   },
   {
     "id": 36,
@@ -1657,7 +1783,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/36/01_header.jpg",
+        "alt": "La copertina di 'Italia Anni '60 - Crucipuzzle' accanto ai punti forti: 80 puzzle a tema con una scheda di curiosità per ogni schema, stampa a caratteri grandi per una lettura senza fatica, quattro sezioni per esplorare il tema passo dopo passo, soluzioni complete in fondo al libro."
+      },
+      {
+        "src": "image/galleria/36/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «La Fiat 500 e 600» e «Arrivano gli Elettrodomestici», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/36/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: quattro sezioni a tema, schemi a tema, schemi a tema e soluzioni."
+      }
+    ]
   },
   {
     "id": 31,
@@ -1728,7 +1868,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/31/01_header.jpg",
+        "alt": "La copertina di 'Bibbia - Parole Intrecciate' accanto ai punti forti: 80 puzzle a tema con una scheda di curiosità per ogni schema, stampa a caratteri grandi per una lettura senza fatica, quattro sezioni per esplorare il tema passo dopo passo, soluzioni complete in fondo al libro."
+      },
+      {
+        "src": "image/galleria/31/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «La Creazione» e «Il Giardino dell'Eden», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/31/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: quattro sezioni a tema, schemi a tema, schemi a tema e soluzioni."
+      }
+    ]
   },
   {
     "id": 28,
@@ -1782,7 +1936,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/28/01_header.jpg",
+        "alt": "The cover of 'Italian Cuisine Word Search for Adults' next to its highlights: 80 large-print puzzles each with a short themed note, four themed chapters to explore the topic step by step, bonus pages coloring scenes and mazes, full solutions at the back of the book."
+      },
+      {
+        "src": "image/galleria/28/02_puzzles.jpg",
+        "alt": "Two puzzles side by side, “The Carbonara” and “Pasta Shapes”, each with a short note above the grid."
+      },
+      {
+        "src": "image/galleria/28/03_inside_the_book.jpg",
+        "alt": "Four inside pages: four themed chapters, mazes, coloring pages and solutions."
+      }
+    ]
   },
   {
     "id": 29,
@@ -1836,7 +2004,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/29/01_header.jpg",
+        "alt": "The cover of 'Spring Word Search for Adults' next to its highlights: 80 large-print puzzles each with a short themed note, four themed chapters to explore the topic step by step, bonus pages coloring scenes and mazes, full solutions at the back of the book."
+      },
+      {
+        "src": "image/galleria/29/02_puzzles.jpg",
+        "alt": "Two puzzles side by side, “First Rays of Sun” and “Melting Snow”, each with a short note above the grid."
+      },
+      {
+        "src": "image/galleria/29/03_inside_the_book.jpg",
+        "alt": "Four inside pages: four themed chapters, mazes, coloring pages and solutions."
+      }
+    ]
   },
   {
     "id": 30,
@@ -1905,7 +2087,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/30/01_header.jpg",
+        "alt": "The cover of 'Ocean Word Search' next to its highlights: 80 large-print puzzles each with a short themed note, four themed chapters to explore the topic step by step, relaxing and engaging a gentle workout for the mind, full solutions at the back of the book."
+      },
+      {
+        "src": "image/galleria/30/02_puzzles.jpg",
+        "alt": "Two puzzles side by side, “The Sandy Beach” and “Tide Pools”, each with a short note above the grid."
+      },
+      {
+        "src": "image/galleria/30/03_inside_the_book.jpg",
+        "alt": "Four inside pages: four themed chapters, themed puzzles, themed puzzles and solutions."
+      }
+    ]
   },
   {
     "id": 26,
@@ -1959,7 +2155,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/26/01_header.jpg",
+        "alt": "The cover of 'Classic Cowboy Word Search' next to its highlights: 80 large-print puzzles each with a short themed note, four themed chapters to explore the topic step by step, bonus pages coloring scenes and mazes, full solutions at the back of the book."
+      },
+      {
+        "src": "image/galleria/26/02_puzzles.jpg",
+        "alt": "Two puzzles side by side, “The Local Saloon” and “Law and Order”, each with a short note above the grid."
+      },
+      {
+        "src": "image/galleria/26/03_inside_the_book.jpg",
+        "alt": "Four inside pages: four themed chapters, mazes, coloring pages and solutions."
+      }
+    ]
   },
   {
     "id": 27,
@@ -2013,7 +2223,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/27/01_header.jpg",
+        "alt": "The cover of 'Cat Lovers Word Search' next to its highlights: 80 large-print puzzles each with a short themed note, four themed chapters to explore the topic step by step, bonus pages coloring scenes and mazes, full solutions at the back of the book."
+      },
+      {
+        "src": "image/galleria/27/02_puzzles.jpg",
+        "alt": "Two puzzles side by side, “The Persian” and “The Siamese”, each with a short note above the grid."
+      },
+      {
+        "src": "image/galleria/27/03_inside_the_book.jpg",
+        "alt": "Four inside pages: four themed chapters, mazes, coloring pages and solutions."
+      }
+    ]
   },
   {
     "id": 20,
@@ -2119,7 +2343,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/25/01_header.jpg",
+        "alt": "The cover of '1980s Pop Culture Word Search' next to its highlights: 80 large-print puzzles each with a short themed note, four themed chapters to explore the topic step by step, bonus pages coloring scenes and mazes, full solutions at the back of the book."
+      },
+      {
+        "src": "image/galleria/25/02_puzzles.jpg",
+        "alt": "Two puzzles side by side, “The King of Pop” and “The Queen of Pop”, each with a short note above the grid."
+      },
+      {
+        "src": "image/galleria/25/03_inside_the_book.jpg",
+        "alt": "Four inside pages: four themed chapters, mazes, coloring pages and solutions."
+      }
+    ]
   },
   {
     "id": 22,
@@ -2172,7 +2410,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/22/01_header.jpg",
+        "alt": "The cover of 'The Ocean Word Search Book for Adults' next to its highlights: 80 large-print puzzles each with a short themed note, four themed chapters to explore the topic step by step, bonus pages coloring scenes and mazes, full solutions at the back of the book."
+      },
+      {
+        "src": "image/galleria/22/02_puzzles.jpg",
+        "alt": "Two puzzles side by side, “The Sandy Beach” and “Tide Pools”, each with a short note above the grid."
+      },
+      {
+        "src": "image/galleria/22/03_inside_the_book.jpg",
+        "alt": "Four inside pages: four themed chapters, mazes, coloring pages and solutions."
+      }
+    ]
   },
   {
     "id": 23,
@@ -2225,7 +2477,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/23/01_header.jpg",
+        "alt": "The cover of 'Italian Cuisine Word Search Book for Adults' next to its highlights: 80 large-print puzzles each with a short themed note, four themed chapters to explore the topic step by step, bonus pages coloring scenes and mazes, full solutions at the back of the book."
+      },
+      {
+        "src": "image/galleria/23/02_puzzles.jpg",
+        "alt": "Two puzzles side by side, “The Carbonara” and “Pasta Shapes”, each with a short note above the grid."
+      },
+      {
+        "src": "image/galleria/23/03_inside_the_book.jpg",
+        "alt": "Four inside pages: four themed chapters, mazes, coloring pages and solutions."
+      }
+    ]
   },
   {
     "id": 24,
@@ -2278,7 +2544,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/24/01_header.jpg",
+        "alt": "The cover of 'Spring Word Search Book for Adults' next to its highlights: 80 large-print puzzles each with a short themed note, four themed chapters to explore the topic step by step, bonus pages coloring scenes and mazes, full solutions at the back of the book."
+      },
+      {
+        "src": "image/galleria/24/02_puzzles.jpg",
+        "alt": "Two puzzles side by side, “First Rays of Sun” and “Melting Snow”, each with a short note above the grid."
+      },
+      {
+        "src": "image/galleria/24/03_inside_the_book.jpg",
+        "alt": "Four inside pages: four themed chapters, mazes, coloring pages and solutions."
+      }
+    ]
   },
   {
     "id": 18,
@@ -2346,7 +2626,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/18/01_header.jpg",
+        "alt": "La copertina di 'La Divina Commedia - Parole Intrecciate (Vol. 124)' accanto ai punti forti: 100 puzzle a tema con una scheda di curiosità per ogni schema, stampa a caratteri grandi per una lettura senza fatica, bonus disegni da colorare e labirinti, soluzioni complete in fondo al libro."
+      },
+      {
+        "src": "image/galleria/18/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «Inferno - Canto 1» e «Inferno - Canto 2», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/18/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: quattro sezioni a tema, labirinti, disegni da colorare e soluzioni."
+      }
+    ]
   },
   {
     "id": 21,
@@ -2410,7 +2704,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/21/01_header.jpg",
+        "alt": "La copertina di 'Astronomia - Parole Intrecciate per Adulti' accanto ai punti forti: 80 puzzle a tema con una scheda di curiosità per ogni schema, stampa a caratteri grandi per una lettura senza fatica, bonus disegni da colorare e labirinti, soluzioni complete in fondo al libro."
+      },
+      {
+        "src": "image/galleria/21/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «Il Sole» e «Mercurio», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/21/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: quattro sezioni a tema, labirinti, disegni da colorare e soluzioni."
+      }
+    ]
   },
   {
     "id": 2,
@@ -2478,7 +2786,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/2/01_header.jpg",
+        "alt": "La copertina di 'Parole Intrecciate - Il Corpo Umano (Vol. 123)' accanto ai punti forti: 80 puzzle a tema con una scheda di curiosità per ogni schema, stampa a caratteri grandi per una lettura senza fatica, bonus disegni da colorare e labirinti, soluzioni complete in fondo al libro."
+      },
+      {
+        "src": "image/galleria/2/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «Lo Scheletro Umano» e «La Colonna Vertebrale», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/2/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: quattro sezioni a tema, labirinti, disegni da colorare e soluzioni."
+      }
+    ]
   },
   {
     "id": 10,
@@ -2553,7 +2875,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/10/01_header.jpg",
+        "alt": "La copertina di 'Halloween - Parole Intrecciate (Vol. 114)' accanto ai punti forti: 80 puzzle a tema con una scheda di curiosità per ogni schema, stampa a caratteri grandi per una lettura senza fatica, bonus disegni da colorare e labirinti, soluzioni complete in fondo al libro."
+      },
+      {
+        "src": "image/galleria/10/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «L'Antico Samhain» e «Jack-O'-Lantern», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/10/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: quattro sezioni a tema, labirinti, disegni da colorare e soluzioni."
+      }
+    ]
   },
   {
     "id": 14,
@@ -2622,7 +2958,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/14/01_header.jpg",
+        "alt": "La copertina di 'L'Iliade - Parole Intrecciate (Vol. 125)' accanto ai punti forti: 80 puzzle a tema con una scheda di curiosità per ogni schema, stampa a caratteri grandi per una lettura senza fatica, bonus disegni da colorare e labirinti, soluzioni complete in fondo al libro."
+      },
+      {
+        "src": "image/galleria/14/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «L'Ira Funesta» e «Il Re dei Re», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/14/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: quattro sezioni a tema, labirinti, disegni da colorare e soluzioni."
+      }
+    ]
   },
   {
     "id": 15,
@@ -2691,7 +3041,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/15/01_header.jpg",
+        "alt": "La copertina di 'L'Odissea - Parole Intrecciate (Vol. 126)' accanto ai punti forti: 80 puzzle a tema con una scheda di curiosità per ogni schema, stampa a caratteri grandi per una lettura senza fatica, bonus disegni da colorare e labirinti, soluzioni complete in fondo al libro."
+      },
+      {
+        "src": "image/galleria/15/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «La Fine di Troia» e «La Fuga sul Mare», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/15/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: quattro sezioni a tema, labirinti, disegni da colorare e soluzioni."
+      }
+    ]
   },
   {
     "id": 19,
@@ -2755,7 +3119,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/19/01_header.jpg",
+        "alt": "La copertina di 'Giardinaggio Antistress - Parole Intrecciate' accanto ai punti forti: 80 puzzle a tema con una scheda di curiosità per ogni schema, stampa a caratteri grandi per una lettura senza fatica, bonus disegni da colorare e labirinti, soluzioni complete in fondo al libro."
+      },
+      {
+        "src": "image/galleria/19/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «Preparare il Terreno» e «La Semina», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/19/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: quattro sezioni a tema, labirinti, disegni da colorare e soluzioni."
+      }
+    ]
   },
   {
     "id": 17,
@@ -2819,7 +3197,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/17/01_header.jpg",
+        "alt": "La copertina di 'Mindfulness Parole Intrecciate per Adulti' accanto ai punti forti: 80 puzzle a tema con una scheda di curiosità per ogni schema, stampa a caratteri grandi per una lettura senza fatica, bonus disegni da colorare e labirinti, soluzioni complete in fondo al libro."
+      },
+      {
+        "src": "image/galleria/17/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «Vivere il Presente» e «I Cinque Sensi», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/17/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: quattro sezioni a tema, labirinti, disegni da colorare e soluzioni."
+      }
+    ]
   },
   {
     "id": 16,
@@ -2873,7 +3265,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/16/01_header.jpg",
+        "alt": "The cover of 'Mindfulness Word Search for Adults' next to its highlights: 80 large-print puzzles each with a short themed note, four themed chapters to explore the topic step by step, bonus pages coloring scenes and mazes, full solutions at the back of the book."
+      },
+      {
+        "src": "image/galleria/16/02_puzzles.jpg",
+        "alt": "Two puzzles side by side, “Living in the Present” and “The Five Senses”, each with a short note above the grid."
+      },
+      {
+        "src": "image/galleria/16/03_inside_the_book.jpg",
+        "alt": "Four inside pages: four themed chapters, mazes, coloring pages and solutions."
+      }
+    ]
   },
   {
     "id": 12,
@@ -2948,7 +3354,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/12/01_header.jpg",
+        "alt": "La copertina di 'Kamasutra per Coppie - Parole Intrecciate' accanto ai punti forti: 80 puzzle a tema con una scheda di curiosità per ogni schema, stampa a caratteri grandi per una lettura senza fatica, bonus disegni da colorare e labirinti, soluzioni complete in fondo al libro."
+      },
+      {
+        "src": "image/galleria/12/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «Creare l'Atmosfera» e «Il Gioco di Sguardi», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/12/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: quattro sezioni a tema, labirinti, disegni da colorare e soluzioni."
+      }
+    ]
   },
   {
     "id": 3,
@@ -3099,7 +3519,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/4/01_header.jpg",
+        "alt": "La copertina di 'I Quattro Elementi - Ricerca Parole Motivazionale (Vol. 131)' accanto ai punti forti: 80 puzzle a tema con una scheda di curiosità per ogni schema, stampa a caratteri grandi per una lettura senza fatica, bonus disegni da colorare e labirinti, soluzioni complete in fondo al libro."
+      },
+      {
+        "src": "image/galleria/4/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «La Mente Libera» e «Luce e Ottimismo», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/4/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: quattro sezioni a tema, labirinti, disegni da colorare e soluzioni."
+      }
+    ]
   },
   {
     "id": 13,
@@ -3169,7 +3603,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/13/01_header.jpg",
+        "alt": "The cover of 'Kamasutra for Couples - Word Search' next to its highlights: 80 large-print puzzles each with a short themed note, four themed chapters to explore the topic step by step, bonus pages coloring scenes and mazes, full solutions at the back of the book."
+      },
+      {
+        "src": "image/galleria/13/02_puzzles.jpg",
+        "alt": "Two puzzles side by side, “Setting the Mood” and “The Game of Glances”, each with a short note above the grid."
+      },
+      {
+        "src": "image/galleria/13/03_inside_the_book.jpg",
+        "alt": "Four inside pages: four themed chapters, mazes, coloring pages and solutions."
+      }
+    ]
   },
   {
     "id": 11,
