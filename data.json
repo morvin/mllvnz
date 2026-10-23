@@ -4699,7 +4699,21 @@
         "n. 37.778 in Arte, cinema e fotografia (Libri)"
       ]
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/70/01_header.jpg",
+        "alt": "La copertina bordeaux del Quaderno di Lettura accanto ai punti forti: 100 schede guidate, indice dei libri, albo d'oro del Nobel e guida ai festival letterari."
+      },
+      {
+        "src": "image/galleria/70/02_scheda_doppia_pagina.jpg",
+        "alt": "Due schede libro affiancate, con autore, date di lettura, valutazione a stelle, trama, citazione del cuore e analisi critica."
+      },
+      {
+        "src": "image/galleria/70/03_dentro_trovi.jpg",
+        "alt": "Quattro pagine interne: indice dei libri, albo d'oro del Nobel, un'opera d'autore in nero di china e la guida ai festival letterari."
+      }
+    ]
   },
   {
     "id": 71,
@@ -4776,7 +4790,21 @@
         "n. 121 in Birre"
       ]
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/71/01_header.jpg",
+        "alt": "La copertina ambra del Quaderno di Birra accanto ai punti forti: 50 schede su doppia pagina, guida ai festival birrari, compendio del mastro birraio e registro di cantina."
+      },
+      {
+        "src": "image/galleria/71/02_scheda_doppia_pagina.jpg",
+        "alt": "La scheda di degustazione aperta su due pagine: vista, schiuma e olfatto a sinistra, gusto e giudizio a destra."
+      },
+      {
+        "src": "image/galleria/71/03_dentro_trovi.jpg",
+        "alt": "Quattro pagine interne: il compendio illustrato del mastro birraio, guida ai festival, vocabolario dei profumi e wishlist delle birre rare."
+      }
+    ]
   },
   {
     "id": 72,
@@ -4851,7 +4879,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/72/01_header.jpg",
+        "alt": "La copertina rosso pompeiano del Quaderno di Arte accanto ai punti forti: 50 schede di visita su doppia pagina, tavolozza cromatica, atelier souvenir, musei e capolavori da vedere."
+      },
+      {
+        "src": "image/galleria/72/02_scheda_doppia_pagina.jpg",
+        "alt": "La scheda di una mostra aperta su due pagine: la visita a sinistra, le opere che hanno colpito a destra con griglia a punti per appunti e disegni."
+      },
+      {
+        "src": "image/galleria/72/03_dentro_trovi.jpg",
+        "alt": "Quattro pagine interne: criteri di analisi visiva, atelier souvenir, i musei della vita e capolavori da vedere."
+      }
+    ]
   },
   {
     "id": 73,
@@ -4916,7 +4958,21 @@
         "n. 542 in Vino (Libri)"
       ]
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/73/01_header.jpg",
+        "alt": "La copertina del Quaderno di Vino in pelle bordeaux accanto ai punti forti: 50 schede su doppia pagina, guida regionale ai grandi vini d'Italia, tavola delle grandi annate e registro di cantina."
+      },
+      {
+        "src": "image/galleria/73/02_scheda_doppia_pagina.jpg",
+        "alt": "La scheda di degustazione aperta su due pagine: esame visivo e olfattivo a sinistra, esame gustativo e giudizio a destra."
+      },
+      {
+        "src": "image/galleria/73/03_dentro_trovi.jpg",
+        "alt": "Quattro pagine interne: tavola delle annate, vocabolario dei profumi, guida regionale e registro di cantina."
+      }
+    ]
   },
   {
     "id": 74,
@@ -4990,7 +5046,21 @@
         "n. 24.137 in Libri sulla sociologia della cultura"
       ]
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/74/01_header.jpg",
+        "alt": "La copertina blu notte del Quaderno degli Ospiti accanto ai punti forti: 100 schede ospite, scheda dell'host, registro delle visite e bacheca dei luoghi del cuore."
+      },
+      {
+        "src": "image/galleria/74/02_scheda_doppia_pagina.jpg",
+        "alt": "Due schede ospite affiancate, con nomi, provenienza, date del soggiorno e ampio spazio per pensieri e dediche."
+      },
+      {
+        "src": "image/galleria/74/03_dentro_trovi.jpg",
+        "alt": "Quattro pagine interne: lettera di benvenuto, informazioni per il soggiorno, registro delle visite e bacheca dei luoghi del cuore."
+      }
+    ]
   },
   {
     "id": 78,
