@@ -314,7 +314,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/50/01_header.jpg",
+        "alt": "La copertina del Quaderno di Chitarra accanto ai punti forti: 5 sistemi per pagina con pentagramma e tablatura a 6 righe, 100 pagine numerate, indice dei brani, formato tascabile 6x9 pollici."
+      },
+      {
+        "src": "image/galleria/50/02_pagine.jpg",
+        "alt": "Due pagine affiancate, ognuna con cinque sistemi di pentagramma e tablatura."
+      },
+      {
+        "src": "image/galleria/50/03_dentro_il_quaderno.jpg",
+        "alt": "Tre pagine interne: la pagina del proprietario, l'indice dei brani e una pagina numerata."
+      }
+    ]
   },
   {
     "id": 51,
@@ -391,7 +405,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/51/01_header.jpg",
+        "alt": "La copertina del Quaderno Musicale Pentagrammato accanto ai punti forti: 12 righi per pagina con chiave di violino, 100 pagine numerate, indice delle composizioni, formato tascabile 6x9 pollici."
+      },
+      {
+        "src": "image/galleria/51/02_pagine.jpg",
+        "alt": "Due pagine affiancate, ognuna con dodici righi e la chiave di violino già stampata."
+      },
+      {
+        "src": "image/galleria/51/03_dentro_il_quaderno.jpg",
+        "alt": "Tre pagine interne: la pagina del proprietario, l'indice delle composizioni e una pagina numerata."
+      }
+    ]
   },
   {
     "id": 49,
@@ -473,7 +501,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/49/01_header.jpg",
+        "alt": "La copertina del 'Sudoku della Divina Commedia' accanto ai punti forti: 100 enigmi, uno per ogni canto, difficoltà crescente dall'Inferno al Paradiso, un'introduzione al canto prima di ogni schema, soluzioni complete."
+      },
+      {
+        "src": "image/galleria/49/02_canto.jpg",
+        "alt": "Due pagine affiancate con i primi due sudoku dell'Inferno, ognuno con la sua introduzione al canto."
+      },
+      {
+        "src": "image/galleria/49/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: l'indice dell'Inferno, un sudoku del Purgatorio, uno del Paradiso e le soluzioni."
+      }
+    ]
   },
   {
     "id": 48,
