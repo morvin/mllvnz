@@ -930,7 +930,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/43/01_header.jpg",
+        "alt": "La copertina di 'Capolavori della Letteratura - Parole Intrecciate (Vol. 2)' accanto ai punti forti: 50 crucipuzzle sui grandi romanzi, una xilografia d'autore per ogni opera, una scheda per ogni romanzo, formato grande con le soluzioni dopo ogni schema."
+      },
+      {
+        "src": "image/galleria/43/02_romanzo.jpg",
+        "alt": "Lo schema di «Una vita» a sinistra e, a destra, la soluzione con la scheda del romanzo e la sua xilografia."
+      },
+      {
+        "src": "image/galleria/43/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: l'indice dei romanzi, l'apertura della sezione L'anima e l'abisso, la sezione Ombre, enigmi e fantasie e una soluzione illustrata."
+      }
+    ]
   },
   {
     "id": 42,
@@ -998,7 +1012,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/42/01_header.jpg",
+        "alt": "La copertina di 'Capolavori della Letteratura - Parole Intrecciate' accanto ai punti forti: 50 crucipuzzle sui grandi romanzi, una xilografia d'autore per ogni opera, una scheda per ogni romanzo, formato grande con le soluzioni dopo ogni schema."
+      },
+      {
+        "src": "image/galleria/42/02_romanzo.jpg",
+        "alt": "Lo schema di «Sostiene Pereira» a sinistra e, a destra, la soluzione con la scheda del romanzo e la sua xilografia."
+      },
+      {
+        "src": "image/galleria/42/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: l'indice dei romanzi, l'apertura della sezione L'anima e l'abisso, la sezione Epica, storia e destino e una soluzione illustrata."
+      }
+    ]
   },
   {
     "id": 41,
