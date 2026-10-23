@@ -4180,7 +4180,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/65/01_header.jpg",
+        "alt": "The cover of 'Ischia Guide - Hot Springs, Sea & Wine' next to its highlights: trip preparation, hot springs and wellness, themed itineraries and the six towns."
+      },
+      {
+        "src": "image/galleria/65/02_itineraries.jpg",
+        "alt": "Two pages of the wellness itinerary, with the thermal parks table and a day-by-day plan."
+      },
+      {
+        "src": "image/galleria/65/03_maps.jpg",
+        "alt": "Four full-page illustrated maps: the island of Ischia, Ischia Porto and Ponte, Forio and Sant'Angelo."
+      }
+    ]
   },
   {
     "id": 66,
@@ -4276,7 +4290,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/66/01_header.jpg",
+        "alt": "La copertina della guida 'Terme, mare e vino: organizza il tuo viaggio a Ischia' accanto ai punti forti: mappa completa dell'isola, i sei comuni, terme e parchi termali, itinerari tematici."
+      },
+      {
+        "src": "image/galleria/66/02_itinerari.jpg",
+        "alt": "Due pagine dell'itinerario benessere, con la tabella dei parchi termali e il programma giorno per giorno."
+      },
+      {
+        "src": "image/galleria/66/03_mappe.jpg",
+        "alt": "Quattro mappe illustrate a pagina intera: l'isola di Ischia, Ischia Porto e Ponte, Forio e Sant'Angelo."
+      }
+    ]
   },
   {
     "id": 67,
@@ -4352,7 +4380,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/67/01_header.jpg",
+        "alt": "Das Cover von 'Thermen, Meer und Wein: Planen Sie Ihre Reise nach Ischia' neben den Highlights: Vorbereitung und Logistik, Thermen und Wellness, Themenrouten und die sechs Gemeinden."
+      },
+      {
+        "src": "image/galleria/67/02_themenrouten.jpg",
+        "alt": "Zwei Seiten der Wellnessroute mit der Tabelle der Thermenparks und einem Tagesplan."
+      },
+      {
+        "src": "image/galleria/67/03_karten.jpg",
+        "alt": "Vier ganzseitige illustrierte Karten: die Insel Ischia, Ischia Porto und Ponte, Forio und Sant'Angelo."
+      }
+    ]
   },
   {
     "id": 68,
@@ -4527,7 +4569,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/52/01_header.jpg",
+        "alt": "La copertina nera e oro del Quaderno di Cinema accanto ai punti forti: 100 schede guidate, la scena cult, indice dei 100 film e tavole illustrate."
+      },
+      {
+        "src": "image/galleria/52/02_scheda_doppia_pagina.jpg",
+        "alt": "Una tavola illustrata in bianco e nero accanto a una scheda film con trama, scena cult, analisi critica e giudizio finale."
+      },
+      {
+        "src": "image/galleria/52/03_dentro_trovi.jpg",
+        "alt": "Quattro pagine interne: indice dei film, pagina del proprietario e due tavole illustrate dedicate ai classici del cinema."
+      }
+    ]
   },
   {
     "id": 69,
@@ -4631,7 +4687,21 @@
         "n. 1.574 in Giochi per feste"
       ]
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/69/01_header.jpg",
+        "alt": "La copertina de 'Il Grande Quiz del Cinema' accanto alla domanda 'Quanto ne sai davvero di cinema?' e ai punti forti: 360 domande in 15 capitoli, risposte spiegate con aneddoti, indice analitico."
+      },
+      {
+        "src": "image/galleria/69/02_capitoli.jpg",
+        "alt": "L'apertura del primo capitolo, I pionieri, con la tavola illustrata del Viaggio nella Luna di Méliès e la prima pagina di domande a risposta multipla."
+      },
+      {
+        "src": "image/galleria/69/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: indice dei contenuti, risposte con curiosità, una tavola illustrata di capitolo e l'indice analitico."
+      }
+    ]
   },
   {
     "id": 70,
