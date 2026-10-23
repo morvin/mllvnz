@@ -3764,7 +3764,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/59/01_header.jpg",
+        "alt": "La copertina di 'Criptovalute - Parole Intrecciate' accanto ai punti forti: 80 puzzle a tema con curiosità, stampa a caratteri grandi, disegni da colorare e labirinti, soluzioni complete."
+      },
+      {
+        "src": "image/galleria/59/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, Bitcoin: l'oro digitale e La blockchain immutabile, ognuno con una breve spiegazione sopra la griglia."
+      },
+      {
+        "src": "image/galleria/59/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: l'apertura di una sezione, un labirinto, un disegno da colorare della rete blockchain e le soluzioni."
+      }
+    ]
   },
   {
     "id": 60,
@@ -3899,7 +3913,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/61/01_header.jpg",
+        "alt": "La copertina di 'Citazioni Latine - Parole Intrecciate' accanto ai punti forti: 80 puzzle a tema con curiosità, stampa a caratteri grandi, disegni da colorare e labirinti, soluzioni complete."
+      },
+      {
+        "src": "image/galleria/61/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, Carpe diem e Cogito ergo sum, ognuno con la citazione, l'autore e il significato sopra la griglia."
+      },
+      {
+        "src": "image/galleria/61/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: l'apertura di una sezione, un labirinto, un disegno da colorare di Cesare a cavallo e le soluzioni."
+      }
+    ]
   },
   {
     "id": 62,
@@ -3974,7 +4002,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/62/01_header.jpg",
+        "alt": "La copertina di 'Grandi Esplorazioni - Parole Intrecciate' accanto ai punti forti: 80 puzzle a tema con curiosità, stampa a caratteri grandi, disegni da colorare e labirinti, soluzioni complete."
+      },
+      {
+        "src": "image/galleria/62/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, Cristoforo Colombo e Amerigo Vespucci, ognuno con la sua scheda storica sopra la griglia."
+      },
+      {
+        "src": "image/galleria/62/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: l'apertura di una sezione, un labirinto, un disegno da colorare dell'antico Egitto e le soluzioni."
+      }
+    ]
   },
   {
     "id": 63,
@@ -4049,7 +4091,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/63/01_header.jpg",
+        "alt": "The cover of 'US National Parks Word Search' next to its highlights: 80 large-print puzzles, a short story for every park, coloring pages and mazes, full solutions."
+      },
+      {
+        "src": "image/galleria/63/02_puzzles.jpg",
+        "alt": "Two puzzles side by side, Yellowstone and Old Faithful, each with a short portrait of the park above the grid."
+      },
+      {
+        "src": "image/galleria/63/03_inside_the_book.jpg",
+        "alt": "Four inside pages: a chapter opener, a maze, a Yellowstone coloring page and the solutions."
+      }
+    ]
   },
   {
     "id": 64,
@@ -4117,7 +4173,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/64/01_header.jpg",
+        "alt": "La copertina di 'Grandi Invenzioni - Parole Intrecciate' accanto ai punti forti: 80 puzzle a tema con curiosità, stampa a caratteri grandi, disegni da colorare e labirinti, soluzioni complete."
+      },
+      {
+        "src": "image/galleria/64/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, La ruota e La scrittura cuneiforme, ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/64/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: l'apertura di una sezione, un labirinto, un disegno da colorare della stampa di Gutenberg e le soluzioni."
+      }
+    ]
   },
   {
     "id": 65,
