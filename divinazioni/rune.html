@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rune</title>
+<style>
+@font-face{
+font-family:'Noto Sans Runic';
+src:url(data:font/woff2;base64,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) format('woff2');
+font-weight:400;
+font-style:normal;
+font-display:swap;
+unicode-range:U+16A0-16FF;
+}
+:root{
+--paper:#f7f6f2;
+--paper-deep:#efeee7;
+--ink:#1b201d;
+--ink-soft:#4a534d;
+--indigo:#33485c;
+--cinnabar:#a83a2a;
+--bronze:#8a8360;
+--rule:rgba(27,32,29,.16);
+--serif:"Palatino Linotype",Palatino,"Iowan Old Style","Book Antiqua",Georgia,serif;
+--body:Georgia,"Times New Roman",serif;
+--mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+background:var(--paper);
+color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.62;
+-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px;margin:0 auto;padding:38px 26px 96px}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.backlink{margin:0 0 14px}
+.backlink a{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze);text-decoration:none;border-bottom:1px solid transparent;transition:color .25s ease,border-color .25s ease}
+.backlink a:hover{color:var(--indigo);border-bottom-color:var(--indigo)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze);margin:0 0 10px}
+.lang{display:flex;gap:0;border:1px solid var(--rule);border-radius:2px;overflow:hidden;flex:0 0 auto}
+.lang button{
+background:transparent;border:0;border-right:1px solid var(--rule);padding:6px 11px;cursor:pointer;
+font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--ink-soft)
+}
+.lang button:last-child{border-right:0}
+.lang button[aria-pressed="true"]{background:var(--indigo);color:#f2f2ec}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,6vw,44px);line-height:1.06;margin:0 0 6px;letter-spacing:-.01em}
+h1 .glyph{font-family:var(--serif);font-style:italic;font-size:.78em;margin-right:.28em;color:var(--indigo)}
+.lede{margin:0 0 34px;color:var(--ink-soft);max-width:54ch}
+label.field{display:block;margin-bottom:22px}
+label.field > span,.flabel{
+display:block;font-family:var(--mono);font-size:11px;letter-spacing:.2em;
+text-transform:uppercase;color:var(--bronze);margin-bottom:8px
+}
+textarea{
+width:100%;min-height:78px;resize:vertical;background:rgba(255,255,255,.42);
+border:1px solid var(--rule);border-radius:2px;padding:12px 14px;
+font-family:var(--body);font-size:17px;line-height:1.5;color:var(--ink)
+}
+textarea:focus,button:focus-visible{outline:2px solid var(--indigo);outline-offset:2px}
+.seg{display:flex;border:1px solid var(--rule);border-radius:2px;overflow:hidden;width:max-content;max-width:100%}
+.seg button{
+background:transparent;border:0;border-right:1px solid var(--rule);padding:9px 16px;cursor:pointer;
+font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)
+}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--indigo);color:#f2f2ec}
+.method-note{font-size:14px;color:var(--ink-soft);margin:10px 0 0;max-width:54ch}
+.actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:28px}
+button.cast{background:var(--ink);color:#eceade;border:0;border-radius:2px;padding:13px 26px;cursor:pointer;font-family:var(--serif);font-size:17px}
+button.cast:hover{background:var(--indigo)}
+button.cast[disabled]{opacity:.45;cursor:default}
+button.ghost{background:transparent;border:1px solid var(--rule);border-radius:2px;padding:11px 18px;cursor:pointer;font-family:var(--serif);font-size:16px;color:var(--ink)}
+button.ghost:hover{border-color:var(--indigo);color:var(--indigo)}
+button.ghost[disabled]{opacity:.4;cursor:default}
+
+.stage{position:relative;margin:40px 0 0}
+.cardblock{position:relative;padding:18px 0 6px}
+.watermark{position:absolute;right:-6px;top:50%;transform:translateY(-50%);font-family:'Noto Sans Runic',"Segoe UI Historic","Segoe UI Symbol",var(--serif);font-style:normal;
+font-size:220px;line-height:.8;color:rgba(51,72,92,.09);pointer-events:none;user-select:none;white-space:nowrap}
+
+.spread{position:relative;display:flex;gap:22px;justify-content:flex-start;align-items:flex-end;flex-wrap:wrap}
+.spread.single{width:min(320px,86vw)}
+.spread.three{width:min(820px,98vw)}
+.cardslot{flex:1 1 0;min-width:150px;max-width:280px;display:flex;flex-direction:column;gap:8px;opacity:0;transform:translateY(8px)}
+.cardslot.in{opacity:1;transform:none;transition:opacity .5s ease,transform .5s ease}
+.poslabel{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze);text-align:center}
+
+.cardface-wrap{perspective:900px}
+.card3d{position:relative;width:100%;aspect-ratio:5/8;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.2,.7,.3,1)}
+.card3d.flipped{transform:rotateY(180deg)}
+.cardside{position:absolute;inset:0;backface-visibility:hidden;border:1px solid var(--rule);border-radius:5px;
+display:flex;align-items:center;justify-content:center;overflow:hidden}
+.cardback{background:
+ repeating-linear-gradient(135deg, rgba(51,72,92,.14) 0 8px, rgba(51,72,92,.05) 8px 16px),
+ var(--indigo)}
+.cardback::after{content:"✦";font-family:var(--serif);font-style:italic;color:rgba(242,242,236,.85);font-size:28px}
+.cardfront{background:var(--paper);transform:rotateY(180deg);padding:10px 6px;flex-direction:column}
+.cardfront .inner{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;transition:transform .3s;height:100%;width:100%}
+.card3d.reversed .cardfront .inner{transform:rotate(180deg)}
+.cf-num{font-family:var(--mono);font-size:12px;color:var(--bronze);letter-spacing:.1em}
+.cf-glyph{font-family:'Noto Sans Runic',"Segoe UI Historic","Segoe UI Symbol",var(--serif);font-style:normal;font-size:56px;color:var(--indigo)}
+.cf-img{max-width:90%;max-height:72%;object-fit:contain;border:1px solid var(--rule);background:#fff;display:none}
+.cf-img.on{display:block}
+.cf-name{font-family:var(--serif);font-size:17px;text-align:center;line-height:1.15;padding:0 4px}
+.cf-orient{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--cinnabar)}
+
+.deckpicker{display:flex;gap:9px;flex-wrap:wrap}
+.deckopt{display:flex;flex-direction:column;align-items:center;gap:5px;background:transparent;border:1px solid var(--rule);
+border-radius:3px;padding:6px 6px 7px;cursor:pointer;width:66px}
+.deckopt:hover{border-color:var(--bronze)}
+.deckopt img{width:42px;height:auto;display:block;border:1px solid var(--rule);border-radius:2px;background:#fff}
+.deckopt .glyph-mini{width:42px;height:56px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);
+font-style:italic;color:var(--indigo);font-size:19px;border:1px solid var(--rule);border-radius:2px;background:rgba(51,72,92,.05)}
+.deckopt span.lbl{font-family:var(--mono);font-size:8px;letter-spacing:0;text-transform:uppercase;color:var(--ink-soft);text-align:center;line-height:1.25;min-width:0;width:100%;white-space:normal;overflow-wrap:break-word;hyphens:auto}
+.deckopt[aria-pressed="true"]{border-color:var(--indigo);background:rgba(51,72,92,.05)}
+.deckopt[aria-pressed="true"] span.lbl{color:var(--indigo)}
+
+.namebar{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:26px 0 2px}
+.namebar .num{font-family:var(--mono);font-size:12px;color:var(--bronze);letter-spacing:.16em}
+.namebar .glyph{font-family:'Noto Sans Runic',"Segoe UI Historic","Segoe UI Symbol",var(--serif);font-style:normal;font-size:34px;line-height:1;color:var(--indigo)}
+.namebar .it{font-family:var(--serif);font-size:26px}
+.namebar .key{font-family:var(--mono);font-size:12px;color:var(--ink-soft);letter-spacing:.06em}
+.namebar .orient{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--cinnabar)}
+
+.sec{margin:30px 0 0}
+.sec h3{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);font-weight:400;margin:0 0 8px}
+.sec p{margin:0 0 10px}
+.judgment{font-family:var(--serif);font-size:21px;line-height:1.5}
+
+.pos-list{list-style:none;margin:0;padding:0}
+.pos-list li{border-left:2px solid var(--cinnabar);padding:2px 0 10px 16px;margin:0 0 16px}
+.pos-list b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+color:var(--cinnabar);font-weight:400;margin-bottom:3px}
+.pos-list .pname{font-family:var(--serif);font-size:19px;margin:2px 0 4px}
+.pos-list .pmeaning{font-size:16px}
+
+.into{border-top:1px solid var(--rule);padding-top:22px;margin-top:32px}
+.q-echo{font-family:var(--serif);font-size:19px;font-style:italic;color:var(--indigo);margin:0 0 4px}
+.reading{white-space:pre-wrap;font-size:16.5px}
+.status{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--bronze)}
+
+.export-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:22px}
+.export-row:first-of-type{margin-top:22px}
+.export-row + .export-row{margin-top:12px}
+.export-row button.ghost{padding:9px 15px;font-size:14.5px}
+.export-row .flabel{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--bronze);margin:0}
+.share-link{font-family:var(--serif);font-size:14px;color:var(--indigo);text-decoration:none;
+ border:1px solid var(--rule);border-radius:2px;padding:8px 13px;cursor:pointer;background:transparent;line-height:1}
+.share-link:hover{border-color:var(--indigo);background:rgba(51,72,92,.05)}
+.export-status{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--bronze);opacity:0;transition:opacity .4s ease}
+
+.log{margin-top:56px}
+.log h3{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);font-weight:400;margin:0 0 4px}
+.log-entry{display:block;width:100%;text-align:left;background:transparent;border:0;border-bottom:1px solid var(--rule);
+padding:9px 0;font-family:var(--body);font-size:14.5px;color:var(--ink-soft)}
+.log-entry .k{font-family:var(--mono);font-size:11px;color:var(--bronze);letter-spacing:.1em;margin-right:8px}
+
+footer{margin-top:64px;font-size:13.5px;color:var(--ink-soft);line-height:1.55;max-width:60ch}
+
+@media (max-width:560px){.watermark{font-size:120px;opacity:.7}.wrap{padding:28px 20px 80px}.spread.three{gap:12px}}
+@media (prefers-reduced-motion:reduce){.cardslot,.cardslot.in,.card3d{transition:none}.cardslot.in{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top">
+<div>
+<p class="backlink"><a href="./" id="t-back"></a></p>
+<p class="eyebrow" id="t-eyebrow"></p>
+</div>
+<div class="lang" role="group" aria-label="Lingua / Language">
+<button type="button" id="l-it" aria-pressed="true">IT</button>
+<button type="button" id="l-en" aria-pressed="false">EN</button>
+</div>
+</div>
+<h1><span class="glyph">✦</span><span id="t-title"></span></h1>
+<p class="lede" id="t-lede"></p>
+
+<label class="field">
+<span id="t-qlabel"></span>
+<textarea id="q"></textarea>
+</label>
+
+<div style="margin-bottom:0">
+<span class="flabel" id="t-method"></span>
+<div class="seg" role="group">
+<button type="button" id="m-single" aria-pressed="true"></button>
+<button type="button" id="m-three" aria-pressed="false"></button>
+</div>
+</div>
+<p class="method-note" id="mnote"></p>
+
+<div style="margin-bottom:0;margin-top:22px;display:none">
+<span class="flabel" id="t-deck"></span>
+<div class="deckpicker" id="deckpicker" role="group"></div>
+</div>
+
+<div class="actions">
+<button class="cast" id="cast"></button>
+<button class="ghost" id="again" style="display:none"></button>
+</div>
+
+<div class="stage" id="stage" aria-live="polite"></div>
+
+<div class="log" id="log" style="display:none">
+<h3 id="t-log"></h3>
+<div id="log-entries"></div>
+</div>
+
+<footer id="t-foot"></footer>
+</div>
+
+<script>
+const RUNES = [
+{n:0,glyph:"\u16A0",name:"Fehu",it:"Fehu",en:"Fehu",key:"La ricchezza guadagnata",keyEn:"Wealth earned by hand",
+up:"Un raccolto che si pu\u00f2 toccare con mano, frutto di lavoro pi\u00f9 che di fortuna. Prosperit\u00e0 che circola, non che si accumula soltanto.",
+upEn:"A harvest you can hold in your hands, born of labor more than luck. Prosperity that circulates, not merely piles up.",
+rev:"Ricchezza che sfugge tra le dita, o un possesso che ha smesso di nutrire chi lo trattiene.",
+revEn:"Wealth slipping through the fingers, or a possession that has stopped nourishing the one who holds it.",
+lore:"Il nome significa \u201cbestiame\u201d: nelle societ\u00e0 del Nord era la prima forma di moneta, la ricchezza che cammina sulle proprie gambe.",
+loreEn:"The name means \u201ccattle\u201d: in the societies of the North it was the earliest form of currency, wealth that walks on its own legs.",
+reversible:true},
+{n:1,glyph:"\u16A2",name:"Uruz",it:"Uruz",en:"Uruz",key:"La forza selvatica",keyEn:"Untamed strength",
+up:"La forza di un corpo che non ha ancora imparato a dubitare di s\u00e9. Vitalit\u00e0 grezza, salute, la spinta che precede la forma.",
+upEn:"The strength of a body that has not yet learned to doubt itself. Raw vitality, health, the push that comes before form.",
+rev:"Un vigore speso male, o la fatica di chi ha smesso di ascoltare il proprio corpo.",
+revEn:"Vigor spent poorly, or the weariness of one who has stopped listening to their own body.",
+lore:"Prende il nome dall'uro, il grande bue selvatico d'Europa, estinto da secoli ma vivo nel gesto di questa runa.",
+loreEn:"Named for the aurochs, the great wild ox of Europe, extinct for centuries but still alive in the shape of this rune.",
+reversible:true},
+{n:2,glyph:"\u16A6",name:"Thurisaz",it:"Thurisaz",en:"Thurisaz",key:"La soglia pericolosa",keyEn:"The dangerous threshold",
+up:"Una forza che protegge proprio perch\u00e9 sa mordere. Un ostacolo che, attraversato con cautela, diventa riparo.",
+upEn:"A force that protects precisely because it can bite. An obstacle that, crossed with caution, becomes shelter.",
+rev:"Un pericolo subito senza difesa, o una collera che si ritorce contro chi la porta.",
+revEn:"A danger endured without defense, or an anger that turns back on the one who carries it.",
+lore:"Il suo nome evoca insieme il gigante e la spina: la runa di Thor, forza che protegge e minaccia nello stesso gesto.",
+loreEn:"Its name evokes both the giant and the thorn: Thor's rune, a force that protects and threatens in the same breath.",
+reversible:true},
+{n:3,glyph:"\u16A8",name:"Ansuz",it:"Ansuz",en:"Ansuz",key:"Il messaggio ricevuto",keyEn:"The message received",
+up:"Una parola che arriva da pi\u00f9 lontano di chi la pronuncia. Ascolta: la risposta che cercavi potrebbe gi\u00e0 essere stata detta.",
+upEn:"A word arriving from farther than the one who speaks it. Listen: the answer you sought may already have been spoken.",
+rev:"Un consiglio distorto, una voce che inganna, o un messaggio importante lasciato cadere.",
+revEn:"Twisted advice, a voice that deceives, or an important message left unheeded.",
+lore:"Legata a Odino, dio della parola e del respiro: la runa che porta la voce degli d\u00e8i fino all'orecchio umano.",
+loreEn:"Linked to Odin, god of speech and breath: the rune that carries the voice of the gods down to the human ear.",
+reversible:true},
+{n:4,glyph:"\u16B1",name:"Raidho",it:"Raidho",en:"Raidho",key:"Il movimento giusto",keyEn:"Rightful movement",
+up:"Il ritmo di chi si muove sapendo dove mettere il piede. Un viaggio, reale o interiore, che segue il proprio passo naturale.",
+upEn:"The rhythm of one who moves knowing where to place each step. A journey, real or inward, that follows its own natural pace.",
+rev:"Una sosta forzata, un percorso interrotto, o la sensazione di aver perso la direzione.",
+revEn:"A forced stop, an interrupted path, or the feeling of having lost one's direction.",
+lore:"Indica il carro e la cavalcata: la runa dei viandanti, di chi porta a termine il tragitto misurando bene le proprie forze.",
+loreEn:"It signifies the wagon and the ride: the rune of travelers, of one who completes the journey by measuring their strength well.",
+reversible:true},
+{n:5,glyph:"\u16B2",name:"Kenaz",it:"Kenaz",en:"Kenaz",key:"La luce controllata",keyEn:"Controlled light",
+up:"Una fiamma piccola ma ben governata, capace di rischiarare senza bruciare. Chiarezza, sapere che diventa strumento.",
+upEn:"A small but well-tended flame, able to give light without burning. Clarity, knowledge turned into a tool.",
+rev:"Un fuoco che si spegne, un'idea che perde forza, o una luce che rivela pi\u00f9 di quanto si volesse mostrare.",
+revEn:"A fire going out, an idea losing strength, or a light revealing more than one wished to show.",
+lore:"Il nome significa \u201ctorcia\u201d: la runa dell'artigiano e del conoscitore, di chi trasforma la fiamma in mestiere.",
+loreEn:"The name means \u201ctorch\u201d: the rune of the craftsman and the knower, of one who turns flame into craft.",
+reversible:true},
+{n:6,glyph:"\u16B7",name:"Gebo",it:"Gebo",en:"Gebo",key:"Lo scambio che lega",keyEn:"The exchange that binds",
+up:"Un dono che non chiede di essere ripagato subito, perch\u00e9 il legame stesso \u00e8 gi\u00e0 la ricompensa. Equilibrio tra il dare e il ricevere.",
+upEn:"A gift that asks nothing in return right away, because the bond itself is already the reward. Balance between giving and receiving.",
+rev:"",revEn:"",
+lore:"Il segno a incrocio, uguale in ogni direzione: per questo non ha rovescio, il dono resta dono comunque lo si guardi.",
+loreEn:"The crossing mark, the same from every direction: this is why it has no reverse \u2014 a gift remains a gift however you look at it.",
+reversible:false},
+{n:7,glyph:"\u16B9",name:"Wunjo",it:"Wunjo",en:"Wunjo",key:"L'armonia raggiunta",keyEn:"Harmony reached",
+up:"Una gioia che non ha bisogno di essere spiegata, il sollievo di ci\u00f2 che finalmente va per il verso giusto.",
+upEn:"A joy that needs no explanation, the relief of something finally falling into place.",
+rev:"Un piacere rimandato, un legame che si sfilaccia, o una gioia che tarda ad arrivare.",
+revEn:"A pleasure postponed, a bond fraying, or a joy slow to arrive.",
+lore:"Chiude la prima famiglia di otto rune con la parola \u201cgioia\u201d: il raccolto del cammino percorso fin qui.",
+loreEn:"It closes the first family of eight runes with the word \u201cjoy\u201d: the harvest of the road walked so far.",
+reversible:true},
+{n:8,glyph:"\u16BA",name:"Hagalaz",it:"Hagalaz",en:"Hagalaz",key:"La tempesta necessaria",keyEn:"The necessary storm",
+up:"Una forza che non chiede permesso, ma che smuove ci\u00f2 che era rimasto troppo a lungo fermo. Non tutte le rotture sono perdite.",
+upEn:"A force that asks no permission, yet stirs what had stood still for too long. Not every breaking is a loss.",
+rev:"",revEn:"",
+lore:"La grandine cade uguale su ogni campo: una runa che non conosce rovescio, perch\u00e9 il cambiamento che porta non si pu\u00f2 addolcire guardandola da un altro verso.",
+loreEn:"Hail falls the same on every field: a rune with no reverse, because the change it brings cannot be softened by looking at it from another angle.",
+reversible:false},
+{n:9,glyph:"\u16BE",name:"Naudiz",it:"Naudiz",en:"Naudiz",key:"Il limite che insegna",keyEn:"The limit that teaches",
+up:"Una resistenza che costringe a trovare in s\u00e9 una forza non ancora usata. Ci\u00f2 che manca, insegnato dalla mancanza stessa.",
+upEn:"A resistance that forces you to find a strength not yet used. What is missing, taught by the lack itself.",
+rev:"Un bisogno portato troppo a lungo, che diventa privazione, ansia, o scelte fatte per paura.",
+revEn:"A need carried too long, turning into deprivation, anxiety, or choices made out of fear.",
+lore:"Il nome significa \u201cnecessit\u00e0\u201d: la runa che ricorda come, spesso, sia proprio il vincolo a rivelare la via.",
+loreEn:"The name means \u201cneed\u201d: the rune reminding us that it is often constraint itself that reveals the way.",
+reversible:true},
+{n:10,glyph:"\u16C1",name:"Isa",it:"Isa",en:"Isa",key:"La sosta immobile",keyEn:"The still pause",
+up:"Un fermo che non \u00e8 sconfitta, ma la superficie compatta su cui aspettare che le cose maturino da sole. Chiarezza fredda, tempo sospeso.",
+upEn:"A stillness that is not defeat, but the firm surface on which to wait for things to ripen on their own. Cold clarity, suspended time.",
+rev:"",revEn:"",
+lore:"Un solo tratto verticale, identico da qualunque lato lo si guardi: la runa del silenzio che non si lascia piegare.",
+loreEn:"A single vertical stroke, identical from whichever side you view it: the rune of a silence that will not bend.",
+reversible:false},
+{n:11,glyph:"\u16C3",name:"Jera",it:"Jera",en:"Jera",key:"Il tempo che matura",keyEn:"Time that ripens",
+up:"Un frutto che arriva solo dopo la stagione giusta. Ricompensa per un lavoro seminato senza fretta di vederlo crescere.",
+upEn:"A fruit that comes only after the right season. Reward for work sown without haste to see it grow.",
+rev:"",revEn:"",
+lore:"Indica il ciclo dell'anno e del raccolto: ruota su se stessa senza cambiare aspetto, come le stagioni che tornano sempre uguali.",
+loreEn:"It signifies the cycle of the year and the harvest: it turns upon itself without changing shape, like the seasons that always return the same.",
+reversible:false},
+{n:12,glyph:"\u16C7",name:"Eihwaz",it:"Eihwaz",en:"Eihwaz",key:"La radice che resiste",keyEn:"The root that endures",
+up:"Un albero che affonda le radici tanto in profondit\u00e0 quanto si alza in altezza. Resistenza, e la capacit\u00e0 di attraversare una fine per trovare un principio.",
+upEn:"A tree whose roots run as deep as its branches climb high. Endurance, and the capacity to pass through an ending to find a beginning.",
+rev:"",revEn:"",
+lore:"Il tasso, pianta di lunghissima vita spesso legata ai cimiteri del Nord: la runa che unisce morte e rinascita in un solo tronco.",
+loreEn:"The yew, a long-living tree often linked to northern burial grounds: the rune that joins death and rebirth in a single trunk.",
+reversible:false},
+{n:13,glyph:"\u16C8",name:"Perthro",it:"Perthro",en:"Perthro",key:"Il caso che rivela",keyEn:"Chance that reveals",
+up:"Un tiro di dadi che nessuno pu\u00f2 truccare. Ci\u00f2 che era nascosto viene a galla, spesso proprio quando meno lo si aspettava.",
+upEn:"A throw of the dice no one can rig. What was hidden comes to light, often just when least expected.",
+rev:"Una sfortuna che sembra ostinata, un segreto che pesa, o la fiducia nel destino che vacilla.",
+revEn:"A stubborn run of bad luck, a secret weighing heavy, or faith in fate beginning to waver.",
+lore:"Il significato esatto del suo nome resta incerto persino per gli studiosi: la runa pi\u00f9 enigmatica del Futhark, adatta a custodire ci\u00f2 che \u00e8 nascosto.",
+loreEn:"The exact meaning of its name remains uncertain even to scholars: the most enigmatic rune of the Futhark, fitting keeper of what is hidden.",
+reversible:true},
+{n:14,glyph:"\u16C9",name:"Algiz",it:"Algiz",en:"Algiz",key:"Lo scudo alzato",keyEn:"The raised shield",
+up:"Le braccia alzate verso il cielo, un istinto che protegge prima ancora di capire da cosa. Un legame con qualcosa di pi\u00f9 grande di s\u00e9.",
+upEn:"Arms raised toward the sky, an instinct that protects before it even understands from what. A bond with something larger than oneself.",
+rev:"Una difesa abbassata, un rischio non visto, o un avvertimento che \u00e8 meglio non ignorare.",
+revEn:"A lowered guard, an unseen risk, or a warning better not ignored.",
+lore:"Il nome rimanda all'alce, ma il segno stesso, un ramo che si apre in due, \u00e8 diventato simbolo universale di riparo.",
+loreEn:"The name recalls the elk, but the sign itself, a branch splitting in two, has become a universal symbol of shelter.",
+reversible:true},
+{n:15,glyph:"\u16CA",name:"Sowilo",it:"Sowilo",en:"Sowilo",key:"La meta raggiunta",keyEn:"The goal reached",
+up:"Una luce che non tramonta a met\u00e0 cammino. Successo, energia vitale, la certezza di essere sulla strada giusta.",
+upEn:"A light that does not set halfway through the journey. Success, vital energy, the certainty of being on the right path.",
+rev:"",revEn:"",
+lore:"Il segno a zig-zag del fulmine solare: chiude la seconda famiglia di rune con la promessa che la luce, alla fine, arriva sempre.",
+loreEn:"The zig-zag mark of the solar bolt: it closes the second family of runes with the promise that light, in the end, always arrives.",
+reversible:false},
+{n:16,glyph:"\u16CF",name:"Tiwaz",it:"Tiwaz",en:"Tiwaz",key:"La giustizia che sacrifica",keyEn:"Justice that sacrifices",
+up:"Una vittoria ottenuta con le regole, non nonostante esse. Il coraggio di rinunciare a qualcosa per il bene comune.",
+upEn:"A victory won by the rules, not despite them. The courage to give something up for the common good.",
+rev:"Un'ingiustizia subita, energie spese in una battaglia sbagliata, o la volont\u00e0 che vacilla proprio quando servirebbe di pi\u00f9.",
+revEn:"An injustice endured, energy spent in the wrong battle, or willpower faltering exactly when it is needed most.",
+lore:"Prende il nome dal dio Tyr, che sacrific\u00f2 la propria mano per tenere fede a un patto: la runa dell'onore che si paga.",
+loreEn:"Named for the god Tyr, who sacrificed his own hand to keep a pact: the rune of honor that must be paid for.",
+reversible:true},
+{n:17,glyph:"\u16D2",name:"Berkano",it:"Berkano",en:"Berkano",key:"La crescita che nutre",keyEn:"Growth that nurtures",
+up:"Un germoglio che chiede solo tempo e cura per diventare albero. Nuovi inizi, fertilit\u00e0, un progetto ancora giovane ma vivo.",
+upEn:"A sprout that asks only for time and care to become a tree. New beginnings, fertility, a project still young but alive.",
+rev:"Una crescita bloccata, preoccupazioni familiari, o la fatica di prendersi cura di qualcosa senza vederne ancora i frutti.",
+revEn:"Growth held back, family worries, or the strain of caring for something without yet seeing its fruit.",
+lore:"La betulla, primo albero a rifiorire dopo l'inverno nordico: la runa legata alle d\u00e8e della fertilit\u00e0 e della madre.",
+loreEn:"The birch, the first tree to bloom again after the northern winter: the rune tied to goddesses of fertility and motherhood.",
+reversible:true},
+{n:18,glyph:"\u16D6",name:"Ehwaz",it:"Ehwaz",en:"Ehwaz",key:"La fiducia che avanza",keyEn:"Trust that moves forward",
+up:"Il passo di due che si muovono come uno solo. Un'alleanza, un progresso costante costruito sulla fiducia reciproca.",
+upEn:"The stride of two moving as one. An alliance, steady progress built on mutual trust.",
+rev:"Un'intesa che si incrina, un cambiamento imposto troppo in fretta, o il timore di essere lasciati indietro.",
+revEn:"A bond cracking, a change forced too quickly, or the fear of being left behind.",
+lore:"Il cavallo, compagno di viaggio e di guerra nel mondo nordico: la runa che ricorda quanto ogni avanzata dipenda da un buon compagno.",
+loreEn:"The horse, companion in travel and war across the Norse world: the rune recalling how every advance depends on a good companion.",
+reversible:true},
+{n:19,glyph:"\u16D7",name:"Mannaz",it:"Mannaz",en:"Mannaz",key:"Il s\u00e9 tra gli altri",keyEn:"The self among others",
+up:"Ci\u00f2 che si \u00e8, visto anche attraverso gli occhi di chi cammina accanto. Comunit\u00e0, consapevolezza di s\u00e9, il posto che si occupa nel mondo.",
+upEn:"What one is, seen also through the eyes of those walking alongside. Community, self-awareness, the place one holds in the world.",
+rev:"Un isolamento cercato o subito, la fatica di chiedere aiuto, o un'immagine di s\u00e9 che si \u00e8 appannata.",
+revEn:"Isolation sought or endured, the difficulty of asking for help, or a self-image grown dim.",
+lore:"Il nome significa semplicemente \u201cuomo\u201d: la runa dell'umanit\u00e0 intera, non del singolo isolato dal resto.",
+loreEn:"The name simply means \u201chuman\u201d: the rune of humanity as a whole, not of the single one cut off from the rest.",
+reversible:true},
+{n:20,glyph:"\u16DA",name:"Laguz",it:"Laguz",en:"Laguz",key:"Il flusso che sa",keyEn:"The flow that knows",
+up:"Una corrente che conosce la strada meglio di chi prova a controllarla. Intuizione, adattamento, la saggezza di lasciarsi portare quando serve.",
+upEn:"A current that knows the way better than anyone trying to steer it. Intuition, adaptability, the wisdom of letting oneself be carried when needed.",
+rev:"Una paura che confonde, emozioni che travolgono, o un'intuizione lasciata inascoltata.",
+revEn:"A fear that clouds judgment, emotions that overwhelm, or intuition left unheard.",
+lore:"Legata all'acqua e, in alcuni poemi runici, al porro: la runa delle correnti sotterranee, visibili e no.",
+loreEn:"Linked to water and, in some rune poems, to the leek: the rune of undercurrents, both visible and hidden.",
+reversible:true},
+{n:21,glyph:"\u16DC",name:"Ingwaz",it:"Ingwaz",en:"Ingwaz",key:"Il seme che matura dentro",keyEn:"The seed ripening within",
+up:"Un'energia raccolta e messa da parte, non ancora pronta per essere mostrata ma gi\u00e0 in cammino verso la propria forma.",
+upEn:"An energy gathered and set aside, not yet ready to be shown but already moving toward its own shape.",
+rev:"",revEn:"",
+lore:"Il segno a losanga, chiuso su se stesso: la runa del dio Ing, il seme che matura al buio prima del raccolto.",
+loreEn:"The diamond-shaped sign, closed upon itself: the rune of the god Ing, the seed ripening in the dark before the harvest.",
+reversible:false},
+{n:22,glyph:"\u16DE",name:"Dagaz",it:"Dagaz",en:"Dagaz",key:"La svolta improvvisa",keyEn:"The sudden turning point",
+up:"Il momento preciso in cui la notte diventa giorno, senza gradualit\u00e0. Una chiarezza che arriva tutta insieme, un risveglio.",
+upEn:"The exact moment night turns to day, with no gradual passage. A clarity that arrives all at once, an awakening.",
+rev:"",revEn:"",
+lore:"Il segno a clessidra, uguale se capovolto: come l'alba, che \u00e8 sempre alba comunque la si guardi.",
+loreEn:"The hourglass-shaped sign, the same when turned upside down: like dawn, which is always dawn however you look at it.",
+reversible:false},
+{n:23,glyph:"\u16DF",name:"Othala",it:"Othala",en:"Othala",key:"La radice di casa",keyEn:"The root of home",
+up:"Ci\u00f2 che \u00e8 stato tramandato e che ancora regge, la casa a cui si torna anche solo con il pensiero. Eredit\u00e0, appartenenza.",
+upEn:"What has been handed down and still holds, the home one returns to even in thought alone. Heritage, belonging.",
+rev:"Un legame con le proprie radici diventato peso, un'eredit\u00e0 contesa, o l'allontanamento da ci\u00f2 che un tempo era casa.",
+revEn:"A bond with one's roots turned into a burden, a contested inheritance, or estrangement from what once was home.",
+lore:"Ultima runa del Futhark: chiude il cerchio tornando a ci\u00f2 da cui si \u00e8 partiti, la terra e la famiglia.",
+loreEn:"The last rune of the Futhark: it closes the circle by returning to where one began, land and family.",
+reversible:true}
+];
+
+// Ordinale a due cifre (01..24), usato come piccola etichetta accanto al glifo.
+RUNES.forEach(r=>{ r.r = String(r.n+1).padStart(2,'0'); });
+
+const DECK_IMAGES = {};
+
+const DECK_META = [
+ {key:'minimal', labelIt:'Minimale', labelEn:'Minimal'}
+];
+
+const PAGE_URL = 'https://morvinlab.com/mllvnz/divinazioni/rune.html';
+
+const TR = {
+it:{
+back:"← Divinazioni",
+docTitle:"Rune",
+eyebrow:"Rune · Futhark Antico",
+title:"Consultazione",
+lede:"Formula una domanda, scegli la stesura e lascia che le rune si rivelino. Ventiquattro rune del Futhark Antico, dritte o capovolte, accompagnate da un commento composto al momento.",
+qlabel:"LA DOMANDA",
+qplaceholder:"Che cosa chiedi alle rune?",
+method:"STESURA",
+mSingle:"UNA RUNA",
+mThree:"TRE RUNE",
+noteSingle:"Una runa estratta a caso. Alcune rune sono simmetriche e restano sempre dritte; le altre possono uscire anche capovolte. Risposta diretta a una domanda precisa.",
+noteThree:"Tre rune in sequenza: passato, presente, futuro. Ogni runa reversibile può uscire dritta o capovolta.",
+cast:"Consulta le rune",
+again:"Consulta di nuovo",
+statusDraw:"· le rune si rivelano ·",
+statusRead:"· si compone la lettura ·",
+meaning:"SIGNIFICATO",
+image:"ORIGINE",
+reversed:"Capovolta",
+positions:{past:"PASSATO",present:"PRESENTE",future:"FUTURO"},
+reading:"LETTURA ESTESA",
+log:"Consultazioni di questa sessione",
+foot:"I significati delle rune riprendono la tradizione divinatoria moderna del Futhark Antico (ordine dei tre aett: Frey, Hagal, Tyr); non riproducono alcun testo protetto da copyright. Le posizioni capovolte seguono la popolare sistematizzazione novecentesca di Ralph Blum: otto rune simmetriche non hanno un significato capovolto e restano sempre dritte. La lettura estesa è composta al momento da un motore di testo locale, che intreccia le rune uscite con la domanda posta: va presa per quello che è, un commento, mai una previsione.",
+saveBtn:"Salva su file",
+shareBtn:"Condividi",
+savedMsg:"File salvato.",
+sharedMsg:"Condiviso.",
+shareFallbackMsg:"Condivisione non disponibile: testo copiato negli appunti.",
+shareFailMsg:"Impossibile condividere o copiare automaticamente.",
+shareOnLabel:"Condividi su",
+fbMsg:"Testo copiato: incollalo nel tuo post su Facebook.",
+deckLabel:"Mazzo",
+spreadLabel:"Stesura",
+questionLabel:"Domanda",
+headerTitle:"RUNE — Consultazione",
+dateLabel:"Data",
+timeLabel:"Ora"
+},
+en:{
+back:"← Divinations",
+docTitle:"Runes",
+eyebrow:"Runes · Elder Futhark",
+title:"Consultation",
+lede:"Ask a question, choose a spread, and let the runes reveal themselves. Twenty-four runes of the Elder Futhark, upright or reversed, with a reading composed on the spot.",
+qlabel:"THE QUESTION",
+qplaceholder:"What do you ask the runes?",
+method:"SPREAD",
+mSingle:"ONE RUNE",
+mThree:"THREE RUNES",
+noteSingle:"One rune drawn at random. Some runes are symmetrical and always stay upright; the others may also fall reversed. A direct answer to a precise question.",
+noteThree:"Three runes in sequence: past, present, future. Each reversible rune may fall upright or reversed.",
+cast:"Consult the runes",
+again:"Consult again",
+statusDraw:"· the runes are revealing ·",
+statusRead:"· the reading is being composed ·",
+meaning:"MEANING",
+image:"ORIGIN",
+reversed:"Reversed",
+positions:{past:"PAST",present:"PRESENT",future:"FUTURE"},
+reading:"EXTENDED READING",
+log:"This session's consultations",
+foot:"The rune meanings follow the modern divinatory tradition of the Elder Futhark (aett order: Freyr, Hagal, Tyr); they do not reproduce any copyrighted text. Reversed positions follow Ralph Blum's popular 20th-century system: eight symmetrical runes have no reversed meaning and always stay upright. The extended reading is composed on the spot by a local text engine, weaving the runes drawn together with the question asked: take it for what it is, a commentary, never a prediction.",
+saveBtn:"Save to file",
+shareBtn:"Share",
+savedMsg:"File saved.",
+sharedMsg:"Shared.",
+shareFallbackMsg:"Sharing unavailable: text copied to clipboard.",
+shareFailMsg:"Could not share or copy automatically.",
+shareOnLabel:"Share on",
+fbMsg:"Text copied: paste it into your Facebook post.",
+deckLabel:"Deck",
+spreadLabel:"Spread",
+questionLabel:"Question",
+headerTitle:"RUNES — Consultation",
+dateLabel:"Date",
+timeLabel:"Time"
+}
+};
+
+function artIt(prep, phrase){
+ const p = phrase.toLowerCase();
+ const map = { da:{ "il":"dal", "la":"dalla", "l'":"dall'" }, a:{ "il":"al", "la":"alla", "l'":"all'" } };
+ let art=null, rest=p;
+ if(p.startsWith("l'")){ art="l'"; rest=p.slice(2); }
+ else if(p.startsWith("il ")){ art="il"; rest=p.slice(3); }
+ else if(p.startsWith("la ")){ art="la"; rest=p.slice(3); }
+ if(art && map[prep] && map[prep][art]){
+  const contracted = map[prep][art];
+  return contracted.endsWith("'") ? contracted+rest : contracted+' '+rest;
+ }
+ return prep+' '+p;
+}
+
+const PHRASES = {
+it:{
+openQ:[
+ q=>`Hai chiesto: “${q}”. Le rune rispondono così.`,
+ q=>`Davanti alla domanda “${q}”, le rune si dispongono così.`,
+ q=>`Per “${q}”, ecco cosa emerge dalle rune.`
+],
+openNoQ:[
+ ()=>`Senza una domanda precisa, le rune parlano comunque.`,
+ ()=>`Le rune si rivelano, pronte a dire la loro anche senza una domanda formulata.`
+],
+closeSingle:[
+ ()=>`Non è un verdetto: è un invito a guardare la situazione da questo angolo per qualche giorno.`,
+ ()=>`Prendila come una lente, non come una sentenza: ciò che suggerisce vale la pena di essere provato.`,
+ ()=>`Come sempre con le rune, il significato si completa solo quando lo confronti con ciò che già sai.`
+],
+synthesis:[
+ (k1,k2,k3)=>`Messe in fila, le tre rune raccontano un percorso: ${artIt('da',k1)}, attraverso ${k2.toLowerCase()}, verso ${k3.toLowerCase()}.`,
+ (k1,k2,k3)=>`Il filo che le lega va ${artIt('da',k1)}, passa per ${k2.toLowerCase()}, e arriva ${artIt('a',k3)}.`,
+ (k1,k2,k3)=>`Tre movimenti distinti — ${k1.toLowerCase()}, ${k2.toLowerCase()}, ${k3.toLowerCase()} — che qui si leggono come un unico arco.`
+],
+reflection:[
+ key=>`Fermati un momento su ciò che ${key.toLowerCase()} tocca davvero in te: spesso la runa non risponde alla domanda posta alla lettera, ma a quella che le sta sotto.`,
+ key=>`C'è probabilmente più di uno strato in questa risposta: ${key.toLowerCase()} raramente riguarda un solo aspetto della vita, e vale la pena chiedersi dove altro si stia già manifestando.`,
+ key=>`Vale la pena chiedersi non solo cosa significhi ${key.toLowerCase()}, ma perché sia proprio questa runa a essere uscita oggi, e non un'altra.`,
+ key=>`Le rune non parlano per caso: se ${key.toLowerCase()} è comparsa ora, forse è perché una parte di te la stava già aspettando.`
+],
+adviceUpright:[
+ key=>`Nei prossimi giorni, cerca un'occasione concreta in cui onorare ciò che ${key.toLowerCase()} suggerisce, anche in un gesto piccolo.`,
+ key=>`Un buon esercizio: annota una situazione recente in cui ${key.toLowerCase()} era già presente, anche se non l'avevi notato allora.`,
+ key=>`Prova a fare, oggi stesso, un passo minimo ma reale nella direzione che ${key.toLowerCase()} indica.`,
+ key=>`Non serve una svolta grande: basta lasciare un po' più di spazio, questa settimana, a ciò che ${key.toLowerCase()} rappresenta.`
+],
+adviceReversed:[
+ key=>`Prima di agire, vale la pena capire cosa nella situazione ha impedito ${artIt('a',key)} di manifestarsi pienamente.`,
+ key=>`Non forzare: a volte il modo migliore di rispondere a un rovescio è aspettare un giorno prima di reagire.`,
+ key=>`Chiediti se stai davvero affrontando il problema, o solo la sua superficie: ${key.toLowerCase()} capovolta spesso indica qualcosa lasciato in sospeso.`,
+ key=>`Un rovescio non è una condanna, ma un invito a rallentare: cosa succederebbe se, per una volta, non correggessi subito la rotta?`
+],
+reflectionThree:[
+ (k1,k2,k3)=>`Le tre rune non vanno lette come tre risposte separate, ma come tre momenti di un unico movimento: nota cosa si ripete e cosa cambia passando ${artIt('da',k1)} ${artIt('a',k3)}.`,
+ (k1,k2,k3)=>`Spesso la runa del presente, ${k2.toLowerCase()}, è la chiave per capire perché le altre due si comportano così: è lì che si decide come andrà a finire.`,
+ (k1,k2,k3)=>`Guarda alla runa del passato come a una causa più che a un ricordo: ${k1.toLowerCase()} spiega, in parte, perché oggi ti trovi davanti a ${k2.toLowerCase()}.`
+],
+adviceThree:[
+ k3=>`Guardando al futuro, un passo concreto da muovere ora è lasciare spazio a ciò che ${k3.toLowerCase()} suggerisce, anche solo in piccolo.`,
+ k3=>`Se una sola cosa è da tenere a mente nei prossimi giorni, è questa: ${k3.toLowerCase()}.`,
+ k3=>`Il futuro descritto da questa runa non è già scritto: è più simile a una direzione che resta da confermare con le scelte di ogni giorno.`
+]
+},
+en:{
+openQ:[
+ q=>`You asked: “${q}”. Here is how the runes answer.`,
+ q=>`Facing the question “${q}”, the runes arrange themselves like this.`,
+ q=>`For “${q}”, here is what emerges from the runes.`
+],
+openNoQ:[
+ ()=>`Without a precise question, the runes still have something to say.`,
+ ()=>`The runes reveal themselves, ready to speak even without a question asked.`
+],
+closeSingle:[
+ ()=>`This is not a verdict: it is an invitation to look at the situation from this angle for a few days.`,
+ ()=>`Take it as a lens, not a sentence: what it suggests is worth trying out.`,
+ ()=>`As always with runes, the meaning is only complete once you set it against what you already know.`
+],
+synthesis:[
+ (k1,k2,k3)=>`Lined up, the three runes trace a path: from ${k1.toLowerCase()}, through ${k2.toLowerCase()}, toward ${k3.toLowerCase()}.`,
+ (k1,k2,k3)=>`The thread linking them runs from ${k1.toLowerCase()}, through ${k2.toLowerCase()}, to ${k3.toLowerCase()}.`,
+ (k1,k2,k3)=>`Three distinct movements — ${k1.toLowerCase()}, ${k2.toLowerCase()}, ${k3.toLowerCase()} — read here as a single arc.`
+],
+reflection:[
+ key=>`Pause for a moment on what ${key.toLowerCase()} actually touches in you: the rune often answers not the question asked in so many words, but the one underneath it.`,
+ key=>`There is probably more than one layer to this answer: ${key.toLowerCase()} rarely concerns only one part of life, and it's worth asking where else it may already be showing up.`,
+ key=>`It's worth asking not only what ${key.toLowerCase()} means, but why this particular rune came up today, and not another.`,
+ key=>`Runes rarely speak by accident: if ${key.toLowerCase()} appeared now, perhaps some part of you was already expecting it.`
+],
+adviceUpright:[
+ key=>`In the coming days, look for a concrete occasion to honor what ${key.toLowerCase()} suggests, even in a small gesture.`,
+ key=>`A useful exercise: note a recent situation where ${key.toLowerCase()} was already present, even if you didn't notice it at the time.`,
+ key=>`Try taking, today, one small but real step in the direction ${key.toLowerCase()} points toward.`,
+ key=>`No grand turn is needed: just make a little more room, this week, for what ${key.toLowerCase()} represents.`
+],
+adviceReversed:[
+ key=>`Before acting, it's worth understanding what in the situation kept ${key.toLowerCase()} from fully showing itself.`,
+ key=>`Don't force it: sometimes the best answer to a reversal is to wait a day before reacting.`,
+ key=>`Ask yourself whether you're truly facing the problem, or only its surface: ${key.toLowerCase()} reversed often points to something left unresolved.`,
+ key=>`A reversal is not a sentence, but an invitation to slow down: what would happen if, just this once, you didn't correct course right away?`
+],
+reflectionThree:[
+ (k1,k2,k3)=>`The three runes should not be read as three separate answers, but as three moments of a single movement: notice what repeats and what changes moving from ${k1.toLowerCase()} to ${k3.toLowerCase()}.`,
+ (k1,k2,k3)=>`Often the rune of the present, ${k2.toLowerCase()}, is the key to understanding why the other two behave as they do: that is where the outcome is decided.`,
+ (k1,k2,k3)=>`Read the rune of the past more as a cause than a memory: ${k1.toLowerCase()} partly explains why you now stand before ${k2.toLowerCase()}.`
+],
+adviceThree:[
+ k3=>`Looking to the future, one concrete step to take now is to make room for what ${k3.toLowerCase()} suggests, even in a small way.`,
+ k3=>`If there is one thing to keep in mind over the coming days, it is this: ${k3.toLowerCase()}.`,
+ k3=>`The future this rune describes is not already written: it is more a direction still to be confirmed by everyday choices.`
+]
+}
+};
+
+let lang = 'it';
+
+// La lingua scelta nel portale vale anche qui, cosi' chi arriva dall'indice in
+// inglese non si ritrova lo strumento in italiano.
+const LANG_KEY = 'divinazioni_lang';
+try { const saved = localStorage.getItem(LANG_KEY); if(saved==='it'||saved==='en') lang = saved; } catch(e){}
+let method = 'single';
+let deckStyle = 'minimal';
+let busy = false;
+let history = [];
+let lastDraw = null; // {question, method, draws}
+
+function pick(arr){return arr[Math.floor(Math.random()*arr.length)]}
+
+function drawCards(m){
+ const pool = RUNES.slice();
+ const n = m==='three' ? 3 : 1;
+ const chosen = [];
+ for(let i=0;i<n;i++){
+  const idx = Math.floor(Math.random()*pool.length);
+  const card = pool.splice(idx,1)[0];
+  // Alcune rune (Gebo, Hagalaz, Isa, Jera, Eihwaz, Sowilo, Ingwaz, Dagaz) sono
+  // tradizionalmente simmetriche e non hanno un significato "capovolto": per
+  // quelle l'orientamento è sempre dritto.
+  chosen.push({card, reversed: card.reversible ? Math.random()<0.5 : false});
+ }
+ if(m==='three'){
+  chosen[0].pos='past'; chosen[1].pos='present'; chosen[2].pos='future';
+ }
+ return chosen;
+}
+
+function composeReading(question, draws, m, l){
+ const P = PHRASES[l];
+ const q = (question||'').trim();
+ let out = q ? pick(P.openQ)(q) : pick(P.openNoQ)();
+ out += '\n\n';
+ if(m==='single'){
+  const d = draws[0];
+  const card = d.card;
+  const name = l==='it'?card.it:card.en;
+  const key = l==='it'?card.key:card.keyEn;
+  const meaning = d.reversed ? (l==='it'?card.rev:card.revEn) : (l==='it'?card.up:card.upEn);
+  const lore = l==='it'?card.lore:card.loreEn;
+  const orient = d.reversed ? ` (${TR[l].reversed.toLowerCase()})` : '';
+  out += `${name}${orient} — ${key}. ${meaning}\n\n`;
+  out += `${lore}\n\n`;
+  out += pick(P.reflection)(key) + '\n\n';
+  out += (d.reversed ? pick(P.adviceReversed)(key) : pick(P.adviceUpright)(key)) + '\n\n';
+  out += pick(P.closeSingle)();
+ } else {
+  const labels = TR[l].positions;
+  draws.forEach(d=>{
+   const card = d.card;
+   const name = l==='it'?card.it:card.en;
+   const key = l==='it'?card.key:card.keyEn;
+   const meaning = d.reversed ? (l==='it'?card.rev:card.revEn) : (l==='it'?card.up:card.upEn);
+   const orient = d.reversed ? ` (${TR[l].reversed.toLowerCase()})` : '';
+   out += `${labels[d.pos]}: ${name}${orient}. ${meaning}\n\n`;
+  });
+  const k1 = l==='it'?draws[0].card.key:draws[0].card.keyEn;
+  const k2 = l==='it'?draws[1].card.key:draws[1].card.keyEn;
+  const k3 = l==='it'?draws[2].card.key:draws[2].card.keyEn;
+  out += pick(P.synthesis)(k1,k2,k3) + '\n\n';
+  out += pick(P.reflectionThree)(k1,k2,k3) + '\n\n';
+  out += pick(P.adviceThree)(k3) + '\n\n';
+  out += pick(P.closeSingle)();
+ }
+ return out;
+}
+
+const $ = id=>document.getElementById(id);
+
+function applyStaticText(){
+ const t = TR[lang];
+ $('t-back').textContent = t.back;
+ $('t-eyebrow').textContent = t.eyebrow;
+ $('t-title').textContent = t.title;
+ $('t-lede').textContent = t.lede;
+ $('t-qlabel').textContent = t.qlabel;
+ $('q').placeholder = t.qplaceholder;
+ $('t-method').textContent = t.method;
+ $('m-single').textContent = t.mSingle;
+ $('m-three').textContent = t.mThree;
+ $('mnote').textContent = method==='single' ? t.noteSingle : t.noteThree;
+ $('t-deck').textContent = lang==='it' ? 'STILE MAZZO' : 'DECK STYLE';
+ $('cast').textContent = t.cast;
+ $('again').textContent = t.again;
+ $('t-log').textContent = t.log;
+ $('t-foot').textContent = t.foot;
+ document.documentElement.lang = lang;
+ document.title = t.docTitle;
+ renderDeckPicker();
+ renderLog();
+ // Le etichette di posizione (passato/presente/futuro) sopra le carte sono
+ // scritte una sola volta in buildStage: se si cambia lingua a lettura già
+ // fatta, vanno aggiornate qui a mano.
+ const posKeys = ['past','present','future'];
+ document.querySelectorAll('#stage .poslabel').forEach((el,i)=>{
+  el.textContent = t.positions[posKeys[i]];
+ });
+ if(lastDraw){ renderResults(lastDraw.draws, lastDraw.method, true); renderReadingBox(lastDraw); }
+}
+
+function renderDeckPicker(){
+ const wrap = $('deckpicker');
+ wrap.innerHTML = DECK_META.map(d=>{
+  const label = lang==='it' ? d.labelIt : d.labelEn;
+  const thumb = d.key==='minimal'
+   ? `<span class="glyph-mini">✦</span>`
+   : `<img src="${DECK_IMAGES[d.key][0]}" alt="">`;
+  return `<button type="button" class="deckopt" data-deck="${d.key}" aria-pressed="${d.key===deckStyle}">${thumb}<span class="lbl">${label}</span></button>`;
+ }).join('');
+ wrap.querySelectorAll('.deckopt').forEach(btn=>{
+  btn.addEventListener('click', ()=>setDeck(btn.getAttribute('data-deck')));
+ });
+}
+
+function setDeck(k){
+ if(busy) return;
+ deckStyle = k;
+ $('deckpicker').querySelectorAll('.deckopt').forEach(btn=>{
+  btn.setAttribute('aria-pressed', btn.getAttribute('data-deck')===k);
+ });
+ refreshStageImages();
+}
+
+function refreshStageImages(){
+ if(!lastDraw) return;
+ const c3s = document.querySelectorAll('#stage .card3d.flipped');
+ if(c3s.length !== lastDraw.draws.length) return;
+ c3s.forEach((c3, i)=>{ fillFront(c3, lastDraw.draws[i]); });
+}
+
+function setLang(l){
+ lang = l;
+ try { localStorage.setItem(LANG_KEY, l); } catch(e){}
+ $('l-it').setAttribute('aria-pressed', l==='it');
+ $('l-en').setAttribute('aria-pressed', l==='en');
+ applyStaticText();
+}
+
+function setMethod(m){
+ if(busy) return;
+ method = m;
+ $('m-single').setAttribute('aria-pressed', m==='single');
+ $('m-three').setAttribute('aria-pressed', m==='three');
+ $('mnote').textContent = m==='single' ? TR[lang].noteSingle : TR[lang].noteThree;
+}
+
+function buildStage(m){
+ const stage = $('stage');
+ stage.innerHTML = '';
+ const block = document.createElement('div');
+ block.className = 'cardblock';
+ const spread = document.createElement('div');
+ spread.className = 'spread ' + (m==='three' ? 'three' : 'single');
+
+ const n = m==='three' ? 3 : 1;
+ const posKeys = ['past','present','future'];
+ const slots = [];
+ for(let i=0;i<n;i++){
+  const slot = document.createElement('div');
+  slot.className = 'cardslot';
+  if(m==='three'){
+   const pl = document.createElement('div');
+   pl.className = 'poslabel';
+   pl.textContent = TR[lang].positions[posKeys[i]];
+   slot.appendChild(pl);
+  }
+  const wrap = document.createElement('div');
+  wrap.className = 'cardface-wrap';
+  const c3 = document.createElement('div');
+  c3.className = 'card3d';
+  c3.innerHTML = `<div class="cardside cardback"></div><div class="cardside cardfront"><div class="inner"><div class="cf-num"></div><div class="cf-glyph">✦</div><img class="cf-img" alt=""><div class="cf-name"></div><div class="cf-orient"></div></div></div>`;
+  wrap.appendChild(c3);
+  slot.appendChild(wrap);
+  spread.appendChild(slot);
+  slots.push({slot, c3});
+ }
+ block.appendChild(spread);
+ stage.appendChild(block);
+
+ const status = document.createElement('p');
+ status.className = 'status';
+ status.id = 'stage-status';
+ status.textContent = TR[lang].statusDraw;
+ stage.appendChild(status);
+
+ return slots;
+}
+
+function fillFront(c3, d){
+ const card = d.card;
+ const name = lang==='it'?card.it:card.en;
+ c3.querySelector('.cf-num').textContent = card.r;
+ c3.querySelector('.cf-name').textContent = name;
+ c3.querySelector('.cf-orient').textContent = d.reversed ? TR[lang].reversed : '';
+ const glyphEl = c3.querySelector('.cf-glyph');
+ const imgEl = c3.querySelector('.cf-img');
+ glyphEl.style.display = '';
+ glyphEl.textContent = card.glyph;
+ imgEl.classList.remove('on');
+ imgEl.removeAttribute('src');
+ if(d.reversed) c3.classList.add('reversed'); else c3.classList.remove('reversed');
+}
+
+function renderResults(draws, m, skipWatermark){
+ const stage = $('stage');
+ let results = stage.querySelector('.results');
+ if(results) results.remove();
+ results = document.createElement('div');
+ results.className = 'results';
+
+ if(m==='single'){
+  const d = draws[0];
+  const card = d.card;
+  const name = lang==='it'?card.it:card.en;
+  const key = lang==='it'?card.key:card.keyEn;
+  const meaning = d.reversed ? (lang==='it'?card.rev:card.revEn) : (lang==='it'?card.up:card.upEn);
+  const lore = lang==='it'?card.lore:card.loreEn;
+  results.innerHTML = `
+   <div class="namebar">
+    <span class="num">${card.r}</span>
+    <span class="glyph">${card.glyph}</span>
+    <span class="it">${name}</span>
+    <span class="key">${key}</span>
+    ${d.reversed?`<span class="orient">${TR[lang].reversed}</span>`:''}
+   </div>
+   <div class="sec"><h3>${TR[lang].meaning}</h3><p class="judgment">${meaning}</p></div>
+   <div class="sec"><h3>${TR[lang].image}</h3><p>${lore}</p></div>
+  `;
+ } else {
+  const labels = TR[lang].positions;
+  const items = draws.map(d=>{
+   const card = d.card;
+   const name = lang==='it'?card.it:card.en;
+   const meaning = d.reversed ? (lang==='it'?card.rev:card.revEn) : (lang==='it'?card.up:card.upEn);
+   return `<li><b>${labels[d.pos]}</b><div class="pname">${card.r} · ${name}${d.reversed?` — ${TR[lang].reversed}`:''}</div><div class="pmeaning">${meaning}</div></li>`;
+  }).join('');
+  results.innerHTML = `<ul class="pos-list">${items}</ul>`;
+ }
+
+ const block = stage.querySelector('.cardblock');
+ if(!skipWatermark && m==='single'){
+  const wm = document.createElement('span');
+  wm.className = 'watermark';
+  wm.textContent = draws[0].card.glyph;
+  block.appendChild(wm);
+ } else if(block && block.querySelector('.watermark') && m==='single'){
+  block.querySelector('.watermark').textContent = draws[0].card.glyph;
+ }
+
+ stage.appendChild(results);
+}
+
+function buildShareSnippet(entry){
+ const l = lang;
+ const t = TR[l];
+ const cardNames = entry.draws.map(d=>{
+  const name = l==='it' ? d.card.it : d.card.en;
+  return d.reversed ? `${name} (${t.reversed.toLowerCase()})` : name;
+ }).join(', ');
+ const q = entry.question ? `“${entry.question}” — ` : '';
+ const suffix = l==='it' ? ' · Lettura delle Rune' : ' · Rune reading';
+ return `${q}${cardNames}${suffix} — ${PAGE_URL}`;
+}
+
+function renderReadingBox(entry){
+ const stage = $('stage');
+ let into = stage.querySelector('.into');
+ if(into) into.remove();
+ into = document.createElement('div');
+ into.className = 'into';
+ into.id = 'into-block';
+
+
+ // Se la lettura estesa era già stata composta in un'altra lingua, la si
+ // rigenera nella lingua corrente invece di lasciarla incoerente col resto.
+ const text = (entry.readingText && entry.readingLang===lang) ? entry.readingText : composeReading(entry.question, entry.draws, entry.method, lang);
+ entry.readingText = text;
+ entry.readingLang = lang;
+ const snippet = buildShareSnippet(entry);
+ const encSnippet = encodeURIComponent(snippet);
+ const encTitle = encodeURIComponent(lang==='it' ? 'La mia lettura delle rune' : 'My rune reading');
+ const waHref = `https://wa.me/?text=${encSnippet}`;
+ const tgHref = `https://t.me/share/url?url=${encodeURIComponent(PAGE_URL)}&text=${encSnippet}`;
+ const xHref = `https://twitter.com/intent/tweet?text=${encSnippet}`;
+ const mailHref = `mailto:?subject=${encTitle}&body=${encodeURIComponent(text + '\n\n' + PAGE_URL)}`;
+ into.innerHTML = `
+  <h3 class="flabel">${TR[lang].reading}</h3>
+  ${entry.question?`<p class="q-echo">“${entry.question}”</p>`:''}
+  <p class="reading">${text}</p>
+  <div class="export-row">
+   <button type="button" class="ghost" id="save-txt">${TR[lang].saveBtn}</button>
+   <button type="button" class="ghost" id="share-reading">${TR[lang].shareBtn}</button>
+  </div>
+  <div class="export-row share-links">
+   <span class="flabel" style="margin:0">${TR[lang].shareOnLabel}</span>
+   <a class="share-link" href="${waHref}" target="_blank" rel="noopener">WhatsApp</a>
+   <a class="share-link" href="${tgHref}" target="_blank" rel="noopener">Telegram</a>
+   <a class="share-link" href="${xHref}" target="_blank" rel="noopener">X</a>
+   <button type="button" class="share-link" id="share-fb">Facebook</button>
+   <a class="share-link" href="${mailHref}" target="_blank" rel="noopener">Email</a>
+  </div>
+  <div class="export-row"><span class="export-status" id="export-status"></span></div>
+ `;
+ stage.appendChild(into);
+ into.querySelector('#save-txt').addEventListener('click', ()=>saveTxt(entry));
+ into.querySelector('#share-reading').addEventListener('click', ()=>shareReading(entry));
+ into.querySelector('#share-fb').addEventListener('click', ()=>shareToFacebook(entry));
+}
+
+function buildExportText(entry){
+ const l = lang;
+ const t = TR[l];
+ const methodLabel = entry.method==='single' ? t.mSingle : t.mThree;
+ const now = new Date();
+ const locale = l==='it' ? 'it-IT' : 'en-US';
+ const dateOnly = now.toLocaleDateString(locale, {day:'2-digit', month:'2-digit', year:'numeric'});
+ const timeOnly = now.toLocaleTimeString(locale, {hour:'2-digit', minute:'2-digit', second:'2-digit'});
+ const lines = [];
+ lines.push(t.headerTitle);
+ lines.push(`${t.dateLabel}: ${dateOnly} — ${t.timeLabel}: ${timeOnly}`);
+ lines.push('');
+ lines.push(`${t.spreadLabel}: ${methodLabel}`);
+ if(entry.question) lines.push(`${t.questionLabel}: ${entry.question}`);
+ lines.push('');
+ if(entry.method==='single'){
+  const d = entry.draws[0];
+  const card = d.card;
+  const name = l==='it'?card.it:card.en;
+  const meaning = d.reversed ? (l==='it'?card.rev:card.revEn) : (l==='it'?card.up:card.upEn);
+  const lore = l==='it'?card.lore:card.loreEn;
+  lines.push(`${card.r} · ${name}${d.reversed?' — '+t.reversed:''}`);
+  lines.push(meaning);
+  lines.push(lore);
+ } else {
+  const labels = t.positions;
+  entry.draws.forEach(d=>{
+   const card = d.card;
+   const name = l==='it'?card.it:card.en;
+   const meaning = d.reversed ? (l==='it'?card.rev:card.revEn) : (l==='it'?card.up:card.upEn);
+   lines.push(`${labels[d.pos]}: ${card.r} · ${name}${d.reversed?' — '+t.reversed:''}`);
+   lines.push(meaning);
+   lines.push('');
+  });
+ }
+ lines.push('');
+ lines.push(t.reading + ':');
+ lines.push(entry.readingText || composeReading(entry.question, entry.draws, entry.method, l));
+ lines.push('');
+ lines.push(t.foot);
+ return lines.join('\n');
+}
+
+function showExportStatus(msg){
+ const el = document.getElementById('export-status');
+ if(!el) return;
+ el.textContent = msg;
+ el.style.opacity = '1';
+ clearTimeout(showExportStatus._t);
+ showExportStatus._t = setTimeout(()=>{ el.style.opacity = '0'; }, 4500);
+}
+
+function buildFilename(){
+ const now = new Date();
+ const pad = n => String(n).padStart(2,'0');
+ const datePart = `${pad(now.getDate())}-${pad(now.getMonth()+1)}-${now.getFullYear()}`;
+ const timePart = `${pad(now.getHours())}-${pad(now.getMinutes())}-${pad(now.getSeconds())}`;
+ return `runeconsult-${datePart}_${timePart}.txt`;
+}
+
+function saveTxt(entry){
+ const text = buildExportText(entry);
+ const blob = new Blob([text], {type:'text/plain;charset=utf-8'});
+ const url = URL.createObjectURL(blob);
+ const a = document.createElement('a');
+ a.href = url;
+ a.download = buildFilename();
+ document.body.appendChild(a);
+ a.click();
+ document.body.removeChild(a);
+ setTimeout(()=>URL.revokeObjectURL(url), 2000);
+ showExportStatus(TR[lang].savedMsg);
+}
+
+async function shareReading(entry){
+ const text = buildExportText(entry);
+ const title = lang==='it' ? 'La mia lettura delle rune' : 'My rune reading';
+ try{
+  if(navigator.canShare){
+   const file = new File([text], buildFilename(), {type:'text/plain'});
+   if(navigator.canShare({files:[file]})){
+    await navigator.share({title, text, files:[file]});
+    showExportStatus(TR[lang].sharedMsg);
+    return;
+   }
+  }
+  if(navigator.share){
+   await navigator.share({title, text});
+   showExportStatus(TR[lang].sharedMsg);
+   return;
+  }
+  throw new Error('no-share-api');
+ } catch(err){
+  if(err && err.name==='AbortError') return;
+  try{
+   await navigator.clipboard.writeText(text);
+   showExportStatus(TR[lang].shareFallbackMsg);
+  } catch(e2){
+   showExportStatus(TR[lang].shareFailMsg);
+  }
+ }
+}
+
+async function shareToFacebook(entry){
+ // Facebook's share dialog only accepts a URL, not arbitrary post text, so the
+ // most reliable path is to copy the reading to the clipboard and open Facebook,
+ // letting the person paste it into a new post themselves.
+ const snippet = buildShareSnippet(entry);
+ try{
+  await navigator.clipboard.writeText(snippet);
+  showExportStatus(TR[lang].fbMsg);
+ } catch(e){
+  showExportStatus(TR[lang].shareFailMsg);
+ }
+ window.open('https://www.facebook.com/', '_blank', 'noopener');
+}
+
+function renderLog(){
+ const wrap = $('log');
+ const entries = $('log-entries');
+ if(history.length===0){ wrap.style.display='none'; return; }
+ wrap.style.display = '';
+ entries.innerHTML = history.slice().reverse().map(h=>{
+  const names = h.draws.map(d=>{
+   const n = lang==='it'?d.card.it:d.card.en;
+   return d.reversed ? n+'↩' : n;
+  }).join(', ');
+  const mLabel = h.method==='single' ? TR[lang].mSingle : TR[lang].mThree;
+  const qSnippet = h.question ? `“${h.question.length>60?h.question.slice(0,60)+'…':h.question}”` : (lang==='it'?'(nessuna domanda)':'(no question)');
+  return `<div class="log-entry"><span class="k">${mLabel}</span>${qSnippet} — ${names}</div>`;
+ }).join('');
+}
+
+async function runCast(){
+ if(busy) return;
+ busy = true;
+ $('cast').setAttribute('disabled','');
+ $('again').style.display = 'none';
+
+ const question = $('q').value.trim();
+ const slots = buildStage(method);
+ const draws = drawCards(method);
+
+ // stagger the flip-in of each slot, then flip each card
+ for(let i=0;i<slots.length;i++){
+  await wait(i===0?120:260);
+  slots[i].slot.classList.add('in');
+  await wait(180);
+  fillFront(slots[i].c3, draws[i]);
+  slots[i].c3.classList.add('flipped');
+ }
+
+ await wait(500);
+ const statusEl = $('stage-status');
+ if(statusEl) statusEl.textContent = TR[lang].statusRead;
+ await wait(650);
+ if(statusEl) statusEl.remove();
+
+ renderResults(draws, method, false);
+ const entry = {
+  id: (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : (Date.now()+'-'+Math.random().toString(36).slice(2)),
+  question, method, draws,
+  deckStyle, lang
+ };
+ lastDraw = entry;
+ renderReadingBox(entry);
+
+ history.push(entry);
+ if(history.length>12) history.shift();
+ renderLog();
+
+ $('cast').removeAttribute('disabled');
+ $('again').style.display = '';
+ busy = false;
+}
+
+function wait(ms){ return new Promise(r=>setTimeout(r,ms)); }
+
+$('l-it').addEventListener('click', ()=>setLang('it'));
+$('l-en').addEventListener('click', ()=>setLang('en'));
+$('m-single').addEventListener('click', ()=>setMethod('single'));
+$('m-three').addEventListener('click', ()=>setMethod('three'));
+$('cast').addEventListener('click', runCast);
+$('again').addEventListener('click', runCast);
+
+$('l-it').setAttribute('aria-pressed', lang==='it');
+$('l-en').setAttribute('aria-pressed', lang==='en');
+applyStaticText();
+</script>
+</body>
+</html>

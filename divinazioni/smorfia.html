@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smorfia</title>
+<style>
+:root{
+--paper:#f7f6f2;
+--paper-deep:#efeee7;
+--ink:#1b201d;
+--ink-soft:#4a534d;
+--indigo:#33485c;
+--cinnabar:#a83a2a;
+--bronze:#8a8360;
+--rule:rgba(27,32,29,.16);
+--serif:"Palatino Linotype",Palatino,"Iowan Old Style","Book Antiqua",Georgia,serif;
+--body:Georgia,"Times New Roman",serif;
+--mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+background:var(--paper);
+color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.62;
+-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px;margin:0 auto;padding:38px 26px 96px}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.backlink{margin:0 0 14px}
+.backlink a{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--bronze);text-decoration:none;border-bottom:1px solid transparent;transition:color .25s ease,border-color .25s ease}
+.backlink a:hover{color:var(--indigo);border-bottom-color:var(--indigo)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze);margin:0 0 10px}
+.lang{display:flex;gap:0;border:1px solid var(--rule);border-radius:2px;overflow:hidden;flex:0 0 auto}
+.lang button{
+background:transparent;border:0;border-right:1px solid var(--rule);padding:6px 11px;cursor:pointer;
+font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--ink-soft)
+}
+.lang button:last-child{border-right:0}
+.lang button[aria-pressed="true"]{background:var(--indigo);color:#f2f2ec}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,6vw,44px);line-height:1.06;margin:0 0 6px;letter-spacing:-.01em}
+h1 .glyph{font-family:var(--serif);font-style:italic;font-size:.78em;margin-right:.28em;color:var(--indigo)}
+.lede{margin:0 0 34px;color:var(--ink-soft);max-width:54ch}
+.flabel{
+display:block;font-family:var(--mono);font-size:11px;letter-spacing:.22em;
+text-transform:uppercase;color:var(--bronze);margin:0 0 12px
+}
+footer{
+margin-top:26px;font-family:var(--mono);font-size:11px;line-height:1.85;
+letter-spacing:.03em;color:var(--bronze)
+}
+.rule{border:0;border-top:1px solid var(--rule);margin:52px 0 0}
+
+label.field{display:block;margin-bottom:24px}
+label.field > span{
+display:block;font-family:var(--mono);font-size:11px;letter-spacing:.22em;
+text-transform:uppercase;color:var(--bronze);margin:0 0 10px
+}
+textarea{
+width:100%;min-height:150px;resize:vertical;
+background:var(--paper-deep);border:1px solid var(--rule);border-radius:3px;
+padding:14px 15px;font-family:var(--body);font-size:16.5px;line-height:1.6;color:var(--ink)
+}
+textarea:focus{outline:0;border-color:var(--indigo)}
+.actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:26px 0 0}
+.cast{
+background:var(--ink);color:var(--paper);border:0;border-radius:3px;
+padding:13px 26px;font-family:var(--serif);font-size:17px;cursor:pointer;
+transition:background-color .25s ease
+}
+.cast:hover{background:var(--indigo)}
+.cast[disabled]{opacity:.5;cursor:default}
+.ghost{
+background:transparent;color:var(--ink);border:1px solid var(--rule);border-radius:3px;
+padding:13px 22px;font-family:var(--serif);font-size:16px;cursor:pointer
+}
+.ghost:hover{border-color:var(--indigo)}
+.tablelink{
+font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+color:var(--indigo);text-decoration:none;border-bottom:1px solid transparent
+}
+.tablelink:hover{border-bottom-color:var(--indigo)}
+
+.stage{margin-top:46px}
+.balls{display:flex;flex-wrap:wrap;gap:14px;margin:0 0 34px}
+.ball{
+width:74px;height:74px;flex:0 0 auto;border-radius:50%;
+border:1px solid var(--rule);background:var(--paper-deep);
+display:flex;align-items:center;justify-content:center;
+font-family:var(--serif);font-size:29px;color:var(--indigo);
+opacity:0;transform:translateY(8px);
+animation:pop .5s ease forwards
+}
+@keyframes pop{to{opacity:1;transform:translateY(0)}}
+.readings{margin:0}
+.entry{border-top:1px solid var(--rule);padding:18px 0}
+.entry:last-child{border-bottom:1px solid var(--rule)}
+.entry .num{
+font-family:var(--serif);font-size:23px;color:var(--indigo);
+display:inline-block;min-width:1.9em
+}
+.entry .nap{font-family:var(--serif);font-size:19px}
+.entry .ita{color:var(--ink-soft);font-size:15.5px}
+.entry .why{
+display:block;margin-top:7px;font-family:var(--mono);font-size:11px;
+letter-spacing:.05em;color:var(--bronze)
+}
+.entry .note{margin:9px 0 0;font-size:15px;color:var(--ink-soft);line-height:1.55}
+.intro{margin:0 0 26px;color:var(--ink-soft)}
+.empty{
+border:1px solid var(--rule);border-radius:3px;padding:22px 20px;
+background:rgba(138,131,96,.05);color:var(--ink-soft);margin:0
+}
+.export-row{display:flex;flex-wrap:wrap;gap:9px;margin:26px 0 0;align-items:center}
+.share-link,.share-btn{
+font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--ink-soft);
+text-decoration:none;border:1px solid var(--rule);border-radius:2px;
+padding:8px 13px;cursor:pointer;background:transparent;line-height:1
+}
+.share-link:hover,.share-btn:hover{border-color:var(--indigo);background:rgba(51,72,92,.05)}
+@media (max-width:520px){
+.wrap{padding:30px 20px 72px}
+.ball{width:62px;height:62px;font-size:25px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="top">
+<div>
+<p class="backlink"><a href="./" id="t-back"></a></p>
+<p class="eyebrow" id="t-eyebrow"></p>
+</div>
+<div class="lang" role="group" aria-label="Lingua / Language">
+<button type="button" id="l-it" aria-pressed="true">IT</button>
+<button type="button" id="l-en" aria-pressed="false">EN</button>
+</div>
+</div>
+
+<h1><span class="glyph">&#10022;</span><span id="t-title"></span></h1>
+<p class="lede" id="t-lede"></p>
+
+<label class="field">
+<span id="t-qlabel"></span>
+<textarea id="q"></textarea>
+</label>
+
+<div class="actions">
+<button class="cast" id="cast"></button>
+<button class="ghost" id="again" style="display:none"></button>
+<a class="tablelink" href="smorfia-90.html" id="t-tablelink"></a>
+</div>
+
+<div class="stage" id="stage" aria-live="polite"></div>
+
+<hr class="rule">
+<footer id="t-foot"></footer>
+
+</div>
+<script>
+const SMORFIA = [{"n":1,"nap":"L'Italia","it":"L'Italia","en":"Italy","kit":["italia","patria","nazione","tricolore","bandiera"],"ken":["italy","homeland","nation","flag"],"nit":"Apre la tombola e vale la patria intera.","nen":"It opens the tombola and stands for the whole country."},{"n":2,"nap":"'A piccerella","it":"La bambina","en":"The little girl","kit":["bambina","bimba","piccerella","neonata","figlioletta"],"ken":["little girl","baby girl","girl"]},{"n":3,"nap":"'A jatta","it":"La gatta","en":"The cat","kit":["gatto","gatta","micio","micia","gattino","jatta","felino","cane","cani","cagnolino","cuccioli","cucciolo"],"ken":["cat","kitten","tomcat","dog","dogs","puppy"]},{"n":4,"nap":"'O puorco","it":"Il maiale","en":"The pig","kit":["maiale","porco","scrofa","suino","porcello","cavallo","cavalli","mucca","vacca","pecora","capra","asino","bue","gregge","stalla","fattoria"],"ken":["pig","hog","sow","swine","horse","horses","cow","sheep","goat","donkey","farm","stable"]},{"n":5,"nap":"'A mano","it":"La mano","en":"The hand","kit":["mano","mani","manina","palmo","piede","piedi","gamba","gambe","braccio","braccia","dito","dita","unghie","spalle","polso"],"ken":["hand","hands","palm","foot","feet","leg","legs","arm","arms","finger","fingers","shoulders"]},{"n":6,"nap":"Chella ca guarda 'nterra","it":"L'organo femminile","en":"The female sex","kit":["organo femminile","sesso femminile","genitali femminili","vulva","vagina","chella ca guarda nterra","figa","fica","patata","passera","topa","fregna","sorca","farfallina"],"ken":["female organ","female sex","female genitals","vulva","vagina","pussy","cunt"],"nit":"Uno dei numeri che non si nominano: si indicano per perifrasi, e questa vuol dire «quella che guarda per terra». Nella lettura dei sogni scatta solo su riferimenti espliciti all'anatomia femminile: la donna, di suo, non è questo numero, e la donna nuda ha il suo, il 21.","nen":"One of the numbers nobody names out loud: it is pointed at by periphrasis, and this one means “she who looks at the ground”. When reading dreams it fires only on explicit references to female anatomy: a woman as such is not this number, and the naked woman has her own, 21."},{"n":7,"nap":"'O vase","it":"Il vaso","en":"The vase","kit":["vaso","vasi","anfora","brocca","giara","bacio","baci","baciare","abbraccio","abbracciare","carezza","accarezzare"],"ken":["vase","jar","kiss","kisses","kissing"],"nit":"Il vaso di creta. In napoletano 'o vase è anche il bacio, e la smorfia gioca volentieri su questo doppio senso.","nen":"The clay vase. In Neapolitan 'o vase also means the kiss, and the smorfia happily plays on the double meaning."},{"n":8,"nap":"'A Madonna","it":"La Madonna","en":"The Madonna","kit":["madonna","vergine","immacolata","maria","cielo","paradiso","angelo","angeli","preghiera","pregare","rosario"],"ken":["madonna","virgin mary","our lady","sky","heaven","angel","angels","prayer","praying"]},{"n":9,"nap":"'A figliata","it":"La figliolanza","en":"The offspring","kit":["figli","figliolanza","nidiata","parto","partorire","nascita","neonato","gravidanza","incinta","culla","passeggino","bambini","nipote","nipoti"],"ken":["offspring","childbirth","birth","newborn","pregnant","pregnancy"]},{"n":10,"nap":"'E fasule","it":"I fagioli","en":"The beans","kit":["fagioli","fagiolo","legumi","pasta e fagioli","piselli","ceci","lenticchie","minestrone"],"ken":["beans","bean","legumes"]},{"n":11,"nap":"'E suricille","it":"I topolini","en":"The mice","kit":["topo","topi","topolino","sorcio","ratto","ratti"],"ken":["mouse","mice","rat","rats"]},{"n":12,"nap":"'O surdate","it":"Il soldato","en":"The soldier","kit":["soldato","soldati","militare","militari","esercito","caserma","divisa","viaggio","viaggiare","partire","partenza","treno","aereo","nave","macchina","automobile","auto","moto","bicicletta","autobus","strada","autostrada","valigia","stazione","aeroporto","guerra","bomba","esplosione"],"ken":["soldier","soldiers","army","military","barracks","journey","travel","leaving","train","plane","ship","car","motorbike","bicycle","road","suitcase","station","airport","war","bomb"]},{"n":13,"nap":"Sant'Antonio","it":"Sant'Antonio","en":"Saint Anthony","kit":["sant antonio","santantonio","antonio"],"ken":["saint anthony","st anthony"],"nit":"Il santo che si invoca per le cose perdute.","nen":"The saint invoked for lost things."},{"n":14,"nap":"'O 'mbriaco","it":"L'ubriaco","en":"The drunkard","kit":["ubriaco","ubriaca","ubriacone","sbronzo","sbronza","brillo","alcol","birra","osteria","taverna","ubriacarsi"],"ken":["drunk","drunkard","tipsy"]},{"n":15,"nap":"'O guaglione","it":"Il ragazzo","en":"The boy","kit":["ragazzo","ragazzino","guaglione","giovane","adolescente","bambino","bimbo"],"ken":["boy","lad","young man","kid","child"]},{"n":16,"nap":"'O culo","it":"Il sedere, e per estensione la fortuna","en":"Luck","kit":["sedere","culo","deretano","fondoschiena","fortuna","fortunato","culo","fortunato","fortunata","botta di culo","sedere"],"ken":["luck","lucky","backside","bottom","arse","ass","backside"],"nit":"A Napoli «tenè 'o culo» vuol dire essere fortunati: da qui il numero della sorte.","nen":"In Naples “tenè 'o culo” means to be lucky: hence the number of good fortune."},{"n":17,"nap":"'A disgrazzia","it":"La disgrazia","en":"Misfortune","kit":["disgrazia","sfortuna","sventura","malasorte","iella","disastro","incidente","perdersi","smarrire","fallire","rovina","crollo","terremoto","sfortunato"],"ken":["misfortune","bad luck","disaster","accident","getting lost","failing","ruin","collapse","earthquake"],"nit":"La disgrazia. Il diciassette porta sfortuna in tutta Italia, non solo qui.","nen":"Misfortune. Seventeen is the unlucky number across Italy, not only here."},{"n":18,"nap":"'O sanghe","it":"Il sangue","en":"Blood","kit":["sangue","sanguinare","ferita","ferite","emorragia","cuore","arteria","trasfusione","parente","parenti","famiglia","fratelli"],"ken":["blood","bleeding","wound","wounds","heart","relatives","family"]},{"n":19,"nap":"'A resata","it":"La risata","en":"Laughter","kit":["risata","risate","ridere","sorriso","sorridere","scherzo","barzelletta","allegria","divertirsi","buffo"],"ken":["laughter","laugh","laughing","smile","smiling"]},{"n":20,"nap":"'A festa","it":"La festa","en":"The feast","kit":["festa","feste","festeggiare","compleanno","sagra","ballo","ballare","amico","amici","amica","amiche","compagnia","invitati","sole","estate"],"ken":["feast","party","celebration","birthday","dancing","friend","friends","company","sun","summer"]},{"n":21,"nap":"'A femmena annura","it":"La donna nuda","en":"The naked woman","kit":["donna nuda","nuda","nudo","nudi","nudita","spogliarsi","spogliata","seduzione","desiderio","amante","sedurre"],"ken":["naked woman","naked","nude","nudity"]},{"n":22,"nap":"'O pazzo","it":"Il pazzo","en":"The madman","kit":["pazzo","pazza","matto","matta","folle","manicomio","impazzire","delirio","ossessione","allucinazione","follia"],"ken":["madman","mad","crazy","insane","lunatic"]},{"n":23,"nap":"'O scemo","it":"Lo scemo","en":"The fool","kit":["scemo","scema","stupido","stupida","sciocco","tonto","idiota"],"ken":["fool","foolish","stupid","silly","idiot"]},{"n":24,"nap":"'E gguardie","it":"Le guardie","en":"The guards","kit":["guardie","guardia","polizia","poliziotto","carabinieri","carabiniere","vigile","agente","questura","manette","arresto","arrestare","caserma dei carabinieri","volante"],"ken":["guards","police","policeman","officer","cops","handcuffs","arrest","arrested"]},{"n":25,"nap":"'O Natale","it":"Il Natale","en":"Christmas","kit":["natale","presepe","presepio","vigilia","babbo natale","albero di natale","capodanno","epifania","befana","regali di natale"],"ken":["christmas","nativity","christmas eve","santa claus"],"nit":"Il Natale, e con esso la tombola: le due tradizioni sono la stessa cosa.","nen":"Christmas, and with it the tombola: the two traditions are one and the same."},{"n":26,"nap":"Nanninella","it":"Anna","en":"Anna","kit":["anna","nanninella","sant anna"],"ken":["anna","saint anne"],"nit":"Nanninella è Sant'Anna, la madre della Madonna.","nen":"Nanninella is Saint Anne, the mother of the Madonna."},{"n":27,"nap":"'O cantero","it":"Il vaso da notte","en":"The chamber pot","kit":["pitale","vaso da notte","cantero","orinale","bagno","gabinetto","water","orinare"],"ken":["chamber pot","potty"]},{"n":28,"nap":"'E zzizze","it":"Il seno","en":"The breasts","kit":["seno","mammella","mammelle","allattare","tette","poppe","capezzoli"],"ken":["breasts","bosom","breastfeeding","tits","boobs","nipples"]},{"n":29,"nap":"'O pate d'e criature","it":"Il padre dei bambini","en":"The father of children","kit":["organo maschile","sesso maschile","genitali maschili","pene","membro","padre dei bambini","cazzo","pisello","minchia","uccello di un uomo","fava","arnese"],"ken":["male organ","male sex","male genitals","penis","cock","dick","prick"],"nit":"Perifrasi per l'organo maschile. La tradizione dà un numero alla mamma, il 52, ma non al padre in quanto tale: molti elenchi moderni colmano il vuoto mandando «padre» qui, e chi sogna suo padre si ritrova un numero che vuol dire un'altra cosa. Qui il 29 scatta solo sul senso anatomico.","nen":"A periphrasis for the male organ. Tradition gives the mother a number, 52, but not the father as such: many modern lists fill the gap by sending “father” here, so that dreaming of your father returns a number that means something else. Here 29 fires only on the anatomical sense."},{"n":30,"nap":"'E palle d'o tenente","it":"Le palle del tenente","en":"The lieutenant's balls","kit":["tenente","palle del tenente"],"ken":["lieutenant","officer"]},{"n":31,"nap":"'O padrone 'e casa","it":"Il padrone di casa","en":"The landlord","kit":["padrone di casa","padrone","proprietario","affitto","locatore"],"ken":["landlord","landlady","rent","owner"]},{"n":32,"nap":"'O capitone","it":"Il capitone","en":"The eel","kit":["capitone","anguilla","capitoni","pesce","pesci","pesciolino","acquario","pescare","rete da pesca","polpo"],"ken":["eel","eels","fish","fishes","aquarium","fishing","octopus"]},{"n":33,"nap":"L'anne 'e Cristo","it":"Gli anni di Cristo","en":"The years of Christ","kit":["gesu","cristo","crocifisso","croce","orologio","calendario","anni","ore","tempo che passa"],"ken":["jesus","christ","crucifix","cross","clock","watch","calendar","years","passing time"],"nit":"Trentatré: l'età della crocifissione.","nen":"Thirty-three: the age of the crucifixion."},{"n":34,"nap":"'A capa","it":"La testa","en":"The head","kit":["testa","cranio","cervello","occhio","occhi","orecchie","orecchio","naso","viso","faccia","fronte","sguardo","pensiero","pensare","ricordo","ricordare"],"ken":["head","skull","brain","eye","eyes","ear","ears","nose","face","gaze","thought","thinking","memory"]},{"n":35,"nap":"L'aucelluzzo","it":"L'uccellino","en":"The little bird","kit":["uccello","uccelli","uccellino","passero","passerotto","canarino","volatile","volare","volo","ali","nido","piume","aquila","gabbiano","colomba","corvo","gallina","gallo","piccione"],"ken":["bird","birds","little bird","sparrow","flying","flight","wings","nest","feathers","eagle","seagull","dove","crow","hen","rooster"]},{"n":36,"nap":"'E castagnelle","it":"Le nacchere","en":"The castanets","kit":["nacchere","castagnette","castagnelle"],"ken":["castanets"]},{"n":37,"nap":"'O monaco","it":"Il monaco","en":"The monk","kit":["monaco","monaci","frate","frati","convento","saio","prete","sacerdote","parroco","suora","monaca","maestro","professore","scuola","studiare","libro","libri","biblioteca","quaderno"],"ken":["monk","friar","monastery","priest","nun","teacher","professor","school","studying","book","books","library"]},{"n":38,"nap":"'E mmazzate","it":"Le botte","en":"The beating","kit":["botte","mazzate","percosse","picchiare","rissa","schiaffi","pugni","litigare","lite","litigio","discussione","vendetta","nemico","nemici","schiaffo"],"ken":["beating","beaten","punches","slaps","brawl","fight","quarrel","argument","revenge","enemy","enemies"]},{"n":39,"nap":"'A funa n'ganna","it":"La corda al collo","en":"The rope around the neck","kit":["corda al collo","cappio","impiccato","impiccarsi","forca","serpente","serpenti","biscia","vipera","corda","fune","catena","nodo","soffocare","strangolare"],"ken":["rope around the neck","noose","hanged","gallows","snake","snakes","viper","rope","chain","knot","choking"]},{"n":40,"nap":"'A paposcia","it":"L'ernia","en":"The hernia","kit":["ernia","paposcia"],"ken":["hernia"],"nit":"La paposcia è l'ernia. Qualche elenco moderno lo addolcisce in «la noia», ma le fonti napoletane concordano sull'ernia.","nen":"The paposcia is the hernia. Some modern lists soften it into “boredom”, but Neapolitan sources agree on the hernia."},{"n":41,"nap":"'O curtiello","it":"Il coltello","en":"The knife","kit":["coltello","coltelli","lama","pugnale","accoltellare","forbici","ago","spada","taglio","tagliare","ferro","ascia"],"ken":["knife","knives","blade","dagger","stabbed","scissors","needle","sword","cutting","axe"]},{"n":42,"nap":"'O cafè","it":"Il caffè","en":"Coffee","kit":["caffe","espresso","moka","caffettiera","tazzina"],"ken":["coffee","espresso"]},{"n":43,"nap":"'Onna Pereta fore 'o barcone","it":"La donna al balcone","en":"The gossip on the balcony","kit":["balcone","affacciata","pettegola","pettegolezzo","pettegolezzi","comare"],"ken":["balcony","gossip","gossiping"],"nit":"La comare affacciata che sa tutto di tutti. Il nome napoletano è molto meno gentile della traduzione.","nen":"The neighbour leaning out who knows everything about everyone. The Neapolitan name is far less polite than the translation."},{"n":44,"nap":"'E ccancelle","it":"Le carceri","en":"The prison","kit":["carcere","prigione","galera","cella","sbarre","detenuto","arrestato","cancelli","chiave","chiavi","serratura","lucchetto","gabbia","prigioniero","rinchiuso"],"ken":["prison","jail","cell","bars","arrested","key","keys","lock","padlock","cage","locked up"]},{"n":45,"nap":"'O vino bbuono","it":"Il vino buono","en":"Good wine","kit":["vino","cantina","brindisi","vigna","bottiglia di vino","bere","bicchiere","botte di vino","vendemmia"],"ken":["wine","cellar","toast","vineyard"]},{"n":46,"nap":"'E denare","it":"I soldi","en":"Money","kit":["soldi","denaro","denari","banconote","monete","moneta","euro","ricchezza","portafoglio","oro","argento","gioielli","tesoro","banca","vincita","vincere","pagare","comprare","stipendio","eredita","assegno"],"ken":["money","cash","coins","banknotes","wealth","wallet","gold","silver","jewels","treasure","bank","winning","paying","buying","salary","inheritance"]},{"n":47,"nap":"'O muorto","it":"Il morto","en":"The dead man","kit":["morto","morta","morti","morte","defunto","cadavere","funerale","cimitero","lutto","bara","tomba","lapide","becchino","veglia","morire"],"ken":["dead","death","corpse","funeral","cemetery","grave","tomb","gravestone","dying"],"nit":"Nella smorfia il morto non è solo lutto: è anche eredità e memoria.","nen":"In the smorfia the dead man is not only mourning: he is also inheritance and memory."},{"n":48,"nap":"'O muorto che pparla","it":"Il morto che parla","en":"The dead man who speaks","kit":["morto che parla","defunto che parla","morto che parlava","morto che mi parla","morto che mi parlava"],"ken":["dead man who speaks","dead man talking","dead who speaks"],"nit":"Il numero più famoso della smorfia. Chi lo sogna, dice la tradizione, deve ascoltare e non chiedere.","nen":"The most famous number in the smorfia. Whoever dreams it, tradition says, should listen and not ask."},{"n":49,"nap":"'O piezzo 'e carne","it":"Il pezzo di carne","en":"The piece of meat","kit":["carne","pezzo di carne","macelleria","bistecca","pancia","stomaco","macellaio","salsiccia","prosciutto"],"ken":["meat","flesh","butcher","belly","stomach","butcher","sausage","ham"]},{"n":50,"nap":"'O ppane","it":"Il pane","en":"Bread","kit":["pane","panetteria","forno","pagnotta","fame","affamato","farina","grano","spiga","mulino","panino","crosta"],"ken":["bread","loaf","bakery","hunger","hungry","flour","wheat","mill","sandwich"]},{"n":51,"nap":"'O ciardino","it":"Il giardino","en":"The garden","kit":["giardino","giardini","orto","aiuola","albero","alberi","bosco","foresta","prato","campagna","erba","foglie","pianta","piante","seminare","frutta","mela","uva","ulivo"],"ken":["garden","orchard","tree","trees","wood","forest","meadow","countryside","grass","leaves","plant","fruit","apple","grapes"]},{"n":52,"nap":"'A mamma","it":"La mamma","en":"The mother","kit":["mamma","madre","mamme"],"ken":["mother","mom","mum","mama"],"nit":"'A mamma. A Napoli non serve spiegare.","nen":"'A mamma. In Naples no explanation is needed."},{"n":53,"nap":"'O viecchio","it":"Il vecchio","en":"The old man","kit":["vecchio","anziano","nonno","vecchi","bastone","pensione","tempi andati"],"ken":["old man","elder","grandfather"]},{"n":54,"nap":"'O cappiello","it":"Il cappello","en":"The hat","kit":["cappello","cappelli","coppola","berretto"],"ken":["hat","cap","hats"]},{"n":55,"nap":"'A museca","it":"La musica","en":"Music","kit":["musica","canzone","canzoni","cantare","suonare","melodia","concerto","tromba","violino","orchestra","radio","disco","ballare al suono"],"ken":["music","song","singing","playing","melody","trumpet","violin","orchestra","radio","record"]},{"n":56,"nap":"'A caruta","it":"La caduta","en":"The fall","kit":["caduta","cadere","precipitare","precipizio","cascare","scala","scale","scalini","gradini","precipizio","burrone","inciampare","scivolare"],"ken":["fall","falling","fell","plunge","stairs","steps","cliff","tripping","slipping"]},{"n":57,"nap":"'O scartellato","it":"Il gobbo","en":"The hunchback","kit":["gobbo","gobba","scartellato","amuleto","portafortuna","corna","ferro di cavallo","quadrifoglio","scaramanzia"],"ken":["hunchback","hunch","amulet","charm","lucky charm","horseshoe","four leaf clover"],"nit":"Il gobbo porta fortuna: si tocca la gobba e si gioca il numero.","nen":"The hunchback brings luck: you touch the hump and play the number."},{"n":58,"nap":"'O paccotto","it":"Il pacco, il regalo","en":"The parcel","kit":["pacco","pacchi","regalo","regali","pacchetto","dono","posta","corriere","spedizione","consegna"],"ken":["parcel","package","gift","present"]},{"n":59,"nap":"'E pile","it":"I peli","en":"The hair","kit":["peli","pelo","capelli","barba","baffi","pettine","parrucchiere","rasoio","radersi","calvo","treccia"],"ken":["hair","beard","moustache"]},{"n":60,"nap":"Se lamenta","it":"Il lamento","en":"The lament","kit":["lamento","lamentarsi","lagna","gemito","lamenti","urlare","gridare","grido","protesta","piagnisteo"],"ken":["lament","complaining","moan","groan","shouting","screaming","scream","protest"]},{"n":61,"nap":"'O cacciatore","it":"Il cacciatore","en":"The hunter","kit":["cacciatore","caccia","cacciare","fucile","fuggire","scappare","inseguire","inseguimento","preda","trappola","freccia"],"ken":["hunter","hunting","rifle","shotgun","fleeing","running away","chasing","chase","prey","trap","arrow"]},{"n":62,"nap":"'O muorto acciso","it":"Il morto ammazzato","en":"The murdered man","kit":["morto ammazzato","ucciso","assassinato","omicidio","assassino","ammazzato"],"ken":["murdered","killed","murder","murderer","homicide"]},{"n":63,"nap":"'A sposa","it":"La sposa","en":"The bride","kit":["sposa","sposo","matrimonio","nozze","sposarsi","sposalizio","amore","innamorarsi","innamorato","innamorata","fidanzato","fidanzata","marito","moglie","anello","velo da sposa"],"ken":["bride","groom","wedding","marriage","love","falling in love","boyfriend","girlfriend","husband","wife","ring"]},{"n":64,"nap":"'A sciammeria","it":"La marsina","en":"The tailcoat","kit":["marsina","sciammeria","frac","smoking","cravatta","camicia","scarpe","vestito","abito","gonna","borsa","eleganza"],"ken":["tailcoat","tuxedo","tails","tie","shirt","shoes","dress","suit","skirt","bag"]},{"n":65,"nap":"'O chianto","it":"Il pianto","en":"Weeping","kit":["pianto","piangere","lacrime","singhiozzo","tristezza","disperazione","addio","abbandono","malinconia"],"ken":["weeping","crying","tears","cry","sadness","despair","farewell","abandonment"]},{"n":66,"nap":"'E ddoie zetelle","it":"Le due zitelle","en":"The two spinsters","kit":["zitelle","zitella","nubili","due zitelle","sorella","sorelle","zia","zie","vicina di casa","cognata"],"ken":["spinsters","spinster","unmarried women","sister","sisters","aunt"],"nit":"Le due sorelle rimaste sole. Il numero si gioca sorridendo.","nen":"The two sisters left alone. The number is played with a smile."},{"n":67,"nap":"'O totaro int'a chitarra","it":"Il totano nella chitarra","en":"The squid in the guitar","kit":["totano","totani","scopare","chiavare","amplesso","fare l amore","rapporto sessuale"],"ken":["squid","fucking","intercourse","making love"],"nit":"Immagine buffa e allusiva, tra le più tipiche della smorfia.","nen":"A comic and allusive image, among the most typical of the smorfia."},{"n":68,"nap":"'A zuppa cotta","it":"La zuppa cotta","en":"The cooked soup","kit":["zuppa","minestra","brodo","cucina","cucinare","pentola","fornello","ricetta","pasta","maccheroni","ragu","sugo"],"ken":["soup","broth","kitchen","cooking","pot","stove","recipe","pasta","sauce"]},{"n":69,"nap":"Sott'e 'ncoppa","it":"Il sottosopra","en":"Upside down","kit":["sottosopra","capovolto","rovesciato","sotto sopra","al contrario","confusione","caos","disordine","rovesciare","capovolgere","ribaltare","mondo alla rovescia"],"ken":["upside down","inverted","reversed","confusion","chaos","mess","overturning","world turned upside down"],"nit":"Il numero che si legge uguale anche al rovescio: le cose capovolte.","nen":"The number that reads the same upside down: things turned over."},{"n":70,"nap":"'O palazzo","it":"Il palazzo","en":"The building","kit":["palazzo","palazzi","edificio","casa","case","condominio","stabile","porta!","finestra","muro","tetto","stanza","camera","salotto","ascensore","cortile","portone","letto","cuscino","coperta","materasso","trasloco","appartamento","villa","castello","torre","grattacielo"],"ken":["building","palace","house","home","door","window","wall","roof","room","bedroom","lift","courtyard","bed","pillow","blanket","mattress","flat","apartment","villa","castle","tower"]},{"n":71,"nap":"L'ommo 'e merda","it":"L'uomo spregevole","en":"The despicable man","kit":["vigliacco","infame","traditore","uomo spregevole","vigliaccheria","tradimento","tradire","sputare addosso"],"ken":["despicable man","scoundrel","traitor","coward"],"nit":"Detto senza mezzi termini, come si usa da queste parti.","nen":"Said without mincing words, as they do around here."},{"n":72,"nap":"'A maraviglia","it":"La meraviglia","en":"Wonder","kit":["meraviglia","stupore","meravigliarsi","stupirsi","sorpresa","incanto","specchio","incantesimo","magia","miracolo","prodigio","arcobaleno"],"ken":["wonder","amazement","astonishment","surprise","mirror","spell","magic","miracle","rainbow"]},{"n":73,"nap":"'O spitale","it":"L'ospedale","en":"The hospital","kit":["ospedale","clinica","pronto soccorso","corsia","infermiere","infermiera","medico","dottore","malattia","ammalarsi","febbre","operazione","chirurgo","medicina","farmacia","ambulanza","barella","siringa","cura"],"ken":["hospital","clinic","emergency room","nurse","doctor","illness","falling ill","fever","surgery","surgeon","medicine","pharmacy","ambulance","stretcher","syringe"]},{"n":74,"nap":"'A rotta","it":"La grotta","en":"The cave","kit":["grotta","caverna","antro","cripta","buio","oscurita","notte","luna","tunnel","galleria","sotterraneo","montagna","roccia","pietra","scogliera","abisso","caverna"],"ken":["cave","cavern","grotto","darkness","dark","night","moon","tunnel","underground","mountain","rock","stone","cliff","abyss","cavern"]},{"n":75,"nap":"Pullecenella","it":"Pulcinella","en":"Pulcinella","kit":["pulcinella","pullecenella","maschera","maschere"],"ken":["pulcinella","mask","masks"],"nit":"La maschera di Napoli, che dice la verità fingendo di scherzare.","nen":"The mask of Naples, telling the truth while pretending to joke."},{"n":76,"nap":"'A funtana","it":"La fontana","en":"The fountain","kit":["fontana","fontane","zampillo","acqua","mare","oceano","onda","onde","fiume","lago","ruscello","nuotare","bagnarsi","annegare","barca","sorgente","pozzo","secchio","rubinetto","doccia"],"ken":["fountain","fountains","water","sea","ocean","wave","waves","river","lake","stream","swimming","drowning","boat","spring","well","tap","shower"]},{"n":77,"nap":"'E riavulille","it":"I diavoletti","en":"The little devils","kit":["diavolo","diavoli","diavoletto","demonio","demoni","inferno","fuoco","fiamme","incendio","bruciare","fumo","cenere","inferno","tentazione","strega","stregoneria"],"ken":["devil","devils","demon","hell","fire","flames","blaze","burning","smoke","ash","hell","temptation","witch"]},{"n":78,"nap":"'A bella figliola","it":"La bella figliola","en":"The beautiful girl","kit":["bella ragazza","bella figliola","prostituta"],"ken":["beautiful girl","pretty girl","prostitute"],"nit":"Storicamente la donna di malaffare; oggi si legge più spesso come la bella ragazza.","nen":"Historically the woman of ill repute; today more often read as the beautiful girl."},{"n":79,"nap":"'O mariuolo","it":"Il ladro","en":"The thief","kit":["ladro","ladri","mariuolo","furto","rubare","rapina","scippo","furto","borseggio","scasso","banditi","pirata","derubato"],"ken":["thief","thieves","theft","robbery","stealing","stolen","burglary","pickpocket","break in","bandits","pirate","robbed"]},{"n":80,"nap":"'A vocca","it":"La bocca","en":"The mouth","kit":["bocca","labbra","lingua","denti","telefono","telefonare","messaggio","lettera","voce","urlo","parola","parole"],"ken":["mouth","lips","tongue","teeth","telephone","phone","calling","message","letter","voice","word","words"]},{"n":81,"nap":"'E sciure","it":"I fiori","en":"The flowers","kit":["fiori","fiore","sciure","rosa","rose","mazzo di fiori","bouquet","rosa","giglio","margherita","garofano","profumo","primavera","corona di fiori"],"ken":["flowers","flower","rose","roses","bouquet","rose","lily","daisy","carnation","perfume","spring"]},{"n":82,"nap":"'A tavula 'mbandita","it":"La tavola imbandita","en":"The laid table","kit":["tavola imbandita","tavola apparecchiata","banchetto","pranzo","cena","tavolata","ristorante","trattoria","pizzeria","pizza","invito a cena","festino"],"ken":["laid table","banquet","dinner","lunch","restaurant","trattoria","pizzeria","pizza","dinner invitation"]},{"n":83,"nap":"'O maletiempo","it":"Il maltempo","en":"Bad weather","kit":["maltempo","pioggia","piovere","temporale","tempesta","vento","fulmine","tuono","grandine","neve","nevicare","ghiaccio","freddo","gelo","nebbia","alluvione","inondazione"],"ken":["bad weather","rain","storm","thunder","lightning","wind","hail","snow","snowing","ice","cold","frost","fog","flood"]},{"n":84,"nap":"'A cchiesa","it":"La chiesa","en":"The church","kit":["chiesa","chiese","cattedrale","duomo","messa!","altare","campanile","confessione","comunione","battesimo","campana","campane","navata"],"ken":["church","cathedral","mass","altar","bell tower","mass","confession","communion","baptism","bell","bells"]},{"n":85,"nap":"Ll'aneme d'o priatorio","it":"Le anime del purgatorio","en":"The souls in purgatory","kit":["anime del purgatorio","purgatorio","anime","anima","stella","stelle","spirito","spiriti","fantasma","fantasmi","apparizione","aldila"],"ken":["souls in purgatory","purgatory","souls","soul","star","stars","spirit","spirits","ghost","ghosts","apparition","afterlife"],"nit":"Le anime pezzentelle, che a Napoli si adottano e si pregano.","nen":"The “anime pezzentelle”, adopted and prayed for in Naples."},{"n":86,"nap":"'A puteca","it":"La bottega","en":"The shop","kit":["bottega","negozio","puteca","negozi","vetrina","commerciante","lavoro","lavorare","ufficio","mercato","cliente","vendere","merce","magazzino","bancarella"],"ken":["shop","store","shopkeeper","work","working","office","market","customer","selling","goods","warehouse","stall"]},{"n":87,"nap":"'E perucchie","it":"I pidocchi","en":"The lice","kit":["pidocchi","pidocchio","perucchie","insetto","insetti","ragno","ragni","formica","formiche","mosca","mosche","zanzara","scarafaggio","verme","vermi","ape","api","sporcizia"],"ken":["lice","louse","insect","insects","spider","spiders","ant","ants","fly","flies","mosquito","cockroach","worm","worms","bee","bees","filth"]},{"n":88,"nap":"'E casecavalle","it":"I caciocavalli","en":"The caciocavallo cheeses","kit":["caciocavallo","caciocavalli","formaggio","formaggi","casecavalle","latte","burro","mozzarella","ricotta","provola","salumi","dispensa"],"ken":["caciocavallo","cheese","cheeses","milk","butter","mozzarella","ricotta","cold cuts","pantry"]},{"n":89,"nap":"'A vecchia","it":"La vecchia","en":"The old woman","kit":["vecchia","anziana","nonna","vecchie","vecchiaia","nonnina","bisnonna"],"ken":["old woman","grandmother","granny","old age","granny"]},{"n":90,"nap":"'A paura","it":"La paura","en":"Fear","kit":["paura","spavento","terrore","angoscia","timore","incubo","spaventato","paure"],"ken":["fear","fright","terror","scared","afraid","nightmare"],"nit":"Chiude la tombola, e chiude ogni sogno.","nen":"It closes the tombola, and it closes every dream."}];
+
+// ---------- normalizzazione e riconoscimento ----------
+
+// Toglie accenti, apostrofi e punteggiatura: il testo del sogno e le parole del
+// lessico passano di qui, così si confrontano sullo stesso piano.
+function normalize(s){
+ return s.toLowerCase()
+  .replace(/[àáâãä]/g,'a')
+  .replace(/[èéêë]/g,'e')
+  .replace(/[ìíîï]/g,'i')
+  .replace(/[òóôõö]/g,'o')
+  .replace(/[ùúûü]/g,'u')
+  .replace(/[’'`]/g,' ')
+  .replace(/[^a-z0-9\s]/g,' ')
+  .replace(/\s+/g,' ')
+  .trim();
+}
+
+// Riduce una parola alla sua radice, togliendo le desinenze più comuni.
+// Serve perché "gatti", "gatta" e "gattino" devono arrivare tutte al 3, e
+// "parlava" deve valere quanto "parla". Si ferma a tre lettere per non
+// accorciare troppo.
+const SUFFIXES = ['issimo','issima','avamo','evamo','ivamo','mente','zione',
+                  'avano','evano','ivano','ando','endo','ava','eva','iva',
+                  'avo','evo','ivo','ato','ata','ito','ita','uto','uta',
+                  'are','ere','ire','ano','ono','ini','ino',
+                  'i','o','a','e'];
+function stem(w){
+ if(w.length < 4) return w;
+ for(const suf of SUFFIXES){
+  if(w.length - suf.length >= 3 && w.endsWith(suf)) return w.slice(0, w.length - suf.length);
+ }
+ return w;
+}
+
+// Due indici: uno per la forma esatta, uno per la radice. L'esatto vince
+// sempre, altrimenti "nonna" e "nonno" finirebbero sullo stesso numero.
+function buildIndex(lang){
+ const exact = new Map(), stems = new Map();
+ let maxLen = 1;
+ for(const e of SMORFIA){
+  for(const kw of (lang==='it' ? e.kit : e.ken)){
+   // "porta!" si riconosce solo cosi' com'e': la sua radice e' quella di
+   // "portare", e senza questo freno ogni "portava" darebbe la casa.
+   const exactOnly = kw.endsWith('!');
+   const norm = normalize(exactOnly ? kw.slice(0,-1) : kw);
+   if(!norm) continue;
+   const words = norm.split(' ');
+   maxLen = Math.max(maxLen, words.length);
+   if(!exact.has(norm)) exact.set(norm, e.n);
+   if(words.length === 1 && !exactOnly){
+    const st = stem(norm);
+    if(!stems.has(st)) stems.set(st, e.n);
+   }
+  }
+ }
+ return {exact, stems, maxLen};
+}
+
+// Scorre il racconto una volta sola, dall'inizio alla fine, provando prima le
+// espressioni lunghe: così "morto che parla" prende il 48 e si mangia le
+// parole, invece di lasciare che "morto" prenda il 47.
+function findNumbers(text, lang){
+ const idx = buildIndex(lang);
+ const words = normalize(text).split(' ').filter(Boolean);
+ const found = [];
+ const seen = new Set();
+ let i = 0;
+ while(i < words.length){
+  let hit = null;
+  for(let len = Math.min(idx.maxLen, words.length - i); len >= 1; len--){
+   const span = words.slice(i, i+len).join(' ');
+   let n = idx.exact.get(span);
+   if(n === undefined && len === 1) n = idx.stems.get(stem(span));
+   if(n !== undefined){ hit = {n, len, span}; break; }
+  }
+  if(hit){
+   if(!seen.has(hit.n)){
+    seen.add(hit.n);
+    found.push({n:hit.n, match:hit.span, entry:SMORFIA.find(e=>e.n===hit.n)});
+   }
+   i += hit.len;
+  } else {
+   i += 1;
+  }
+ }
+ return found;
+}
+
+const PAGE_URL = 'https://morvinlab.com/mllvnz/divinazioni/smorfia.html';
+const MAX_NUMBERS = 5;
+
+const TR = {
+it:{
+ docTitle:"Smorfia",
+ back:"← Divinazioni",
+ eyebrow:"Smorfia napoletana · Dal sogno al numero",
+ title:"Smorfia",
+ lede:"Racconta un sogno con parole tue. La Smorfia non indovina nulla: traduce. Cerca nel racconto le figure che la tradizione napoletana ha messo in corrispondenza con i novanta numeri, e ti restituisce quelle che trova — al massimo cinque, spesso meno.",
+ qlabel:"Il sogno",
+ qplaceholder:"Che cosa hai sognato?",
+ cast:"Cerca i numeri",
+ again:"Cerca di nuovo",
+ tablelink:"I novanta numeri →",
+ needText:"Racconta prima il sogno: senza parole non c'è niente da tradurre.",
+ resultTitle:"Il responso",
+ introOne:"Nel tuo racconto la Smorfia ha riconosciuto una sola figura.",
+ introMany:"Nel tuo racconto la Smorfia ha riconosciuto {n} figure, nell'ordine in cui compaiono.",
+ introMax:"Il tuo racconto ne conteneva altre: la tradizione si ferma a cinque numeri, e questi sono i primi cinque che compaiono.",
+ why:"dal tuo racconto: “{w}”",
+ emptyTitle:"Nessun numero",
+ empty:"La Smorfia canonica ha novanta figure soltanto, e in questo racconto non ne compare nessuna. Non ti do numeri inventati: prova a raccontare il sogno con più dettagli concreti — le cose, gli animali, le persone che hai visto.",
+ save:"Salva .txt",
+ shareIntro:"Condividi",
+ mailSubject:"I miei numeri della Smorfia",
+ exportTitle:"SMORFIA — Responso",
+ exportDream:"Sogno",
+ exportNumbers:"Numeri",
+ foot:"La Smorfia napoletana è un patrimonio di cultura popolare, non un metodo per prevedere alcunché. Questo strumento traduce parole in numeri secondo la tradizione, e si ferma lì: non è un invito a giocare denaro, e nessun numero è più probabile di un altro. Il gioco può causare dipendenza. Tutto avviene nel tuo browser: quello che scrivi non viene inviato né salvato altrove."
+},
+en:{
+ docTitle:"Smorfia",
+ back:"← Divinations",
+ eyebrow:"Neapolitan Smorfia · From dream to number",
+ title:"Smorfia",
+ lede:"Tell a dream in your own words. The Smorfia guesses nothing: it translates. It looks in your account for the figures that Neapolitan tradition matched to the ninety numbers, and gives back the ones it finds — five at most, often fewer.",
+ qlabel:"The dream",
+ qplaceholder:"What did you dream?",
+ cast:"Find the numbers",
+ again:"Search again",
+ tablelink:"The ninety numbers →",
+ needText:"Tell the dream first: with no words there is nothing to translate.",
+ resultTitle:"The answer",
+ introOne:"In your account the Smorfia recognised a single figure.",
+ introMany:"In your account the Smorfia recognised {n} figures, in the order they appear.",
+ introMax:"Your account held more: tradition stops at five numbers, and these are the first five to appear.",
+ why:"from your account: “{w}”",
+ emptyTitle:"No numbers",
+ empty:"The canonical Smorfia has only ninety figures, and none of them appears in this account. I won't hand you invented numbers: try telling the dream with more concrete detail — the things, the animals, the people you saw. Note that the lexicon is richer in Italian.",
+ save:"Save .txt",
+ shareIntro:"Share",
+ mailSubject:"My Smorfia numbers",
+ exportTitle:"SMORFIA — Answer",
+ exportDream:"Dream",
+ exportNumbers:"Numbers",
+ foot:"The Neapolitan Smorfia is a piece of folk culture, not a method for predicting anything. This tool translates words into numbers according to tradition, and stops there: it is not an invitation to gamble, and no number is more likely than any other. Gambling can be addictive. Everything happens in your browser: what you write is never sent or stored anywhere."
+}
+};
+
+const $ = id=>document.getElementById(id);
+let lang = 'it';
+let lastResult = null;
+
+const LANG_KEY = 'divinazioni_lang';
+try { const saved = localStorage.getItem(LANG_KEY); if(saved==='it'||saved==='en') lang = saved; } catch(e){}
+
+function applyStaticText(){
+ const t = TR[lang];
+ $('t-back').textContent = t.back;
+ $('t-eyebrow').textContent = t.eyebrow;
+ $('t-title').textContent = t.title;
+ $('t-lede').textContent = t.lede;
+ $('t-qlabel').textContent = t.qlabel;
+ $('q').placeholder = t.qplaceholder;
+ $('cast').textContent = t.cast;
+ $('again').textContent = t.again;
+ $('t-tablelink').textContent = t.tablelink;
+ $('t-foot').textContent = t.foot;
+ document.documentElement.lang = lang;
+ document.title = t.docTitle;
+ if(lastResult) render(lastResult.text, lastResult.found, lastResult.total);
+}
+
+function setLang(l){
+ if(l===lang) return;
+ lang = l;
+ try { localStorage.setItem(LANG_KEY, l); } catch(e){}
+ $('l-it').setAttribute('aria-pressed', String(l==='it'));
+ $('l-en').setAttribute('aria-pressed', String(l==='en'));
+ // il lessico cambia con la lingua, quindi il responso va ricalcolato
+ if(lastResult){
+  const all = findNumbers(lastResult.text, lang);
+  lastResult.found = all.slice(0, MAX_NUMBERS);
+  lastResult.total = all.length;
+ }
+ applyStaticText();
+}
+
+function esc(s){
+ return String(s).replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+}
+
+function buildExportText(text, found){
+ const t = TR[lang];
+ const lines = [t.exportTitle, ''];
+ lines.push(t.exportDream + ': ' + text.trim(), '');
+ lines.push(t.exportNumbers + ': ' + found.map(f=>f.n).join(' · '), '');
+ for(const f of found){
+  const e = f.entry;
+  lines.push(`${e.n} — ${e.nap} — ${lang==='it'?e.it:e.en}  (${f.match})`);
+ }
+ lines.push('', PAGE_URL);
+ return lines.join('\n');
+}
+
+function shareSnippet(found){
+ const nums = found.map(f=>f.n).join(' · ');
+ const label = lang==='it' ? 'I miei numeri della Smorfia' : 'My Smorfia numbers';
+ return `${label}: ${nums} — ${PAGE_URL}`;
+}
+
+function render(text, found, total){
+ const t = TR[lang];
+ const stage = $('stage');
+ stage.innerHTML = '';
+
+ if(!found.length){
+  stage.innerHTML = `<h3 class="flabel">${esc(t.emptyTitle)}</h3><p class="empty">${esc(t.empty)}</p>`;
+  return;
+ }
+
+ const balls = found.map((f,i)=>
+  `<div class="ball" style="animation-delay:${i*0.12}s">${f.n}</div>`).join('');
+
+ const intro = found.length===1
+  ? t.introOne
+  : t.introMany.replace('{n}', found.length);
+ // solo se ne sono state davvero scartate, altrimenti sarebbe una bugia
+ const introMax = total > found.length ? ` ${t.introMax}` : '';
+
+ const rows = found.map(f=>{
+  const e = f.entry;
+  const note = lang==='it' ? e.nit : e.nen;
+  return `<div class="entry">
+   <span class="num">${e.n}</span><span class="nap">${esc(e.nap)}</span>
+   <span class="ita"> &mdash; ${esc(lang==='it'?e.it:e.en)}</span>
+   <span class="why">${esc(t.why.replace('{w}', f.match))}</span>
+   ${note?`<p class="note">${esc(note)}</p>`:''}
+  </div>`;
+ }).join('');
+
+ const snippet = encodeURIComponent(shareSnippet(found));
+ stage.innerHTML = `
+  <h3 class="flabel">${esc(t.resultTitle)}</h3>
+  <div class="balls">${balls}</div>
+  <p class="intro">${esc(intro + introMax)}</p>
+  <div class="readings">${rows}</div>
+  <div class="export-row">
+   <button type="button" class="share-btn" id="save-txt">${esc(t.save)}</button>
+   <a class="share-link" target="_blank" rel="noopener" href="https://wa.me/?text=${snippet}">WhatsApp</a>
+   <a class="share-link" target="_blank" rel="noopener" href="https://t.me/share/url?url=${encodeURIComponent(PAGE_URL)}&text=${snippet}">Telegram</a>
+   <a class="share-link" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text=${snippet}">X</a>
+   <a class="share-link" href="mailto:?subject=${encodeURIComponent(t.mailSubject)}&body=${encodeURIComponent(buildExportText(text, found))}">Email</a>
+  </div>`;
+
+ $('save-txt').addEventListener('click', ()=>{
+  const blob = new Blob([buildExportText(text, found)], {type:'text/plain;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'smorfia.txt';
+  a.click();
+  setTimeout(()=>URL.revokeObjectURL(a.href), 1000);
+ });
+}
+
+function run(){
+ const text = $('q').value;
+ if(!text.trim()){
+  $('stage').innerHTML = `<p class="empty">${esc(TR[lang].needText)}</p>`;
+  return;
+ }
+ const all = findNumbers(text, lang);
+ const found = all.slice(0, MAX_NUMBERS);
+ lastResult = {text, found, total: all.length};
+ render(text, found, all.length);
+ $('again').style.display = '';
+}
+
+$('l-it').addEventListener('click', ()=>setLang('it'));
+$('l-en').addEventListener('click', ()=>setLang('en'));
+$('cast').addEventListener('click', run);
+$('again').addEventListener('click', run);
+
+$('l-it').setAttribute('aria-pressed', lang==='it');
+$('l-en').setAttribute('aria-pressed', lang==='en');
+applyStaticText();
+
+</script>
+</body>
+</html>

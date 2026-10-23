@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Divinazioni</title>
+<meta name="description" content="Strumenti di consultazione: tarocchi e rune. Nessun account, nessun tracciamento, tutto in italiano e in inglese.">
+<style>
+@font-face{
+font-family:'Noto Sans Runic';
+src:url(data:font/woff2;base64,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) format('woff2');
+font-weight:400;
+font-style:normal;
+font-display:swap;
+unicode-range:U+16A0-16FF;
+}
+:root{
+--paper:#f7f6f2;
+--paper-deep:#efeee7;
+--ink:#1b201d;
+--ink-soft:#4a534d;
+--indigo:#33485c;
+--cinnabar:#a83a2a;
+--bronze:#8a8360;
+--rule:rgba(27,32,29,.16);
+--serif:"Palatino Linotype",Palatino,"Iowan Old Style","Book Antiqua",Georgia,serif;
+--body:Georgia,"Times New Roman",serif;
+--mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+--runic:'Noto Sans Runic',var(--serif);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+background:var(--paper);
+color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.62;
+-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px;margin:0 auto;padding:38px 26px 96px}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze);margin:0 0 10px}
+.lang{display:flex;gap:0;border:1px solid var(--rule);border-radius:2px;overflow:hidden;flex:0 0 auto}
+.lang button{
+background:transparent;border:0;border-right:1px solid var(--rule);padding:6px 11px;cursor:pointer;
+font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--ink-soft)
+}
+.lang button:last-child{border-right:0}
+.lang button[aria-pressed="true"]{background:var(--indigo);color:#f2f2ec}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,6vw,44px);line-height:1.06;margin:0 0 6px;letter-spacing:-.01em}
+h1 .glyph{font-family:var(--serif);font-style:italic;font-size:.78em;margin-right:.28em;color:var(--indigo)}
+.lede{margin:0 0 44px;color:var(--ink-soft);max-width:54ch}
+
+.flabel{
+display:block;font-family:var(--mono);font-size:11px;letter-spacing:.22em;
+text-transform:uppercase;color:var(--bronze);margin:0 0 18px
+}
+
+.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px;margin:0 0 12px}
+.tool{
+display:flex;gap:20px;align-items:flex-start;
+border:1px solid var(--rule);border-radius:3px;padding:24px 22px;
+text-decoration:none;color:inherit;background:transparent;
+transition:border-color .25s ease,background-color .25s ease,transform .25s ease
+}
+.tool:hover{border-color:var(--indigo);background:rgba(51,72,92,.045);transform:translateY(-2px)}
+.tool:focus-visible{outline:2px solid var(--indigo);outline-offset:3px}
+.tool .mark{
+flex:0 0 auto;width:46px;height:46px;display:flex;align-items:center;justify-content:center;
+border:1px solid var(--rule);border-radius:2px;background:var(--paper-deep);
+color:var(--indigo);font-size:24px;line-height:1
+}
+.tool .mark.runic{font-family:var(--runic);font-size:23px}
+.tool .mark.star{font-family:var(--serif);font-style:italic}
+.tool .mark.num{font-family:var(--serif);font-size:19px;letter-spacing:.02em}
+.tool .body{min-width:0}
+.tool h2{
+font-family:var(--serif);font-weight:400;font-size:23px;line-height:1.15;
+margin:0 0 6px;letter-spacing:-.01em
+}
+.tool p{margin:0 0 12px;color:var(--ink-soft);font-size:15.5px;line-height:1.52}
+.tool .meta{
+font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+color:var(--bronze);margin:0
+}
+.tool .go{
+display:inline-block;margin-top:12px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+text-transform:uppercase;color:var(--indigo);border-bottom:1px solid transparent;transition:border-color .25s ease
+}
+.tool:hover .go{border-bottom-color:var(--indigo)}
+
+.tool.soon{opacity:.55;pointer-events:none}
+.tool.soon .mark{color:var(--bronze)}
+
+.rule{border:0;border-top:1px solid var(--rule);margin:52px 0 0}
+footer{
+margin-top:26px;font-family:var(--mono);font-size:11px;line-height:1.85;
+letter-spacing:.03em;color:var(--bronze)
+}
+
+@media (max-width:520px){
+.wrap{padding:30px 20px 72px}
+.tool{padding:20px 18px;gap:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="top">
+<p class="eyebrow" id="t-eyebrow"></p>
+<div class="lang" role="group" aria-label="Lingua / Language">
+<button type="button" id="l-it" aria-pressed="true">IT</button>
+<button type="button" id="l-en" aria-pressed="false">EN</button>
+</div>
+</div>
+
+<h1><span class="glyph">✦</span><span id="t-title"></span></h1>
+<p class="lede" id="t-lede"></p>
+
+<span class="flabel" id="t-choose"></span>
+<div class="tools" id="tools"></div>
+
+<hr class="rule">
+<footer id="t-foot"></footer>
+
+</div>
+
+<script>
+// Aggiungere una divinazione = aggiungere una voce qui, nient'altro.
+// `soon:true` la mostra in grigio e non cliccabile (per annunciare qualcosa
+// che non e' ancora pronto); finche' non serve, lasciarlo fuori.
+const TOOLS = [
+ {
+  href:'tarot.html',
+  glyph:'✦', markClass:'star',
+  it:{
+   name:'Tarocchi',
+   desc:'Ventidue Arcani Maggiori, dritti o capovolti. Lettura a una carta o a tre carte, con un commento composto al momento.',
+   meta:'22 Arcani Maggiori · 7 stili di mazzo'
+  },
+  en:{
+   name:'Tarot',
+   desc:'Twenty-two Major Arcana, upright or reversed. One-card or three-card reading, with a commentary composed on the spot.',
+   meta:'22 Major Arcana · 7 deck styles'
+  }
+ },
+ {
+  href:'smorfia.html',
+  glyph:'90', markClass:'num',
+  it:{
+   name:'Smorfia',
+   desc:'Racconta un sogno: la Smorfia napoletana ne riconosce le figure e le traduce nei numeri della tradizione. Al massimo cinque, spesso meno.',
+   meta:'90 numeri · Tradizione napoletana'
+  },
+  en:{
+   name:'Smorfia',
+   desc:'Tell a dream: the Neapolitan Smorfia recognises its figures and turns them into the numbers of tradition. Five at most, often fewer.',
+   meta:'90 numbers · Neapolitan tradition'
+  }
+ },
+ {
+  href:'rune.html',
+  glyph:'ᚠ', markClass:'runic',
+  it:{
+   name:'Rune',
+   desc:'Le ventiquattro rune del Futhark Antico, dritte o capovolte. Lettura a una runa o a tre rune, nello stesso spirito.',
+   meta:'24 rune · Futhark Antico'
+  },
+  en:{
+   name:'Runes',
+   desc:'The twenty-four runes of the Elder Futhark, upright or reversed. One-rune or three-rune reading, in the same spirit.',
+   meta:'24 runes · Elder Futhark'
+  }
+ }
+];
+
+const TR = {
+it:{
+ eyebrow:"Divinazioni · Strumenti di consultazione",
+ title:"Divinazioni",
+ lede:"Piccoli strumenti di consultazione, da usare come si usa uno specchio: non per sapere cosa accadrà, ma per guardare da un'altra angolazione quello che già sai. Nessun account, nessuna registrazione, niente che esca dal tuo browser.",
+ choose:"Scegli lo strumento",
+ go:"Apri",
+ soon:"In arrivo",
+ foot:"Ogni strumento funziona interamente nel tuo browser: le letture sono composte da un motore di testo locale, non da un servizio esterno, e nulla di quello che scrivi viene inviato o salvato altrove. Vanno prese per quello che sono, un commento, mai una previsione."
+},
+en:{
+ eyebrow:"Divinations · Consultation tools",
+ title:"Divinations",
+ lede:"Small consultation tools, to be used the way one uses a mirror: not to know what will happen, but to look at what you already know from another angle. No account, no sign-up, nothing that leaves your browser.",
+ choose:"Choose a tool",
+ go:"Open",
+ soon:"Coming soon",
+ foot:"Each tool runs entirely in your browser: readings are composed by a local text engine, not by an external service, and nothing you type is sent or stored anywhere else. Take them for what they are — a commentary, never a prediction."
+}
+};
+
+const $ = id=>document.getElementById(id);
+let lang = 'it';
+
+// La lingua scelta qui vale anche per gli strumenti, cosi' chi arriva dal
+// portale in inglese non si ritrova i tarocchi in italiano.
+const LANG_KEY = 'divinazioni_lang';
+try { const saved = localStorage.getItem(LANG_KEY); if(saved==='it'||saved==='en') lang = saved; } catch(e){}
+
+function renderTools(){
+ $('tools').innerHTML = TOOLS.map(tool=>{
+  const c = tool[lang];
+  const soon = tool.soon;
+  const tag = soon ? 'div' : 'a';
+  const href = soon ? '' : ` href="${tool.href}"`;
+  return `<${tag} class="tool${soon?' soon':''}"${href}>
+   <span class="mark ${tool.markClass}" aria-hidden="true">${tool.glyph}</span>
+   <span class="body">
+    <h2>${c.name}</h2>
+    <p>${c.desc}</p>
+    <p class="meta">${c.meta}</p>
+    <span class="go">${soon ? TR[lang].soon : TR[lang].go} →</span>
+   </span>
+  </${tag}>`;
+ }).join('');
+}
+
+function applyStaticText(){
+ const t = TR[lang];
+ $('t-eyebrow').textContent = t.eyebrow;
+ $('t-title').textContent = t.title;
+ $('t-lede').textContent = t.lede;
+ $('t-choose').textContent = t.choose;
+ $('t-foot').textContent = t.foot;
+ document.documentElement.lang = lang;
+ document.title = t.title;
+ renderTools();
+}
+
+function setLang(l){
+ if(l===lang) return;
+ lang = l;
+ try { localStorage.setItem(LANG_KEY, l); } catch(e){}
+ $('l-it').setAttribute('aria-pressed', String(l==='it'));
+ $('l-en').setAttribute('aria-pressed', String(l==='en'));
+ applyStaticText();
+}
+
+$('l-it').addEventListener('click', ()=>setLang('it'));
+$('l-en').addEventListener('click', ()=>setLang('en'));
+
+$('l-it').setAttribute('aria-pressed', String(lang==='it'));
+$('l-en').setAttribute('aria-pressed', String(lang==='en'));
+applyStaticText();
+</script>
+</body>
+</html>

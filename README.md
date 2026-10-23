@@ -178,3 +178,10 @@ Facebook tiene in memoria le anteprime già viste. Se hai cambiato titolo,
 descrizione o copertina di una voce già condivisa, incolla l'indirizzo della
 pagina nello Sharing Debugger di Facebook e premi "Scrape Again":
 <https://developers.facebook.com/tools/debug/>
+
+## Divinazioni
+
+La cartella `divinazioni/` è una copia del portale Divinazioni (Tarocchi, Smorfia,
+Rune), servita su `morvinlab.com/mllvnz/divinazioni/`. Il sorgente è in
+`~/1PROGETTI/tarot`: si modifica lì e poi si rilancia `tools/sync-divinazioni.sh`,
+che copia le pagine e aggiorna l'indirizzo usato nei link di condivisione.
