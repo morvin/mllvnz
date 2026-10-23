@@ -3017,7 +3017,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/3/01_header.jpg",
+        "alt": "La copertina di 'Storia d'Italia - Ricerca Parole' accanto ai punti forti: 80 puzzle a tema con curiosità, stampa a caratteri grandi, disegni da colorare e labirinti, soluzioni complete."
+      },
+      {
+        "src": "image/galleria/3/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «La fondazione di Roma» e «I sette re di Roma», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/3/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: l'apertura di una sezione, un labirinto, un disegno da colorare e le soluzioni."
+      }
+    ]
   },
   {
     "id": 4,
@@ -3224,7 +3238,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/11/01_header.jpg",
+        "alt": "La copertina di 'La Campania - Parole Intrecciate' accanto ai punti forti: 80 puzzle a tema con curiosità, stampa a caratteri grandi, disegni da colorare e labirinti, soluzioni complete."
+      },
+      {
+        "src": "image/galleria/11/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «Il Vesuvio» e «Spaccanapoli», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/11/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: l'apertura di una sezione, un labirinto, un disegno da colorare e le soluzioni."
+      }
+    ]
   },
   {
     "id": 5,
@@ -3292,7 +3320,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/5/01_header.jpg",
+        "alt": "La copertina di 'Vino e Degustazione - Parole Intrecciate (Vol. 130)' accanto ai punti forti: 80 puzzle a tema con curiosità, stampa a caratteri grandi, disegni da colorare e labirinti, soluzioni complete."
+      },
+      {
+        "src": "image/galleria/5/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «Il risveglio della vite» e «Il terroir», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/5/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: l'apertura di una sezione, un labirinto, un disegno da colorare e le soluzioni."
+      }
+    ]
   },
   {
     "id": 6,
@@ -3360,7 +3402,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/6/01_header.jpg",
+        "alt": "La copertina di 'Il Sistema Periodico - Parole Intrecciate (Vol. 121)' accanto ai punti forti: 80 puzzle a tema con curiosità, stampa a caratteri grandi, disegni da colorare e labirinti, soluzioni complete."
+      },
+      {
+        "src": "image/galleria/6/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «La tavola periodica» e «L'atomo», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/6/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: l'apertura di una sezione, un labirinto, un disegno da colorare e le soluzioni."
+      }
+    ]
   },
   {
     "id": 7,
@@ -3427,7 +3483,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/7/01_header.jpg",
+        "alt": "La copertina di 'Miti Greci - Parole Intrecciate (Vol. 122)' accanto ai punti forti: 80 puzzle a tema con curiosità, stampa a caratteri grandi, disegni da colorare e labirinti, soluzioni complete."
+      },
+      {
+        "src": "image/galleria/7/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «Zeus e il tuono» e «Era, la regina», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/7/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: l'apertura di una sezione, un labirinto, un disegno da colorare e le soluzioni."
+      }
+    ]
   },
   {
     "id": 8,
@@ -3496,7 +3566,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/8/01_header.jpg",
+        "alt": "La copertina di 'L'Eneide - Parole Intrecciate (Vol. 127)' accanto ai punti forti: 80 puzzle a tema con curiosità, stampa a caratteri grandi, disegni da colorare e labirinti, soluzioni complete."
+      },
+      {
+        "src": "image/galleria/8/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «L'ira di Giunone» e «Il Nettuno placatore», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/8/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: l'apertura di una sezione, un labirinto, un disegno da colorare e le soluzioni."
+      }
+    ]
   },
   {
     "id": 9,
@@ -3550,7 +3634,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/9/01_header.jpg",
+        "alt": "The cover of 'Dog Lovers Word Search (Vol. 207)' next to its highlights: 80 large-print puzzles, a short note for every puzzle, coloring pages and mazes, full solutions."
+      },
+      {
+        "src": "image/galleria/9/02_puzzles.jpg",
+        "alt": "Two puzzles side by side, “Golden Retriever” and “German Shepherd”, each with a short note above the grid."
+      },
+      {
+        "src": "image/galleria/9/03_inside_the_book.jpg",
+        "alt": "Four inside pages: a chapter opener, a maze, a coloring page and the solutions."
+      }
+    ]
   },
   {
     "id": 57,
@@ -3619,7 +3717,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/57/01_header.jpg",
+        "alt": "La copertina di 'U.S. Salernitana 1919: Macte Animo - Parole Intrecciate (Vol. 135)' accanto ai punti forti: 80 puzzle a tema con curiosità, stampa a caratteri grandi, disegni da colorare e labirinti, soluzioni complete."
+      },
+      {
+        "src": "image/galleria/57/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «19 giugno 1919» e «Donato Vestuti», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/57/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: l'apertura di una sezione, un labirinto, un disegno da colorare e le soluzioni."
+      }
+    ]
   },
   {
     "id": 58,
@@ -3685,7 +3797,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/58/01_header.jpg",
+        "alt": "La copertina di 'Antico Egitto - Parole Intrecciate (Vol. 136)' accanto ai punti forti: 80 puzzle a tema con curiosità, stampa a caratteri grandi, disegni da colorare e labirinti, soluzioni complete."
+      },
+      {
+        "src": "image/galleria/58/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «L'Enneade di Eliopoli» e «Ra: il dio del sole», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/58/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: l'apertura di una sezione, un labirinto, un disegno da colorare e le soluzioni."
+      }
+    ]
   },
   {
     "id": 59,
@@ -3844,7 +3970,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/60/01_header.jpg",
+        "alt": "La copertina di 'Il Regno delle Fiabe e delle Favole - Parole Intrecciate (Vol. 138)' accanto ai punti forti: 80 puzzle a tema con curiosità, stampa a caratteri grandi, disegni da colorare e labirinti, soluzioni complete."
+      },
+      {
+        "src": "image/galleria/60/02_puzzle.jpg",
+        "alt": "Due schemi affiancati, «Cenerentola» e «Biancaneve», ognuno con la sua scheda di curiosità sopra la griglia."
+      },
+      {
+        "src": "image/galleria/60/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: l'apertura di una sezione, un labirinto, un disegno da colorare e le soluzioni."
+      }
+    ]
   },
   {
     "id": 61,
