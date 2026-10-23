@@ -41,7 +41,7 @@
     "date": "2026-08-14",
     "image": "image/divinazioni.jpg",
     "url": "https://morvinlab.com/mllvnz/divinazioni/",
-    "alt": "La carta dell'Appeso nello stile di Marsiglia, estratta durante una lettura dei tarocchi su Divinazioni.",
+    "alt": "La carta dell'Appeso dal Tarot de Marseille di Nicolas Conver (circa 1760), uno dei mazzi di Divinazioni.",
     "caption": "Apri Divinazioni",
     "description": "Un piccolo portale di strumenti di consultazione: Tarocchi, Smorfia napoletana e Rune. Si usa come uno specchio, non per sapere cosa accadrà ma per guardare da un'altra angolazione quello che già sai. Funziona tutto nel browser: nessun account, nessuna registrazione, nessun dato che esce dal tuo dispositivo.",
     "scheda": [
@@ -55,7 +55,7 @@
       ],
       [
         "Tarocchi",
-        "22 Arcani Maggiori, dritti o capovolti; lettura a una o a tre carte (passato, presente, futuro) e 7 stili di mazzo, dal Marsiglia al Luzzati"
+        "22 Arcani Maggiori, dritti o capovolti; lettura a una o a tre carte (passato, presente, futuro) e 6 stili di mazzo, tra cui il Marsiglia di Conver (1760) e il Rider-Waite (1909)"
       ],
       [
         "Smorfia",
@@ -81,11 +81,11 @@
     "galleria": [
       {
         "src": "image/galleria/105/01_divinazioni.jpg",
-        "alt": "La carta dell'Appeso in stile Marsiglia accanto alla presentazione di Divinazioni: tarocchi, Smorfia napoletana e rune, senza account e tutto nel browser, in italiano e in inglese."
+        "alt": "La carta dell'Appeso del Marsiglia di Conver accanto alla presentazione di Divinazioni: tarocchi, Smorfia napoletana e rune, senza account e tutto nel browser, in italiano e in inglese."
       },
       {
         "src": "image/galleria/105/02_tarocchi.jpg",
-        "alt": "Una lettura dei tarocchi a tre carte in stile Marsiglia: L'Appeso per il passato, Il Carro capovolto per il presente e L'Imperatore capovolto per il futuro, accanto alle caratteristiche dello strumento."
+        "alt": "Una lettura dei tarocchi a tre carte con il Marsiglia di Conver: La Morte capovolta per il passato, Gli Amanti per il presente e Il Mago capovolto per il futuro, accanto alle caratteristiche dello strumento."
       },
       {
         "src": "image/galleria/105/03_smorfia.jpg",
