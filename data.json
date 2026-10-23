@@ -36,6 +36,68 @@
     "famiglia": "Progetti"
   },
   {
+    "id": 105,
+    "title": "Divinazioni",
+    "date": "2026-08-14",
+    "image": "image/divinazioni.jpg",
+    "url": "https://morvin.github.io/tarot/",
+    "alt": "La carta dell'Appeso nello stile di Marsiglia, estratta durante una lettura dei tarocchi su Divinazioni.",
+    "caption": "Apri Divinazioni",
+    "description": "Un piccolo portale di strumenti di consultazione: Tarocchi, Smorfia napoletana e Rune. Si usa come uno specchio, non per sapere cosa accadrà ma per guardare da un'altra angolazione quello che già sai. Funziona tutto nel browser: nessun account, nessuna registrazione, nessun dato che esce dal tuo dispositivo.",
+    "scheda": [
+      [
+        "Dove",
+        "Sito web, gratuito"
+      ],
+      [
+        "Indirizzo",
+        "morvin.github.io/tarot"
+      ],
+      [
+        "Tarocchi",
+        "22 Arcani Maggiori, dritti o capovolti; lettura a una o a tre carte (passato, presente, futuro) e 7 stili di mazzo, dal Marsiglia al Luzzati"
+      ],
+      [
+        "Smorfia",
+        "Racconti un sogno e la Smorfia napoletana ne riconosce le figure e le traduce nei numeri della tradizione: al massimo cinque, mai inventati"
+      ],
+      [
+        "Rune",
+        "Le 24 rune del Futhark Antico, a una o a tre rune"
+      ],
+      [
+        "Lingue",
+        "Italiano e inglese"
+      ],
+      [
+        "Privacy",
+        "Le letture sono composte da un motore di testo locale: nulla di quello che scrivi viene inviato o salvato altrove"
+      ]
+    ],
+    "lang": "it",
+    "type": "Link",
+    "category": "Varie",
+    "famiglia": "Progetti",
+    "galleria": [
+      {
+        "src": "image/galleria/105/portale.jpg",
+        "alt": "La pagina iniziale di Divinazioni con le tre schede degli strumenti: Tarocchi, Smorfia e Rune."
+      },
+      {
+        "src": "image/galleria/105/tarot.jpg",
+        "alt": "Una lettura dei tarocchi a tre carte in stile Marsiglia: L'Appeso per il passato, Il Carro capovolto per il presente e L'Imperatore capovolto per il futuro, con il commento di ciascuna."
+      },
+      {
+        "src": "image/galleria/105/smorfia.jpg",
+        "alt": "Il responso della Smorfia per un sogno: i numeri 89, 68, 32, 70 e 76, cioè la vecchia, la zuppa cotta, il capitone, il palazzo e la fontana, ognuno con la parola del racconto da cui nasce."
+      },
+      {
+        "src": "image/galleria/105/rune.jpg",
+        "alt": "Una lettura a tre rune: Eihwaz per il passato, Ansuz capovolta per il presente e Thurisaz capovolta per il futuro, con il significato di ciascuna."
+      }
+    ]
+  },
+  {
     "id": 53,
     "title": "Quaderno per Appunti e Scrittura",
     "date": "2025-08-03",
