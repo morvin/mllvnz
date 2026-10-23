@@ -296,6 +296,20 @@ def schermate(p, prefisso, nome):
             f'                <div class="shots">{immagini}</div>\n            </section>')
 
 
+def galleria(voce, prefisso):
+    """Immagini a tutta larghezza in fondo alla pagina (es. i contenuti A+ di un libro)."""
+    foto = voce.get("galleria", [])
+    if not foto:
+        return ""
+    immagini = "".join(
+        f'<a href="{prefisso}{e(f["src"])}" target="_blank" rel="noopener"><img src="{prefisso}{e(f["src"])}" '
+        f'alt="{e(f.get("alt", ""))}" loading="lazy" decoding="async"></a>'
+        for f in foto)
+    return ('\n    <section class="galleria" aria-labelledby="h-galleria">\n'
+            '        <h2 id="h-galleria">Uno sguardo all\'interno</h2>\n'
+            f'        <div class="galleria-foto">{immagini}</div>\n    </section>\n')
+
+
 def novita(p):
     if not p.get("novita"):
         return ""
@@ -600,7 +614,7 @@ def costruisci_pagina(voce, indice, voci, card_url, prefisso, collane):
             <p class="lead">{e(breve)}</p>{cta}{condivisione(url_voce, titolo, breve, card_url)}{corpo}
         </article>
     </main>
-
+{galleria(voce, prefisso)}
     <footer class="foot"><span>&copy; 2026 Il Mio Archivio</span><span>Voce {indice + 1} di {len(ids)}</span></footer>
 </div>
 <script>window.VOCE = {dati_js};</script>

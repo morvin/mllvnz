@@ -4428,7 +4428,25 @@
         "di": 3
       }
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/68/01_header.jpg",
+        "alt": "La copertina de 'I Pionieri del Cinema' accanto al titolo 'Come è nata la settima arte?' e ai punti forti: una scheda a doppia pagina per ogni film, le 5 sequenze fondamentali, il dizionario dei pionieri, la galleria dei manifesti d'epoca."
+      },
+      {
+        "src": "image/galleria/68/02_scheda_doppia_pagina.jpg",
+        "alt": "Anteprima della scheda a doppia pagina de 'L'arrivo di un treno' (1895), con le sezioni dati generali, struttura narrativa, personaggi, cinque sequenze fondamentali, temi ed eredità."
+      },
+      {
+        "src": "image/galleria/68/03_dizionario_galleria.jpg",
+        "alt": "Due pagine interne: il Dizionario dei pionieri e glossario, e la Galleria dei manifesti storici con la locandina de 'Il monello' di Charlie Chaplin."
+      },
+      {
+        "src": "image/galleria/68/04_banner_manifesti.jpg",
+        "alt": "Sei manifesti d'epoca in fila: Cabiria, Nosferatu, La febbre dell'oro, La corazzata Potëmkin, La passione di Giovanna d'Arco e Il vaso di Pandora."
+      }
+    ]
   },
   {
     "id": 52,

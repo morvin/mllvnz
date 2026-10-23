@@ -260,6 +260,12 @@ h2 {
     display: block; width: 150px; height: auto; border-radius: 12px;
     border: 1px solid var(--rule); background: var(--card);
 }
+.galleria { padding-bottom: 56px; }
+.galleria-foto { display: grid; gap: 20px; }
+.galleria-foto img {
+    display: block; width: 100%; height: auto; border-radius: 6px;
+    border: 1px solid var(--rule); background: var(--card);
+}
 .tags { align-items: center; }
 .cover.opera { background: var(--card); padding: 10px; }
 
