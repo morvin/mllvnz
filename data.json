@@ -95,7 +95,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/53/01_header.jpg",
+        "alt": "La copertina verde del Quaderno per Appunti e Scrittura accanto ai punti forti: 120 pagine a righe, formato 6x9 pollici, per scuola, lavoro e journaling."
+      },
+      {
+        "src": "image/galleria/53/02_pagine.jpg",
+        "alt": "Due pagine a righe affiancate, numerate e pronte per gli appunti."
+      },
+      {
+        "src": "image/galleria/53/03_dentro_il_quaderno.jpg",
+        "alt": "Tre pagine interne: la pagina del proprietario e due pagine a righe."
+      }
+    ]
   },
   {
     "id": 54,
@@ -183,7 +197,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/54/01_header.jpg",
+        "alt": "La copertina del Quaderno Make Up accanto ai punti forti: face chart a pagina intera, schede per viso, occhi e labbra, formato grande 8.5x11 pollici."
+      },
+      {
+        "src": "image/galleria/54/02_face_chart.jpg",
+        "alt": "Due schede affiancate, ognuna con un face chart da disegnare e le note su prodotti e tecniche."
+      },
+      {
+        "src": "image/galleria/54/03_dentro_il_quaderno.jpg",
+        "alt": "Quattro pagine interne: il frontespizio, le istruzioni d'uso, un face chart e le note finali."
+      }
+    ]
   },
   {
     "id": 55,
@@ -221,7 +249,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/55/01_header.jpg",
+        "alt": "La copertina del Diario della Pressione Arteriosa e Glicemia accanto ai punti forti: monitoraggio settimanale, profilo e contatti utili, piano terapeutico, valori di riferimento."
+      },
+      {
+        "src": "image/galleria/55/02_settimana.jpg",
+        "alt": "Due pagine affiancate: la tabella settimanale della pressione arteriosa e quella della glicemia giornaliera, con la checklist dei farmaci."
+      },
+      {
+        "src": "image/galleria/55/03_dentro_il_diario.jpg",
+        "alt": "Quattro pagine interne: il profilo personale, la scheda del piano terapeutico e le tabelle dei valori di riferimento di glicemia e pressione."
+      }
+    ]
   },
   {
     "id": 56,
@@ -253,7 +295,21 @@
       ],
       "aggiornato": "2026-10-22"
     },
-    "famiglia": "Libri"
+    "famiglia": "Libri",
+    "galleria": [
+      {
+        "src": "image/galleria/56/01_header.jpg",
+        "alt": "La copertina di The Security Book accanto ai punti forti: schede di recupero per wallet Bitcoin, backup dei wallet custodial, carte di credito e password, indice iniziale."
+      },
+      {
+        "src": "image/galleria/56/02_wallet.jpg",
+        "alt": "Due schede affiancate per il recupero di un wallet Bitcoin, con lo spazio per le 24 parole della seed phrase."
+      },
+      {
+        "src": "image/galleria/56/03_dentro_il_libro.jpg",
+        "alt": "Quattro pagine interne: l'indice, il backup dei wallet custodial, le carte di credito e le password."
+      }
+    ]
   },
   {
     "id": 50,
