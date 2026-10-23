@@ -232,7 +232,7 @@ def main():
         time.sleep(random.uniform(1.5, 3))
 
     # Ordine: la prima voce resta in testa, poi libri e app, ognuno per data
-    famiglie = {"Progetti": 0, "Libri": 1, "App": 2, "Arte": 3}
+    famiglie = {"Progetti": 0, "Libri": 1, "App": 2, "Arte": 3, "Digitale": 4}
     testa = voci[:1]
     resto = sorted(voci[1:], key=lambda v: (famiglie.get(v.get("famiglia", "Libri"), 9), v.get("date", "")))
     with open(DATA, "w", encoding="utf-8") as f:

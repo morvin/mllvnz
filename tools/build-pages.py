@@ -189,17 +189,45 @@ def nome_sito(url):
         return "Google Play"
     if "fineartamerica." in d:
         return "Fine Art America"
+    if "gumroad." in d:
+        return "Gumroad"
     return d
 
 
-FAMIGLIE = ["Libri", "App", "Arte", "Progetti"]
+FAMIGLIE = ["Libri", "App", "Arte", "Digitale", "Progetti"]
 # Come si presenta ogni famiglia in home: titolo della sezione e una riga
 DESCRIZIONI_FAMIGLIE = {
     "Libri": ("Libri", "Parole intrecciate, quaderni, guide di viaggio e libri di cinema, su Amazon."),
     "App": ("App per Android", "Mappe dei trasporti per le città del mondo, su Google Play."),
     "Arte": ("Opere d'arte", "Dipinti, disegni e fotografie, in vendita come stampe su Fine Art America."),
+    "Digitale": ("Risorse digitali", "Texture e materiali per artisti digitali, su Gumroad."),
     "Progetti": ("Progetti", "Le pagine nate intorno all'archivio."),
 }
+
+
+def scheda_digitale(voce, g):
+    """Scheda di un prodotto digitale su Gumroad."""
+    righe = []
+
+    def riga(nome, valore, testo=False):
+        if valore:
+            classe = ' class="txt"' if testo else ""
+            righe.append(f"<dt>{e(nome)}</dt><dd{classe}>{valore}</dd>")
+
+    venditore = e(g.get("venditore", ""))
+    if g.get("negozio"):
+        venditore += f' <span class="nota">· <a href="{e(g["negozio"])}" target="_blank" rel="noopener">{e(dominio(g["negozio"]))}</a></span>'
+    riga("Autore", venditore, testo=True)
+    riga("Prezzo", e(g.get("prezzo", "")))
+    riga("Tipo", e(voce.get("type", "")), testo=True)
+    if g.get("stelle"):
+        riga("Valutazione", e(f"{g['stelle']:.1f}".replace(".", ",") + f" su 5 ({g.get('recensioni', 0)} recensioni)"))
+    if g.get("vendite"):
+        riga("Vendite", e(g["vendite"]))
+    riga("Consegna", "Download immediato dopo l'acquisto", testo=True)
+    return (f'\n            <section aria-labelledby="h-scheda">\n'
+            f'                <h2 id="h-scheda">Scheda del prodotto</h2>\n'
+            f'                <dl class="scheda">{"".join(righe)}</dl>\n            </section>')
 
 
 def scheda_arte(voce, f):
@@ -403,6 +431,7 @@ def costruisci_pagina(voce, indice, voci, card_url, prefisso, collane):
     a = voce.get("amazon") or {}
     p = voce.get("play")
     arte = voce.get("faa")
+    gum = voce.get("gumroad")
     sito = nome_sito(url)
 
     testa = ""
@@ -452,14 +481,14 @@ def costruisci_pagina(voce, indice, voci, card_url, prefisso, collane):
     # --- Colonna sinistra: copertina e QR ---
     if voce.get("image"):
         img = (f'<img src="{prefisso}{e(voce["image"])}" alt="{e(voce.get("alt") or titolo)}" decoding="async">')
-        copertina = (f'<a class="cover{" phone" if p else " opera" if arte else ""}" href="{e(url)}" target="_blank" rel="noopener" '
+        copertina = (f'<a class="cover{" phone" if p else " opera" if arte or gum else ""}" href="{e(url)}" target="_blank" rel="noopener" '
                      f'aria-label="{e(principale)}: apri su {e(sito)}">{img}</a>' if url
                      else f'<span class="cover">{img}</span>')
     else:
         copertina = ""
     qr = ""
     if url:
-        cosa = "il libro" if sito == "Amazon" else "l'app" if p else "l'opera" if arte else "la pagina"
+        cosa = "il libro" if sito == "Amazon" else "l'app" if p else "l'opera" if arte else "il prodotto" if gum else "la pagina"
         qr = f"""<div class="qr">
                 <img src="{prefisso}qr/{voce['id']}.svg" alt="QR code: {e(url)}" width="96" height="96">
                 <div><strong>Inquadra col telefono</strong>e {cosa} si apre su {e(sito)}.</div>
@@ -492,6 +521,8 @@ def costruisci_pagina(voce, indice, voci, card_url, prefisso, collane):
         etichetta = ("Apri su Amazon" if sito == "Amazon" else "Scarica da Google Play" if p
                      else (voce.get("caption") or f"Apri su {sito}"))
         prezzo = ""
+        if gum and gum.get("prezzo"):
+            prezzo = f'<div class="price">{e(gum["prezzo"])}<small>download digitale</small></div>'
         if p and p.get("prezzo"):
             prezzo = f'<div class="price">{e(p["prezzo"])}<small>Android</small></div>'
         if a.get("prezzo"):
@@ -503,7 +534,10 @@ def costruisci_pagina(voce, indice, voci, card_url, prefisso, collane):
                 {prezzo}
             </div>"""
 
-    if arte:
+    if gum:
+        corpo = scheda_digitale(voce, gum) + descrizione(gum)
+        icona_app = ""
+    elif arte:
         corpo = scheda_arte(voce, arte)
         icona_app = ""
     elif p:
@@ -648,7 +682,7 @@ def costruisci_home(voci, collane, card_url):
     numeri_html = "".join(f"<div><b>{n}</b><span>{nome}</span></div>" for n, nome in numeri)
 
     def classe_card(v):
-        return "card card-app" if v.get("play") else "card card-arte" if v.get("faa") else "card"
+        return "card card-app" if v.get("play") else "card card-arte" if v.get("faa") or v.get("gumroad") else "card"
 
     def vetrina(fam, quante=6):
         elenco = per_famiglia[fam]
@@ -662,7 +696,7 @@ def costruisci_home(voci, collane, card_url):
             f'<span class="card-title">{e(dividi_titolo(v["title"])[0])}</span>'
             f'<span class="card-date">{e(data_italiana(v.get("date")))}</span></a>'
             for v in ultime if v.get("image"))
-        tutti = f'Vedi {"tutte" if fam in ("App", "Arte") else "tutti"} ({len(elenco)}) &rarr;'
+        tutti = f'Vedi {"tutte" if fam in ("App", "Arte", "Digitale") else "tutti"} ({len(elenco)}) &rarr;'
         return f"""
         <section class="famiglia" id="{fam.lower()}" aria-labelledby="h-{fam.lower()}">
             <div class="sez-head"><div><h2 id="h-{fam.lower()}">{e(titolo)}</h2><p>{e(riga)}</p></div>
@@ -687,8 +721,8 @@ def costruisci_home(voci, collane, card_url):
 
     primo = voci[0]
     titolo = "Il Mio Archivio"
-    breve = (f"{len(voci)} voci da sfogliare: libri, app di mappe per le città del mondo e opere "
-             "d'arte, ognuna con la sua scheda.")
+    breve = (f"{len(voci)} voci da sfogliare: libri, app di mappe per le città del mondo, opere "
+             "d'arte e risorse digitali, ognuna con la sua scheda.")
     testa = ""
     testa += meta("description", breve, attr="name")
     testa += meta("og:site_name", titolo)
@@ -733,9 +767,9 @@ def costruisci_home(voci, collane, card_url):
             {griglia_home()}
             <div class="intro">
                 <h1>Il Mio Archivio</h1>
-                <p class="lead">Un posto per collezionare le mie cose: libri, app per Android
-                e opere d'arte. Ogni voce ha la sua scheda, con le immagini, i dettagli e il
-                link per averla.</p>
+                <p class="lead">Un posto per collezionare le mie cose: libri, app per Android,
+                opere d'arte e risorse digitali. Ogni voce ha la sua scheda, con le immagini,
+                i dettagli e il link per averla.</p>
                 <div class="numeri">{numeri_html}</div>
             </div>
         </section>

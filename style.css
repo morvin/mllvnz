@@ -264,7 +264,7 @@ h2 {
 .cover.opera { background: var(--card); padding: 10px; }
 
 /* Indice delle sezioni in home */
-.tessere { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.tessere { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; }
 .tessera {
     display: grid; gap: 14px; align-content: start; padding: 16px;
     background: var(--card); border: 1px solid var(--rule); border-radius: 8px;
@@ -274,7 +274,7 @@ h2 {
 .tessera:hover { border-color: var(--accent); transform: translateY(-2px); }
 .mini { display: flex; gap: 6px; height: 92px; }
 .mini img { flex: 1; min-width: 0; height: 100%; object-fit: cover; border-radius: 4px; background: var(--cell); }
-.t-arte .mini img { object-fit: contain; }
+.t-arte .mini img, .t-digitale .mini img { object-fit: contain; }
 .t-testo { display: grid; gap: 2px; }
 .t-testo b { font-family: var(--font-display); font-weight: 400; font-size: 1.6rem; color: var(--ink); line-height: 1.1; font-variant-numeric: tabular-nums; }
 .t-testo strong { color: var(--ink); font-size: var(--step-0); }

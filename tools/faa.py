@@ -30,7 +30,7 @@ TECNICHE = {"painting": "Dipinto", "photograph": "Fotografia", "digital art": "A
             "sculpture": "Scultura", "relief": "Rilievo", "tapestry - textile": "Tessuto"}
 MESI_EN = ["january", "february", "march", "april", "may", "june", "july",
            "august", "september", "october", "november", "december"]
-FAMIGLIE = {"Progetti": 0, "Libri": 1, "App": 2, "Arte": 3}
+FAMIGLIE = {"Progetti": 0, "Libri": 1, "App": 2, "Arte": 3, "Digitale": 4}
 
 
 def contesto_ssl():
