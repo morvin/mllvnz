@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>La Libreria · Il Mio Archivio</title>
+<meta name="description" content="Sfoglia tutti i libri de La Quercia Edizioni: copertine, immagini dall'interno e collegamento ad Amazon.">
+<meta name="theme-color" content="#14111c">
+<meta property="og:title" content="La Libreria · Il Mio Archivio">
+<meta property="og:description" content="Sfoglia tutti i libri de La Quercia Edizioni, uno scaffale alla volta.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="libreria.css">
+</head>
+<body>
+<canvas id="atmo" aria-hidden="true"></canvas>
+<div id="sfondo" aria-hidden="true"><div class="strato"></div><div class="strato"></div></div>
+
+<header class="testa">
+  <a class="indietro" href="../">← Il Mio Archivio</a>
+  <h1><span aria-hidden="true">🌳</span> La Libreria <small id="conta"></small></h1>
+  <div class="azioni">
+    <button id="btnShow" type="button" aria-pressed="false">▶ Presentazione</button>
+    <button id="btnCaso" type="button">🎲 A caso</button>
+  </div>
+</header>
+
+<nav class="filtri" id="filtri" aria-label="Filtra per categoria"></nav>
+
+<main>
+  <div id="anello" role="listbox" aria-label="Copertine dei libri: trascina o usa le frecce"></div>
+  <div class="didascalia" aria-live="polite">
+    <span class="chip" id="dCat"></span>
+    <h2 id="dTitolo"></h2>
+    <button id="btnApri" type="button">Apri il libro</button>
+  </div>
+  <p class="suggerimento">Trascina, usa le frecce ← → o tocca una copertina</p>
+</main>
+
+<div id="scheda" role="dialog" aria-modal="true" aria-labelledby="sTitolo" hidden>
+  <div class="velo" data-chiudi></div>
+  <article class="foglio">
+    <button class="chiudi" type="button" data-chiudi aria-label="Chiudi">×</button>
+    <div class="s-cop"><img id="sCop" alt=""></div>
+    <div class="s-testo">
+      <span class="chip" id="sCat"></span>
+      <h2 id="sTitolo"></h2>
+      <p id="sFrase"></p>
+      <div class="dati" id="sDati"></div>
+      <div class="galleria" id="galleria">
+        <img id="gImg" alt="">
+        <button class="g-prec" type="button" aria-label="Immagine precedente">‹</button>
+        <button class="g-succ" type="button" aria-label="Immagine successiva">›</button>
+        <div class="g-punti" id="gPunti"></div>
+      </div>
+      <div class="bottoni">
+        <a id="sAmazon" class="primario" target="_blank" rel="noopener">🛒 Apri su Amazon</a>
+        <a id="sVoce">📇 Scheda nell'archivio</a>
+        <button id="sCopia" type="button">🔗 Copia il link</button>
+      </div>
+    </div>
+  </article>
+</div>
+
+<script src="libreria.js"></script>
+</body>
+</html>

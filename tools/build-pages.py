@@ -485,7 +485,7 @@ def costruisci_pagina(voce, indice, voci, card_url, prefisso, collane):
             {bottone('first', '|&lsaquo;', ids[0] if indice > 0 else None, 'Prima voce', icona=True)}
             {bottone('prev', '&lsaquo; <span class="lbl">Indietro</span>', prec, f'Voce precedente: {nome_prec}')}
         </div>
-        <div class="where"><b>{indice + 1}</b> di {len(ids)} <a class="btn random" href="{pagina(casuale)}" data-azione="casuale">Casuale</a></div>
+        <div class="where"><b>{indice + 1}</b> di {len(ids)} <a class="btn random" href="{pagina(casuale)}" data-azione="casuale" aria-label="Voce a caso"><span aria-hidden="true">🎲</span><span class="lbl"> Casuale</span></a></div>
         <div class="side end">
             {bottone('next', '<span class="lbl">Avanti</span> &rsaquo;', succ, f'Voce successiva: {nome_succ}')}
             {bottone('last', '&rsaquo;|', ids[-1] if succ else None, 'Ultima voce', icona=True)}
@@ -594,7 +594,7 @@ def costruisci_pagina(voce, indice, voci, card_url, prefisso, collane):
 <div class="wrap">
     <header class="top">
         <a class="brand" href="{prefisso or './'}">Il Mio Archivio <small>un posto per collezionare le mie cose</small></a>
-        <nav aria-label="Sezioni"><a href="{pagina(ids[0])}" aria-current="page">Sfoglia</a><a href="{prefisso}catalogo.html">Catalogo</a></nav>
+        <nav aria-label="Sezioni"><a href="{pagina(ids[0])}" aria-current="page">Sfoglia</a><a href="{prefisso}catalogo.html">Catalogo</a><a href="{prefisso}libreria/">Libreria</a></nav>
     </header>
 
     {pager}
@@ -773,7 +773,7 @@ def costruisci_home(voci, collane, card_url):
 <div class="wrap">
     <header class="top">
         <a class="brand" href="./">Il Mio Archivio <small>un posto per collezionare le mie cose</small></a>
-        <nav aria-label="Sezioni"><a href="v/{primo['id']}.html">Sfoglia</a><a href="catalogo.html">Catalogo</a></nav>
+        <nav aria-label="Sezioni"><a href="v/{primo['id']}.html">Sfoglia</a><a href="catalogo.html">Catalogo</a><a href="libreria/">Libreria</a></nav>
     </header>
 
     <main class="home">
@@ -800,6 +800,11 @@ def costruisci_home(voci, collane, card_url):
                 <span class="porta-n">? di {len(ids)}</span>
                 <strong>Pesca a caso</strong>
                 <span>Una voce qualsiasi dell'archivio, diversa a ogni clic.</span>
+            </a>
+            <a class="porta" href="libreria/">
+                <span class="porta-n">{sum(1 for v in voci if v.get("amazon"))} libri</span>
+                <strong>Sfoglia la libreria</strong>
+                <span>Tutti i libri su uno scaffale che gira: copertine, pagine interne e link ad Amazon.</span>
             </a>
             <a class="porta" href="catalogo.html">
                 <span class="porta-n">{len(categorie)} categorie</span>

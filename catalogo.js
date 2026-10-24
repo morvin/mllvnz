@@ -177,6 +177,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             render();
             document.body.classList.remove('is-loading');
+
+            // Pesca a caso tra le voci visibili, cioè rispettando i filtri scelti
+            $('catalog-random').addEventListener('click', ev => {
+                const voci = [...document.querySelectorAll('#catalog a[href^="v/"]')];
+                if (!voci.length) return;
+                ev.preventDefault();
+                location.href = voci[Math.floor(Math.random() * voci.length)].getAttribute('href');
+            });
         })
         .catch(error => {
             console.error('Errore nel caricamento dei dati:', error);

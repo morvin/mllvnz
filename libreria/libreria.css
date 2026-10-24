@@ -1,0 +1,91 @@
+/* La Libreria: versione da sfogliare della scena delle dirette. --c1..--c3 vengono dal libro al centro, --h è l'altezza delle copertine */
+:root { --c1: #2b2540; --c2: #4b3b6e; --c3: #c9a8f0; --h: clamp(220px, 46vh, 520px); --serif: 'Fraunces', Georgia, serif; --sans: Nunito, system-ui, sans-serif; color-scheme: dark; }
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+html { overflow-x: hidden; }
+body { min-height: 100vh; min-height: 100dvh; overflow-x: hidden; color: #fff; font-family: var(--sans);
+  background: radial-gradient(ellipse at 30% 30%, color-mix(in srgb, var(--c2) 70%, #000), color-mix(in srgb, var(--c1) 55%, #000) 60%, #050409) fixed;
+  transition: background 2s; display: flex; flex-direction: column; }
+a { color: inherit; }
+button, .bottoni a { font: 800 15px var(--sans); color: #fff; cursor: pointer; border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.1);
+  padding: 10px 16px; border-radius: 14px; backdrop-filter: blur(8px); text-decoration: none; transition: background .2s, transform .15s; }
+button:hover, .bottoni a:hover { background: rgba(255,255,255,.2); transform: translateY(-1px); }
+button:focus-visible, a:focus-visible { outline: 3px solid var(--c3); outline-offset: 2px; }
+#atmo { position: fixed; inset: 0; z-index: 0; pointer-events: none; width: 100%; height: 100%; }
+#sfondo { position: fixed; inset: -60px; z-index: 0; pointer-events: none; }
+#sfondo .strato { position: absolute; inset: 0; background: center / cover no-repeat; filter: blur(38px) saturate(1.3) brightness(.4); opacity: 0; transition: opacity 2s; }
+#sfondo .strato.on { opacity: .85; }
+
+.testa { position: relative; z-index: 5; display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between; padding: 18px max(16px, 3vw) 6px; }
+.indietro { font-weight: 700; opacity: .8; text-decoration: none; }
+.indietro:hover { opacity: 1; }
+.testa h1 { margin: 0; font: 600 clamp(26px, 3.4vw, 40px)/1 var(--serif); flex: 1; text-align: center; }
+.testa h1 small { font: 700 14px var(--sans); opacity: .65; margin-left: 6px; }
+.azioni { display: flex; gap: 8px; }
+#btnShow[aria-pressed="true"] { background: color-mix(in srgb, var(--c3) 45%, transparent); }
+
+.filtri { position: relative; z-index: 5; display: flex; gap: 8px; overflow-x: auto; padding: 10px max(16px, 3vw); scrollbar-width: none;
+  mask-image: linear-gradient(90deg, transparent, #000 16px, #000 calc(100% - 16px), transparent); }
+.filtri::-webkit-scrollbar { display: none; }
+.filtri button { flex: none; padding: 7px 14px; border-radius: 999px; font-size: 14px; }
+.filtri button[aria-pressed="true"] { background: #fff; color: #1b1626; }
+
+main { position: relative; z-index: 3; flex: 1; width: 100%; overflow: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; padding-bottom: 24px; min-height: 0; }
+#anello { position: relative; width: 100%; height: calc(var(--h) * 1.25); perspective: 1600px; touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none; }
+#anello.trascina { cursor: grabbing; }
+.libro { position: absolute; left: 50%; top: calc(var(--h) * .06); height: var(--h); transition: transform .9s cubic-bezier(.45,.05,.2,1), opacity .9s, filter .9s; will-change: transform; }
+#anello.trascina .libro { transition-duration: .35s; }
+.libro img { display: block; height: 100%; width: auto; border-radius: 5px 9px 9px 5px; pointer-events: none;
+  box-shadow: 0 24px 50px rgba(0,0,0,.55), inset 3px 0 6px rgba(255,255,255,.12);
+  -webkit-box-reflect: below 5px linear-gradient(transparent 72%, rgba(255,255,255,.16)); }
+.libro.centro img { box-shadow: 0 24px 60px rgba(0,0,0,.6), 0 0 50px color-mix(in srgb, var(--c3) 60%, transparent); animation: respira 5s ease-in-out infinite; }
+@keyframes respira { 50% { box-shadow: 0 24px 60px rgba(0,0,0,.6), 0 0 80px color-mix(in srgb, var(--c3) 75%, transparent); } }
+.libro.nascosto { visibility: hidden; }
+
+.didascalia { display: grid; justify-items: center; gap: 10px; text-align: center; padding: 0 16px; margin-top: 4px; }
+.chip { font: 800 13px var(--sans); letter-spacing: 1.2px; text-transform: uppercase; padding: 6px 14px; border-radius: 999px;
+  background: color-mix(in srgb, var(--c3) 28%, rgba(255,255,255,.06)); border: 1px solid color-mix(in srgb, var(--c3) 55%, transparent); }
+.didascalia h2 { margin: 0; font: 800 clamp(22px, 3vw, 38px)/1.1 var(--serif); max-width: 24em; text-shadow: 0 4px 24px rgba(0,0,0,.4); }
+#btnApri { background: #fff; color: #1b1626; padding: 12px 22px; font-size: 16px; }
+.suggerimento { margin: 14px 0 0; font-size: 13px; opacity: .55; text-align: center; padding: 0 16px; }
+
+/* Scheda del libro */
+#scheda { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: max(12px, 2vw); }
+#scheda[hidden] { display: none; }
+.velo { position: absolute; inset: 0; background: rgba(5,4,9,.7); backdrop-filter: blur(10px); animation: appare .3s; }
+.foglio { position: relative; width: min(1180px, 100%); max-height: calc(100dvh - 24px); overflow: auto; display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 32px;
+  padding: 32px; border-radius: 28px; background: color-mix(in srgb, var(--c1) 28%, #14111c); border: 1px solid rgba(255,255,255,.12);
+  box-shadow: 0 40px 120px rgba(0,0,0,.6); animation: sale .45s cubic-bezier(.2,.9,.3,1.2); }
+@keyframes appare { from { opacity: 0; } }
+@keyframes sale { from { opacity: 0; transform: translateY(30px) scale(.97); } }
+.chiudi { position: absolute; top: 14px; right: 14px; width: 44px; height: 44px; padding: 0; font-size: 26px; line-height: 1; border-radius: 50%; z-index: 2; }
+.s-cop img { width: 100%; border-radius: 6px 12px 12px 6px; box-shadow: -14px 24px 60px rgba(0,0,0,.55); transform: perspective(1200px) rotateY(-7deg); }
+.s-testo { display: grid; gap: 14px; align-content: start; }
+.s-testo .chip { justify-self: start; }
+.s-testo h2 { margin: 0; padding-right: 40px; font: 800 clamp(26px, 3vw, 42px)/1.08 var(--serif); }
+.s-testo p { margin: 0; font-size: 17px; line-height: 1.6; opacity: .9; }
+.dati { display: flex; flex-wrap: wrap; gap: 8px; }
+.dati span { font-weight: 700; font-size: 14px; padding: 6px 12px; border-radius: 10px; background: rgba(255,255,255,.1); }
+.galleria { position: relative; aspect-ratio: 1940 / 1200; border-radius: 16px; overflow: hidden; background: rgba(0,0,0,.35); box-shadow: 0 18px 50px rgba(0,0,0,.4); }
+.galleria img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity .35s; }
+.galleria img.cambia { opacity: 0; }
+.g-prec, .g-succ { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; padding: 0; border-radius: 50%; font-size: 28px; line-height: 1; background: rgba(0,0,0,.45); }
+.g-prec { left: 10px; } .g-succ { right: 10px; }
+.g-prec:hover, .g-succ:hover { transform: translateY(-50%) scale(1.06); }
+.g-punti { position: absolute; bottom: 10px; left: 0; right: 0; display: flex; justify-content: center; gap: 8px; }
+.g-punti i { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.45); cursor: pointer; }
+.g-punti i.on { background: #fff; transform: scale(1.25); }
+.bottoni { display: flex; flex-wrap: wrap; gap: 10px; }
+.bottoni .primario { background: #fff; color: #1b1626; }
+
+@media (max-width: 760px) {
+  :root { --h: min(44vh, 64vw); }
+  .testa h1 { order: -1; flex-basis: 100%; text-align: left; }
+  .foglio { grid-template-columns: 1fr; padding: 22px 18px; gap: 20px; border-radius: 22px; }
+  .s-cop { max-width: 220px; }
+  .suggerimento { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .libro, .foglio, .velo { transition: none; animation: none; }
+  .libro.centro img { animation: none; }
+}
